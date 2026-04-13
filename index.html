@@ -1,0 +1,754 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!--
+      <!doctype html>
+      Que es: indica que el documento usa HTML5.
+      Como funciona: se escribe una sola vez al principio del archivo.
+      Para que sirve: ayuda al navegador a interpretar bien la pagina.
+    -->
+    <meta charset="UTF-8" />
+    <!--
+      <meta charset>
+      Que es: define la codificacion de caracteres.
+      Como funciona: le dice al navegador como leer letras y simbolos.
+      Para que sirve: evitar errores con acentos y caracteres especiales.
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+      <meta name="viewport">
+      Que es: configura la vista en dispositivos moviles.
+      Como funciona: adapta el ancho al tamaño del dispositivo.
+      Para que sirve: mejorar la visualizacion responsive.
+    -->
+    <title>Guia Basica de HTML y CSS</title>
+    <!--
+      <title>
+      Que es: el titulo de la pestaña del navegador.
+      Como funciona: muestra texto arriba del navegador.
+      Para que sirve: identificar la pagina.
+    -->
+    <link rel="stylesheet" href="css/index.css" />
+    <!--
+      <link>
+      Que es: conecta la pagina con un archivo externo.
+      Como funciona: en este caso carga una hoja de estilos CSS.
+      Para que sirve: separar HTML de CSS.
+    -->
+  </head>
+  <body>
+    <!--
+      <body>
+      Que es: la parte visible del documento.
+      Como funciona: aqui van textos, imagenes, tablas, formularios y mas.
+      Para que sirve: mostrar contenido al usuario.
+    -->
+    <noscript>
+      Este mensaje aparece si JavaScript esta desactivado.
+    </noscript>
+    <!--
+      <noscript>
+      Que es: contenido alternativo para cuando no hay JavaScript.
+      Como funciona: el navegador lo muestra solo en ese caso.
+      Para que sirve: dar avisos o instrucciones extra.
+    -->
+
+    <header class="bloque introduccion" id="inicio">
+      <!--
+        <header>
+        Que es: la cabecera principal de la pagina.
+        Como funciona: suele contener titulo, introduccion o menu.
+        Para que sirve: presentar el contenido inicial.
+      -->
+      <h1>Guia Basica de HTML y CSS</h1>
+      <p>
+        Esta pagina junta muchos ejemplos simples de etiquetas HTML y una hoja
+        de estilos CSS separada para practicar.
+      </p>
+
+      <nav class="menu-principal">
+        <!--
+          <nav>
+          Que es: una zona de navegacion.
+          Como funciona: agrupa enlaces a secciones o a otros archivos.
+          Para que sirve: facilitar el recorrido del usuario.
+        -->
+        <a href="#estructura">Estructura</a>
+        <a href="#textos">Textos</a>
+        <a href="#listas">Listas</a>
+        <a href="#multimedia">Multimedia</a>
+        <a href="#tablas">Tablas</a>
+        <a href="#formularios">Formularios</a>
+        <a href="#interactivas">Interactivas</a>
+        <a href="#css-demo">CSS</a>
+        <a href="pages/formularios/formulario.html">Formulario aparte</a>
+      </nav>
+    </header>
+
+    <main>
+      <!--
+        <main>
+        Que es: el contenido principal de la pagina.
+        Como funciona: contiene la informacion mas importante del documento.
+        Para que sirve: mejorar orden y semantica.
+      -->
+      <section class="bloque" id="estructura">
+        <h2>Estructura y contenedores</h2>
+
+        <!--
+          <div>
+          Que es: un contenedor generico.
+          Como funciona: agrupa elementos sin significado semantico especial.
+          Para que sirve: ordenar contenido y aplicar estilos.
+        -->
+        <div class="caja-interna">
+          Este texto esta dentro de un div usado como contenedor basico.
+        </div>
+
+        <!--
+          id y class
+          Que son: atributos comunes de HTML.
+          Como funcionan: id identifica un elemento unico y class agrupa varios.
+          Para que sirven: enlazar secciones y aplicar estilos con CSS.
+        -->
+        <p id="selector-id-demo">
+          Este parrafo usa un id para mostrar un ejemplo de selector por id.
+        </p>
+        <p class="selector-clase-demo">
+          Este parrafo usa una clase para mostrar un ejemplo de selector por
+          clase.
+        </p>
+
+        <!--
+          <article>
+          Que es: un contenido independiente.
+          Como funciona: puede leerse por separado del resto.
+          Para que sirve: noticias, publicaciones o tarjetas.
+        -->
+        <article class="tarjeta">
+          <h3>Ejemplo de article</h3>
+          <p>
+            Este article representa un contenido que podria existir solo dentro
+            de una pagina.
+          </p>
+        </article>
+
+        <!--
+          <aside>
+          Que es: contenido secundario o complementario.
+          Como funciona: acompaña al contenido principal.
+          Para que sirve: notas, avisos o datos extra.
+        -->
+        <aside class="tarjeta">
+          <h3>Ejemplo de aside</h3>
+          <p>Este aside muestra informacion secundaria.</p>
+        </aside>
+      </section>
+
+      <section class="bloque" id="textos">
+        <h2>Etiquetas de texto y enlaces</h2>
+
+        <!--
+          <h1> a <h6>
+          Que son: encabezados o titulos.
+          Como funcionan: h1 es el mas importante y h6 el menos importante.
+          Para que sirven: crear jerarquia visual y semantica.
+        -->
+        <h3>Ejemplo de h3</h3>
+        <h4>Ejemplo de h4</h4>
+        <h5>Ejemplo de h5</h5>
+        <h6>Ejemplo de h6</h6>
+
+        <!--
+          <p>
+          Que es: un parrafo.
+          Como funciona: agrupa texto en bloques.
+          Para que sirve: escribir contenido normal.
+        -->
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum
+          repudiandae quasi asperiores nemo perspiciatis modi.
+        </p>
+
+        <!--
+          <span>
+          Que es: una etiqueta en linea.
+          Como funciona: no rompe la linea del texto.
+          Para que sirve: destacar una parte pequeña del contenido.
+        -->
+        <p>
+          Este parrafo tiene un
+          <span class="resaltado">span resaltado dentro del texto</span>.
+        </p>
+
+        <!--
+          <strong>, <b>, <em>, <i>, <u>, <mark>, <small>
+          Que son: etiquetas de texto en linea.
+          Como funcionan: modifican significado o aspecto visual.
+          Para que sirven: enfatizar, resaltar o diferenciar texto.
+        -->
+        <p><strong>strong:</strong> indica importancia fuerte.</p>
+        <p><b>b:</b> pone texto en negrita visual.</p>
+        <p><em>em:</em> indica enfasis en una frase.</p>
+        <p><i>i:</i> suele usarse para una voz alternativa o estilo visual.</p>
+        <p><u>u:</u> subraya texto.</p>
+        <p><mark>mark:</mark> resalta una palabra.</p>
+        <p><small>small:</small> muestra texto de menor tamaño.</p>
+
+        <!--
+          <s>, <del>, <ins>, <sub>, <sup>
+          Que son: etiquetas para cambios o posicion especial del texto.
+          Como funcionan: tachan, insertan o colocan texto arriba o abajo.
+          Para que sirven: correcciones, formulas y comparaciones.
+        -->
+        <p><s>Texto no vigente</s></p>
+        <p><del>Precio anterior</del> <ins>Precio nuevo</ins></p>
+        <p>Formula: H<sub>2</sub>O</p>
+        <p>Potencia: 10<sup>2</sup></p>
+
+        <!--
+          <abbr>, <time>, <data>
+          Que son: etiquetas para datos concretos.
+          Como funcionan: agregan significado extra a palabras o valores.
+          Para que sirven: fechas, abreviaturas y datos utiles.
+        -->
+        <p>
+          <abbr title="HyperText Markup Language">HTML</abbr> es un lenguaje de
+          marcado.
+        </p>
+        <p>
+          Fecha de ejemplo:
+          <time datetime="2026-04-13">13 de abril de 2026</time>
+        </p>
+        <p>Producto: <data value="pc-01">Teclado basico</data></p>
+
+        <!--
+          <code>, <pre>, <kbd>, <samp>, <var>
+          Que son: etiquetas para codigo o texto tecnico.
+          Como funcionan: representan codigo, teclas, salida del sistema y variables.
+          Para que sirven: documentar ejemplos tecnicos.
+        -->
+        <p>Codigo corto: <code>&lt;p&gt;Hola&lt;/p&gt;</code></p>
+        <pre>
+body {
+  background-color: white;
+  color: black;
+}
+        </pre>
+        <p>Pulsa <kbd>Ctrl</kbd> + <kbd>S</kbd> para guardar.</p>
+        <p>Salida del sistema: <samp>Archivo guardado</samp></p>
+        <p>Variable matematica: <var>x</var> + <var>y</var> = 10</p>
+
+        <!--
+          <q>, <blockquote>, <cite>
+          Que son: etiquetas para citas.
+          Como funcionan: q sirve para citas cortas, blockquote para citas largas y cite para la fuente.
+          Para que sirven: referenciar frases o textos.
+        -->
+        <p><q>Esta es una cita corta.</q></p>
+        <blockquote cite="https://example.com">
+          Esta es una cita larga de ejemplo dentro de blockquote para mostrar
+          como se separa del resto del texto.
+        </blockquote>
+        <p><cite>Fuente o libro de ejemplo</cite></p>
+
+        <!--
+          <address>
+          Que es: informacion de contacto.
+          Como funciona: agrupa datos como nombre, correo o direccion.
+          Para que sirve: mostrar datos de contacto del autor o sitio.
+        -->
+        <address>
+          Nombre: Alumno de practica<br />
+          Correo: ejemplo@correo.com<br />
+          Ciudad: Buenos Aires
+        </address>
+
+        <!--
+          <br>, <wbr> y <hr>
+          Que son: salto de linea, corte opcional y separador horizontal.
+          Como funcionan: br baja una linea, wbr permite cortar palabras largas y hr separa temas.
+          Para que sirven: ordenar visualmente el contenido.
+        -->
+        <p>Linea uno<br />Linea dos con br.</p>
+        <p>
+          Palabra larga con wbr:
+          electroencefalo<wbr />grafista<wbr />superavanzado
+        </p>
+        <hr />
+
+        <!--
+          <a>
+          Que es: un enlace.
+          Como funciona: usa el atributo href para indicar el destino.
+          Para que sirve: navegar por la misma pagina o por otras paginas.
+        -->
+        <p><a href="#inicio">Enlace interno al inicio</a></p>
+        <p>
+          <a href="https://example.com" target="_blank" rel="noopener">
+            Enlace externo
+          </a>
+        </p>
+      </section>
+
+      <section class="bloque" id="listas">
+        <h2>Etiquetas de listas</h2>
+
+        <!--
+          <ul> y <li>
+          Que son: lista desordenada y elemento de lista.
+          Como funcionan: muestran items con viñetas.
+          Para que sirven: agrupar elementos sin orden numerico.
+        -->
+        <h3>Lista desordenada</h3>
+        <ul class="mini-lista">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+        </ul>
+
+        <!--
+          <ol> y <li>
+          Que son: lista ordenada y elemento de lista.
+          Como funcionan: muestran items numerados.
+          Para que sirven: explicar pasos o procesos.
+        -->
+        <h3>Lista ordenada</h3>
+        <ol>
+          <li>Abrir el archivo</li>
+          <li>Escribir codigo</li>
+          <li>Guardar cambios</li>
+        </ol>
+
+        <!--
+          <dl>, <dt>, <dd>
+          Que son: lista de definiciones.
+          Como funcionan: dt muestra el termino y dd su descripcion.
+          Para que sirven: explicar conceptos.
+        -->
+        <h3>Lista de definiciones</h3>
+        <dl>
+          <dt>HTML</dt>
+          <dd>Se usa para la estructura del contenido.</dd>
+
+          <dt>CSS</dt>
+          <dd>Se usa para el diseño visual.</dd>
+        </dl>
+      </section>
+
+      <section class="bloque" id="multimedia">
+        <h2>Etiquetas multimedia y embebidas</h2>
+
+        <!--
+          <figure>, <img>, <figcaption>
+          Que son: una imagen con su descripcion.
+          Como funcionan: figure agrupa el contenido visual y figcaption lo explica.
+          Para que sirven: mostrar imagenes con contexto.
+        -->
+        <figure>
+          <img
+            src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='180'><rect width='100%25' height='100%25' fill='%23d9e8ff'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20'>Imagen simple</text></svg>"
+            alt="Imagen de ejemplo generada con SVG"
+          />
+          <figcaption>Ejemplo basico de img dentro de figure.</figcaption>
+        </figure>
+
+        <!--
+          <picture> y <source>
+          Que son: una imagen adaptable con varias fuentes posibles.
+          Como funcionan: source ofrece opciones y img actua como respaldo.
+          Para que sirven: mostrar una imagen segun el tamaño de pantalla.
+        -->
+        <picture>
+          <source
+            media="(min-width: 700px)"
+            srcset="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='180'><rect width='100%25' height='100%25' fill='%23c7f9cc'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24'>Picture grande</text></svg>"
+          />
+          <img
+            src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='180'><rect width='100%25' height='100%25' fill='%23fde68a'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='22'>Picture base</text></svg>"
+            alt="Ejemplo de picture con imagen base"
+          />
+        </picture>
+
+        <!--
+          <audio> y <source>
+          Que son: reproductor de audio y fuente del archivo.
+          Como funcionan: audio crea el reproductor y source indica el archivo.
+          Para que sirven: reproducir sonidos o musica.
+        -->
+        <h3>Audio</h3>
+        <audio controls>
+          <source src="" type="audio/mpeg" />
+          Tu navegador no soporta la etiqueta audio.
+        </audio>
+
+        <!--
+          <video>, <source> y <track>
+          Que son: reproductor de video, fuente del archivo y pista de subtitulos.
+          Como funcionan: video crea el reproductor, source carga el archivo y track agrega subtitulos.
+          Para que sirven: mostrar video con informacion adicional.
+        -->
+        <h3>Video</h3>
+        <video controls width="320">
+          <source src="" type="video/mp4" />
+          <track src="" kind="captions" srclang="es" label="Espanol" />
+          Tu navegador no soporta la etiqueta video.
+        </video>
+
+        <!--
+          <iframe>
+          Que es: una ventana dentro de la pagina que carga otro documento.
+          Como funciona: usa el atributo src para traer otro contenido.
+          Para que sirve: incrustar paginas o vistas externas.
+        -->
+        <h3>Iframe</h3>
+        <iframe
+          src="pages/formularios/formulario.html"
+          title="Vista previa del formulario"
+        ></iframe>
+
+        <!--
+          <svg>
+          Que es: grafico vectorial dentro de HTML.
+          Como funciona: dibuja formas usando etiquetas y atributos.
+          Para que sirve: crear iconos, dibujos y graficos simples.
+        -->
+        <h3>SVG</h3>
+        <svg width="160" height="120" aria-label="Ejemplo SVG">
+          <rect x="10" y="10" width="140" height="100" rx="12" fill="#cfe8ff"></rect>
+          <circle cx="50" cy="60" r="20" fill="#2563eb"></circle>
+          <line x1="90" y1="35" x2="130" y2="35" stroke="#1f2937" stroke-width="4"></line>
+          <line x1="90" y1="60" x2="130" y2="60" stroke="#1f2937" stroke-width="4"></line>
+          <line x1="90" y1="85" x2="120" y2="85" stroke="#1f2937" stroke-width="4"></line>
+        </svg>
+
+        <!--
+          <canvas>
+          Que es: una superficie para dibujar con JavaScript.
+          Como funciona: por si sola no dibuja casi nada; necesita JS para ser util.
+          Para que sirve: juegos, animaciones o graficos.
+        -->
+        <h3>Canvas</h3>
+        <canvas width="220" height="90">
+          Tu navegador no soporta la etiqueta canvas.
+        </canvas>
+      </section>
+
+      <section class="bloque" id="tablas">
+        <h2>Etiquetas de tablas</h2>
+
+        <!--
+          <table>, <caption>, <colgroup>, <col>, <thead>, <tbody>, <tfoot>, <tr>, <th>, <td>
+          Que son: etiquetas para crear tablas.
+          Como funcionan: organizan datos en filas y columnas.
+          Para que sirven: mostrar informacion tabular.
+        -->
+        <table>
+          <caption>
+            Tabla de alumnos
+          </caption>
+          <colgroup>
+            <col class="columna-clara" />
+            <col />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Edad</th>
+              <th>Curso</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ana</td>
+              <td>20</td>
+              <td>HTML</td>
+            </tr>
+            <tr>
+              <td>Juan</td>
+              <td>22</td>
+              <td>CSS</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3">Fin de la tabla</td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+
+      <section class="bloque" id="formularios">
+        <h2>Etiquetas de formularios</h2>
+
+        <!--
+          <form>
+          Que es: la estructura principal de un formulario.
+          Como funciona: agrupa campos y acciones de envio.
+          Para que sirve: capturar datos del usuario.
+        -->
+        <form action="#" method="post">
+          <fieldset>
+            <!--
+              <fieldset> y <legend>
+              Que son: agrupan campos relacionados y les ponen titulo.
+              Como funcionan: fieldset crea el grupo y legend lo nombra.
+              Para que sirven: ordenar mejor formularios grandes.
+            -->
+            <legend>Campos de entrada</legend>
+
+            <label for="nombre">Nombre</label>
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              placeholder="Escribe tu nombre"
+              required
+            />
+
+            <label for="correo">Correo</label>
+            <input
+              type="email"
+              id="correo"
+              name="correo"
+              placeholder="correo@ejemplo.com"
+              required
+            />
+
+            <label for="clave">Contrasena</label>
+            <input
+              type="password"
+              id="clave"
+              name="clave"
+              placeholder="Escribe tu contrasena"
+            />
+
+            <label for="buscar">Busqueda</label>
+            <input type="search" id="buscar" name="buscar" placeholder="Buscar..." />
+
+            <label for="telefono">Telefono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="11 2345 6789" />
+
+            <label for="sitio">Sitio web</label>
+            <input type="url" id="sitio" name="sitio" placeholder="https://ejemplo.com" />
+
+            <label for="numero">Numero</label>
+            <input type="number" id="numero" name="numero" min="1" max="100" />
+
+            <label for="fecha">Fecha</label>
+            <input type="date" id="fecha" name="fecha" />
+
+            <label for="hora">Hora</label>
+            <input type="time" id="hora" name="hora" />
+
+            <label for="color">Color</label>
+            <input type="color" id="color" name="color" />
+
+            <label for="rango">Rango</label>
+            <input type="range" id="rango" name="rango" min="0" max="10" />
+
+            <label for="archivo">Archivo</label>
+            <input type="file" id="archivo" name="archivo" />
+
+            <label for="solo-lectura">Input readonly</label>
+            <input
+              type="text"
+              id="solo-lectura"
+              name="solo-lectura"
+              value="No se puede editar"
+              readonly
+            />
+
+            <input type="hidden" name="oculto" value="valor-oculto" />
+            <!--
+              <input type="hidden">
+              Que es: un campo no visible.
+              Como funciona: guarda un valor que no se muestra.
+              Para que sirve: enviar datos ocultos.
+            -->
+          </fieldset>
+
+          <fieldset>
+            <legend>Opciones</legend>
+
+            <label class="opcion-linea">
+              <input type="checkbox" name="html" checked />
+              Aprender HTML
+            </label>
+
+            <label class="opcion-linea">
+              <input type="checkbox" name="css" />
+              Aprender CSS
+            </label>
+
+            <p>Turno:</p>
+            <label class="opcion-linea">
+              <input type="radio" name="turno" value="manana" />
+              Manana
+            </label>
+            <label class="opcion-linea">
+              <input type="radio" name="turno" value="tarde" checked />
+              Tarde
+            </label>
+
+            <label for="curso">Curso</label>
+            <select id="curso" name="curso">
+              <optgroup label="Basico">
+                <option value="html">HTML</option>
+                <option value="css" selected>CSS</option>
+              </optgroup>
+              <optgroup label="Avanzado">
+                <option value="js">JavaScript</option>
+              </optgroup>
+            </select>
+
+            <label for="lenguajes">Select multiple</label>
+            <select id="lenguajes" name="lenguajes" multiple>
+              <option value="html">HTML</option>
+              <option value="css">CSS</option>
+              <option value="js">JavaScript</option>
+            </select>
+
+            <label for="mensaje">Mensaje</label>
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              rows="4"
+              cols="30"
+            >Escribe aqui</textarea>
+
+            <label for="navegador">Navegador</label>
+            <input list="navegadores" id="navegador" name="navegador" />
+            <datalist id="navegadores">
+              <option value="Chrome"></option>
+              <option value="Firefox"></option>
+              <option value="Edge"></option>
+            </datalist>
+
+            <p>Resultado: <output>10</output></p>
+
+            <label for="avance">Progreso</label>
+            <progress id="avance" value="60" max="100">60%</progress>
+
+            <label for="nivel">Nivel</label>
+            <meter id="nivel" value="7" min="0" max="10">7 de 10</meter>
+
+            <div class="grupo-botones">
+              <button type="submit">Enviar</button>
+              <button type="reset">Limpiar</button>
+              <button type="button">Boton normal</button>
+            </div>
+          </fieldset>
+        </form>
+      </section>
+
+      <section class="bloque" id="interactivas">
+        <h2>Etiquetas interactivas y varias</h2>
+
+        <details>
+          <!--
+            <details> y <summary>
+            Que son: contenido desplegable.
+            Como funcionan: summary es el titulo y details abre o cierra el contenido.
+            Para que sirven: preguntas frecuentes o explicaciones ocultas.
+          -->
+          <summary>Haz clic para ver una explicacion</summary>
+          <p>Este texto aparece cuando se abre el details.</p>
+        </details>
+
+        <dialog open>
+          <!--
+            <dialog>
+            Que es: una ventana de dialogo.
+            Como funciona: puede abrirse con el atributo open o con JavaScript.
+            Para que sirve: mostrar mensajes o cuadros modales.
+          -->
+          <p>Este es un dialog abierto como ejemplo.</p>
+        </dialog>
+
+        <p>
+          <ruby>HTML<rp>(</rp><rt>marcado</rt><rp>)</rp></ruby>
+        </p>
+        <!--
+          <ruby>, <rt>, <rp>
+          Que son: etiquetas para anotaciones pequeñas sobre texto.
+          Como funcionan: ruby envuelve el texto, rt agrega la anotacion y rp sirve como respaldo.
+          Para que sirven: pronunciacion o aclaraciones breves.
+        -->
+
+        <p>Ejemplo de bdi: usuario <bdi>ABC-123</bdi></p>
+        <p>Ejemplo de bdo: <bdo dir="rtl">texto invertido</bdo></p>
+        <!--
+          <bdi> y <bdo>
+          Que son: etiquetas relacionadas con la direccion del texto.
+          Como funcionan: bdi aisla direccion y bdo fuerza una direccion.
+          Para que sirven: textos multilenguaje o especiales.
+        -->
+
+        <p>Abajo hay un template de ejemplo que no se ve en pantalla.</p>
+        <template id="plantilla-ejemplo">
+          <!--
+            <template>
+            Que es: una plantilla de HTML no visible.
+            Como funciona: el navegador la guarda pero no la muestra.
+            Para que sirve: reutilizar contenido despues con JavaScript.
+          -->
+          <article>
+            <h3>Plantilla oculta</h3>
+            <p>Este contenido solo se veria si se copia con JavaScript.</p>
+          </article>
+        </template>
+      </section>
+
+      <section class="bloque" id="css-demo">
+        <h2>Elementos para probar CSS</h2>
+        <p>
+          Esta seccion existe para que el archivo <code>index.css</code> tenga
+          ejemplos claros de selectores y propiedades.
+        </p>
+
+        <div class="badge-contenedor">
+          <span class="badge">HTML</span>
+          <span class="badge">CSS</span>
+          <span class="badge">Selectores</span>
+        </div>
+
+        <div class="flex-demo">
+          <div class="tarjeta-demo">Flex 1</div>
+          <div class="tarjeta-demo">Flex 2</div>
+          <div class="tarjeta-demo">Flex 3</div>
+        </div>
+
+        <div class="grid-demo">
+          <div class="tarjeta-demo">Grid 1</div>
+          <div class="tarjeta-demo">Grid 2</div>
+          <div class="tarjeta-demo">Grid 3</div>
+          <div class="tarjeta-demo">Grid 4</div>
+        </div>
+
+        <div class="posicion-padre">
+          Caja con position relative
+          <span class="posicion-hijo">Absoluta</span>
+        </div>
+
+        <div class="desborde">
+          Este bloque tiene texto muy largo para mostrar overflow. Este bloque
+          tiene texto muy largo para mostrar overflow. Este bloque tiene texto
+          muy largo para mostrar overflow. Este bloque tiene texto muy largo
+          para mostrar overflow.
+        </div>
+      </section>
+    </main>
+
+    <footer class="bloque">
+      <!--
+        <footer>
+        Que es: el pie de pagina.
+        Como funciona: cierra el documento con informacion final.
+        Para que sirve: terminar la pagina de forma ordenada.
+      -->
+      <p>Fin de la guia basica de HTML y CSS.</p>
+    </footer>
+  </body>
+</html>

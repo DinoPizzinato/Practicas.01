@@ -1,0 +1,754 @@
+/*
+  :root
+  Que es: un selector especial para la raiz del documento.
+  Como funciona: aqui se pueden guardar variables CSS.
+  Para que sirve: reutilizar colores, espacios y valores en toda la pagina.
+*/
+:root {
+  --color-fondo: #f4f4f4;
+  --color-superficie: #ffffff;
+  --color-texto: #222222;
+  --color-principal: #1f3c88;
+  --color-secundario: #0f766e;
+  --color-borde: #cfcfcf;
+  --color-resalte: #fff3b0;
+  --sombra: 0 2px 6px rgba(0, 0, 0, 0.08);
+  --radio: 10px;
+  --espacio: 16px;
+}
+
+/*
+  *
+  Que es: el selector universal.
+  Como funciona: selecciona todos los elementos.
+  Para que sirve: aplicar una regla general a toda la pagina.
+*/
+* {
+  box-sizing: border-box;
+}
+
+/*
+  html
+  Que es: selector de la etiqueta html.
+  Como funciona: aplica reglas a todo el documento.
+  Para que sirve: por ejemplo mejorar el desplazamiento interno.
+*/
+html {
+  scroll-behavior: smooth;
+}
+
+/*
+  body
+  Que es: selector de la zona visible del documento.
+  Como funciona: define la base general del diseno.
+  Para que sirve: aplicar tipografia, color, fondo y separaciones globales.
+*/
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+/*
+  ::selection
+  Que es: un pseudo-elemento.
+  Como funciona: cambia el estilo del texto seleccionado.
+  Para que sirve: personalizar la seleccion del usuario.
+*/
+::selection {
+  background-color: #c7d2fe;
+  color: #111827;
+}
+
+/*
+  h1, h2, h3, h4, h5, h6
+  Que es: selector agrupado de encabezados.
+  Como funciona: aplica reglas a varios tipos de titulos.
+  Para que sirve: mantener una apariencia coherente.
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  color: var(--color-principal);
+  line-height: 1.2;
+}
+
+/*
+  h2::after
+  Que es: pseudo-elemento after.
+  Como funciona: agrega contenido despues del elemento sin escribirlo en HTML.
+  Para que sirve: decoracion simple o texto visual de apoyo.
+*/
+h2::after {
+  content: " - ejemplo";
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+/*
+  p, li, dd
+  Que es: selector agrupado para textos comunes.
+  Como funciona: da un margen similar a varios elementos de texto.
+  Para que sirve: mejorar la lectura y la consistencia.
+*/
+p,
+li,
+dd {
+  margin-block: 10px;
+}
+
+/*
+  a
+  Que es: selector de enlaces.
+  Como funciona: cambia color y decoracion del link.
+  Para que sirve: que el usuario identifique enlaces.
+*/
+a {
+  color: #0044cc;
+  text-decoration: none;
+}
+
+/*
+  a:hover, a:focus
+  Que es: pseudoclases.
+  Como funciona: actuan cuando el mouse pasa por encima o cuando el enlace recibe foco.
+  Para que sirve: dar respuesta visual al usuario.
+*/
+a:hover,
+a:focus {
+  color: #c0392b;
+  text-decoration: underline;
+}
+
+/*
+  .bloque
+  Que es: selector por clase.
+  Como funciona: se aplica a cualquier elemento con class="bloque".
+  Para que sirve: crear cajas reutilizables.
+*/
+.bloque {
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  padding: var(--espacio);
+  margin-bottom: 20px;
+  box-shadow: var(--sombra);
+}
+
+/*
+  .introduccion
+  Que es: una clase extra para el encabezado principal.
+  Como funciona: cambia el fondo de esa zona.
+  Para que sirve: diferenciar visualmente la presentacion.
+*/
+.introduccion {
+  background: linear-gradient(180deg, #ffffff 0%, #eef4ff 100%);
+}
+
+/*
+  #selector-id-demo
+  Que es: selector por id.
+  Como funciona: apunta a un solo elemento con un id unico.
+  Para que sirve: aplicar estilo a un elemento puntual.
+*/
+#selector-id-demo {
+  border-left: 4px solid var(--color-secundario);
+  padding-left: 10px;
+  background-color: #ecfeff;
+}
+
+/*
+  .selector-clase-demo
+  Que es: selector por clase.
+  Como funciona: se reutiliza en todos los elementos con esa clase.
+  Para que sirve: mostrar una regla comun reutilizable.
+*/
+.selector-clase-demo {
+  color: #7c3aed;
+  font-weight: bold;
+}
+
+/*
+  .menu-principal
+  Que es: ejemplo de display flex.
+  Como funciona: organiza elementos en fila con separacion.
+  Para que sirve: construir menus y grupos de enlaces.
+*/
+.menu-principal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/*
+  .menu-principal a
+  Que es: selector descendiente.
+  Como funciona: selecciona enlaces dentro del menu principal.
+  Para que sirve: dar estilo especifico a esa zona.
+*/
+.menu-principal a {
+  padding: 6px 10px;
+  border: 1px solid #dbe4f0;
+  border-radius: 999px;
+  background-color: #f8fbff;
+}
+
+/*
+  .caja-interna, .tarjeta
+  Que es: selector agrupado de clases.
+  Como funciona: comparte reglas entre varios elementos.
+  Para que sirve: evitar repetir CSS.
+*/
+.caja-interna,
+.tarjeta {
+  padding: 12px;
+  margin-top: 12px;
+  border: 1px dashed #9ca3af;
+  background-color: #fafafa;
+}
+
+/*
+  section > h2
+  Que es: selector de hijo directo.
+  Como funciona: solo afecta a h2 que sean hijos directos de section.
+  Para que sirve: mostrar otro tipo de selector combinador.
+*/
+section > h2 {
+  letter-spacing: 0.02em;
+}
+
+/*
+  .resaltado
+  Que es: una clase para un fragmento de texto.
+  Como funciona: cambia fondo, color y espacio interno.
+  Para que sirve: destacar una palabra o frase.
+*/
+.resaltado {
+  background-color: var(--color-resalte);
+  color: #8a5a00;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+/*
+  blockquote
+  Que es: selector de cita larga.
+  Como funciona: agrega borde, margen y fondo.
+  Para que sirve: separar visualmente una cita.
+*/
+blockquote {
+  margin: 12px 0;
+  padding: 12px 14px;
+  border-left: 4px solid #93c5fd;
+  background-color: #eff6ff;
+}
+
+/*
+  blockquote::before y blockquote::after
+  Que es: pseudo-elementos.
+  Como funciona: agregan contenido visual antes y despues del elemento.
+  Para que sirve: decoracion o senal visual.
+*/
+blockquote::before {
+  content: '"';
+  font-size: 1.6rem;
+  color: #2563eb;
+}
+
+blockquote::after {
+  content: '"';
+  font-size: 1.6rem;
+  color: #2563eb;
+}
+
+/*
+  pre, code, kbd, samp
+  Que es: selector de etiquetas tecnicas.
+  Como funciona: usa fuente monoespaciada y fondo suave.
+  Para que sirve: diferenciar codigo y salidas del sistema.
+*/
+pre,
+code,
+kbd,
+samp {
+  font-family: "Courier New", monospace;
+  background-color: #f1f5f9;
+}
+
+/*
+  pre
+  Que es: selector de texto preformateado.
+  Como funciona: conserva espacios y saltos de linea.
+  Para que sirve: mostrar codigo tal cual se escribe.
+*/
+pre {
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  overflow-x: auto;
+}
+
+/*
+  mark
+  Que es: selector de texto resaltado.
+  Como funciona: cambia el fondo del contenido marcado.
+  Para que sirve: destacar palabras importantes.
+*/
+mark {
+  background-color: #fde68a;
+}
+
+/*
+  ul, ol, dl
+  Que es: selector de listas.
+  Como funciona: agrega espacio lateral.
+  Para que sirve: que las listas sean faciles de leer.
+*/
+ul,
+ol,
+dl {
+  padding-left: 20px;
+}
+
+/*
+  .mini-lista li:nth-child(odd)
+  Que es: pseudoclase nth-child.
+  Como funciona: selecciona los elementos impares de una lista.
+  Para que sirve: alternar estilos dentro de una serie.
+*/
+.mini-lista li:nth-child(odd) {
+  color: #0f766e;
+  font-weight: bold;
+}
+
+/*
+  img, picture, video, audio, iframe, canvas, svg
+  Que es: selector de elementos multimedia.
+  Como funciona: les da ancho maximo y separacion.
+  Para que sirve: evitar desbordes y ordenar los ejemplos.
+*/
+img,
+picture,
+video,
+audio,
+iframe,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  margin-top: 10px;
+}
+
+/*
+  iframe
+  Que es: selector especifico del iframe.
+  Como funciona: define altura y borde.
+  Para que sirve: que la vista embebida se vea mejor.
+*/
+iframe {
+  width: 100%;
+  min-height: 260px;
+  border: 1px solid #94a3b8;
+}
+
+/*
+  canvas
+  Que es: selector del canvas.
+  Como funciona: le da fondo y borde aunque no tenga dibujo real.
+  Para que sirve: hacer visible el area del ejemplo.
+*/
+canvas {
+  border: 1px solid #cbd5e1;
+  background-color: #f8fafc;
+}
+
+/*
+  table, th, td
+  Que es: selector agrupado de tabla y celdas.
+  Como funciona: aplica bordes y relleno.
+  Para que sirve: que la tabla sea legible.
+*/
+table,
+th,
+td {
+  border: 1px solid #6b7280;
+  border-collapse: collapse;
+  padding: 8px;
+}
+
+/*
+  table
+  Que es: selector de la tabla.
+  Como funciona: ocupa todo el ancho disponible.
+  Para que sirve: aprovechar mejor el espacio.
+*/
+table {
+  width: 100%;
+  margin-top: 12px;
+}
+
+/*
+  caption
+  Que es: selector del titulo de la tabla.
+  Como funciona: lo coloca arriba por defecto.
+  Para que sirve: describir el contenido de la tabla.
+*/
+caption {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+/*
+  tbody tr:nth-child(even)
+  Que es: pseudoclase para filas pares.
+  Como funciona: cambia el fondo de una fila si su posicion es par.
+  Para que sirve: alternar colores y mejorar la lectura.
+*/
+tbody tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+/*
+  .columna-clara
+  Que es: clase para una columna de tabla.
+  Como funciona: cambia su fondo.
+  Para que sirve: destacar una columna puntual.
+*/
+.columna-clara {
+  background-color: #eff6ff;
+}
+
+/*
+  form
+  Que es: selector del formulario.
+  Como funciona: organiza los grupos en columna.
+  Para que sirve: ordenar el contenido del formulario.
+*/
+form {
+  display: grid;
+  gap: 14px;
+}
+
+/*
+  fieldset y legend
+  Que es: selectores del grupo de campos y su titulo.
+  Como funciona: fieldset crea el borde del grupo y legend nombra el bloque.
+  Para que sirve: mejorar orden y comprension.
+*/
+fieldset {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+legend {
+  padding-inline: 6px;
+  font-weight: bold;
+}
+
+/*
+  label
+  Que es: selector del texto asociado a campos.
+  Como funciona: se muestra en bloque.
+  Para que sirve: que cada input tenga una descripcion clara.
+*/
+label {
+  display: block;
+  margin-top: 8px;
+}
+
+/*
+  .opcion-linea
+  Que es: clase para etiquetas con checkbox o radio.
+  Como funciona: usa flex para alinear control y texto.
+  Para que sirve: mostrar opciones de forma mas comoda.
+*/
+.opcion-linea {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/*
+  input, select, textarea, button
+  Que es: selector agrupado de controles de formulario.
+  Como funciona: unifica borde, espacio y ancho.
+  Para que sirve: dar una apariencia basica consistente.
+*/
+input,
+select,
+textarea,
+button {
+  width: 100%;
+  max-width: 460px;
+  padding: 8px;
+  border: 1px solid #94a3b8;
+  border-radius: 6px;
+  margin-top: 4px;
+  font: inherit;
+}
+
+/*
+  input[required]
+  Que es: selector por atributo.
+  Como funciona: selecciona inputs que tengan el atributo required.
+  Para que sirve: dar una pista visual a campos obligatorios.
+*/
+input[required] {
+  border-color: #2563eb;
+}
+
+/*
+  input[readonly]
+  Que es: selector por atributo.
+  Como funciona: selecciona inputs de solo lectura.
+  Para que sirve: diferenciarlos de los campos editables.
+*/
+input[readonly] {
+  background-color: #f3f4f6;
+}
+
+/*
+  input[type="checkbox"], input[type="radio"]
+  Que es: selector por tipo.
+  Como funciona: quita el ancho completo de controles pequenos.
+  Para que sirve: evitar que se deformen.
+*/
+input[type="checkbox"],
+input[type="radio"] {
+  width: auto;
+  margin: 0;
+}
+
+/*
+  input:focus, select:focus, textarea:focus
+  Que es: pseudoclase focus.
+  Como funciona: se activa cuando el elemento recibe foco.
+  Para que sirve: resaltar el campo activo.
+*/
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #93c5fd;
+  border-color: #2563eb;
+}
+
+/*
+  progress y meter
+  Que es: selector de medidores.
+  Como funciona: les da ancho y separacion.
+  Para que sirve: hacerlos mas visibles.
+*/
+progress,
+meter {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  margin-top: 6px;
+}
+
+/*
+  .grupo-botones
+  Que es: ejemplo de flexbox.
+  Como funciona: pone los botones uno al lado del otro.
+  Para que sirve: ordenar acciones.
+*/
+.grupo-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/*
+  .grupo-botones button
+  Que es: selector descendiente dentro del grupo.
+  Como funciona: permite que los botones ocupen solo lo necesario.
+  Para que sirve: evitar que usen todo el ancho.
+*/
+.grupo-botones button {
+  width: auto;
+  background-color: #dbeafe;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/*
+  .grupo-botones button:hover
+  Que es: pseudoclase hover.
+  Como funciona: cambia el estilo al pasar el mouse.
+  Para que sirve: dar una pista visual de interaccion.
+*/
+.grupo-botones button:hover {
+  background-color: #bfdbfe;
+}
+
+/*
+  details y details[open]
+  Que es: selector normal y selector por atributo.
+  Como funciona: cambia la caja y tambien su aspecto cuando esta abierta.
+  Para que sirve: destacar el contenido desplegable.
+*/
+details {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+}
+
+details[open] {
+  background-color: #f0fdf4;
+}
+
+/*
+  summary
+  Que es: selector del titulo desplegable.
+  Como funciona: cambia el cursor y el peso del texto.
+  Para que sirve: dejar claro que es clickable.
+*/
+summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/*
+  dialog
+  Que es: selector del cuadro de dialogo.
+  Como funciona: lo hace visible como caja comun dentro del flujo.
+  Para que sirve: que el ejemplo no se vea raro en la pagina.
+*/
+dialog {
+  position: static;
+  margin: 12px 0;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+/*
+  .badge-contenedor y .badge
+  Que es: ejemplo de inline-block y espaciado.
+  Como funciona: muestra pequenas etiquetas una al lado de otra.
+  Para que sirve: listar categorias o estados.
+*/
+.badge-contenedor {
+  margin-top: 10px;
+}
+
+.badge {
+  display: inline-block;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+/*
+  .flex-demo
+  Que es: ejemplo de display flex.
+  Como funciona: organiza cajas en fila flexible.
+  Para que sirve: menus, tarjetas o grupos de botones.
+*/
+.flex-demo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+/*
+  .grid-demo
+  Que es: ejemplo de display grid.
+  Como funciona: arma una grilla de columnas automaticas.
+  Para que sirve: tarjetas, galerias o paneles.
+*/
+.grid-demo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+
+/*
+  .tarjeta-demo
+  Que es: caja simple reutilizable.
+  Como funciona: aplica borde, relleno y color de fondo.
+  Para que sirve: mostrar items dentro de flex o grid.
+*/
+.tarjeta-demo {
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  background-color: #fafafa;
+  text-align: center;
+}
+
+/*
+  .posicion-padre y .posicion-hijo
+  Que es: ejemplo de position relative y absolute.
+  Como funciona: el hijo absoluto se acomoda respecto al padre relativo.
+  Para que sirve: etiquetas, iconos o carteles dentro de una caja.
+*/
+.posicion-padre {
+  position: relative;
+  min-height: 90px;
+  margin-top: 14px;
+  padding: 18px;
+  border: 1px solid #cbd5e1;
+  background-color: #f8fafc;
+}
+
+.posicion-hijo {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 4px 8px;
+  background-color: #dbeafe;
+  border-radius: 999px;
+}
+
+/*
+  .desborde
+  Que es: ejemplo de overflow.
+  Como funciona: cuando el contenido supera el tamano, aparece scroll.
+  Para que sirve: controlar textos o bloques largos.
+*/
+.desborde {
+  max-height: 80px;
+  margin-top: 14px;
+  padding: 10px;
+  overflow: auto;
+  border: 1px solid #d1d5db;
+  background-color: #fffefc;
+}
+
+/*
+  @media
+  Que es: una media query.
+  Como funciona: aplica reglas solo si se cumple una condicion de pantalla.
+  Para que sirve: adaptar el diseno a celulares o pantallas pequenas.
+*/
+@media (max-width: 700px) {
+  body {
+    padding: 12px;
+  }
+
+  .menu-principal,
+  .grupo-botones {
+    flex-direction: column;
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    max-width: 100%;
+  }
+}

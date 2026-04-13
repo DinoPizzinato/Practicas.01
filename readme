@@ -1,0 +1,17 @@
+Para que el chat me revise y corrija errores.
+
+
+Prompt sugerido:
+“Actúa como revisor de HTML semántico y accesible. Evalúa este archivo:
+
+Jerarquía de encabezados
+
+Uso de etiquetas semánticas (header/nav/main/section/article/aside/footer)
+
+Accesibilidad mínima: lang, meta viewport, alt, label/for, aria-current
+
+Rutas relativas del menú
+
+Etiquetas sin cerrar
+
+Devuélveme una lista de problemas concretos y propuestas de corrección sin reescribir todo el archivo.”

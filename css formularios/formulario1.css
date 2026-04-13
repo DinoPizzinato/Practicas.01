@@ -1,0 +1,25 @@
+.body {
+}
+
+div {
+}
+
+h2 {
+  text-align: center;
+}
+
+section {
+  text-align: center;
+  max-width: 10%;
+  margin: 0 auto;
+  border: 2px solid black;
+  padding: 10px;
+  max-width: 400px;
+  margin: 0% auto;
+  display: block;
+  margin-bottom: 15px;
+}
+
+label {
+  text-align: center;
+}
