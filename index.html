@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="es">
   <head>
     <!--
@@ -20,14 +20,14 @@
     <!--
       <meta name="viewport">
       Que es: configura la vista en dispositivos moviles.
-      Como funciona: adapta el ancho al tamaño del dispositivo.
+      Como funciona: adapta el ancho al tamaÃ±o del dispositivo.
       Para que sirve: mejorar la visualizacion responsive.
       Ejemplo real: hace que una pagina de un kiosco o una peluqueria se vea bien en celular.
     -->
     <title>Guia Basica de HTML y CSS</title>
     <!--
       <title>
-      Que es: el titulo de la pestaña del navegador.
+      Que es: el titulo de la pestaÃ±a del navegador.
       Como funciona: muestra texto arriba del navegador.
       Para que sirve: identificar la pagina.
       Ejemplo real: podria decir "Tienda de Ropa", "Menu de Cafeteria" o "Portfolio de Juan".
@@ -108,19 +108,27 @@
         <div class="codigo-caja">
           <h3>CSS del menu</h3>
           <pre><code>.menu-principal {
+  /* Hace que los elementos internos se acomoden en una fila flexible y ordenada. */
   display: flex;
+  /* Permite que los elementos bajen a otra fila si ya no entra todo en el ancho disponible. */
   flex-wrap: wrap;
+  /* Deja una separacion pareja entre los elementos para que no queden pegados. */
   gap: 10px;
 }
 
 .menu-principal a {
+  /* Agrega espacio interno para que el contenido respire y no quede pegado al borde. */
   padding: 6px 10px;
+  /* Dibuja un borde alrededor del elemento para que su caja se vea claramente. */
   border: 1px solid #dbe4f0;
+  /* Redondea las esquinas para que la caja se vea mas suave y amigable. */
   border-radius: 999px;
+  /* Pinta el fondo del elemento para resaltarlo o diferenciarlo del resto. */
   background-color: #f8fbff;
 }
 
 .menu-principal a:hover {
+  /* Mueve el elemento hacia arriba o hacia abajo para dar sensacion de movimiento. */
   transform: translateY(-2px);
 }</code></pre>
         </div>
@@ -157,9 +165,13 @@
 &lt;/div&gt;</code></pre>
             <h4>CSS</h4>
             <pre><code>.caja-interna {
+  /* Agrega espacio interno para que el contenido respire y no quede pegado al borde. */
   padding: 12px;
+  /* Deja un espacio arriba para separarlo del elemento anterior. */
   margin-top: 12px;
+  /* Dibuja un borde alrededor del elemento para que su caja se vea claramente. */
   border: 1px dashed #9ca3af;
+  /* Pinta el fondo del elemento para resaltarlo o diferenciarlo del resto. */
   background-color: #fafafa;
 }</code></pre>
           </div>
@@ -180,8 +192,11 @@
 &lt;/p&gt;</code></pre>
             <h4>CSS</h4>
             <pre><code>#selector-id-demo {
+  /* Dibuja una linea solo en el lado izquierdo para destacarlo visualmente. */
   border-left: 4px solid var(--color-secundario);
+  /* Corre el contenido hacia la derecha para dejar un espacio visual en el lado izquierdo. */
   padding-left: 10px;
+  /* Pinta el fondo del elemento para resaltarlo o diferenciarlo del resto. */
   background-color: #ecfeff;
 }</code></pre>
           </div>
@@ -202,7 +217,9 @@
 &lt;/p&gt;</code></pre>
             <h4>CSS</h4>
             <pre><code>.selector-clase-demo {
+  /* Cambia el color del texto para hacerlo mas visible o darle otra jerarquia. */
   color: #7c3aed;
+  /* Hace que el texto se vea mas grueso y llame mas la atencion. */
   font-weight: bold;
 }</code></pre>
           </div>
@@ -224,9 +241,13 @@
 &lt;/article&gt;</code></pre>
             <h4>CSS</h4>
             <pre><code>.tarjeta {
+  /* Agrega espacio interno para que el contenido respire y no quede pegado al borde. */
   padding: 12px;
+  /* Deja un espacio arriba para separarlo del elemento anterior. */
   margin-top: 12px;
+  /* Dibuja un borde alrededor del elemento para que su caja se vea claramente. */
   border: 1px dashed #9ca3af;
+  /* Pinta el fondo del elemento para resaltarlo o diferenciarlo del resto. */
   background-color: #fafafa;
 }</code></pre>
           </div>
@@ -248,9 +269,13 @@
 &lt;/aside&gt;</code></pre>
             <h4>CSS</h4>
             <pre><code>.tarjeta {
+  /* Agrega espacio interno para que el contenido respire y no quede pegado al borde. */
   padding: 12px;
+  /* Deja un espacio arriba para separarlo del elemento anterior. */
   margin-top: 12px;
+  /* Dibuja un borde alrededor del elemento para que su caja se vea claramente. */
   border: 1px dashed #9ca3af;
+  /* Pinta el fondo del elemento para resaltarlo o diferenciarlo del resto. */
   background-color: #fafafa;
 }</code></pre>
           </div>
@@ -287,20 +312,29 @@
               <h3>CSS completo</h3>
               <pre><code>.caja-interna,
 .tarjeta {
+  /* Agrega espacio interno para que el contenido respire y no quede pegado al borde. */
   padding: 12px;
+  /* Deja un espacio arriba para separarlo del elemento anterior. */
   margin-top: 12px;
+  /* Dibuja un borde alrededor del elemento para que su caja se vea claramente. */
   border: 1px dashed #9ca3af;
+  /* Pinta el fondo del elemento para resaltarlo o diferenciarlo del resto. */
   background-color: #fafafa;
 }
 
 #selector-id-demo {
+  /* Dibuja una linea solo en el lado izquierdo para destacarlo visualmente. */
   border-left: 4px solid var(--color-secundario);
+  /* Corre el contenido hacia la derecha para dejar un espacio visual en el lado izquierdo. */
   padding-left: 10px;
+  /* Pinta el fondo del elemento para resaltarlo o diferenciarlo del resto. */
   background-color: #ecfeff;
 }
 
 .selector-clase-demo {
+  /* Cambia el color del texto para hacerlo mas visible o darle otra jerarquia. */
   color: #7c3aed;
+  /* Hace que el texto se vea mas grueso y llame mas la atencion. */
   font-weight: bold;
 }</code></pre>
             </div>
@@ -310,199 +344,375 @@
 
       <section class="bloque" id="textos">
         <h2>Etiquetas de texto y enlaces</h2>
-
-        <!--
-          <h1> a <h6>
-          Que son: encabezados o titulos.
-          Como funcionan: h1 es el mas importante y h6 el menos importante.
-          Para que sirven: crear jerarquia visual y semantica.
-          Ejemplo real: h1 puede ser "Tienda de Ropa", h2 "Ofertas" y h3 "Camperas".
-        -->
-        <h3>Ejemplo de h3</h3>
-        <h4>Ejemplo de h4</h4>
-        <h5>Ejemplo de h5</h5>
-        <h6>Ejemplo de h6</h6>
-
-        <!--
-          <p>
-          Que es: un parrafo.
-          Como funciona: agrupa texto en bloques.
-          Para que sirve: escribir contenido normal.
-          Ejemplo real: lo usarias para contar la historia de un negocio o describir un producto.
-        -->
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum
-          repudiandae quasi asperiores nemo perspiciatis modi.
+        <p class="nota-ejemplo">
+          Cada grupo de etiquetas aparece por separado. Haz clic en el nombre
+          del ejemplo para ver su HTML y el CSS que le corresponde cuando
+          exista.
         </p>
 
-        <!--
-          <span>
-          Que es: una etiqueta en linea.
-          Como funciona: no rompe la linea del texto.
-          Para que sirve: destacar una parte pequeña del contenido.
-          Ejemplo real: sirve para colorear solo la palabra "oferta" dentro de una frase.
-        -->
-        <p>
-          Este parrafo tiene un
-          <span class="resaltado">span resaltado dentro del texto</span>.
-        </p>
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;h1&gt; a &lt;h6&gt;</h3>
+            <div class="caja-interna">
+              <h1>Ejemplo de h1</h1>
+              <h2>Ejemplo de h2</h2>
+              <h3>Ejemplo de h3</h3>
+              <h4>Ejemplo de h4</h4>
+              <h5>Ejemplo de h5</h5>
+              <h6>Ejemplo de h6</h6>
+            </div>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;h1&gt;Ejemplo de h1&lt;/h1&gt;
+&lt;h2&gt;Ejemplo de h2&lt;/h2&gt;
+&lt;h3&gt;Ejemplo de h3&lt;/h3&gt;
+&lt;h4&gt;Ejemplo de h4&lt;/h4&gt;
+&lt;h5&gt;Ejemplo de h5&lt;/h5&gt;
+&lt;h6&gt;Ejemplo de h6&lt;/h6&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* Cambia el color del texto para que todos los titulos se vean dentro de la misma familia visual. */
+  color: var(--color-principal);
+  /* Ajusta el alto de cada linea para que los titulos se lean mejor. */
+  line-height: 1.2;
+}
 
-        <!--
-          <strong>, <b>, <em>, <i>, <u>, <mark>, <small>
-          Que son: etiquetas de texto en linea.
-          Como funcionan: modifican significado o aspecto visual.
-          Para que sirven: enfatizar, resaltar o diferenciar texto.
-          Ejemplo real: podrias poner en strong "Envio gratis", en mark "20% OFF" y en small una aclaracion legal.
-        -->
-        <p><strong>strong:</strong> indica importancia fuerte.</p>
-        <p><b>b:</b> pone texto en negrita visual.</p>
-        <p><em>em:</em> indica enfasis en una frase.</p>
-        <p><i>i:</i> suele usarse para una voz alternativa o estilo visual.</p>
-        <p><u>u:</u> subraya texto.</p>
-        <p><mark>mark:</mark> resalta una palabra.</p>
-        <p><small>small:</small> muestra texto de menor tamaño.</p>
+h2::after {
+  /* Agrega un texto decorativo sin tener que escribirlo dentro del HTML. */
+  content: " - ejemplo";
+}</code></pre>
+          </div>
+        </article>
 
-        <!--
-          <s>, <del>, <ins>, <sub>, <sup>
-          Que son: etiquetas para cambios o posicion especial del texto.
-          Como funcionan: tachan, insertan o colocan texto arriba o abajo.
-          Para que sirven: correcciones, formulas y comparaciones.
-          Ejemplo real: del sirve para un precio viejo, ins para el nuevo, sub para H2O y sup para m2.
-        -->
-        <p><s>Texto no vigente</s></p>
-        <p><del>Precio anterior</del> <ins>Precio nuevo</ins></p>
-        <p>Formula: H<sub>2</sub>O</p>
-        <p>Potencia: 10<sup>2</sup></p>
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;p&gt; y &lt;span&gt;</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum
+              repudiandae quasi asperiores nemo perspiciatis modi.
+            </p>
+            <p>
+              Este parrafo tiene un
+              <span class="resaltado">span resaltado dentro del texto</span>.
+            </p>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;p&gt;
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+&lt;/p&gt;
 
-        <!--
-          <abbr>, <time>, <data>
-          Que son: etiquetas para datos concretos.
-          Como funcionan: agregan significado extra a palabras o valores.
-          Para que sirven: fechas, abreviaturas y datos utiles.
-          Ejemplo real: abbr sirve para siglas como HTML, time para el horario del local y data para codigos de productos.
-        -->
-        <p>
-          <abbr title="HyperText Markup Language">HTML</abbr> es un lenguaje de
-          marcado.
-        </p>
-        <p>
-          Fecha de ejemplo:
-          <time datetime="2026-04-13">13 de abril de 2026</time>
-        </p>
-        <p>Producto: <data value="pc-01">Teclado basico</data></p>
+&lt;p&gt;
+  Este parrafo tiene un
+  &lt;span class="resaltado"&gt;span resaltado dentro del texto&lt;/span&gt;.
+&lt;/p&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>p,
+li,
+dd {
+  /* Agrega espacio arriba y abajo para que el texto se lea con mas aire. */
+  margin-block: 10px;
+}
 
-        <!--
-          <code>, <pre>, <kbd>, <samp>, <var>
-          Que son: etiquetas para codigo o texto tecnico.
-          Como funcionan: representan codigo, teclas, salida del sistema y variables.
-          Para que sirven: documentar ejemplos tecnicos.
-          Ejemplo real: sirven para explicar en una guia como guardar con Ctrl + S o mostrar un pedazo de codigo.
-        -->
-        <p>Codigo corto: <code>&lt;p&gt;Hola&lt;/p&gt;</code></p>
-        <pre>
+.resaltado {
+  /* Pinta el fondo del texto para llamar la atencion sobre una parte puntual. */
+  background-color: var(--color-resalte);
+  /* Cambia el color de la letra para que el resaltado se note mas. */
+  color: #8a5a00;
+  /* Agrega un pequeno relleno para que el resaltado no quede pegado al texto. */
+  padding: 2px 4px;
+}</code></pre>
+          </div>
+        </article>
+
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;strong&gt;, &lt;b&gt;, &lt;em&gt;, &lt;i&gt;, &lt;u&gt;, &lt;mark&gt; y &lt;small&gt;</h3>
+            <p><strong>strong:</strong> indica importancia fuerte.</p>
+            <p><b>b:</b> pone texto en negrita visual.</p>
+            <p><em>em:</em> indica enfasis en una frase.</p>
+            <p><i>i:</i> suele usarse para una voz alternativa o estilo visual.</p>
+            <p><u>u:</u> subraya texto.</p>
+            <p><mark>mark:</mark> resalta una palabra.</p>
+            <p><small>small:</small> muestra texto de menor tamano.</p>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;p&gt;&lt;strong&gt;strong:&lt;/strong&gt; indica importancia fuerte.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;b:&lt;/b&gt; pone texto en negrita visual.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;em:&lt;/em&gt; indica enfasis en una frase.&lt;/p&gt;
+&lt;p&gt;&lt;i&gt;i:&lt;/i&gt; suele usarse para una voz alternativa o estilo visual.&lt;/p&gt;
+&lt;p&gt;&lt;u&gt;u:&lt;/u&gt; subraya texto.&lt;/p&gt;
+&lt;p&gt;&lt;mark&gt;mark:&lt;/mark&gt; resalta una palabra.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;small:&lt;/small&gt; muestra texto de menor tamano.&lt;/p&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>mark {
+  /* Pinta el fondo del texto marcado para que se vea como un resaltador. */
+  background-color: #fde68a;
+}</code></pre>
+          </div>
+        </article>
+
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;s&gt;, &lt;del&gt;, &lt;ins&gt;, &lt;sub&gt; y &lt;sup&gt;</h3>
+            <p><s>Texto no vigente</s></p>
+            <p><del>Precio anterior</del> <ins>Precio nuevo</ins></p>
+            <p>Formula: H<sub>2</sub>O</p>
+            <p>Potencia: 10<sup>2</sup></p>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;p&gt;&lt;s&gt;Texto no vigente&lt;/s&gt;&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;Precio anterior&lt;/del&gt; &lt;ins&gt;Precio nuevo&lt;/ins&gt;&lt;/p&gt;
+&lt;p&gt;Formula: H&lt;sub&gt;2&lt;/sub&gt;O&lt;/p&gt;
+&lt;p&gt;Potencia: 10&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;</code></pre>
+          </div>
+        </article>
+
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;abbr&gt;, &lt;time&gt; y &lt;data&gt;</h3>
+            <p>
+              <abbr title="HyperText Markup Language">HTML</abbr> es un lenguaje
+              de marcado.
+            </p>
+            <p>
+              Fecha de ejemplo:
+              <time datetime="2026-04-13">13 de abril de 2026</time>
+            </p>
+            <p>Producto: <data value="pc-01">Teclado basico</data></p>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;p&gt;
+  &lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt; es un lenguaje de marcado.
+&lt;/p&gt;
+&lt;p&gt;Fecha de ejemplo: &lt;time datetime="2026-04-13"&gt;13 de abril de 2026&lt;/time&gt;&lt;/p&gt;
+&lt;p&gt;Producto: &lt;data value="pc-01"&gt;Teclado basico&lt;/data&gt;&lt;/p&gt;</code></pre>
+          </div>
+        </article>
+
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;code&gt;, &lt;pre&gt;, &lt;kbd&gt;, &lt;samp&gt; y &lt;var&gt;</h3>
+            <p>Codigo corto: <code>&lt;p&gt;Hola&lt;/p&gt;</code></p>
+            <pre>
 body {
   background-color: white;
   color: black;
 }
-        </pre>
-        <p>Pulsa <kbd>Ctrl</kbd> + <kbd>S</kbd> para guardar.</p>
-        <p>Salida del sistema: <samp>Archivo guardado</samp></p>
-        <p>Variable matematica: <var>x</var> + <var>y</var> = 10</p>
-
-        <!--
-          <q>, <blockquote>, <cite>
-          Que son: etiquetas para citas.
-          Como funcionan: q sirve para citas cortas, blockquote para citas largas y cite para la fuente.
-          Para que sirven: referenciar frases o textos.
-          Ejemplo real: podrias citar una opinion de un cliente o una frase tomada de un articulo.
-        -->
-        <p><q>Esta es una cita corta.</q></p>
-        <blockquote cite="https://example.com">
-          Esta es una cita larga de ejemplo dentro de blockquote para mostrar
-          como se separa del resto del texto.
-        </blockquote>
-        <p><cite>Fuente o libro de ejemplo</cite></p>
-
-        <!--
-          <address>
-          Que es: informacion de contacto.
-          Como funciona: agrupa datos como nombre, correo o direccion.
-          Para que sirve: mostrar datos de contacto del autor o sitio.
-          Ejemplo real: sirve para poner la direccion del local, el mail y el telefono de contacto.
-        -->
-        <address>
-          Nombre: Alumno de practica<br />
-          Correo: ejemplo@correo.com<br />
-          Ciudad: Buenos Aires
-        </address>
-
-        <!--
-          <br>, <wbr> y <hr>
-          Que son: salto de linea, corte opcional y separador horizontal.
-          Como funcionan: br baja una linea, wbr permite cortar palabras largas y hr separa temas.
-          Para que sirven: ordenar visualmente el contenido.
-          Ejemplo real: br te sirve para una direccion en varias lineas y hr para separar secciones como "Productos" y "Contacto".
-        -->
-        <p>Linea uno<br />Linea dos con br.</p>
-        <p>
-          Palabra larga con wbr: electroencefalo<wbr />grafista<wbr />superavanzado
-        </p>
-        <hr />
-
-        <!--
-          <a>
-          Que es: un enlace.
-          Como funciona: usa el atributo href para indicar el destino.
-          Para que sirve: navegar por la misma pagina o por otras paginas.
-          Ejemplo real: sirve para ir a YouTube, a Instagram, a WhatsApp o a la pagina de un local de ropa.
-        -->
-        <p><a href="#inicio">Enlace interno al inicio</a></p>
-        <p>
-          <a href="https://example.com" target="_blank" rel="noopener">
-            Enlace externo
-          </a>
-        </p>
-
-        <p class="nota-ejemplo">
-          Este bloque mezcla estructura HTML con selectores CSS, pseudoclases y
-          pseudo-elementos.
-        </p>
-
-        <div class="codigo-comparado">
-          <div class="codigo-caja">
-            <h3>HTML del ejemplo</h3>
-            <pre><code>&lt;p&gt;
-  Este parrafo tiene un
-  &lt;span class="resaltado"&gt;span resaltado&lt;/span&gt;.
-&lt;/p&gt;
-
-&lt;blockquote cite="https://example.com"&gt;
-  Esta es una cita larga de ejemplo.
-&lt;/blockquote&gt;
-
-&lt;a href="#inicio"&gt;Enlace interno al inicio&lt;/a&gt;</code></pre>
+            </pre>
+            <p>Pulsa <kbd>Ctrl</kbd> + <kbd>S</kbd> para guardar.</p>
+            <p>Salida del sistema: <samp>Archivo guardado</samp></p>
+            <p>Variable matematica: <var>x</var> + <var>y</var> = 10</p>
           </div>
-          <div class="codigo-caja">
-            <h3>CSS que lo estiliza</h3>
-            <pre><code>.resaltado {
-  background-color: var(--color-resalte);
-  color: #8a5a00;
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;p&gt;Codigo corto: &lt;code&gt;&amp;lt;p&amp;gt;Hola&amp;lt;/p&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;
+body {
+  background-color: white;
+  color: black;
+}
+&lt;/pre&gt;
+&lt;p&gt;Pulsa &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;S&lt;/kbd&gt; para guardar.&lt;/p&gt;
+&lt;p&gt;Salida del sistema: &lt;samp&gt;Archivo guardado&lt;/samp&gt;&lt;/p&gt;
+&lt;p&gt;Variable matematica: &lt;var&gt;x&lt;/var&gt; + &lt;var&gt;y&lt;/var&gt; = 10&lt;/p&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>pre,
+code,
+kbd,
+samp {
+  /* Cambia la tipografia para que estos elementos se vean como texto tecnico o de codigo. */
+  font-family: "Courier New", monospace;
+  /* Pinta el fondo para separar visualmente el contenido tecnico del texto comun. */
+  background-color: #f1f5f9;
 }
 
-blockquote {
+pre {
+  /* Agrega espacio interno para que el bloque de codigo se lea mas comodo. */
+  padding: 12px;
+  /* Dibuja un borde alrededor para que el bloque se vea como una caja aparte. */
+  border: 1px solid #d1d5db;
+  /* Si el codigo es mas ancho que la caja, permite desplazarse en horizontal. */
+  overflow-x: auto;
+}</code></pre>
+          </div>
+        </article>
+
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;q&gt;, &lt;blockquote&gt; y &lt;cite&gt;</h3>
+            <p><q>Esta es una cita corta.</q></p>
+            <blockquote cite="https://example.com">
+              Esta es una cita larga de ejemplo dentro de blockquote para
+              mostrar como se separa del resto del texto.
+            </blockquote>
+            <p><cite>Fuente o libro de ejemplo</cite></p>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;p&gt;&lt;q&gt;Esta es una cita corta.&lt;/q&gt;&lt;/p&gt;
+&lt;blockquote cite="https://example.com"&gt;
+  Esta es una cita larga de ejemplo dentro de blockquote.
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;cite&gt;Fuente o libro de ejemplo&lt;/cite&gt;&lt;/p&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>blockquote {
+  /* Agrega espacio arriba y abajo para separar la cita del resto del texto. */
+  margin: 12px 0;
+  /* Agrega espacio interno para que la cita se lea dentro de su propia caja. */
+  padding: 12px 14px;
+  /* Dibuja una linea en el costado para darle aspecto de cita destacada. */
   border-left: 4px solid #93c5fd;
+  /* Pinta el fondo para diferenciar la cita del texto normal. */
   background-color: #eff6ff;
 }
 
-blockquote::before {
+blockquote::before,
+blockquote::after {
+  /* Agrega comillas decorativas sin tener que escribirlas en el HTML. */
   content: '"';
+}</code></pre>
+          </div>
+        </article>
+
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;address&gt;, &lt;br&gt;, &lt;wbr&gt; y &lt;hr&gt;</h3>
+            <address>
+              Nombre: Alumno de practica<br />
+              Correo: ejemplo@correo.com<br />
+              Ciudad: Buenos Aires
+            </address>
+            <p>Linea uno<br />Linea dos con br.</p>
+            <p>
+              Palabra larga con wbr:
+              electroencefalo<wbr />grafista<wbr />superavanzado
+            </p>
+            <hr />
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;address&gt;
+  Nombre: Alumno de practica&lt;br /&gt;
+  Correo: ejemplo@correo.com&lt;br /&gt;
+  Ciudad: Buenos Aires
+&lt;/address&gt;
+
+&lt;p&gt;Linea uno&lt;br /&gt;Linea dos con br.&lt;/p&gt;
+&lt;p&gt;Palabra larga con wbr: electroencefalo&lt;wbr /&gt;grafista&lt;wbr /&gt;superavanzado&lt;/p&gt;
+&lt;hr /&gt;</code></pre>
+          </div>
+        </article>
+
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;a&gt;</h3>
+            <p><a href="#inicio">Enlace interno al inicio</a></p>
+            <p>
+              <a href="https://example.com" target="_blank" rel="noopener">
+                Enlace externo
+              </a>
+            </p>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;p&gt;&lt;a href="#inicio"&gt;Enlace interno al inicio&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;
+  &lt;a href="https://example.com" target="_blank" rel="noopener"&gt;
+    Enlace externo
+  &lt;/a&gt;
+&lt;/p&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>a {
+  /* Cambia el color para que el enlace se identifique facil dentro del texto. */
+  color: #0044cc;
+  /* Quita el subrayado por defecto para usar un estilo mas limpio. */
+  text-decoration: none;
 }
 
 a:hover,
 a:focus {
+  /* Cambia el color cuando pasas el cursor o llegas con teclado para marcar la interaccion. */
   color: #c0392b;
+  /* Vuelve a mostrar el subrayado para que se note que es un enlace activo. */
   text-decoration: underline;
 }</code></pre>
+          </div>
+        </article>
+
+        <div class="resumen-seccion">
+          <h3>Codigo general de textos</h3>
+          <p class="nota-ejemplo">
+            Este bloque junta una muestra completa de la seccion para que
+            tambien puedas verla toda de corrido.
+          </p>
+          <div class="codigo-comparado">
+            <div class="codigo-caja">
+              <h3>HTML del ejemplo</h3>
+              <pre><code>&lt;h1&gt;Ejemplo de h1&lt;/h1&gt;
+&lt;p&gt;
+  Este parrafo tiene un
+  &lt;span class="resaltado"&gt;span resaltado&lt;/span&gt;.
+&lt;/p&gt;
+&lt;p&gt;&lt;mark&gt;mark:&lt;/mark&gt; resalta una palabra.&lt;/p&gt;
+&lt;p&gt;Formula: H&lt;sub&gt;2&lt;/sub&gt;O&lt;/p&gt;
+&lt;p&gt;Potencia: 10&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Codigo corto: &lt;code&gt;&amp;lt;p&amp;gt;Hola&amp;lt;/p&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote cite="https://example.com"&gt;
+  Esta es una cita larga de ejemplo.
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="#inicio"&gt;Enlace interno al inicio&lt;/a&gt;&lt;/p&gt;</code></pre>
+            </div>
+            <div class="codigo-caja">
+              <h3>CSS que lo estiliza</h3>
+              <pre><code>h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* Cambia el color del texto para que todos los titulos se vean dentro de la misma familia visual. */
+  color: var(--color-principal);
+  /* Ajusta el alto de cada linea para que los titulos se lean mejor. */
+  line-height: 1.2;
+}
+
+.resaltado {
+  /* Pinta el fondo del texto para llamar la atencion sobre una parte puntual. */
+  background-color: var(--color-resalte);
+  /* Cambia el color de la letra para que el resaltado se note mas. */
+  color: #8a5a00;
+}
+
+mark {
+  /* Pinta el fondo del texto marcado para que se vea como un resaltador. */
+  background-color: #fde68a;
+}
+
+blockquote {
+  /* Dibuja una linea en el costado para darle aspecto de cita destacada. */
+  border-left: 4px solid #93c5fd;
+  /* Pinta el fondo para diferenciar la cita del texto normal. */
+  background-color: #eff6ff;
+}
+
+a:hover,
+a:focus {
+  /* Cambia el color cuando pasas el cursor o llegas con teclado para marcar la interaccion. */
+  color: #c0392b;
+  /* Vuelve a mostrar el subrayado para que se note que es un enlace activo. */
+  text-decoration: underline;
+}</code></pre>
+            </div>
           </div>
         </div>
       </section>
@@ -535,11 +745,14 @@ a:focus {
             <pre><code>ul,
 ol,
 dl {
+  /* Corre el contenido hacia la derecha para dejar un espacio visual en el lado izquierdo. */
   padding-left: 20px;
 }
 
 .mini-lista li:nth-child(odd) {
+  /* Cambia el color del texto para hacerlo mas visible o darle otra jerarquia. */
   color: #0f766e;
+  /* Hace que el texto se vea mas grueso y llame mas la atencion. */
   font-weight: bold;
 }</code></pre>
           </div>
@@ -563,6 +776,7 @@ dl {
 &lt;/ol&gt;</code></pre>
             <h4>CSS</h4>
             <pre><code>ol {
+  /* Corre el contenido hacia la derecha para dejar un espacio visual en el lado izquierdo. */
   padding-left: 20px;
 }</code></pre>
           </div>
@@ -588,12 +802,14 @@ dl {
 &lt;/dl&gt;</code></pre>
             <h4>CSS</h4>
             <pre><code>dl {
+  /* Corre el contenido hacia la derecha para dejar un espacio visual en el lado izquierdo. */
   padding-left: 20px;
 }
 
 p,
 li,
 dd {
+  /* Agrega espacio arriba y abajo para que el texto se lea con mas aire. */
   margin-block: 10px;
 }</code></pre>
           </div>
@@ -628,17 +844,21 @@ dd {
               <pre><code>ul,
 ol,
 dl {
+  /* Corre el contenido hacia la derecha para dejar un espacio visual en el lado izquierdo. */
   padding-left: 20px;
 }
 
 p,
 li,
 dd {
+  /* Agrega espacio arriba y abajo para que el texto se lea con mas aire. */
   margin-block: 10px;
 }
 
 .mini-lista li:nth-child(odd) {
+  /* Cambia el color del texto para hacerlo mas visible o darle otra jerarquia. */
   color: #0f766e;
+  /* Hace que el texto se vea mas grueso y llame mas la atencion. */
   font-weight: bold;
 }</code></pre>
             </div>
@@ -648,174 +868,291 @@ dd {
 
       <section class="bloque" id="multimedia">
         <h2>Etiquetas multimedia y embebidas</h2>
-
-        <!--
-          <figure>, <img>, <figcaption>
-          Que son: una imagen con su descripcion.
-          Como funcionan: figure agrupa el contenido visual y figcaption lo explica.
-          Para que sirven: mostrar imagenes con contexto.
-          Ejemplo real: sirve para subir la foto de una prenda y abajo poner "Campera negra talle M".
-        -->
-        <figure>
-          <img
-            src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='180'><rect width='100%25' height='100%25' fill='%23d9e8ff'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20'>Imagen simple</text></svg>"
-            alt="Imagen de ejemplo generada con SVG"
-          />
-          <figcaption>Ejemplo basico de img dentro de figure.</figcaption>
-        </figure>
-
-        <!--
-          <picture> y <source>
-          Que son: una imagen adaptable con varias fuentes posibles.
-          Como funcionan: source ofrece opciones y img actua como respaldo.
-          Para que sirven: mostrar una imagen segun el tamaño de pantalla.
-          Ejemplo real: sirve para mostrar una foto grande en PC y una version mas chica en celular.
-        -->
-        <picture>
-          <source
-            media="(min-width: 700px)"
-            srcset="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='180'><rect width='100%25' height='100%25' fill='%23c7f9cc'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24'>Picture grande</text></svg>"
-          />
-          <img
-            src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='180'><rect width='100%25' height='100%25' fill='%23fde68a'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='22'>Picture base</text></svg>"
-            alt="Ejemplo de picture con imagen base"
-          />
-        </picture>
-
-        <!--
-          <audio> y <source>
-          Que son: reproductor de audio y fuente del archivo.
-          Como funcionan: audio crea el reproductor y source indica el archivo.
-          Para que sirven: reproducir sonidos o musica.
-          Ejemplo real: podrias poner una cancion de fondo, un podcast o un audio de presentacion del negocio.
-        -->
-        <h3>Audio</h3>
-        <audio controls>
-          <source src="" type="audio/mpeg" />
-          Tu navegador no soporta la etiqueta audio.
-        </audio>
-
-        <!--
-          <video>, <source> y <track>
-          Que son: reproductor de video, fuente del archivo y pista de subtitulos.
-          Como funcionan: video crea el reproductor, source carga el archivo y track agrega subtitulos.
-          Para que sirven: mostrar video con informacion adicional.
-          Ejemplo real: sirve para subir un video mostrando un producto o el interior del local.
-        -->
-        <h3>Video</h3>
-        <video controls width="320">
-          <source src="" type="video/mp4" />
-          <track src="" kind="captions" srclang="es" label="Espanol" />
-          Tu navegador no soporta la etiqueta video.
-        </video>
-
-        <!--
-          <iframe>
-          Que es: una ventana dentro de la pagina que carga otro documento.
-          Como funciona: usa el atributo src para traer otro contenido.
-          Para que sirve: incrustar paginas o vistas externas.
-          Ejemplo real: sirve para mostrar un mapa de Google, un video de YouTube o otra pagina dentro de la tuya.
-        -->
-        <h3>Iframe</h3>
-        <iframe
-          src="pages/formularios/formulario.html"
-          title="Vista previa del formulario"
-        ></iframe>
-
-        <!--
-          <svg>
-          Que es: grafico vectorial dentro de HTML.
-          Como funciona: dibuja formas usando etiquetas y atributos.
-          Para que sirve: crear iconos, dibujos y graficos simples.
-          Ejemplo real: podrias hacer un icono de carrito, un logo simple o una flecha para un boton.
-        -->
-        <h3>SVG</h3>
-        <svg width="160" height="120" aria-label="Ejemplo SVG">
-          <rect
-            x="10"
-            y="10"
-            width="140"
-            height="100"
-            rx="12"
-            fill="#cfe8ff"
-          ></rect>
-          <circle cx="50" cy="60" r="20" fill="#2563eb"></circle>
-          <line
-            x1="90"
-            y1="35"
-            x2="130"
-            y2="35"
-            stroke="#1f2937"
-            stroke-width="4"
-          ></line>
-          <line
-            x1="90"
-            y1="60"
-            x2="130"
-            y2="60"
-            stroke="#1f2937"
-            stroke-width="4"
-          ></line>
-          <line
-            x1="90"
-            y1="85"
-            x2="120"
-            y2="85"
-            stroke="#1f2937"
-            stroke-width="4"
-          ></line>
-        </svg>
-
-        <!--
-          <canvas>
-          Que es: una superficie para dibujar con JavaScript.
-          Como funciona: por si sola no dibuja casi nada; necesita JS para ser util.
-          Para que sirve: juegos, animaciones o graficos.
-          Ejemplo real: se usa para juegos simples, graficos interactivos o pizarras de dibujo.
-        -->
-        <h3>Canvas</h3>
-        <canvas width="220" height="90">
-          Tu navegador no soporta la etiqueta canvas.
-        </canvas>
-
         <p class="nota-ejemplo">
-          Estos selectores hacen que los elementos multimedia no se rompan en
-          pantallas chicas y que algunos, como <code>iframe</code> o
-          <code>canvas</code>, tengan una caja visible.
+          Cada ejemplo visual aparece por separado. Haz clic en el nombre del
+          ejemplo para abrir su HTML y el CSS que le da forma cuando
+          corresponda.
         </p>
 
-        <div class="codigo-comparado">
-          <div class="codigo-caja">
-            <h3>HTML multimedia</h3>
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;figure&gt;, &lt;img&gt; y &lt;figcaption&gt;</h3>
+            <figure>
+              <img
+                src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='180'><rect width='100%25' height='100%25' fill='%23d9e8ff'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20'>Imagen simple</text></svg>"
+                alt="Imagen de ejemplo generada con SVG"
+              />
+              <figcaption>Ejemplo basico de img dentro de figure.</figcaption>
+            </figure>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
             <pre><code>&lt;figure&gt;
-  &lt;img src="imagen.jpg" alt="Imagen de ejemplo" /&gt;
+  &lt;img src="imagen.svg" alt="Imagen de ejemplo" /&gt;
+  &lt;figcaption&gt;Ejemplo basico de img dentro de figure.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>img {
+  /* Hace que la imagen se acomode como bloque y no quede mezclada con el texto. */
+  display: block;
+  /* Evita que la imagen se pase del ancho disponible en pantallas chicas. */
+  max-width: 100%;
+  /* Deja un espacio arriba para separarla del contenido anterior. */
+  margin-top: 10px;
+}</code></pre>
+          </div>
+        </article>
+
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;picture&gt; y &lt;source&gt;</h3>
+            <picture>
+              <source
+                media="(min-width: 700px)"
+                srcset="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='180'><rect width='100%25' height='100%25' fill='%23c7f9cc'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24'>Picture grande</text></svg>"
+              />
+              <img
+                src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='180'><rect width='100%25' height='100%25' fill='%23fde68a'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='22'>Picture base</text></svg>"
+                alt="Ejemplo de picture con imagen base"
+              />
+            </picture>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;picture&gt;
+  &lt;source media="(min-width: 700px)" srcset="imagen-grande.svg" /&gt;
+  &lt;img src="imagen-base.svg" alt="Ejemplo de picture" /&gt;
+&lt;/picture&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>picture,
+img {
+  /* Hace que la imagen y su contenedor se acomoden como bloques separados del texto. */
+  display: block;
+  /* Evita que el contenido se salga del ancho de la pantalla. */
+  max-width: 100%;
+}</code></pre>
+          </div>
+        </article>
+
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;audio&gt; y &lt;source&gt;</h3>
+            <audio controls>
+              <source src="" type="audio/mpeg" />
+              Tu navegador no soporta la etiqueta audio.
+            </audio>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;audio controls&gt;
+  &lt;source src="audio.mp3" type="audio/mpeg" /&gt;
+  Tu navegador no soporta la etiqueta audio.
+&lt;/audio&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>audio {
+  /* Hace que el reproductor se acomode como bloque para que se vea mas limpio. */
+  display: block;
+  /* Evita que el reproductor se pase del ancho disponible. */
+  max-width: 100%;
+  /* Deja un espacio arriba para separarlo del contenido anterior. */
+  margin-top: 10px;
+}</code></pre>
+          </div>
+        </article>
+
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;video&gt;, &lt;source&gt; y &lt;track&gt;</h3>
+            <video controls width="320">
+              <source src="" type="video/mp4" />
+              <track src="" kind="captions" srclang="es" label="Espanol" />
+              Tu navegador no soporta la etiqueta video.
+            </video>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;video controls width="320"&gt;
+  &lt;source src="video.mp4" type="video/mp4" /&gt;
+  &lt;track src="subtitulos.vtt" kind="captions" srclang="es" label="Espanol" /&gt;
+  Tu navegador no soporta la etiqueta video.
+&lt;/video&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>video {
+  /* Hace que el video se acomode como bloque para ocupar su propia linea. */
+  display: block;
+  /* Evita que el video se salga de la pantalla si el espacio es chico. */
+  max-width: 100%;
+  /* Deja un espacio arriba para que no quede pegado al contenido anterior. */
+  margin-top: 10px;
+}</code></pre>
+          </div>
+        </article>
+
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;iframe&gt;</h3>
+            <iframe
+              src="pages/formularios/formulario.html"
+              title="Vista previa del formulario"
+            ></iframe>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;iframe
+  src="pages/formularios/formulario.html"
+  title="Vista previa del formulario"
+&gt;&lt;/iframe&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>iframe {
+  /* Hace que el iframe use todo el ancho disponible dentro de su bloque. */
+  width: 100%;
+  /* Le asegura una altura comoda para que el contenido se vea sin quedar aplastado. */
+  min-height: 260px;
+  /* Dibuja un borde para que el area embebida se vea como una caja aparte. */
+  border: 1px solid #94a3b8;
+}</code></pre>
+          </div>
+        </article>
+
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;svg&gt;</h3>
+            <svg width="160" height="120" aria-label="Ejemplo SVG">
+              <rect
+                x="10"
+                y="10"
+                width="140"
+                height="100"
+                rx="12"
+                fill="#cfe8ff"
+              ></rect>
+              <circle cx="50" cy="60" r="20" fill="#2563eb"></circle>
+              <line
+                x1="90"
+                y1="35"
+                x2="130"
+                y2="35"
+                stroke="#1f2937"
+                stroke-width="4"
+              ></line>
+              <line
+                x1="90"
+                y1="60"
+                x2="130"
+                y2="60"
+                stroke="#1f2937"
+                stroke-width="4"
+              ></line>
+              <line
+                x1="90"
+                y1="85"
+                x2="120"
+                y2="85"
+                stroke="#1f2937"
+                stroke-width="4"
+              ></line>
+            </svg>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;svg width="160" height="120" aria-label="Ejemplo SVG"&gt;
+  &lt;rect x="10" y="10" width="140" height="100" rx="12" fill="#cfe8ff"&gt;&lt;/rect&gt;
+  &lt;circle cx="50" cy="60" r="20" fill="#2563eb"&gt;&lt;/circle&gt;
+&lt;/svg&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>svg {
+  /* Hace que el grafico vectorial se acomode como bloque y no se mezcle con el texto. */
+  display: block;
+  /* Evita que el dibujo se salga del ancho disponible. */
+  max-width: 100%;
+  /* Deja aire arriba para separarlo del contenido anterior. */
+  margin-top: 10px;
+}</code></pre>
+          </div>
+        </article>
+
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;canvas&gt;</h3>
+            <canvas width="220" height="90">
+              Tu navegador no soporta la etiqueta canvas.
+            </canvas>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;canvas width="220" height="90"&gt;
+  Tu navegador no soporta la etiqueta canvas.
+&lt;/canvas&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>canvas {
+  /* Dibuja un borde para que el area del canvas se vea aunque no tenga dibujo dentro. */
+  border: 1px solid #cbd5e1;
+  /* Pinta el fondo para marcar el espacio donde iria el dibujo o grafico. */
+  background-color: #f8fafc;
+}</code></pre>
+          </div>
+        </article>
+
+        <div class="resumen-seccion">
+          <h3>Codigo general de multimedia</h3>
+          <p class="nota-ejemplo">
+            Este bloque junta una vista general con las etiquetas multimedia mas
+            usadas de la seccion.
+          </p>
+          <div class="codigo-comparado">
+            <div class="codigo-caja">
+              <h3>HTML multimedia</h3>
+              <pre><code>&lt;figure&gt;
+  &lt;img src="imagen.svg" alt="Imagen de ejemplo" /&gt;
+  &lt;figcaption&gt;Ejemplo basico de img dentro de figure.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;iframe src="pages/formularios/formulario.html"&gt;&lt;/iframe&gt;
+&lt;picture&gt;
+  &lt;source media="(min-width: 700px)" srcset="imagen-grande.svg" /&gt;
+  &lt;img src="imagen-base.svg" alt="Ejemplo de picture" /&gt;
+&lt;/picture&gt;
 
+&lt;audio controls&gt;
+  &lt;source src="audio.mp3" type="audio/mpeg" /&gt;
+&lt;/audio&gt;
+
+&lt;video controls width="320"&gt;
+  &lt;source src="video.mp4" type="video/mp4" /&gt;
+&lt;/video&gt;
+
+&lt;iframe src="pages/formularios/formulario.html" title="Vista previa del formulario"&gt;&lt;/iframe&gt;
+&lt;svg width="160" height="120"&gt;...&lt;/svg&gt;
 &lt;canvas width="220" height="90"&gt;&lt;/canvas&gt;</code></pre>
-          </div>
-          <div class="codigo-caja">
-            <h3>CSS multimedia</h3>
-            <pre><code>img,
+            </div>
+            <div class="codigo-caja">
+              <h3>CSS multimedia</h3>
+              <pre><code>img,
 picture,
 video,
 audio,
 iframe,
 canvas,
 svg {
+  /* Hace que estos elementos se acomoden como bloques separados del texto. */
   display: block;
+  /* Evita que el contenido multimedia se pase del ancho disponible. */
   max-width: 100%;
+  /* Deja un pequeno espacio arriba para que cada ejemplo respire. */
+  margin-top: 10px;
 }
 
 iframe {
+  /* Hace que el iframe use todo el ancho disponible dentro de su bloque. */
   width: 100%;
+  /* Le asegura una altura comoda para que el contenido se vea sin quedar aplastado. */
   min-height: 260px;
 }
 
 canvas {
+  /* Dibuja un borde para que el area del canvas se vea aunque este vacia. */
   border: 1px solid #cbd5e1;
 }</code></pre>
+            </div>
           </div>
         </div>
       </section>
@@ -889,16 +1226,21 @@ canvas {
             <pre><code>table,
 th,
 td {
+  /* Dibuja un borde alrededor del elemento para que su caja se vea claramente. */
   border: 1px solid #6b7280;
+  /* Une los bordes de la tabla para que no se vean dobles entre una celda y otra. */
   border-collapse: collapse;
+  /* Agrega espacio interno para que el contenido respire y no quede pegado al borde. */
   padding: 8px;
 }
 
 tbody tr:nth-child(even) {
+  /* Pinta el fondo del elemento para resaltarlo o diferenciarlo del resto. */
   background-color: #f8fafc;
 }
 
 .columna-clara {
+  /* Pinta el fondo del elemento para resaltarlo o diferenciarlo del resto. */
   background-color: #eff6ff;
 }</code></pre>
           </div>
@@ -933,7 +1275,9 @@ tbody tr:nth-child(even) {
 &lt;/form&gt;</code></pre>
             <h4>CSS</h4>
             <pre><code>form {
+  /* Organiza los elementos internos como una grilla para repartir mejor el espacio. */
   display: grid;
+  /* Deja una separacion pareja entre los elementos para que no queden pegados. */
   gap: 14px;
 }</code></pre>
           </div>
@@ -959,13 +1303,18 @@ tbody tr:nth-child(even) {
 &lt;/fieldset&gt;</code></pre>
             <h4>CSS</h4>
             <pre><code>fieldset {
+  /* Dibuja un borde alrededor del elemento para que su caja se vea claramente. */
   border: 1px solid #cbd5e1;
+  /* Redondea las esquinas para que la caja se vea mas suave y amigable. */
   border-radius: 8px;
+  /* Agrega espacio interno para que el contenido respire y no quede pegado al borde. */
   padding: 12px;
 }
 
 legend {
+  /* Agrega un pequeno aire a los costados del texto dentro del elemento. */
   padding-inline: 6px;
+  /* Hace que el texto se vea mas grueso y llame mas la atencion. */
   font-weight: bold;
 }</code></pre>
           </div>
@@ -985,7 +1334,9 @@ legend {
 &lt;input type="text" id="label-demo" placeholder="Escribe aqui" /&gt;</code></pre>
             <h4>CSS</h4>
             <pre><code>label {
+  /* Hace que el elemento ocupe toda la linea y se acomode debajo del anterior. */
   display: block;
+  /* Deja un espacio arriba para separarlo del elemento anterior. */
   margin-top: 8px;
 }</code></pre>
           </div>
@@ -1013,16 +1364,24 @@ legend {
 select,
 textarea,
 button {
+  /* Hace que el elemento use todo el ancho disponible dentro de su contenedor. */
   width: 100%;
+  /* Evita que el elemento crezca demasiado aunque tenga mas espacio disponible. */
   max-width: 460px;
+  /* Agrega espacio interno para que el contenido respire y no quede pegado al borde. */
   padding: 8px;
+  /* Dibuja un borde alrededor del elemento para que su caja se vea claramente. */
   border: 1px solid #94a3b8;
+  /* Redondea las esquinas para que la caja se vea mas suave y amigable. */
   border-radius: 6px;
+  /* Deja un espacio arriba para separarlo del elemento anterior. */
   margin-top: 4px;
+  /* Hace que este elemento use la misma tipografia que el resto de la pagina. */
   font: inherit;
 }
 
 input[required] {
+  /* Cambia el color del borde para que ese campo obligatorio se note mas rapido. */
   border-color: #2563eb;
 }</code></pre>
           </div>
@@ -1225,6 +1584,7 @@ input[required] {
 &lt;input type="text" id="readonly-demo" value="No se puede editar" readonly /&gt;</code></pre>
             <h4>CSS</h4>
             <pre><code>input[readonly] {
+  /* Pinta el fondo del elemento para resaltarlo o diferenciarlo del resto. */
   background-color: #f3f4f6;
 }</code></pre>
           </div>
@@ -1260,13 +1620,18 @@ input[required] {
 &lt;/label&gt;</code></pre>
             <h4>CSS</h4>
             <pre><code>.opcion-linea {
+  /* Hace que los elementos internos se acomoden en una fila flexible y ordenada. */
   display: flex;
+  /* Alinea los elementos internos a la misma altura para que se vean ordenados. */
   align-items: center;
+  /* Deja una separacion pareja entre los elementos para que no queden pegados. */
   gap: 8px;
 }
 
 input[type="checkbox"] {
+  /* Deja que el ancho se ajuste solo segun el contenido y el espacio disponible. */
   width: auto;
+  /* Agrega espacio por fuera del elemento para separarlo de lo que tiene alrededor. */
   margin: 0;
 }</code></pre>
           </div>
@@ -1288,7 +1653,9 @@ input[type="checkbox"] {
 &lt;/label&gt;</code></pre>
             <h4>CSS</h4>
             <pre><code>input[type="radio"] {
+  /* Deja que el ancho se ajuste solo segun el contenido y el espacio disponible. */
   width: auto;
+  /* Agrega espacio por fuera del elemento para separarlo de lo que tiene alrededor. */
   margin: 0;
 }</code></pre>
           </div>
@@ -1412,9 +1779,13 @@ input[type="checkbox"] {
             <h4>CSS</h4>
             <pre><code>progress,
 meter {
+  /* Hace que el elemento ocupe toda la linea y se acomode debajo del anterior. */
   display: block;
+  /* Hace que el elemento use todo el ancho disponible dentro de su contenedor. */
   width: 100%;
+  /* Evita que el elemento crezca demasiado aunque tenga mas espacio disponible. */
   max-width: 320px;
+  /* Deja un espacio arriba para separarlo del elemento anterior. */
   margin-top: 6px;
 }</code></pre>
           </div>
@@ -1433,9 +1804,13 @@ meter {
             <h4>CSS</h4>
             <pre><code>progress,
 meter {
+  /* Hace que el elemento ocupe toda la linea y se acomode debajo del anterior. */
   display: block;
+  /* Hace que el elemento use todo el ancho disponible dentro de su contenedor. */
   width: 100%;
+  /* Evita que el elemento crezca demasiado aunque tenga mas espacio disponible. */
   max-width: 320px;
+  /* Deja un espacio arriba para separarlo del elemento anterior. */
   margin-top: 6px;
 }</code></pre>
           </div>
@@ -1459,20 +1834,29 @@ meter {
 &lt;/div&gt;</code></pre>
             <h4>CSS</h4>
             <pre><code>.grupo-botones {
+  /* Hace que los elementos internos se acomoden en una fila flexible y ordenada. */
   display: flex;
+  /* Permite que los elementos bajen a otra fila si ya no entra todo en el ancho disponible. */
   flex-wrap: wrap;
+  /* Deja una separacion pareja entre los elementos para que no queden pegados. */
   gap: 10px;
+  /* Deja un espacio arriba para separarlo del elemento anterior. */
   margin-top: 10px;
 }
 
 .grupo-botones button {
+  /* Deja que el ancho se ajuste solo segun el contenido y el espacio disponible. */
   width: auto;
+  /* Pinta el fondo del elemento para resaltarlo o diferenciarlo del resto. */
   background-color: #dbeafe;
+  /* Cambia el cursor a una mano para avisar que ese elemento se puede tocar o hacer clic. */
   cursor: pointer;
 }
 
 .grupo-botones button:hover {
+  /* Pinta el fondo del elemento para resaltarlo o diferenciarlo del resto. */
   background-color: #bfdbfe;
+  /* Mueve el elemento hacia arriba o hacia abajo para dar sensacion de movimiento. */
   transform: translateY(-2px);
 }</code></pre>
           </div>
@@ -1560,29 +1944,41 @@ meter {
             <div class="codigo-caja">
               <h3>CSS aplicado</h3>
               <pre><code>form {
+  /* Organiza los elementos internos como una grilla para repartir mejor el espacio. */
   display: grid;
+  /* Deja una separacion pareja entre los elementos para que no queden pegados. */
   gap: 14px;
 }
 
 fieldset {
+  /* Dibuja un borde alrededor del elemento para que su caja se vea claramente. */
   border: 1px solid #cbd5e1;
+  /* Redondea las esquinas para que la caja se vea mas suave y amigable. */
   border-radius: 8px;
+  /* Agrega espacio interno para que el contenido respire y no quede pegado al borde. */
   padding: 12px;
 }
 
 legend {
+  /* Agrega un pequeno aire a los costados del texto dentro del elemento. */
   padding-inline: 6px;
+  /* Hace que el texto se vea mas grueso y llame mas la atencion. */
   font-weight: bold;
 }
 
 label {
+  /* Hace que el elemento ocupe toda la linea y se acomode debajo del anterior. */
   display: block;
+  /* Deja un espacio arriba para separarlo del elemento anterior. */
   margin-top: 8px;
 }
 
 .opcion-linea {
+  /* Hace que los elementos internos se acomoden en una fila flexible y ordenada. */
   display: flex;
+  /* Alinea los elementos internos a la misma altura para que se vean ordenados. */
   align-items: center;
+  /* Deja una separacion pareja entre los elementos para que no queden pegados. */
   gap: 8px;
 }
 
@@ -1590,53 +1986,76 @@ input,
 select,
 textarea,
 button {
+  /* Hace que el elemento use todo el ancho disponible dentro de su contenedor. */
   width: 100%;
+  /* Evita que el elemento crezca demasiado aunque tenga mas espacio disponible. */
   max-width: 460px;
+  /* Agrega espacio interno para que el contenido respire y no quede pegado al borde. */
   padding: 8px;
+  /* Dibuja un borde alrededor del elemento para que su caja se vea claramente. */
   border: 1px solid #94a3b8;
+  /* Redondea las esquinas para que la caja se vea mas suave y amigable. */
   border-radius: 6px;
+  /* Deja un espacio arriba para separarlo del elemento anterior. */
   margin-top: 4px;
+  /* Hace que este elemento use la misma tipografia que el resto de la pagina. */
   font: inherit;
 }
 
 input[required] {
+  /* Cambia el color del borde para que ese campo obligatorio se note mas rapido. */
   border-color: #2563eb;
 }
 
 input[readonly] {
+  /* Pinta el fondo del elemento para resaltarlo o diferenciarlo del resto. */
   background-color: #f3f4f6;
 }
 
 input[type="checkbox"],
 input[type="radio"] {
+  /* Deja que el ancho se ajuste solo segun el contenido y el espacio disponible. */
   width: auto;
+  /* Agrega espacio por fuera del elemento para separarlo de lo que tiene alrededor. */
   margin: 0;
 }
 
 input:focus,
 select:focus,
 textarea:focus {
+  /* Dibuja una marca exterior para que sea facil ver que elemento esta activo. */
   outline: 2px solid #93c5fd;
+  /* Cambia el color del borde para que el campo activo se destaque mientras escribes. */
   border-color: #2563eb;
 }
 
 progress,
 meter {
+  /* Hace que el elemento ocupe toda la linea y se acomode debajo del anterior. */
   display: block;
+  /* Hace que el elemento use todo el ancho disponible dentro de su contenedor. */
   width: 100%;
+  /* Evita que el elemento crezca demasiado aunque tenga mas espacio disponible. */
   max-width: 320px;
+  /* Deja un espacio arriba para separarlo del elemento anterior. */
   margin-top: 6px;
 }
 
 .grupo-botones {
+  /* Hace que los elementos internos se acomoden en una fila flexible y ordenada. */
   display: flex;
+  /* Permite que los elementos bajen a otra fila si ya no entra todo en el ancho disponible. */
   flex-wrap: wrap;
+  /* Deja una separacion pareja entre los elementos para que no queden pegados. */
   gap: 10px;
+  /* Deja un espacio arriba para separarlo del elemento anterior. */
   margin-top: 10px;
 }
 
 .grupo-botones button:hover {
+  /* Pinta el fondo del elemento para resaltarlo o diferenciarlo del resto. */
   background-color: #bfdbfe;
+  /* Mueve el elemento hacia arriba o hacia abajo para dar sensacion de movimiento. */
   transform: translateY(-2px);
 }</code></pre>
             </div>
@@ -1646,154 +2065,450 @@ meter {
 
       <section class="bloque" id="interactivas">
         <h2>Etiquetas interactivas y varias</h2>
-
-        <details>
-          <!--
-            <details> y <summary>
-            Que son: contenido desplegable.
-            Como funcionan: summary es el titulo y details abre o cierra el contenido.
-            Para que sirven: preguntas frecuentes o explicaciones ocultas.
-            Ejemplo real: sirve para una seccion FAQ donde el cliente toca una pregunta y ve la respuesta.
-          -->
-          <summary>Haz clic para ver una explicacion</summary>
-          <p>Este texto aparece cuando se abre el details.</p>
-        </details>
-
-        <dialog open>
-          <!--
-            <dialog>
-            Que es: una ventana de dialogo.
-            Como funciona: puede abrirse con el atributo open o con JavaScript.
-            Para que sirve: mostrar mensajes o cuadros modales.
-            Ejemplo real: podrias usarlo para "Compra realizada" o "Confirma si quieres borrar".
-          -->
-          <p>Este es un dialog abierto como ejemplo.</p>
-        </dialog>
-
-        <p>
-          <ruby>HTML<rp>(</rp><rt>marcado</rt><rp>)</rp></ruby>
-        </p>
-        <!--
-          <ruby>, <rt>, <rp>
-          Que son: etiquetas para anotaciones pequeñas sobre texto.
-          Como funcionan: ruby envuelve el texto, rt agrega la anotacion y rp sirve como respaldo.
-          Para que sirven: pronunciacion o aclaraciones breves.
-          Ejemplo real: se usa mucho para mostrar como se pronuncia una palabra o para textos educativos.
-        -->
-
-        <p>Ejemplo de bdi: usuario <bdi>ABC-123</bdi></p>
-        <p>Ejemplo de bdo: <bdo dir="rtl">texto invertido</bdo></p>
-        <!--
-          <bdi> y <bdo>
-          Que son: etiquetas relacionadas con la direccion del texto.
-          Como funcionan: bdi aisla direccion y bdo fuerza una direccion.
-          Para que sirven: textos multilenguaje o especiales.
-          Ejemplo real: sirven si mezclas nombres, codigos o idiomas que se escriben en otra direccion.
-        -->
-
-        <p>Abajo hay un template de ejemplo que no se ve en pantalla.</p>
-        <template id="plantilla-ejemplo">
-          <!--
-            <template>
-            Que es: una plantilla de HTML no visible.
-            Como funciona: el navegador la guarda pero no la muestra.
-            Para que sirve: reutilizar contenido despues con JavaScript.
-            Ejemplo real: sirve para clonar tarjetas de productos o comentarios sin escribirlas muchas veces.
-          -->
-          <article>
-            <h3>Plantilla oculta</h3>
-            <p>Este contenido solo se veria si se copia con JavaScript.</p>
-          </article>
-        </template>
-
         <p class="nota-ejemplo">
-          Este ejemplo muestra como HTML activa elementos interactivos y como
-          CSS cambia su aspecto segun el estado.
+          Esta seccion tambien queda por ejemplos individuales. Haz clic en el
+          nombre para ver el codigo y deja al final un resumen general de la
+          parte interactiva.
         </p>
 
-        <div class="codigo-comparado">
-          <div class="codigo-caja">
-            <h3>HTML interactivo</h3>
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;details&gt; y &lt;summary&gt;</h3>
+            <details>
+              <summary>Haz clic para ver una explicacion</summary>
+              <p>Este texto aparece cuando se abre el details.</p>
+            </details>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
             <pre><code>&lt;details&gt;
+  &lt;summary&gt;Haz clic para ver una explicacion&lt;/summary&gt;
+  &lt;p&gt;Este texto aparece cuando se abre el details.&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>details {
+  /* Agrega espacio interno para que el contenido desplegable se vea comodo. */
+  padding: 10px;
+  /* Dibuja un borde para que la caja se vea separada del resto. */
+  border: 1px solid #cbd5e1;
+  /* Redondea las esquinas para que el bloque se vea mas suave. */
+  border-radius: 8px;
+}
+
+details[open] {
+  /* Cambia el fondo cuando el bloque esta abierto para que se note su estado. */
+  background-color: #f0fdf4;
+}
+
+summary {
+  /* Cambia el cursor a una mano para avisar que se puede abrir o cerrar. */
+  cursor: pointer;
+  /* Hace que el titulo se vea mas fuerte y facil de encontrar. */
+  font-weight: bold;
+}</code></pre>
+          </div>
+        </article>
+
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;dialog&gt;</h3>
+            <dialog open>
+              <p>Este es un dialog abierto como ejemplo.</p>
+            </dialog>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;dialog open&gt;
+  &lt;p&gt;Este es un dialog abierto como ejemplo.&lt;/p&gt;
+&lt;/dialog&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>dialog {
+  /* Mantiene el dialog dentro del flujo normal para que se vea como un ejemplo comun. */
+  position: static;
+  /* Deja espacio arriba y abajo para separarlo del resto del contenido. */
+  margin: 12px 0;
+  /* Dibuja un borde para que el cuadro se vea claramente. */
+  border: 1px solid #cbd5e1;
+  /* Redondea las esquinas para que el cuadro tenga un aspecto mas amable. */
+  border-radius: 8px;
+  /* Agrega espacio interno para que el texto no quede pegado al borde. */
+  padding: 12px;
+}</code></pre>
+          </div>
+        </article>
+
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;ruby&gt;, &lt;rt&gt; y &lt;rp&gt;</h3>
+            <p>
+              <ruby>HTML<rp>(</rp><rt>marcado</rt><rp>)</rp></ruby>
+            </p>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;p&gt;
+  &lt;ruby&gt;HTML&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;marcado&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt;
+&lt;/p&gt;</code></pre>
+          </div>
+        </article>
+
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;bdi&gt; y &lt;bdo&gt;</h3>
+            <p>Ejemplo de bdi: usuario <bdi>ABC-123</bdi></p>
+            <p>Ejemplo de bdo: <bdo dir="rtl">texto invertido</bdo></p>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;p&gt;Ejemplo de bdi: usuario &lt;bdi&gt;ABC-123&lt;/bdi&gt;&lt;/p&gt;
+&lt;p&gt;Ejemplo de bdo: &lt;bdo dir="rtl"&gt;texto invertido&lt;/bdo&gt;&lt;/p&gt;</code></pre>
+          </div>
+        </article>
+
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;template&gt;</h3>
+            <div class="ejemplo-oculto">
+              Abajo hay un template de ejemplo que no se ve en pantalla hasta
+              que algun script lo copie y lo inserte.
+            </div>
+            <template id="plantilla-ejemplo">
+              <article>
+                <h3>Plantilla oculta</h3>
+                <p>Este contenido solo se veria si se copia con JavaScript.</p>
+              </article>
+            </template>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;template id="plantilla-ejemplo"&gt;
+  &lt;article&gt;
+    &lt;h3&gt;Plantilla oculta&lt;/h3&gt;
+    &lt;p&gt;Este contenido solo se veria si se copia con JavaScript.&lt;/p&gt;
+  &lt;/article&gt;
+&lt;/template&gt;</code></pre>
+          </div>
+        </article>
+
+        <div class="resumen-seccion">
+          <h3>Codigo general de interactivas</h3>
+          <p class="nota-ejemplo">
+            Este resumen deja juntas las etiquetas interactivas mas visibles de
+            la seccion y el CSS que modifica su estado.
+          </p>
+          <div class="codigo-comparado">
+            <div class="codigo-caja">
+              <h3>HTML interactivo</h3>
+              <pre><code>&lt;details&gt;
   &lt;summary&gt;Haz clic para ver una explicacion&lt;/summary&gt;
   &lt;p&gt;Este texto aparece cuando se abre.&lt;/p&gt;
 &lt;/details&gt;
 
 &lt;dialog open&gt;
   &lt;p&gt;Este es un dialog abierto como ejemplo.&lt;/p&gt;
-&lt;/dialog&gt;</code></pre>
-          </div>
-          <div class="codigo-caja">
-            <h3>CSS interactivo</h3>
-            <pre><code>details {
+&lt;/dialog&gt;
+
+&lt;p&gt;&lt;ruby&gt;HTML&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;marcado&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt;&lt;/p&gt;</code></pre>
+            </div>
+            <div class="codigo-caja">
+              <h3>CSS interactivo</h3>
+              <pre><code>details {
+  /* Agrega espacio interno para que el contenido desplegable se vea comodo. */
   padding: 10px;
+  /* Dibuja un borde para que la caja se vea separada del resto. */
   border: 1px solid #cbd5e1;
+  /* Redondea las esquinas para que el bloque se vea mas suave. */
   border-radius: 8px;
 }
 
 details[open] {
+  /* Cambia el fondo cuando el bloque esta abierto para que se note su estado. */
   background-color: #f0fdf4;
 }
 
 summary {
+  /* Cambia el cursor a una mano para avisar que se puede abrir o cerrar. */
   cursor: pointer;
+  /* Hace que el titulo se vea mas fuerte y facil de encontrar. */
   font-weight: bold;
 }
 
 dialog {
+  /* Dibuja un borde para que el cuadro se vea claramente. */
   border: 1px solid #cbd5e1;
 }</code></pre>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="bloque" id="css-demo">
         <h2>Elementos para probar CSS</h2>
-        <p>
-          Esta seccion existe para que el archivo <code>index.css</code> tenga
-          ejemplos claros de selectores y propiedades.
-        </p>
-
-        <div class="badge-contenedor">
-          <span class="badge">HTML</span>
-          <span class="badge">CSS</span>
-          <span class="badge">Selectores</span>
-        </div>
-
-        <div class="flex-demo">
-          <div class="tarjeta-demo">Flex 1</div>
-          <div class="tarjeta-demo">Flex 2</div>
-          <div class="tarjeta-demo">Flex 3</div>
-        </div>
-
-        <div class="grid-demo">
-          <div class="tarjeta-demo">Grid 1</div>
-          <div class="tarjeta-demo">Grid 2</div>
-          <div class="tarjeta-demo">Grid 3</div>
-          <div class="tarjeta-demo">Grid 4</div>
-        </div>
-
-        <div class="posicion-padre">
-          Caja con position relative
-          <span class="posicion-hijo">Absoluta</span>
-        </div>
-
-        <div class="desborde">
-          Este bloque tiene texto muy largo para mostrar overflow. Este bloque
-          tiene texto muy largo para mostrar overflow. Este bloque tiene texto
-          muy largo para mostrar overflow. Este bloque tiene texto muy largo
-          para mostrar overflow.
-        </div>
-
         <p class="nota-ejemplo">
-          En este bloque ya puedes ver selectores de clases, flex, grid,
-          position y overflow trabajando juntos.
+          Esta parte tambien pasa a ejemplos individuales. Haz clic en cada
+          nombre para ver como se escribe el HTML y como el CSS produce ese
+          resultado en pantalla.
         </p>
 
-        <div class="codigo-comparado">
-          <div class="codigo-caja">
-            <h3>HTML de los ejemplos CSS</h3>
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>.badge</h3>
+            <div class="badge-contenedor">
+              <span class="badge">HTML</span>
+              <span class="badge">CSS</span>
+              <span class="badge">Selectores</span>
+            </div>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
             <pre><code>&lt;div class="badge-contenedor"&gt;
+  &lt;span class="badge"&gt;HTML&lt;/span&gt;
+  &lt;span class="badge"&gt;CSS&lt;/span&gt;
+  &lt;span class="badge"&gt;Selectores&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>.badge {
+  /* Hace que el elemento siga en la misma linea pero se comporte como una cajita con tamano propio. */
+  display: inline-block;
+  /* Agrega aire dentro de la etiqueta para que no quede apretada. */
+  padding: 4px 10px;
+  /* Redondea las esquinas para que la etiqueta tenga forma de pastilla. */
+  border-radius: 999px;
+  /* Pinta el fondo para distinguir la etiqueta del resto del contenido. */
+  background-color: #e0f2fe;
+}</code></pre>
+          </div>
+        </article>
+
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>.flex-demo</h3>
+            <div class="flex-demo">
+              <div class="tarjeta-demo">Flex 1</div>
+              <div class="tarjeta-demo">Flex 2</div>
+              <div class="tarjeta-demo">Flex 3</div>
+            </div>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;div class="flex-demo"&gt;
+  &lt;div class="tarjeta-demo"&gt;Flex 1&lt;/div&gt;
+  &lt;div class="tarjeta-demo"&gt;Flex 2&lt;/div&gt;
+  &lt;div class="tarjeta-demo"&gt;Flex 3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>.flex-demo {
+  /* Hace que los elementos internos se acomoden en una fila flexible y ordenada. */
+  display: flex;
+  /* Permite que los elementos bajen a otra fila si ya no entra todo en el ancho disponible. */
+  flex-wrap: wrap;
+  /* Deja una separacion pareja entre los elementos para que no queden pegados. */
+  gap: 10px;
+}
+
+.tarjeta-demo {
+  /* Agrega espacio interno para que el contenido respire dentro de cada caja. */
+  padding: 12px;
+  /* Dibuja un borde para que cada tarjeta se vea separada. */
+  border: 1px solid #d1d5db;
+  /* Pinta el fondo para que cada caja tenga presencia propia. */
+  background-color: #fafafa;
+}</code></pre>
+          </div>
+        </article>
+
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>.grid-demo</h3>
+            <div class="grid-demo">
+              <div class="tarjeta-demo">Grid 1</div>
+              <div class="tarjeta-demo">Grid 2</div>
+              <div class="tarjeta-demo">Grid 3</div>
+              <div class="tarjeta-demo">Grid 4</div>
+            </div>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;div class="grid-demo"&gt;
+  &lt;div class="tarjeta-demo"&gt;Grid 1&lt;/div&gt;
+  &lt;div class="tarjeta-demo"&gt;Grid 2&lt;/div&gt;
+  &lt;div class="tarjeta-demo"&gt;Grid 3&lt;/div&gt;
+  &lt;div class="tarjeta-demo"&gt;Grid 4&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>.grid-demo {
+  /* Organiza los elementos internos como una grilla para repartir mejor el espacio. */
+  display: grid;
+  /* Crea columnas automaticas que se adaptan al ancho disponible de la pantalla. */
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  /* Deja una separacion pareja entre las tarjetas de la grilla. */
+  gap: 10px;
+}</code></pre>
+          </div>
+        </article>
+
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>.posicion-padre y .posicion-hijo</h3>
+            <div class="posicion-padre">
+              Caja con position relative
+              <span class="posicion-hijo">Absoluta</span>
+            </div>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;div class="posicion-padre"&gt;
+  Caja con position relative
+  &lt;span class="posicion-hijo"&gt;Absoluta&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>.posicion-padre {
+  /* Mantiene la caja en su lugar y la convierte en referencia para ubicar elementos dentro. */
+  position: relative;
+  /* Garantiza una altura minima para que el ejemplo tenga espacio suficiente. */
+  min-height: 90px;
+  /* Agrega espacio interno para que el texto no quede pegado al borde. */
+  padding: 18px;
+}
+
+.posicion-hijo {
+  /* Permite colocar el elemento en un punto exacto dentro de su contenedor. */
+  position: absolute;
+  /* Lo separa del borde superior para ubicarlo con precision. */
+  top: 10px;
+  /* Lo separa del borde derecho para ubicarlo con precision. */
+  right: 10px;
+}</code></pre>
+          </div>
+        </article>
+
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>.desborde</h3>
+            <div class="desborde">
+              Este bloque tiene texto muy largo para mostrar overflow. Este
+              bloque tiene texto muy largo para mostrar overflow. Este bloque
+              tiene texto muy largo para mostrar overflow. Este bloque tiene
+              texto muy largo para mostrar overflow.
+            </div>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;div class="desborde"&gt;
+  Este bloque tiene texto muy largo para mostrar overflow.
+&lt;/div&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>.desborde {
+  /* Limita la altura para que el bloque no crezca mas de lo previsto. */
+  max-height: 80px;
+  /* Agrega espacio interno para que el texto se lea con comodidad. */
+  padding: 10px;
+  /* Si el contenido no entra, muestra scroll en vez de dejar que se desborde. */
+  overflow: auto;
+  /* Dibuja un borde para que se note claramente el area del ejemplo. */
+  border: 1px solid #d1d5db;
+}</code></pre>
+          </div>
+        </article>
+
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>.menu-animado a</h3>
+            <nav class="menu-animado" aria-label="Opciones animadas">
+              <a href="#estructura">
+                Ver estructura
+                <span class="flecha-demo" aria-hidden="true">&gt;</span>
+              </a>
+              <a href="#formularios">
+                Ir a formularios
+                <span class="flecha-demo" aria-hidden="true">&gt;</span>
+              </a>
+            </nav>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;nav class="menu-animado"&gt;
+  &lt;a href="#estructura"&gt;
+    Ver estructura
+    &lt;span class="flecha-demo"&gt;&amp;gt;&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>.menu-animado a {
+  /* Hace que el enlace se comporte como una cajita flexible y centrada. */
+  display: inline-flex;
+  /* Agrega aire dentro del enlace para que parezca un boton. */
+  padding: 10px 14px;
+  /* Hace que los cambios de estilo se vean suaves en vez de aparecer de golpe. */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.menu-animado a:hover {
+  /* Mueve el enlace un poco hacia arriba para dar sensacion de respuesta. */
+  transform: translateY(-4px);
+  /* Agrega una sombra para que el enlace parezca elevado. */
+  box-shadow: 0 12px 20px rgba(37, 99, 235, 0.16);
+}
+
+.menu-animado a:hover .flecha-demo {
+  /* Mueve la flecha hacia un costado para reforzar la idea de avanzar. */
+  transform: translateX(4px);
+}</code></pre>
+          </div>
+        </article>
+
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>.tarjeta-hover</h3>
+            <article class="tarjeta-hover">
+              <strong>HTML basico</strong>
+              Practica etiquetas y estructura semantica.
+              <span class="tarjeta-hover__flecha">Seguir &gt;</span>
+            </article>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;article class="tarjeta-hover"&gt;
+  &lt;strong&gt;HTML basico&lt;/strong&gt;
+  Practica etiquetas y estructura semantica.
+  &lt;span class="tarjeta-hover__flecha"&gt;Seguir &amp;gt;&lt;/span&gt;
+&lt;/article&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>.tarjeta-hover {
+  /* Agrega espacio interno para que el contenido respire dentro de la tarjeta. */
+  padding: 16px;
+  /* Dibuja un borde para que la tarjeta tenga su propio contorno. */
+  border: 1px solid #dbe4f0;
+  /* Redondea las esquinas para que la tarjeta se vea mas amable. */
+  border-radius: 14px;
+  /* Hace que los cambios de estilo se vean suaves en vez de aparecer de golpe. */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tarjeta-hover:hover {
+  /* Mueve la tarjeta hacia arriba para que parezca destacarse del resto. */
+  transform: translateY(-6px);
+  /* Agrega una sombra para dar mas profundidad cuando el cursor pasa encima. */
+  box-shadow: 0 16px 28px rgba(31, 60, 136, 0.14);
+}
+
+.tarjeta-hover:hover .tarjeta-hover__flecha {
+  /* Desplaza la flecha para reforzar visualmente la idea de seguir avanzando. */
+  transform: translateX(6px);
+}</code></pre>
+          </div>
+        </article>
+
+        <div class="resumen-seccion">
+          <h3>Codigo general de ejemplos CSS</h3>
+          <p class="nota-ejemplo">
+            Este resumen deja juntos los bloques mas utiles de la seccion para
+            verlos de corrido al final.
+          </p>
+          <div class="codigo-comparado">
+            <div class="codigo-caja">
+              <h3>HTML de los ejemplos CSS</h3>
+              <pre><code>&lt;div class="badge-contenedor"&gt;
   &lt;span class="badge"&gt;HTML&lt;/span&gt;
   &lt;span class="badge"&gt;CSS&lt;/span&gt;
 &lt;/div&gt;
@@ -1806,129 +2521,46 @@ dialog {
   &lt;span class="posicion-hijo"&gt;Absoluta&lt;/span&gt;
 &lt;/div&gt;
 
-&lt;div class="desborde"&gt;Texto muy largo...&lt;/div&gt;</code></pre>
-          </div>
-          <div class="codigo-caja">
-            <h3>CSS de los ejemplos CSS</h3>
-            <pre><code>.badge {
+&lt;div class="desborde"&gt;Texto muy largo...&lt;/div&gt;
+
+&lt;nav class="menu-animado"&gt;...&lt;/nav&gt;
+&lt;article class="tarjeta-hover"&gt;...&lt;/article&gt;</code></pre>
+            </div>
+            <div class="codigo-caja">
+              <h3>CSS de los ejemplos CSS</h3>
+              <pre><code>.badge {
+  /* Hace que el elemento siga en la misma linea pero se comporte como una cajita con tamano propio. */
   display: inline-block;
+  /* Redondea las esquinas para que la etiqueta tenga forma de pastilla. */
   border-radius: 999px;
 }
 
 .flex-demo {
+  /* Hace que los elementos internos se acomoden en una fila flexible y ordenada. */
   display: flex;
+  /* Permite que los elementos bajen a otra fila si ya no entra todo en el ancho disponible. */
   flex-wrap: wrap;
+  /* Deja una separacion pareja entre los elementos para que no queden pegados. */
   gap: 10px;
 }
 
 .grid-demo {
+  /* Organiza los elementos internos como una grilla para repartir mejor el espacio. */
   display: grid;
+  /* Crea columnas automaticas que se adaptan al ancho disponible de la pantalla. */
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
 }
 
-.posicion-padre {
-  position: relative;
-}
-
-.posicion-hijo {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
-.desborde {
-  max-height: 80px;
-  overflow: auto;
-}</code></pre>
-          </div>
-        </div>
-
-        <div class="demo-hover">
-          <h3>Hover y movimiento</h3>
-          <p>
-            Pasa el cursor por estas opciones para ver como <code>:hover</code>,
-            <code>transition</code> y <code>transform</code> agregan
-            movimiento.
-          </p>
-
-          <nav class="menu-animado" aria-label="Opciones animadas">
-            <a href="#estructura">
-              Ver estructura
-              <span class="flecha-demo" aria-hidden="true">&gt;</span>
-            </a>
-            <a href="#formularios">
-              Ir a formularios
-              <span class="flecha-demo" aria-hidden="true">&gt;</span>
-            </a>
-            <a href="#interactivas">
-              Abrir interactivas
-              <span class="flecha-demo" aria-hidden="true">&gt;</span>
-            </a>
-          </nav>
-
-          <div class="tarjetas-hover">
-            <article class="tarjeta-hover">
-              <strong>HTML basico</strong>
-              Practica etiquetas y estructura semantica.
-              <span class="tarjeta-hover__flecha">Seguir &gt;</span>
-            </article>
-            <article class="tarjeta-hover">
-              <strong>CSS visual</strong>
-              Repasa color, espaciado y selectores utiles.
-              <span class="tarjeta-hover__flecha">Seguir &gt;</span>
-            </article>
-            <article class="tarjeta-hover">
-              <strong>Estados hover</strong>
-              Mira como cambia una opcion cuando el cursor pasa encima.
-              <span class="tarjeta-hover__flecha">Seguir &gt;</span>
-            </article>
-          </div>
-        </div>
-
-        <p class="nota-ejemplo">
-          El movimiento de arriba se logra solo con CSS. La clave esta en usar
-          <code>transition</code> para suavizar y <code>transform</code> para
-          desplazar o elevar.
-        </p>
-
-        <div class="codigo-comparado">
-          <div class="codigo-caja">
-            <h3>HTML con hover</h3>
-            <pre><code>&lt;nav class="menu-animado"&gt;
-  &lt;a href="#estructura"&gt;
-    Ver estructura
-    &lt;span class="flecha-demo"&gt;&amp;gt;&lt;/span&gt;
-  &lt;/a&gt;
-&lt;/nav&gt;
-
-&lt;article class="tarjeta-hover"&gt;
-  &lt;strong&gt;HTML basico&lt;/strong&gt;
-  Practica etiquetas.
-  &lt;span class="tarjeta-hover__flecha"&gt;Seguir &amp;gt;&lt;/span&gt;
-&lt;/article&gt;</code></pre>
-          </div>
-          <div class="codigo-caja">
-            <h3>CSS con hover y movimiento</h3>
-            <pre><code>.menu-animado a {
+.menu-animado a {
+  /* Hace que los cambios de estilo se vean suaves en vez de aparecer de golpe. */
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.menu-animado a:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 20px rgba(37, 99, 235, 0.16);
-}
-
-.menu-animado a:hover .flecha-demo {
-  transform: translateX(4px);
-}
-
 .tarjeta-hover:hover {
+  /* Mueve la tarjeta hacia arriba para que parezca destacarse del resto. */
   transform: translateY(-6px);
-}
-
-.tarjeta-hover:hover .tarjeta-hover__flecha {
-  transform: translateX(6px);
 }</code></pre>
+            </div>
           </div>
         </div>
       </section>
@@ -1998,6 +2630,12 @@ dialog {
     </script>
   </body>
 </html>
+
+
+
+
+
+
 
 
 
