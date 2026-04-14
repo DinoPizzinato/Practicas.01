@@ -6,6 +6,7 @@
       Que es: indica que el documento usa HTML5.
       Como funciona: se escribe una sola vez al principio del archivo.
       Para que sirve: ayuda al navegador a interpretar bien la pagina.
+      Ejemplo real: lo usarias al crear la pagina principal de una tienda, un portfolio o una pagina de un local de ropa.
     -->
     <meta charset="UTF-8" />
     <!--
@@ -13,6 +14,7 @@
       Que es: define la codificacion de caracteres.
       Como funciona: le dice al navegador como leer letras y simbolos.
       Para que sirve: evitar errores con acentos y caracteres especiales.
+      Ejemplo real: sirve para que palabras como "musica", "direccion" o "seccion" no se rompan en la web.
     -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--
@@ -20,6 +22,7 @@
       Que es: configura la vista en dispositivos moviles.
       Como funciona: adapta el ancho al tamaño del dispositivo.
       Para que sirve: mejorar la visualizacion responsive.
+      Ejemplo real: hace que una pagina de un kiosco o una peluqueria se vea bien en celular.
     -->
     <title>Guia Basica de HTML y CSS</title>
     <!--
@@ -27,6 +30,7 @@
       Que es: el titulo de la pestaña del navegador.
       Como funciona: muestra texto arriba del navegador.
       Para que sirve: identificar la pagina.
+      Ejemplo real: podria decir "Tienda de Ropa", "Menu de Cafeteria" o "Portfolio de Juan".
     -->
     <link rel="stylesheet" href="css/index.css" />
     <!--
@@ -34,6 +38,7 @@
       Que es: conecta la pagina con un archivo externo.
       Como funciona: en este caso carga una hoja de estilos CSS.
       Para que sirve: separar HTML de CSS.
+      Ejemplo real: te deja tener la estructura de una pagina de restaurante en HTML y el diseno en otro archivo.
     -->
   </head>
   <body>
@@ -42,15 +47,15 @@
       Que es: la parte visible del documento.
       Como funciona: aqui van textos, imagenes, tablas, formularios y mas.
       Para que sirve: mostrar contenido al usuario.
+      Ejemplo real: todo lo que ves en una web de una libreria o de una zapateria vive dentro del body.
     -->
-    <noscript>
-      Este mensaje aparece si JavaScript esta desactivado.
-    </noscript>
+    <noscript> Este mensaje aparece si JavaScript esta desactivado. </noscript>
     <!--
       <noscript>
       Que es: contenido alternativo para cuando no hay JavaScript.
       Como funciona: el navegador lo muestra solo en ese caso.
       Para que sirve: dar avisos o instrucciones extra.
+      Ejemplo real: podrias avisar "Activa JavaScript para ver el carrito de compras" en una tienda online.
     -->
 
     <header class="bloque introduccion" id="inicio">
@@ -59,6 +64,7 @@
         Que es: la cabecera principal de la pagina.
         Como funciona: suele contener titulo, introduccion o menu.
         Para que sirve: presentar el contenido inicial.
+        Ejemplo real: arriba de una web de ropa pondrias el nombre del local, una frase y el menu principal.
       -->
       <h1>Guia Basica de HTML y CSS</h1>
       <p>
@@ -72,6 +78,7 @@
           Que es: una zona de navegacion.
           Como funciona: agrupa enlaces a secciones o a otros archivos.
           Para que sirve: facilitar el recorrido del usuario.
+          Ejemplo real: sirve para poner links como Inicio, Productos, Contacto o Promociones.
         -->
         <a href="#estructura">Estructura</a>
         <a href="#textos">Textos</a>
@@ -83,6 +90,41 @@
         <a href="#css-demo">CSS</a>
         <a href="pages/formularios/formulario.html">Formulario aparte</a>
       </nav>
+
+      <p class="nota-guia">
+        En varios bloques de esta guia vas a ver el ejemplo ya renderizado y,
+        al hacer clic en el nombre de la etiqueta se abrira su HTML y su CSS.
+      </p>
+
+      <div class="codigo-comparado">
+        <div class="codigo-caja">
+          <h3>HTML del menu</h3>
+          <pre><code>&lt;nav class="menu-principal"&gt;
+  &lt;a href="#estructura"&gt;Estructura&lt;/a&gt;
+  &lt;a href="#textos"&gt;Textos&lt;/a&gt;
+  &lt;a href="#css-demo"&gt;CSS&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+        </div>
+        <div class="codigo-caja">
+          <h3>CSS del menu</h3>
+          <pre><code>.menu-principal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.menu-principal a {
+  padding: 6px 10px;
+  border: 1px solid #dbe4f0;
+  border-radius: 999px;
+  background-color: #f8fbff;
+}
+
+.menu-principal a:hover {
+  transform: translateY(-2px);
+}</code></pre>
+        </div>
+      </div>
     </header>
 
     <main>
@@ -91,58 +133,179 @@
         Que es: el contenido principal de la pagina.
         Como funciona: contiene la informacion mas importante del documento.
         Para que sirve: mejorar orden y semantica.
+        Ejemplo real: en una web de una tienda seria la parte donde aparecen productos, precios y descripciones.
       -->
       <section class="bloque" id="estructura">
         <h2>Estructura y contenedores</h2>
-
-        <!--
-          <div>
-          Que es: un contenedor generico.
-          Como funciona: agrupa elementos sin significado semantico especial.
-          Para que sirve: ordenar contenido y aplicar estilos.
-        -->
-        <div class="caja-interna">
-          Este texto esta dentro de un div usado como contenedor basico.
-        </div>
-
-        <!--
-          id y class
-          Que son: atributos comunes de HTML.
-          Como funcionan: id identifica un elemento unico y class agrupa varios.
-          Para que sirven: enlazar secciones y aplicar estilos con CSS.
-        -->
-        <p id="selector-id-demo">
-          Este parrafo usa un id para mostrar un ejemplo de selector por id.
-        </p>
-        <p class="selector-clase-demo">
-          Este parrafo usa una clase para mostrar un ejemplo de selector por
-          clase.
+        <p class="nota-ejemplo">
+          En esta seccion cada ejemplo va por separado. Haz clic en el nombre
+          de la etiqueta para desplegar su HTML y el CSS que la afecta cuando
+          corresponde.
         </p>
 
-        <!--
-          <article>
-          Que es: un contenido independiente.
-          Como funciona: puede leerse por separado del resto.
-          Para que sirve: noticias, publicaciones o tarjetas.
-        -->
-        <article class="tarjeta">
-          <h3>Ejemplo de article</h3>
-          <p>
-            Este article representa un contenido que podria existir solo dentro
-            de una pagina.
-          </p>
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;div&gt;</h3>
+            <div class="caja-interna">
+              Este texto esta dentro de un div usado como contenedor basico.
+            </div>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;div class="caja-interna"&gt;
+  Este texto esta dentro de un div usado como contenedor basico.
+&lt;/div&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>.caja-interna {
+  padding: 12px;
+  margin-top: 12px;
+  border: 1px dashed #9ca3af;
+  background-color: #fafafa;
+}</code></pre>
+          </div>
         </article>
 
-        <!--
-          <aside>
-          Que es: contenido secundario o complementario.
-          Como funciona: acompaña al contenido principal.
-          Para que sirve: notas, avisos o datos extra.
-        -->
-        <aside class="tarjeta">
-          <h3>Ejemplo de aside</h3>
-          <p>Este aside muestra informacion secundaria.</p>
-        </aside>
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;p id="..."&gt;</h3>
+            <p id="selector-id-demo">
+              Este parrafo usa un id para mostrar un ejemplo de selector por
+              id.
+            </p>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;p id="selector-id-demo"&gt;
+  Este parrafo usa un id para mostrar un ejemplo de selector por id.
+&lt;/p&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>#selector-id-demo {
+  border-left: 4px solid var(--color-secundario);
+  padding-left: 10px;
+  background-color: #ecfeff;
+}</code></pre>
+          </div>
+        </article>
+
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;p class="..."&gt;</h3>
+            <p class="selector-clase-demo">
+              Este parrafo usa una clase para mostrar un ejemplo de selector
+              por clase.
+            </p>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;p class="selector-clase-demo"&gt;
+  Este parrafo usa una clase para mostrar un ejemplo de selector por clase.
+&lt;/p&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>.selector-clase-demo {
+  color: #7c3aed;
+  font-weight: bold;
+}</code></pre>
+          </div>
+        </article>
+
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;article&gt;</h3>
+            <article class="tarjeta">
+              <h3>Ejemplo de article</h3>
+              <p>Este article representa un contenido independiente.</p>
+            </article>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;article class="tarjeta"&gt;
+  &lt;h3&gt;Ejemplo de article&lt;/h3&gt;
+  &lt;p&gt;Este article representa un contenido independiente.&lt;/p&gt;
+&lt;/article&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>.tarjeta {
+  padding: 12px;
+  margin-top: 12px;
+  border: 1px dashed #9ca3af;
+  background-color: #fafafa;
+}</code></pre>
+          </div>
+        </article>
+
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;aside&gt;</h3>
+            <aside class="tarjeta">
+              <h3>Ejemplo de aside</h3>
+              <p>Este aside muestra informacion secundaria.</p>
+            </aside>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;aside class="tarjeta"&gt;
+  &lt;h3&gt;Ejemplo de aside&lt;/h3&gt;
+  &lt;p&gt;Este aside muestra informacion secundaria.&lt;/p&gt;
+&lt;/aside&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>.tarjeta {
+  padding: 12px;
+  margin-top: 12px;
+  border: 1px dashed #9ca3af;
+  background-color: #fafafa;
+}</code></pre>
+          </div>
+        </article>
+
+        <div class="resumen-seccion">
+          <h3>Codigo completo de estructura</h3>
+          <div class="codigo-comparado">
+            <div class="codigo-caja">
+              <h3>HTML completo</h3>
+              <pre><code>&lt;div class="caja-interna"&gt;
+  Este texto esta dentro de un div usado como contenedor basico.
+&lt;/div&gt;
+
+&lt;p id="selector-id-demo"&gt;
+  Este parrafo usa un id para mostrar un ejemplo de selector por id.
+&lt;/p&gt;
+
+&lt;p class="selector-clase-demo"&gt;
+  Este parrafo usa una clase para mostrar un ejemplo de selector por clase.
+&lt;/p&gt;
+
+&lt;article class="tarjeta"&gt;
+  &lt;h3&gt;Ejemplo de article&lt;/h3&gt;
+  &lt;p&gt;Este article representa un contenido independiente.&lt;/p&gt;
+&lt;/article&gt;
+
+&lt;aside class="tarjeta"&gt;
+  &lt;h3&gt;Ejemplo de aside&lt;/h3&gt;
+  &lt;p&gt;Este aside muestra informacion secundaria.&lt;/p&gt;
+&lt;/aside&gt;</code></pre>
+            </div>
+            <div class="codigo-caja">
+              <h3>CSS completo</h3>
+              <pre><code>.caja-interna,
+.tarjeta {
+  padding: 12px;
+  margin-top: 12px;
+  border: 1px dashed #9ca3af;
+  background-color: #fafafa;
+}
+
+#selector-id-demo {
+  border-left: 4px solid var(--color-secundario);
+  padding-left: 10px;
+  background-color: #ecfeff;
+}
+
+.selector-clase-demo {
+  color: #7c3aed;
+  font-weight: bold;
+}</code></pre>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="bloque" id="textos">
@@ -153,6 +316,7 @@
           Que son: encabezados o titulos.
           Como funcionan: h1 es el mas importante y h6 el menos importante.
           Para que sirven: crear jerarquia visual y semantica.
+          Ejemplo real: h1 puede ser "Tienda de Ropa", h2 "Ofertas" y h3 "Camperas".
         -->
         <h3>Ejemplo de h3</h3>
         <h4>Ejemplo de h4</h4>
@@ -164,6 +328,7 @@
           Que es: un parrafo.
           Como funciona: agrupa texto en bloques.
           Para que sirve: escribir contenido normal.
+          Ejemplo real: lo usarias para contar la historia de un negocio o describir un producto.
         -->
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum
@@ -175,6 +340,7 @@
           Que es: una etiqueta en linea.
           Como funciona: no rompe la linea del texto.
           Para que sirve: destacar una parte pequeña del contenido.
+          Ejemplo real: sirve para colorear solo la palabra "oferta" dentro de una frase.
         -->
         <p>
           Este parrafo tiene un
@@ -186,6 +352,7 @@
           Que son: etiquetas de texto en linea.
           Como funcionan: modifican significado o aspecto visual.
           Para que sirven: enfatizar, resaltar o diferenciar texto.
+          Ejemplo real: podrias poner en strong "Envio gratis", en mark "20% OFF" y en small una aclaracion legal.
         -->
         <p><strong>strong:</strong> indica importancia fuerte.</p>
         <p><b>b:</b> pone texto en negrita visual.</p>
@@ -200,6 +367,7 @@
           Que son: etiquetas para cambios o posicion especial del texto.
           Como funcionan: tachan, insertan o colocan texto arriba o abajo.
           Para que sirven: correcciones, formulas y comparaciones.
+          Ejemplo real: del sirve para un precio viejo, ins para el nuevo, sub para H2O y sup para m2.
         -->
         <p><s>Texto no vigente</s></p>
         <p><del>Precio anterior</del> <ins>Precio nuevo</ins></p>
@@ -211,6 +379,7 @@
           Que son: etiquetas para datos concretos.
           Como funcionan: agregan significado extra a palabras o valores.
           Para que sirven: fechas, abreviaturas y datos utiles.
+          Ejemplo real: abbr sirve para siglas como HTML, time para el horario del local y data para codigos de productos.
         -->
         <p>
           <abbr title="HyperText Markup Language">HTML</abbr> es un lenguaje de
@@ -227,6 +396,7 @@
           Que son: etiquetas para codigo o texto tecnico.
           Como funcionan: representan codigo, teclas, salida del sistema y variables.
           Para que sirven: documentar ejemplos tecnicos.
+          Ejemplo real: sirven para explicar en una guia como guardar con Ctrl + S o mostrar un pedazo de codigo.
         -->
         <p>Codigo corto: <code>&lt;p&gt;Hola&lt;/p&gt;</code></p>
         <pre>
@@ -244,6 +414,7 @@ body {
           Que son: etiquetas para citas.
           Como funcionan: q sirve para citas cortas, blockquote para citas largas y cite para la fuente.
           Para que sirven: referenciar frases o textos.
+          Ejemplo real: podrias citar una opinion de un cliente o una frase tomada de un articulo.
         -->
         <p><q>Esta es una cita corta.</q></p>
         <blockquote cite="https://example.com">
@@ -257,6 +428,7 @@ body {
           Que es: informacion de contacto.
           Como funciona: agrupa datos como nombre, correo o direccion.
           Para que sirve: mostrar datos de contacto del autor o sitio.
+          Ejemplo real: sirve para poner la direccion del local, el mail y el telefono de contacto.
         -->
         <address>
           Nombre: Alumno de practica<br />
@@ -269,11 +441,11 @@ body {
           Que son: salto de linea, corte opcional y separador horizontal.
           Como funcionan: br baja una linea, wbr permite cortar palabras largas y hr separa temas.
           Para que sirven: ordenar visualmente el contenido.
+          Ejemplo real: br te sirve para una direccion en varias lineas y hr para separar secciones como "Productos" y "Contacto".
         -->
         <p>Linea uno<br />Linea dos con br.</p>
         <p>
-          Palabra larga con wbr:
-          electroencefalo<wbr />grafista<wbr />superavanzado
+          Palabra larga con wbr: electroencefalo<wbr />grafista<wbr />superavanzado
         </p>
         <hr />
 
@@ -282,6 +454,7 @@ body {
           Que es: un enlace.
           Como funciona: usa el atributo href para indicar el destino.
           Para que sirve: navegar por la misma pagina o por otras paginas.
+          Ejemplo real: sirve para ir a YouTube, a Instagram, a WhatsApp o a la pagina de un local de ropa.
         -->
         <p><a href="#inicio">Enlace interno al inicio</a></p>
         <p>
@@ -289,51 +462,188 @@ body {
             Enlace externo
           </a>
         </p>
+
+        <p class="nota-ejemplo">
+          Este bloque mezcla estructura HTML con selectores CSS, pseudoclases y
+          pseudo-elementos.
+        </p>
+
+        <div class="codigo-comparado">
+          <div class="codigo-caja">
+            <h3>HTML del ejemplo</h3>
+            <pre><code>&lt;p&gt;
+  Este parrafo tiene un
+  &lt;span class="resaltado"&gt;span resaltado&lt;/span&gt;.
+&lt;/p&gt;
+
+&lt;blockquote cite="https://example.com"&gt;
+  Esta es una cita larga de ejemplo.
+&lt;/blockquote&gt;
+
+&lt;a href="#inicio"&gt;Enlace interno al inicio&lt;/a&gt;</code></pre>
+          </div>
+          <div class="codigo-caja">
+            <h3>CSS que lo estiliza</h3>
+            <pre><code>.resaltado {
+  background-color: var(--color-resalte);
+  color: #8a5a00;
+}
+
+blockquote {
+  border-left: 4px solid #93c5fd;
+  background-color: #eff6ff;
+}
+
+blockquote::before {
+  content: '"';
+}
+
+a:hover,
+a:focus {
+  color: #c0392b;
+  text-decoration: underline;
+}</code></pre>
+          </div>
+        </div>
       </section>
 
       <section class="bloque" id="listas">
         <h2>Etiquetas de listas</h2>
+        <p class="nota-ejemplo">
+          Cada tipo de lista aparece por separado. Haz clic en el nombre del
+          ejemplo para ver su codigo y al final queda el bloque completo con su
+          HTML y su CSS.
+        </p>
 
-        <!--
-          <ul> y <li>
-          Que son: lista desordenada y elemento de lista.
-          Como funcionan: muestran items con viñetas.
-          Para que sirven: agrupar elementos sin orden numerico.
-        -->
-        <h3>Lista desordenada</h3>
-        <ul class="mini-lista">
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-        </ul>
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;ul&gt; y &lt;li&gt;</h3>
+            <ul class="mini-lista">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;ul class="mini-lista"&gt;
+  &lt;li&gt;HTML&lt;/li&gt;
+  &lt;li&gt;CSS&lt;/li&gt;
+  &lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>ul,
+ol,
+dl {
+  padding-left: 20px;
+}
 
-        <!--
-          <ol> y <li>
-          Que son: lista ordenada y elemento de lista.
-          Como funcionan: muestran items numerados.
-          Para que sirven: explicar pasos o procesos.
-        -->
-        <h3>Lista ordenada</h3>
-        <ol>
-          <li>Abrir el archivo</li>
-          <li>Escribir codigo</li>
-          <li>Guardar cambios</li>
-        </ol>
+.mini-lista li:nth-child(odd) {
+  color: #0f766e;
+  font-weight: bold;
+}</code></pre>
+          </div>
+        </article>
 
-        <!--
-          <dl>, <dt>, <dd>
-          Que son: lista de definiciones.
-          Como funcionan: dt muestra el termino y dd su descripcion.
-          Para que sirven: explicar conceptos.
-        -->
-        <h3>Lista de definiciones</h3>
-        <dl>
-          <dt>HTML</dt>
-          <dd>Se usa para la estructura del contenido.</dd>
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;ol&gt; y &lt;li&gt;</h3>
+            <ol>
+              <li>Abrir el archivo</li>
+              <li>Escribir codigo</li>
+              <li>Guardar cambios</li>
+            </ol>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;ol&gt;
+  &lt;li&gt;Abrir el archivo&lt;/li&gt;
+  &lt;li&gt;Escribir codigo&lt;/li&gt;
+  &lt;li&gt;Guardar cambios&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>ol {
+  padding-left: 20px;
+}</code></pre>
+          </div>
+        </article>
 
-          <dt>CSS</dt>
-          <dd>Se usa para el diseño visual.</dd>
-        </dl>
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;dl&gt;, &lt;dt&gt; y &lt;dd&gt;</h3>
+            <dl>
+              <dt>HTML</dt>
+              <dd>Se usa para la estructura del contenido.</dd>
+              <dt>CSS</dt>
+              <dd>Se usa para el diseno visual.</dd>
+            </dl>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;Se usa para la estructura del contenido.&lt;/dd&gt;
+  &lt;dt&gt;CSS&lt;/dt&gt;
+  &lt;dd&gt;Se usa para el diseno visual.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>dl {
+  padding-left: 20px;
+}
+
+p,
+li,
+dd {
+  margin-block: 10px;
+}</code></pre>
+          </div>
+        </article>
+
+        <div class="resumen-seccion">
+          <h3>Codigo completo de listas</h3>
+          <div class="codigo-comparado">
+            <div class="codigo-caja">
+              <h3>HTML completo</h3>
+              <pre><code>&lt;ul class="mini-lista"&gt;
+  &lt;li&gt;HTML&lt;/li&gt;
+  &lt;li&gt;CSS&lt;/li&gt;
+  &lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Abrir el archivo&lt;/li&gt;
+  &lt;li&gt;Escribir codigo&lt;/li&gt;
+  &lt;li&gt;Guardar cambios&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;Se usa para la estructura del contenido.&lt;/dd&gt;
+  &lt;dt&gt;CSS&lt;/dt&gt;
+  &lt;dd&gt;Se usa para el diseno visual.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+            </div>
+            <div class="codigo-caja">
+              <h3>CSS aplicado</h3>
+              <pre><code>ul,
+ol,
+dl {
+  padding-left: 20px;
+}
+
+p,
+li,
+dd {
+  margin-block: 10px;
+}
+
+.mini-lista li:nth-child(odd) {
+  color: #0f766e;
+  font-weight: bold;
+}</code></pre>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="bloque" id="multimedia">
@@ -344,6 +654,7 @@ body {
           Que son: una imagen con su descripcion.
           Como funcionan: figure agrupa el contenido visual y figcaption lo explica.
           Para que sirven: mostrar imagenes con contexto.
+          Ejemplo real: sirve para subir la foto de una prenda y abajo poner "Campera negra talle M".
         -->
         <figure>
           <img
@@ -358,6 +669,7 @@ body {
           Que son: una imagen adaptable con varias fuentes posibles.
           Como funcionan: source ofrece opciones y img actua como respaldo.
           Para que sirven: mostrar una imagen segun el tamaño de pantalla.
+          Ejemplo real: sirve para mostrar una foto grande en PC y una version mas chica en celular.
         -->
         <picture>
           <source
@@ -375,6 +687,7 @@ body {
           Que son: reproductor de audio y fuente del archivo.
           Como funcionan: audio crea el reproductor y source indica el archivo.
           Para que sirven: reproducir sonidos o musica.
+          Ejemplo real: podrias poner una cancion de fondo, un podcast o un audio de presentacion del negocio.
         -->
         <h3>Audio</h3>
         <audio controls>
@@ -387,6 +700,7 @@ body {
           Que son: reproductor de video, fuente del archivo y pista de subtitulos.
           Como funcionan: video crea el reproductor, source carga el archivo y track agrega subtitulos.
           Para que sirven: mostrar video con informacion adicional.
+          Ejemplo real: sirve para subir un video mostrando un producto o el interior del local.
         -->
         <h3>Video</h3>
         <video controls width="320">
@@ -400,6 +714,7 @@ body {
           Que es: una ventana dentro de la pagina que carga otro documento.
           Como funciona: usa el atributo src para traer otro contenido.
           Para que sirve: incrustar paginas o vistas externas.
+          Ejemplo real: sirve para mostrar un mapa de Google, un video de YouTube o otra pagina dentro de la tuya.
         -->
         <h3>Iframe</h3>
         <iframe
@@ -412,14 +727,43 @@ body {
           Que es: grafico vectorial dentro de HTML.
           Como funciona: dibuja formas usando etiquetas y atributos.
           Para que sirve: crear iconos, dibujos y graficos simples.
+          Ejemplo real: podrias hacer un icono de carrito, un logo simple o una flecha para un boton.
         -->
         <h3>SVG</h3>
         <svg width="160" height="120" aria-label="Ejemplo SVG">
-          <rect x="10" y="10" width="140" height="100" rx="12" fill="#cfe8ff"></rect>
+          <rect
+            x="10"
+            y="10"
+            width="140"
+            height="100"
+            rx="12"
+            fill="#cfe8ff"
+          ></rect>
           <circle cx="50" cy="60" r="20" fill="#2563eb"></circle>
-          <line x1="90" y1="35" x2="130" y2="35" stroke="#1f2937" stroke-width="4"></line>
-          <line x1="90" y1="60" x2="130" y2="60" stroke="#1f2937" stroke-width="4"></line>
-          <line x1="90" y1="85" x2="120" y2="85" stroke="#1f2937" stroke-width="4"></line>
+          <line
+            x1="90"
+            y1="35"
+            x2="130"
+            y2="35"
+            stroke="#1f2937"
+            stroke-width="4"
+          ></line>
+          <line
+            x1="90"
+            y1="60"
+            x2="130"
+            y2="60"
+            stroke="#1f2937"
+            stroke-width="4"
+          ></line>
+          <line
+            x1="90"
+            y1="85"
+            x2="120"
+            y2="85"
+            stroke="#1f2937"
+            stroke-width="4"
+          ></line>
         </svg>
 
         <!--
@@ -427,11 +771,53 @@ body {
           Que es: una superficie para dibujar con JavaScript.
           Como funciona: por si sola no dibuja casi nada; necesita JS para ser util.
           Para que sirve: juegos, animaciones o graficos.
+          Ejemplo real: se usa para juegos simples, graficos interactivos o pizarras de dibujo.
         -->
         <h3>Canvas</h3>
         <canvas width="220" height="90">
           Tu navegador no soporta la etiqueta canvas.
         </canvas>
+
+        <p class="nota-ejemplo">
+          Estos selectores hacen que los elementos multimedia no se rompan en
+          pantallas chicas y que algunos, como <code>iframe</code> o
+          <code>canvas</code>, tengan una caja visible.
+        </p>
+
+        <div class="codigo-comparado">
+          <div class="codigo-caja">
+            <h3>HTML multimedia</h3>
+            <pre><code>&lt;figure&gt;
+  &lt;img src="imagen.jpg" alt="Imagen de ejemplo" /&gt;
+&lt;/figure&gt;
+
+&lt;iframe src="pages/formularios/formulario.html"&gt;&lt;/iframe&gt;
+
+&lt;canvas width="220" height="90"&gt;&lt;/canvas&gt;</code></pre>
+          </div>
+          <div class="codigo-caja">
+            <h3>CSS multimedia</h3>
+            <pre><code>img,
+picture,
+video,
+audio,
+iframe,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+iframe {
+  width: 100%;
+  min-height: 260px;
+}
+
+canvas {
+  border: 1px solid #cbd5e1;
+}</code></pre>
+          </div>
+        </div>
       </section>
 
       <section class="bloque" id="tablas">
@@ -442,6 +828,7 @@ body {
           Que son: etiquetas para crear tablas.
           Como funcionan: organizan datos en filas y columnas.
           Para que sirven: mostrar informacion tabular.
+          Ejemplo real: sirve para mostrar una lista de precios, talles, horarios o stock.
         -->
         <table>
           <caption>
@@ -477,170 +864,784 @@ body {
             </tr>
           </tfoot>
         </table>
+
+        <p class="nota-ejemplo">
+          La tabla se arma con varias etiquetas HTML y despues el CSS pinta
+          bordes, filas alternadas y una columna destacada.
+        </p>
+
+        <div class="codigo-comparado">
+          <div class="codigo-caja">
+            <h3>HTML de la tabla</h3>
+            <pre><code>&lt;table&gt;
+  &lt;caption&gt;Tabla de alumnos&lt;/caption&gt;
+  &lt;colgroup&gt;
+    &lt;col class="columna-clara" /&gt;
+    &lt;col /&gt;
+    &lt;col /&gt;
+  &lt;/colgroup&gt;
+  &lt;thead&gt;...&lt;/thead&gt;
+  &lt;tbody&gt;...&lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+          </div>
+          <div class="codigo-caja">
+            <h3>CSS de la tabla</h3>
+            <pre><code>table,
+th,
+td {
+  border: 1px solid #6b7280;
+  border-collapse: collapse;
+  padding: 8px;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+.columna-clara {
+  background-color: #eff6ff;
+}</code></pre>
+          </div>
+        </div>
       </section>
 
       <section class="bloque" id="formularios">
         <h2>Etiquetas de formularios</h2>
+        <p class="nota-ejemplo">
+          La pagina separada de formularios queda intacta. Esta seccion del
+          index concentra cada control por separado. Haz clic en el nombre del
+          ejemplo para ver como se escribe, como se estiliza y como se ve.
+        </p>
 
-        <!--
-          <form>
-          Que es: la estructura principal de un formulario.
-          Como funciona: agrupa campos y acciones de envio.
-          Para que sirve: capturar datos del usuario.
-        -->
-        <form action="#" method="post">
-          <fieldset>
-            <!--
-              <fieldset> y <legend>
-              Que son: agrupan campos relacionados y les ponen titulo.
-              Como funcionan: fieldset crea el grupo y legend lo nombra.
-              Para que sirven: ordenar mejor formularios grandes.
-            -->
-            <legend>Campos de entrada</legend>
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;form&gt;</h3>
+            <form action="#" method="post" class="ejemplo-formulario">
+              <label for="form-nombre-demo">Nombre</label>
+              <input
+                type="text"
+                id="form-nombre-demo"
+                placeholder="Escribe tu nombre"
+              />
+            </form>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;form action="#" method="post"&gt;
+  &lt;label for="form-nombre-demo"&gt;Nombre&lt;/label&gt;
+  &lt;input type="text" id="form-nombre-demo" placeholder="Escribe tu nombre" /&gt;
+&lt;/form&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>form {
+  display: grid;
+  gap: 14px;
+}</code></pre>
+          </div>
+        </article>
 
-            <label for="nombre">Nombre</label>
-            <input
-              type="text"
-              id="nombre"
-              name="nombre"
-              placeholder="Escribe tu nombre"
-              required
-            />
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;fieldset&gt; y &lt;legend&gt;</h3>
+            <form class="ejemplo-formulario" action="#">
+              <fieldset>
+                <legend>Campos de entrada</legend>
+                <label for="grupo-demo">Nombre</label>
+                <input type="text" id="grupo-demo" placeholder="Tu nombre" />
+              </fieldset>
+            </form>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;fieldset&gt;
+  &lt;legend&gt;Campos de entrada&lt;/legend&gt;
+  &lt;label for="grupo-demo"&gt;Nombre&lt;/label&gt;
+  &lt;input type="text" id="grupo-demo" placeholder="Tu nombre" /&gt;
+&lt;/fieldset&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>fieldset {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 12px;
+}
 
-            <label for="correo">Correo</label>
-            <input
-              type="email"
-              id="correo"
-              name="correo"
-              placeholder="correo@ejemplo.com"
-              required
-            />
+legend {
+  padding-inline: 6px;
+  font-weight: bold;
+}</code></pre>
+          </div>
+        </article>
 
-            <label for="clave">Contrasena</label>
-            <input
-              type="password"
-              id="clave"
-              name="clave"
-              placeholder="Escribe tu contrasena"
-            />
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;label&gt;</h3>
+            <div class="ejemplo-formulario">
+              <label for="label-demo">Tu nombre</label>
+              <input type="text" id="label-demo" placeholder="Escribe aqui" />
+            </div>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;label for="label-demo"&gt;Tu nombre&lt;/label&gt;
+&lt;input type="text" id="label-demo" placeholder="Escribe aqui" /&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>label {
+  display: block;
+  margin-top: 8px;
+}</code></pre>
+          </div>
+        </article>
 
-            <label for="buscar">Busqueda</label>
-            <input type="search" id="buscar" name="buscar" placeholder="Buscar..." />
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;input type="text"&gt;</h3>
+            <div class="ejemplo-formulario">
+              <label for="texto-demo">Nombre</label>
+              <input
+                type="text"
+                id="texto-demo"
+                placeholder="Escriba su nombre"
+                required
+              />
+            </div>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;label for="texto-demo"&gt;Nombre&lt;/label&gt;
+&lt;input type="text" id="texto-demo" placeholder="Escriba su nombre" required /&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>input,
+select,
+textarea,
+button {
+  width: 100%;
+  max-width: 460px;
+  padding: 8px;
+  border: 1px solid #94a3b8;
+  border-radius: 6px;
+  margin-top: 4px;
+  font: inherit;
+}
 
-            <label for="telefono">Telefono</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="11 2345 6789" />
+input[required] {
+  border-color: #2563eb;
+}</code></pre>
+          </div>
+        </article>
 
-            <label for="sitio">Sitio web</label>
-            <input type="url" id="sitio" name="sitio" placeholder="https://ejemplo.com" />
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;input type="password"&gt;</h3>
+            <div class="ejemplo-formulario">
+              <label for="password-demo">Contrasena</label>
+              <input
+                type="password"
+                id="password-demo"
+                placeholder="Escribe tu contrasena"
+              />
+            </div>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;label for="password-demo"&gt;Contrasena&lt;/label&gt;
+&lt;input type="password" id="password-demo" placeholder="Escribe tu contrasena" /&gt;</code></pre>
+          </div>
+        </article>
 
-            <label for="numero">Numero</label>
-            <input type="number" id="numero" name="numero" min="1" max="100" />
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;input type="email"&gt;</h3>
+            <div class="ejemplo-formulario">
+              <label for="email-demo">Correo</label>
+              <input
+                type="email"
+                id="email-demo"
+                placeholder="correo@ejemplo.com"
+                required
+              />
+            </div>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;label for="email-demo"&gt;Correo&lt;/label&gt;
+&lt;input type="email" id="email-demo" placeholder="correo@ejemplo.com" required /&gt;</code></pre>
+          </div>
+        </article>
 
-            <label for="fecha">Fecha</label>
-            <input type="date" id="fecha" name="fecha" />
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;input type="search"&gt;</h3>
+            <div class="ejemplo-formulario">
+              <label for="search-demo">Busqueda</label>
+              <input type="search" id="search-demo" placeholder="Buscar..." />
+            </div>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;label for="search-demo"&gt;Busqueda&lt;/label&gt;
+&lt;input type="search" id="search-demo" placeholder="Buscar..." /&gt;</code></pre>
+          </div>
+        </article>
 
-            <label for="hora">Hora</label>
-            <input type="time" id="hora" name="hora" />
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;input type="tel"&gt;</h3>
+            <div class="ejemplo-formulario">
+              <label for="tel-demo">Telefono</label>
+              <input type="tel" id="tel-demo" placeholder="11 2345 6789" />
+            </div>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;label for="tel-demo"&gt;Telefono&lt;/label&gt;
+&lt;input type="tel" id="tel-demo" placeholder="11 2345 6789" /&gt;</code></pre>
+          </div>
+        </article>
 
-            <label for="color">Color</label>
-            <input type="color" id="color" name="color" />
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;input type="url"&gt;</h3>
+            <div class="ejemplo-formulario">
+              <label for="url-demo">Sitio web</label>
+              <input
+                type="url"
+                id="url-demo"
+                placeholder="https://ejemplo.com"
+              />
+            </div>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;label for="url-demo"&gt;Sitio web&lt;/label&gt;
+&lt;input type="url" id="url-demo" placeholder="https://ejemplo.com" /&gt;</code></pre>
+          </div>
+        </article>
 
-            <label for="rango">Rango</label>
-            <input type="range" id="rango" name="rango" min="0" max="10" />
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;input type="number"&gt;</h3>
+            <div class="ejemplo-formulario">
+              <label for="number-demo">Numero</label>
+              <input type="number" id="number-demo" min="1" max="100" />
+            </div>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;label for="number-demo"&gt;Numero&lt;/label&gt;
+&lt;input type="number" id="number-demo" min="1" max="100" /&gt;</code></pre>
+          </div>
+        </article>
 
-            <label for="archivo">Archivo</label>
-            <input type="file" id="archivo" name="archivo" />
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;input type="date"&gt;</h3>
+            <div class="ejemplo-formulario">
+              <label for="date-demo">Fecha</label>
+              <input type="date" id="date-demo" />
+            </div>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;label for="date-demo"&gt;Fecha&lt;/label&gt;
+&lt;input type="date" id="date-demo" /&gt;</code></pre>
+          </div>
+        </article>
 
-            <label for="solo-lectura">Input readonly</label>
-            <input
-              type="text"
-              id="solo-lectura"
-              name="solo-lectura"
-              value="No se puede editar"
-              readonly
-            />
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;input type="time"&gt;</h3>
+            <div class="ejemplo-formulario">
+              <label for="time-demo">Hora</label>
+              <input type="time" id="time-demo" />
+            </div>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;label for="time-demo"&gt;Hora&lt;/label&gt;
+&lt;input type="time" id="time-demo" /&gt;</code></pre>
+          </div>
+        </article>
 
-            <input type="hidden" name="oculto" value="valor-oculto" />
-            <!--
-              <input type="hidden">
-              Que es: un campo no visible.
-              Como funciona: guarda un valor que no se muestra.
-              Para que sirve: enviar datos ocultos.
-            -->
-          </fieldset>
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;input type="color"&gt;</h3>
+            <div class="ejemplo-formulario">
+              <label for="color-demo">Color</label>
+              <input type="color" id="color-demo" />
+            </div>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;label for="color-demo"&gt;Color&lt;/label&gt;
+&lt;input type="color" id="color-demo" /&gt;</code></pre>
+          </div>
+        </article>
 
-          <fieldset>
-            <legend>Opciones</legend>
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;input type="range"&gt;</h3>
+            <div class="ejemplo-formulario">
+              <label for="range-demo">Rango</label>
+              <input type="range" id="range-demo" min="0" max="10" />
+            </div>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;label for="range-demo"&gt;Rango&lt;/label&gt;
+&lt;input type="range" id="range-demo" min="0" max="10" /&gt;</code></pre>
+          </div>
+        </article>
 
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;input type="file"&gt;</h3>
+            <div class="ejemplo-formulario">
+              <label for="file-demo">Archivo</label>
+              <input type="file" id="file-demo" />
+            </div>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;label for="file-demo"&gt;Archivo&lt;/label&gt;
+&lt;input type="file" id="file-demo" /&gt;</code></pre>
+          </div>
+        </article>
+
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;input readonly&gt;</h3>
+            <div class="ejemplo-formulario">
+              <label for="readonly-demo">Input readonly</label>
+              <input
+                type="text"
+                id="readonly-demo"
+                value="No se puede editar"
+                readonly
+              />
+            </div>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;label for="readonly-demo"&gt;Input readonly&lt;/label&gt;
+&lt;input type="text" id="readonly-demo" value="No se puede editar" readonly /&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>input[readonly] {
+  background-color: #f3f4f6;
+}</code></pre>
+          </div>
+        </article>
+
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;input type="hidden"&gt;</h3>
+            <div class="ejemplo-oculto">
+              Este campo no se ve en la pagina, pero queda dentro del HTML para
+              enviar datos ocultos.
+            </div>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;input type="hidden" name="oculto" value="valor-oculto" /&gt;</code></pre>
+          </div>
+        </article>
+
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;input type="checkbox"&gt;</h3>
             <label class="opcion-linea">
-              <input type="checkbox" name="html" checked />
+              <input type="checkbox" checked />
               Aprender HTML
             </label>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;label class="opcion-linea"&gt;
+  &lt;input type="checkbox" checked /&gt;
+  Aprender HTML
+&lt;/label&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>.opcion-linea {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
-            <label class="opcion-linea">
-              <input type="checkbox" name="css" />
-              Aprender CSS
-            </label>
+input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+}</code></pre>
+          </div>
+        </article>
 
-            <p>Turno:</p>
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;input type="radio"&gt;</h3>
             <label class="opcion-linea">
-              <input type="radio" name="turno" value="manana" />
-              Manana
+              <input type="radio" name="turno-demo" checked />
+              Turno tarde
             </label>
-            <label class="opcion-linea">
-              <input type="radio" name="turno" value="tarde" checked />
-              Tarde
-            </label>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;label class="opcion-linea"&gt;
+  &lt;input type="radio" name="turno-demo" checked /&gt;
+  Turno tarde
+&lt;/label&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>input[type="radio"] {
+  width: auto;
+  margin: 0;
+}</code></pre>
+          </div>
+        </article>
 
-            <label for="curso">Curso</label>
-            <select id="curso" name="curso">
-              <optgroup label="Basico">
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;select&gt;, &lt;optgroup&gt; y &lt;option&gt;</h3>
+            <div class="ejemplo-formulario">
+              <label for="curso-demo">Curso</label>
+              <select id="curso-demo" name="curso-demo">
+                <optgroup label="Basico">
+                  <option value="html">HTML</option>
+                  <option value="css" selected>CSS</option>
+                </optgroup>
+                <optgroup label="Avanzado">
+                  <option value="js">JavaScript</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;label for="curso-demo"&gt;Curso&lt;/label&gt;
+&lt;select id="curso-demo" name="curso-demo"&gt;
+  &lt;optgroup label="Basico"&gt;
+    &lt;option value="html"&gt;HTML&lt;/option&gt;
+    &lt;option value="css" selected&gt;CSS&lt;/option&gt;
+  &lt;/optgroup&gt;
+  &lt;optgroup label="Avanzado"&gt;
+    &lt;option value="js"&gt;JavaScript&lt;/option&gt;
+  &lt;/optgroup&gt;
+&lt;/select&gt;</code></pre>
+          </div>
+        </article>
+
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;select multiple&gt;</h3>
+            <div class="ejemplo-formulario">
+              <label for="lenguajes-demo">Lenguajes</label>
+              <select id="lenguajes-demo" multiple>
                 <option value="html">HTML</option>
-                <option value="css" selected>CSS</option>
-              </optgroup>
-              <optgroup label="Avanzado">
+                <option value="css">CSS</option>
                 <option value="js">JavaScript</option>
-              </optgroup>
-            </select>
+              </select>
+            </div>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;label for="lenguajes-demo"&gt;Lenguajes&lt;/label&gt;
+&lt;select id="lenguajes-demo" multiple&gt;
+  &lt;option value="html"&gt;HTML&lt;/option&gt;
+  &lt;option value="css"&gt;CSS&lt;/option&gt;
+  &lt;option value="js"&gt;JavaScript&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+          </div>
+        </article>
 
-            <label for="lenguajes">Select multiple</label>
-            <select id="lenguajes" name="lenguajes" multiple>
-              <option value="html">HTML</option>
-              <option value="css">CSS</option>
-              <option value="js">JavaScript</option>
-            </select>
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;textarea&gt;</h3>
+            <div class="ejemplo-formulario">
+              <label for="textarea-demo">Mensaje</label>
+              <textarea id="textarea-demo" rows="4" cols="30">Escribe aqui</textarea>
+            </div>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;label for="textarea-demo"&gt;Mensaje&lt;/label&gt;
+&lt;textarea id="textarea-demo" rows="4" cols="30"&gt;Escribe aqui&lt;/textarea&gt;</code></pre>
+          </div>
+        </article>
 
-            <label for="mensaje">Mensaje</label>
-            <textarea
-              id="mensaje"
-              name="mensaje"
-              rows="4"
-              cols="30"
-            >Escribe aqui</textarea>
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;input list&gt; y &lt;datalist&gt;</h3>
+            <div class="ejemplo-formulario">
+              <label for="navegador-demo">Navegador</label>
+              <input list="navegadores-demo" id="navegador-demo" />
+              <datalist id="navegadores-demo">
+                <option value="Chrome"></option>
+                <option value="Firefox"></option>
+                <option value="Edge"></option>
+              </datalist>
+            </div>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;label for="navegador-demo"&gt;Navegador&lt;/label&gt;
+&lt;input list="navegadores-demo" id="navegador-demo" /&gt;
+&lt;datalist id="navegadores-demo"&gt;
+  &lt;option value="Chrome"&gt;&lt;/option&gt;
+  &lt;option value="Firefox"&gt;&lt;/option&gt;
+  &lt;option value="Edge"&gt;&lt;/option&gt;
+&lt;/datalist&gt;</code></pre>
+          </div>
+        </article>
 
-            <label for="navegador">Navegador</label>
-            <input list="navegadores" id="navegador" name="navegador" />
-            <datalist id="navegadores">
-              <option value="Chrome"></option>
-              <option value="Firefox"></option>
-              <option value="Edge"></option>
-            </datalist>
-
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;output&gt;</h3>
             <p>Resultado: <output>10</output></p>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;p&gt;Resultado: &lt;output&gt;10&lt;/output&gt;&lt;/p&gt;</code></pre>
+          </div>
+        </article>
 
-            <label for="avance">Progreso</label>
-            <progress id="avance" value="60" max="100">60%</progress>
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;progress&gt;</h3>
+            <label for="progress-demo">Progreso</label>
+            <progress id="progress-demo" value="60" max="100">60%</progress>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;label for="progress-demo"&gt;Progreso&lt;/label&gt;
+&lt;progress id="progress-demo" value="60" max="100"&gt;60%&lt;/progress&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>progress,
+meter {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  margin-top: 6px;
+}</code></pre>
+          </div>
+        </article>
 
-            <label for="nivel">Nivel</label>
-            <meter id="nivel" value="7" min="0" max="10">7 de 10</meter>
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;meter&gt;</h3>
+            <label for="meter-demo">Nivel</label>
+            <meter id="meter-demo" value="7" min="0" max="10">7 de 10</meter>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;label for="meter-demo"&gt;Nivel&lt;/label&gt;
+&lt;meter id="meter-demo" value="7" min="0" max="10"&gt;7 de 10&lt;/meter&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>progress,
+meter {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  margin-top: 6px;
+}</code></pre>
+          </div>
+        </article>
 
+        <article class="ejemplo-individual">
+          <div class="ejemplo-vista">
+            <h3>&lt;button&gt;</h3>
             <div class="grupo-botones">
               <button type="submit">Enviar</button>
               <button type="reset">Limpiar</button>
               <button type="button">Boton normal</button>
             </div>
-          </fieldset>
-        </form>
+          </div>
+          <div class="codigo-lateral">
+            <h4>HTML</h4>
+            <pre><code>&lt;div class="grupo-botones"&gt;
+  &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+  &lt;button type="reset"&gt;Limpiar&lt;/button&gt;
+  &lt;button type="button"&gt;Boton normal&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+            <h4>CSS</h4>
+            <pre><code>.grupo-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.grupo-botones button {
+  width: auto;
+  background-color: #dbeafe;
+  cursor: pointer;
+}
+
+.grupo-botones button:hover {
+  background-color: #bfdbfe;
+  transform: translateY(-2px);
+}</code></pre>
+          </div>
+        </article>
+
+        <div class="resumen-seccion">
+          <h3>Codigo completo de formularios</h3>
+          <div class="codigo-comparado">
+            <div class="codigo-caja">
+              <h3>HTML completo</h3>
+              <pre><code>&lt;form action="#" method="post"&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Campos de entrada&lt;/legend&gt;
+    &lt;label for="texto-demo"&gt;Nombre&lt;/label&gt;
+    &lt;input type="text" id="texto-demo" placeholder="Escriba su nombre" required /&gt;
+    &lt;label for="password-demo"&gt;Contrasena&lt;/label&gt;
+    &lt;input type="password" id="password-demo" placeholder="Escribe tu contrasena" /&gt;
+    &lt;label for="email-demo"&gt;Correo&lt;/label&gt;
+    &lt;input type="email" id="email-demo" placeholder="correo@ejemplo.com" required /&gt;
+    &lt;label for="search-demo"&gt;Busqueda&lt;/label&gt;
+    &lt;input type="search" id="search-demo" placeholder="Buscar..." /&gt;
+    &lt;label for="tel-demo"&gt;Telefono&lt;/label&gt;
+    &lt;input type="tel" id="tel-demo" placeholder="11 2345 6789" /&gt;
+    &lt;label for="url-demo"&gt;Sitio web&lt;/label&gt;
+    &lt;input type="url" id="url-demo" placeholder="https://ejemplo.com" /&gt;
+    &lt;label for="number-demo"&gt;Numero&lt;/label&gt;
+    &lt;input type="number" id="number-demo" min="1" max="100" /&gt;
+    &lt;label for="date-demo"&gt;Fecha&lt;/label&gt;
+    &lt;input type="date" id="date-demo" /&gt;
+    &lt;label for="time-demo"&gt;Hora&lt;/label&gt;
+    &lt;input type="time" id="time-demo" /&gt;
+    &lt;label for="color-demo"&gt;Color&lt;/label&gt;
+    &lt;input type="color" id="color-demo" /&gt;
+    &lt;label for="range-demo"&gt;Rango&lt;/label&gt;
+    &lt;input type="range" id="range-demo" min="0" max="10" /&gt;
+    &lt;label for="file-demo"&gt;Archivo&lt;/label&gt;
+    &lt;input type="file" id="file-demo" /&gt;
+    &lt;label for="readonly-demo"&gt;Input readonly&lt;/label&gt;
+    &lt;input type="text" id="readonly-demo" value="No se puede editar" readonly /&gt;
+    &lt;input type="hidden" name="oculto" value="valor-oculto" /&gt;
+  &lt;/fieldset&gt;
+
+  &lt;fieldset&gt;
+    &lt;legend&gt;Opciones&lt;/legend&gt;
+    &lt;label class="opcion-linea"&gt;&lt;input type="checkbox" checked /&gt; Aprender HTML&lt;/label&gt;
+    &lt;label class="opcion-linea"&gt;&lt;input type="radio" name="turno-demo" checked /&gt; Turno tarde&lt;/label&gt;
+    &lt;label for="curso-demo"&gt;Curso&lt;/label&gt;
+    &lt;select id="curso-demo" name="curso-demo"&gt;
+      &lt;optgroup label="Basico"&gt;
+        &lt;option value="html"&gt;HTML&lt;/option&gt;
+        &lt;option value="css" selected&gt;CSS&lt;/option&gt;
+      &lt;/optgroup&gt;
+      &lt;optgroup label="Avanzado"&gt;
+        &lt;option value="js"&gt;JavaScript&lt;/option&gt;
+      &lt;/optgroup&gt;
+    &lt;/select&gt;
+    &lt;label for="lenguajes-demo"&gt;Lenguajes&lt;/label&gt;
+    &lt;select id="lenguajes-demo" multiple&gt;
+      &lt;option value="html"&gt;HTML&lt;/option&gt;
+      &lt;option value="css"&gt;CSS&lt;/option&gt;
+      &lt;option value="js"&gt;JavaScript&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;label for="textarea-demo"&gt;Mensaje&lt;/label&gt;
+    &lt;textarea id="textarea-demo" rows="4" cols="30"&gt;Escribe aqui&lt;/textarea&gt;
+    &lt;label for="navegador-demo"&gt;Navegador&lt;/label&gt;
+    &lt;input list="navegadores-demo" id="navegador-demo" /&gt;
+    &lt;datalist id="navegadores-demo"&gt;
+      &lt;option value="Chrome"&gt;&lt;/option&gt;
+      &lt;option value="Firefox"&gt;&lt;/option&gt;
+      &lt;option value="Edge"&gt;&lt;/option&gt;
+    &lt;/datalist&gt;
+    &lt;p&gt;Resultado: &lt;output&gt;10&lt;/output&gt;&lt;/p&gt;
+    &lt;label for="progress-demo"&gt;Progreso&lt;/label&gt;
+    &lt;progress id="progress-demo" value="60" max="100"&gt;60%&lt;/progress&gt;
+    &lt;label for="meter-demo"&gt;Nivel&lt;/label&gt;
+    &lt;meter id="meter-demo" value="7" min="0" max="10"&gt;7 de 10&lt;/meter&gt;
+    &lt;div class="grupo-botones"&gt;
+      &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+      &lt;button type="reset"&gt;Limpiar&lt;/button&gt;
+      &lt;button type="button"&gt;Boton normal&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+            </div>
+            <div class="codigo-caja">
+              <h3>CSS aplicado</h3>
+              <pre><code>form {
+  display: grid;
+  gap: 14px;
+}
+
+fieldset {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+legend {
+  padding-inline: 6px;
+  font-weight: bold;
+}
+
+label {
+  display: block;
+  margin-top: 8px;
+}
+
+.opcion-linea {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+input,
+select,
+textarea,
+button {
+  width: 100%;
+  max-width: 460px;
+  padding: 8px;
+  border: 1px solid #94a3b8;
+  border-radius: 6px;
+  margin-top: 4px;
+  font: inherit;
+}
+
+input[required] {
+  border-color: #2563eb;
+}
+
+input[readonly] {
+  background-color: #f3f4f6;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  width: auto;
+  margin: 0;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #93c5fd;
+  border-color: #2563eb;
+}
+
+progress,
+meter {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  margin-top: 6px;
+}
+
+.grupo-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.grupo-botones button:hover {
+  background-color: #bfdbfe;
+  transform: translateY(-2px);
+}</code></pre>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="bloque" id="interactivas">
@@ -652,6 +1653,7 @@ body {
             Que son: contenido desplegable.
             Como funcionan: summary es el titulo y details abre o cierra el contenido.
             Para que sirven: preguntas frecuentes o explicaciones ocultas.
+            Ejemplo real: sirve para una seccion FAQ donde el cliente toca una pregunta y ve la respuesta.
           -->
           <summary>Haz clic para ver una explicacion</summary>
           <p>Este texto aparece cuando se abre el details.</p>
@@ -663,6 +1665,7 @@ body {
             Que es: una ventana de dialogo.
             Como funciona: puede abrirse con el atributo open o con JavaScript.
             Para que sirve: mostrar mensajes o cuadros modales.
+            Ejemplo real: podrias usarlo para "Compra realizada" o "Confirma si quieres borrar".
           -->
           <p>Este es un dialog abierto como ejemplo.</p>
         </dialog>
@@ -675,6 +1678,7 @@ body {
           Que son: etiquetas para anotaciones pequeñas sobre texto.
           Como funcionan: ruby envuelve el texto, rt agrega la anotacion y rp sirve como respaldo.
           Para que sirven: pronunciacion o aclaraciones breves.
+          Ejemplo real: se usa mucho para mostrar como se pronuncia una palabra o para textos educativos.
         -->
 
         <p>Ejemplo de bdi: usuario <bdi>ABC-123</bdi></p>
@@ -684,6 +1688,7 @@ body {
           Que son: etiquetas relacionadas con la direccion del texto.
           Como funcionan: bdi aisla direccion y bdo fuerza una direccion.
           Para que sirven: textos multilenguaje o especiales.
+          Ejemplo real: sirven si mezclas nombres, codigos o idiomas que se escriben en otra direccion.
         -->
 
         <p>Abajo hay un template de ejemplo que no se ve en pantalla.</p>
@@ -693,12 +1698,53 @@ body {
             Que es: una plantilla de HTML no visible.
             Como funciona: el navegador la guarda pero no la muestra.
             Para que sirve: reutilizar contenido despues con JavaScript.
+            Ejemplo real: sirve para clonar tarjetas de productos o comentarios sin escribirlas muchas veces.
           -->
           <article>
             <h3>Plantilla oculta</h3>
             <p>Este contenido solo se veria si se copia con JavaScript.</p>
           </article>
         </template>
+
+        <p class="nota-ejemplo">
+          Este ejemplo muestra como HTML activa elementos interactivos y como
+          CSS cambia su aspecto segun el estado.
+        </p>
+
+        <div class="codigo-comparado">
+          <div class="codigo-caja">
+            <h3>HTML interactivo</h3>
+            <pre><code>&lt;details&gt;
+  &lt;summary&gt;Haz clic para ver una explicacion&lt;/summary&gt;
+  &lt;p&gt;Este texto aparece cuando se abre.&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;dialog open&gt;
+  &lt;p&gt;Este es un dialog abierto como ejemplo.&lt;/p&gt;
+&lt;/dialog&gt;</code></pre>
+          </div>
+          <div class="codigo-caja">
+            <h3>CSS interactivo</h3>
+            <pre><code>details {
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+}
+
+details[open] {
+  background-color: #f0fdf4;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+dialog {
+  border: 1px solid #cbd5e1;
+}</code></pre>
+          </div>
+        </div>
       </section>
 
       <section class="bloque" id="css-demo">
@@ -738,6 +1784,153 @@ body {
           muy largo para mostrar overflow. Este bloque tiene texto muy largo
           para mostrar overflow.
         </div>
+
+        <p class="nota-ejemplo">
+          En este bloque ya puedes ver selectores de clases, flex, grid,
+          position y overflow trabajando juntos.
+        </p>
+
+        <div class="codigo-comparado">
+          <div class="codigo-caja">
+            <h3>HTML de los ejemplos CSS</h3>
+            <pre><code>&lt;div class="badge-contenedor"&gt;
+  &lt;span class="badge"&gt;HTML&lt;/span&gt;
+  &lt;span class="badge"&gt;CSS&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div class="flex-demo"&gt;...&lt;/div&gt;
+&lt;div class="grid-demo"&gt;...&lt;/div&gt;
+
+&lt;div class="posicion-padre"&gt;
+  Caja con position relative
+  &lt;span class="posicion-hijo"&gt;Absoluta&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div class="desborde"&gt;Texto muy largo...&lt;/div&gt;</code></pre>
+          </div>
+          <div class="codigo-caja">
+            <h3>CSS de los ejemplos CSS</h3>
+            <pre><code>.badge {
+  display: inline-block;
+  border-radius: 999px;
+}
+
+.flex-demo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.grid-demo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
+.posicion-padre {
+  position: relative;
+}
+
+.posicion-hijo {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.desborde {
+  max-height: 80px;
+  overflow: auto;
+}</code></pre>
+          </div>
+        </div>
+
+        <div class="demo-hover">
+          <h3>Hover y movimiento</h3>
+          <p>
+            Pasa el cursor por estas opciones para ver como <code>:hover</code>,
+            <code>transition</code> y <code>transform</code> agregan
+            movimiento.
+          </p>
+
+          <nav class="menu-animado" aria-label="Opciones animadas">
+            <a href="#estructura">
+              Ver estructura
+              <span class="flecha-demo" aria-hidden="true">&gt;</span>
+            </a>
+            <a href="#formularios">
+              Ir a formularios
+              <span class="flecha-demo" aria-hidden="true">&gt;</span>
+            </a>
+            <a href="#interactivas">
+              Abrir interactivas
+              <span class="flecha-demo" aria-hidden="true">&gt;</span>
+            </a>
+          </nav>
+
+          <div class="tarjetas-hover">
+            <article class="tarjeta-hover">
+              <strong>HTML basico</strong>
+              Practica etiquetas y estructura semantica.
+              <span class="tarjeta-hover__flecha">Seguir &gt;</span>
+            </article>
+            <article class="tarjeta-hover">
+              <strong>CSS visual</strong>
+              Repasa color, espaciado y selectores utiles.
+              <span class="tarjeta-hover__flecha">Seguir &gt;</span>
+            </article>
+            <article class="tarjeta-hover">
+              <strong>Estados hover</strong>
+              Mira como cambia una opcion cuando el cursor pasa encima.
+              <span class="tarjeta-hover__flecha">Seguir &gt;</span>
+            </article>
+          </div>
+        </div>
+
+        <p class="nota-ejemplo">
+          El movimiento de arriba se logra solo con CSS. La clave esta en usar
+          <code>transition</code> para suavizar y <code>transform</code> para
+          desplazar o elevar.
+        </p>
+
+        <div class="codigo-comparado">
+          <div class="codigo-caja">
+            <h3>HTML con hover</h3>
+            <pre><code>&lt;nav class="menu-animado"&gt;
+  &lt;a href="#estructura"&gt;
+    Ver estructura
+    &lt;span class="flecha-demo"&gt;&amp;gt;&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/nav&gt;
+
+&lt;article class="tarjeta-hover"&gt;
+  &lt;strong&gt;HTML basico&lt;/strong&gt;
+  Practica etiquetas.
+  &lt;span class="tarjeta-hover__flecha"&gt;Seguir &amp;gt;&lt;/span&gt;
+&lt;/article&gt;</code></pre>
+          </div>
+          <div class="codigo-caja">
+            <h3>CSS con hover y movimiento</h3>
+            <pre><code>.menu-animado a {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.menu-animado a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px rgba(37, 99, 235, 0.16);
+}
+
+.menu-animado a:hover .flecha-demo {
+  transform: translateX(4px);
+}
+
+.tarjeta-hover:hover {
+  transform: translateY(-6px);
+}
+
+.tarjeta-hover:hover .tarjeta-hover__flecha {
+  transform: translateX(6px);
+}</code></pre>
+          </div>
+        </div>
       </section>
     </main>
 
@@ -747,8 +1940,64 @@ body {
         Que es: el pie de pagina.
         Como funciona: cierra el documento con informacion final.
         Para que sirve: terminar la pagina de forma ordenada.
+        Ejemplo real: ahi podrias poner derechos reservados, redes sociales y medios de contacto.
       -->
       <p>Fin de la guia basica de HTML y CSS.</p>
     </footer>
+    <script>
+      const titulosEjemplo = document.querySelectorAll(".ejemplo-vista > h3");
+
+      function alternarCodigo(titulo) {
+        const tarjeta = titulo.closest(".ejemplo-individual");
+        const seccion = titulo.closest("section");
+
+        if (!tarjeta) {
+          return;
+        }
+
+        if (seccion) {
+          const ejemplosAbiertos = seccion.querySelectorAll(
+            ".ejemplo-individual.abierto",
+          );
+
+          ejemplosAbiertos.forEach((ejemploAbierto) => {
+            if (ejemploAbierto === tarjeta) {
+              return;
+            }
+
+            ejemploAbierto.classList.remove("abierto");
+
+            const tituloAbierto = ejemploAbierto.querySelector(".ejemplo-vista > h3");
+
+            if (tituloAbierto) {
+              tituloAbierto.setAttribute("aria-expanded", "false");
+            }
+          });
+        }
+
+        const estaAbierto = tarjeta.classList.toggle("abierto");
+        titulo.setAttribute("aria-expanded", String(estaAbierto));
+      }
+
+      titulosEjemplo.forEach((titulo) => {
+        titulo.tabIndex = 0;
+        titulo.setAttribute("role", "button");
+        titulo.setAttribute("aria-expanded", "false");
+
+        titulo.addEventListener("click", () => {
+          alternarCodigo(titulo);
+        });
+
+        titulo.addEventListener("keydown", (evento) => {
+          if (evento.key === "Enter" || evento.key === " ") {
+            evento.preventDefault();
+            alternarCodigo(titulo);
+          }
+        });
+      });
+    </script>
   </body>
 </html>
+
+
+

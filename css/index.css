@@ -3,6 +3,7 @@
   Que es: un selector especial para la raiz del documento.
   Como funciona: aqui se pueden guardar variables CSS.
   Para que sirve: reutilizar colores, espacios y valores en toda la pagina.
+  Ejemplo real: sirve para guardar el color principal de una tienda de ropa y usarlo en botones, titulos y bordes sin repetirlo.
 */
 :root {
   --color-fondo: #f4f4f4;
@@ -22,6 +23,7 @@
   Que es: el selector universal.
   Como funciona: selecciona todos los elementos.
   Para que sirve: aplicar una regla general a toda la pagina.
+  Ejemplo real: lo usarias para que todas las cajas de una web midan mejor y no se rompa el diseno.
 */
 * {
   box-sizing: border-box;
@@ -32,6 +34,7 @@
   Que es: selector de la etiqueta html.
   Como funciona: aplica reglas a todo el documento.
   Para que sirve: por ejemplo mejorar el desplazamiento interno.
+  Ejemplo real: sirve para que al tocar un link del menu, la pagina baje suave hasta "Contacto" o "Productos".
 */
 html {
   scroll-behavior: smooth;
@@ -42,6 +45,7 @@ html {
   Que es: selector de la zona visible del documento.
   Como funciona: define la base general del diseno.
   Para que sirve: aplicar tipografia, color, fondo y separaciones globales.
+  Ejemplo real: aca podrias poner la letra, el fondo y el color base de toda la pagina de un negocio.
 */
 body {
   margin: 0;
@@ -57,6 +61,7 @@ body {
   Que es: un pseudo-elemento.
   Como funciona: cambia el estilo del texto seleccionado.
   Para que sirve: personalizar la seleccion del usuario.
+  Ejemplo real: cuando alguien selecciona una descripcion o un precio con el mouse, cambia el color de fondo de esa seleccion.
 */
 ::selection {
   background-color: #c7d2fe;
@@ -68,6 +73,7 @@ body {
   Que es: selector agrupado de encabezados.
   Como funciona: aplica reglas a varios tipos de titulos.
   Para que sirve: mantener una apariencia coherente.
+  Ejemplo real: te sirve para que todos los titulos de una pagina de cafeteria tengan el mismo color y estilo.
 */
 h1,
 h2,
@@ -85,6 +91,7 @@ h6 {
   Que es: pseudo-elemento after.
   Como funciona: agrega contenido despues del elemento sin escribirlo en HTML.
   Para que sirve: decoracion simple o texto visual de apoyo.
+  Ejemplo real: podrias agregar automaticamente una palabra como "nuevo" o una rayita decorativa despues de cada subtitulo.
 */
 h2::after {
   content: " - ejemplo";
@@ -97,6 +104,7 @@ h2::after {
   Que es: selector agrupado para textos comunes.
   Como funciona: da un margen similar a varios elementos de texto.
   Para que sirve: mejorar la lectura y la consistencia.
+  Ejemplo real: sirve para que parrafos, items y descripciones tengan siempre el mismo aire entre lineas y bloques.
 */
 p,
 li,
@@ -109,6 +117,7 @@ dd {
   Que es: selector de enlaces.
   Como funciona: cambia color y decoracion del link.
   Para que sirve: que el usuario identifique enlaces.
+  Ejemplo real: te ayuda a que se note que "Instagram", "YouTube" o "Ver productos" son links que se pueden tocar.
 */
 a {
   color: #0044cc;
@@ -120,6 +129,7 @@ a {
   Que es: pseudoclases.
   Como funciona: actuan cuando el mouse pasa por encima o cuando el enlace recibe foco.
   Para que sirve: dar respuesta visual al usuario.
+  Ejemplo real: cuando alguien pasa el mouse sobre "Comprar ahora", el cambio de color le confirma que puede hacer clic.
 */
 a:hover,
 a:focus {
@@ -132,6 +142,7 @@ a:focus {
   Que es: selector por clase.
   Como funciona: se aplica a cualquier elemento con class="bloque".
   Para que sirve: crear cajas reutilizables.
+  Ejemplo real: podrias usar esta clase en varias secciones como "Ofertas", "Nosotros" y "Contacto" para que todas se vean parecidas.
 */
 .bloque {
   background-color: var(--color-superficie);
@@ -147,6 +158,7 @@ a:focus {
   Que es: una clase extra para el encabezado principal.
   Como funciona: cambia el fondo de esa zona.
   Para que sirve: diferenciar visualmente la presentacion.
+  Ejemplo real: sirve para que la parte superior donde va el nombre del local tenga un fondo distinto al resto de la pagina.
 */
 .introduccion {
   background: linear-gradient(180deg, #ffffff 0%, #eef4ff 100%);
@@ -157,6 +169,7 @@ a:focus {
   Que es: selector por id.
   Como funciona: apunta a un solo elemento con un id unico.
   Para que sirve: aplicar estilo a un elemento puntual.
+  Ejemplo real: podrias destacar solo el parrafo donde dice "Promo del dia" sin afectar a los demas.
 */
 #selector-id-demo {
   border-left: 4px solid var(--color-secundario);
@@ -169,6 +182,7 @@ a:focus {
   Que es: selector por clase.
   Como funciona: se reutiliza en todos los elementos con esa clase.
   Para que sirve: mostrar una regla comun reutilizable.
+  Ejemplo real: sirve para pintar igual varias etiquetas como "nuevo", "oferta" o "destacado".
 */
 .selector-clase-demo {
   color: #7c3aed;
@@ -180,6 +194,7 @@ a:focus {
   Que es: ejemplo de display flex.
   Como funciona: organiza elementos en fila con separacion.
   Para que sirve: construir menus y grupos de enlaces.
+  Ejemplo real: te sirve para acomodar links como Inicio, Productos y Contacto uno al lado del otro.
 */
 .menu-principal {
   display: flex;
@@ -192,12 +207,33 @@ a:focus {
   Que es: selector descendiente.
   Como funciona: selecciona enlaces dentro del menu principal.
   Para que sirve: dar estilo especifico a esa zona.
+  Ejemplo real: permite que los links del menu tengan formato de boton sin cambiar otros links de la pagina.
 */
 .menu-principal a {
   padding: 6px 10px;
   border: 1px solid #dbe4f0;
   border-radius: 999px;
   background-color: #f8fbff;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+/*
+  .menu-principal a:hover y .menu-principal a:focus
+  Que es: un ejemplo de interaccion visual dentro del menu.
+  Como funciona: mueve el enlace y refuerza su fondo cuando el cursor pasa por arriba o recibe foco.
+  Para que sirve: dejar claro que esa opcion se puede tocar o hacer clic.
+  Ejemplo real: en un menu de cursos o categorias ayuda a destacar la opcion activa.
+*/
+.menu-principal a:hover,
+.menu-principal a:focus {
+  transform: translateY(-2px);
+  background-color: #ffffff;
+  border-color: #93c5fd;
+  box-shadow: 0 8px 18px rgba(31, 60, 136, 0.12);
 }
 
 /*
@@ -205,6 +241,7 @@ a:focus {
   Que es: selector agrupado de clases.
   Como funciona: comparte reglas entre varios elementos.
   Para que sirve: evitar repetir CSS.
+  Ejemplo real: si una tarjeta de producto y una caja informativa deben verse parecido, las estilizas juntas.
 */
 .caja-interna,
 .tarjeta {
@@ -219,6 +256,7 @@ a:focus {
   Que es: selector de hijo directo.
   Como funciona: solo afecta a h2 que sean hijos directos de section.
   Para que sirve: mostrar otro tipo de selector combinador.
+  Ejemplo real: sirve si queres tocar solo los subtitulos principales de cada seccion y no los que estan mas adentro.
 */
 section > h2 {
   letter-spacing: 0.02em;
@@ -229,6 +267,7 @@ section > h2 {
   Que es: una clase para un fragmento de texto.
   Como funciona: cambia fondo, color y espacio interno.
   Para que sirve: destacar una palabra o frase.
+  Ejemplo real: podrias resaltar "20% OFF" o "Envio gratis" dentro de una descripcion.
 */
 .resaltado {
   background-color: var(--color-resalte);
@@ -242,6 +281,7 @@ section > h2 {
   Que es: selector de cita larga.
   Como funciona: agrega borde, margen y fondo.
   Para que sirve: separar visualmente una cita.
+  Ejemplo real: sirve para mostrar el comentario de un cliente como "Muy buena atencion y calidad".
 */
 blockquote {
   margin: 12px 0;
@@ -255,6 +295,7 @@ blockquote {
   Que es: pseudo-elementos.
   Como funciona: agregan contenido visual antes y despues del elemento.
   Para que sirve: decoracion o senal visual.
+  Ejemplo real: podrias agregar comillas automaticas a una opinion de cliente sin escribirlas en el HTML.
 */
 blockquote::before {
   content: '"';
@@ -273,6 +314,7 @@ blockquote::after {
   Que es: selector de etiquetas tecnicas.
   Como funciona: usa fuente monoespaciada y fondo suave.
   Para que sirve: diferenciar codigo y salidas del sistema.
+  Ejemplo real: sirve en una guia para mostrar un comando como npm install o una tecla como Ctrl + S.
 */
 pre,
 code,
@@ -287,6 +329,7 @@ samp {
   Que es: selector de texto preformateado.
   Como funciona: conserva espacios y saltos de linea.
   Para que sirve: mostrar codigo tal cual se escribe.
+  Ejemplo real: podrias mostrar un bloque completo de HTML o CSS respetando su formato original.
 */
 pre {
   padding: 12px;
@@ -299,6 +342,7 @@ pre {
   Que es: selector de texto resaltado.
   Como funciona: cambia el fondo del contenido marcado.
   Para que sirve: destacar palabras importantes.
+  Ejemplo real: te sirve para remarcar una parte clave como "no olvidar el cierre de etiquetas".
 */
 mark {
   background-color: #fde68a;
@@ -309,6 +353,7 @@ mark {
   Que es: selector de listas.
   Como funciona: agrega espacio lateral.
   Para que sirve: que las listas sean faciles de leer.
+  Ejemplo real: sirve para que una lista de productos o pasos de compra no quede pegada al borde.
 */
 ul,
 ol,
@@ -321,6 +366,7 @@ dl {
   Que es: pseudoclase nth-child.
   Como funciona: selecciona los elementos impares de una lista.
   Para que sirve: alternar estilos dentro de una serie.
+  Ejemplo real: podrias pintar uno si y uno no en una lista de beneficios para que se lea mejor.
 */
 .mini-lista li:nth-child(odd) {
   color: #0f766e;
@@ -332,6 +378,7 @@ dl {
   Que es: selector de elementos multimedia.
   Como funciona: les da ancho maximo y separacion.
   Para que sirve: evitar desbordes y ordenar los ejemplos.
+  Ejemplo real: hace que una imagen, un video o un mapa no se salgan de la pantalla en celular.
 */
 img,
 picture,
@@ -350,6 +397,7 @@ svg {
   Que es: selector especifico del iframe.
   Como funciona: define altura y borde.
   Para que sirve: que la vista embebida se vea mejor.
+  Ejemplo real: sirve para que un mapa de Google o un video de YouTube incrustado tenga un tamano comodo.
 */
 iframe {
   width: 100%;
@@ -362,6 +410,7 @@ iframe {
   Que es: selector del canvas.
   Como funciona: le da fondo y borde aunque no tenga dibujo real.
   Para que sirve: hacer visible el area del ejemplo.
+  Ejemplo real: te deja ver claramente el espacio donde iria un dibujo, un juego o un grafico interactivo.
 */
 canvas {
   border: 1px solid #cbd5e1;
@@ -373,6 +422,7 @@ canvas {
   Que es: selector agrupado de tabla y celdas.
   Como funciona: aplica bordes y relleno.
   Para que sirve: que la tabla sea legible.
+  Ejemplo real: sirve para una tabla de talles, precios o horarios donde cada dato quede bien separado.
 */
 table,
 th,
@@ -387,6 +437,7 @@ td {
   Que es: selector de la tabla.
   Como funciona: ocupa todo el ancho disponible.
   Para que sirve: aprovechar mejor el espacio.
+  Ejemplo real: hace que una tabla de stock o de turnos use bien el ancho del contenedor.
 */
 table {
   width: 100%;
@@ -398,6 +449,7 @@ table {
   Que es: selector del titulo de la tabla.
   Como funciona: lo coloca arriba por defecto.
   Para que sirve: describir el contenido de la tabla.
+  Ejemplo real: podrias poner arriba "Lista de precios de camperas" para aclarar que muestra esa tabla.
 */
 caption {
   margin-bottom: 8px;
@@ -409,6 +461,7 @@ caption {
   Que es: pseudoclase para filas pares.
   Como funciona: cambia el fondo de una fila si su posicion es par.
   Para que sirve: alternar colores y mejorar la lectura.
+  Ejemplo real: sirve para que en una tabla larga no te pierdas al seguir una fila con la vista.
 */
 tbody tr:nth-child(even) {
   background-color: #f8fafc;
@@ -419,6 +472,7 @@ tbody tr:nth-child(even) {
   Que es: clase para una columna de tabla.
   Como funciona: cambia su fondo.
   Para que sirve: destacar una columna puntual.
+  Ejemplo real: podrias remarcar la columna "Precio final" o "Talle disponible".
 */
 .columna-clara {
   background-color: #eff6ff;
@@ -429,6 +483,7 @@ tbody tr:nth-child(even) {
   Que es: selector del formulario.
   Como funciona: organiza los grupos en columna.
   Para que sirve: ordenar el contenido del formulario.
+  Ejemplo real: ayuda a acomodar prolijamente nombre, mail, mensaje y boton en un formulario de contacto.
 */
 form {
   display: grid;
@@ -440,6 +495,7 @@ form {
   Que es: selectores del grupo de campos y su titulo.
   Como funciona: fieldset crea el borde del grupo y legend nombra el bloque.
   Para que sirve: mejorar orden y comprension.
+  Ejemplo real: sirve para separar "Datos personales" de "Metodo de pago" en un formulario mas largo.
 */
 fieldset {
   border: 1px solid #cbd5e1;
@@ -457,6 +513,7 @@ legend {
   Que es: selector del texto asociado a campos.
   Como funciona: se muestra en bloque.
   Para que sirve: que cada input tenga una descripcion clara.
+  Ejemplo real: hace que arriba del campo aparezca algo como "Tu nombre" o "Correo electronico".
 */
 label {
   display: block;
@@ -468,6 +525,7 @@ label {
   Que es: clase para etiquetas con checkbox o radio.
   Como funciona: usa flex para alinear control y texto.
   Para que sirve: mostrar opciones de forma mas comoda.
+  Ejemplo real: sirve para una opcion como "Acepto terminos y condiciones" con el cuadradito y el texto bien alineados.
 */
 .opcion-linea {
   display: flex;
@@ -480,6 +538,7 @@ label {
   Que es: selector agrupado de controles de formulario.
   Como funciona: unifica borde, espacio y ancho.
   Para que sirve: dar una apariencia basica consistente.
+  Ejemplo real: hace que cajas de texto, selectores y botones se vean parte del mismo formulario.
 */
 input,
 select,
@@ -499,6 +558,7 @@ button {
   Que es: selector por atributo.
   Como funciona: selecciona inputs que tengan el atributo required.
   Para que sirve: dar una pista visual a campos obligatorios.
+  Ejemplo real: podrias remarcar nombre y mail para que el usuario vea rapido que son obligatorios.
 */
 input[required] {
   border-color: #2563eb;
@@ -509,6 +569,7 @@ input[required] {
   Que es: selector por atributo.
   Como funciona: selecciona inputs de solo lectura.
   Para que sirve: diferenciarlos de los campos editables.
+  Ejemplo real: sirve si mostras un codigo de cliente o un numero de pedido que no se debe cambiar.
 */
 input[readonly] {
   background-color: #f3f4f6;
@@ -519,6 +580,7 @@ input[readonly] {
   Que es: selector por tipo.
   Como funciona: quita el ancho completo de controles pequenos.
   Para que sirve: evitar que se deformen.
+  Ejemplo real: hace que un checkbox de "Recibir novedades" no se estire como si fuera un input de texto.
 */
 input[type="checkbox"],
 input[type="radio"] {
@@ -531,6 +593,7 @@ input[type="radio"] {
   Que es: pseudoclase focus.
   Como funciona: se activa cuando el elemento recibe foco.
   Para que sirve: resaltar el campo activo.
+  Ejemplo real: cuando alguien entra en el campo "Email", se marca para que sepa donde esta escribiendo.
 */
 input:focus,
 select:focus,
@@ -544,6 +607,7 @@ textarea:focus {
   Que es: selector de medidores.
   Como funciona: les da ancho y separacion.
   Para que sirve: hacerlos mas visibles.
+  Ejemplo real: podrias mostrar progreso de carga o nivel de bateria con un tamano mas claro.
 */
 progress,
 meter {
@@ -558,6 +622,7 @@ meter {
   Que es: ejemplo de flexbox.
   Como funciona: pone los botones uno al lado del otro.
   Para que sirve: ordenar acciones.
+  Ejemplo real: sirve para acomodar botones como "Enviar", "Limpiar" y "Cancelar" en una misma fila.
 */
 .grupo-botones {
   display: flex;
@@ -571,12 +636,16 @@ meter {
   Que es: selector descendiente dentro del grupo.
   Como funciona: permite que los botones ocupen solo lo necesario.
   Para que sirve: evitar que usen todo el ancho.
+  Ejemplo real: hace que cada boton mida como un boton comun y no como una barra enorme.
 */
 .grupo-botones button {
   width: auto;
   background-color: #dbeafe;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 /*
@@ -584,9 +653,12 @@ meter {
   Que es: pseudoclase hover.
   Como funciona: cambia el estilo al pasar el mouse.
   Para que sirve: dar una pista visual de interaccion.
+  Ejemplo real: cuando alguien pasa por arriba de "Enviar", el boton cambia y confirma que se puede tocar.
 */
 .grupo-botones button:hover {
   background-color: #bfdbfe;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.18);
 }
 
 /*
@@ -594,6 +666,7 @@ meter {
   Que es: selector normal y selector por atributo.
   Como funciona: cambia la caja y tambien su aspecto cuando esta abierta.
   Para que sirve: destacar el contenido desplegable.
+  Ejemplo real: sirve en preguntas frecuentes para que la respuesta abierta se note mejor.
 */
 details {
   margin-top: 10px;
@@ -611,6 +684,7 @@ details[open] {
   Que es: selector del titulo desplegable.
   Como funciona: cambia el cursor y el peso del texto.
   Para que sirve: dejar claro que es clickable.
+  Ejemplo real: ayuda a que una pregunta como "Como comprar" parezca claramente un elemento que se puede abrir.
 */
 summary {
   cursor: pointer;
@@ -622,6 +696,7 @@ summary {
   Que es: selector del cuadro de dialogo.
   Como funciona: lo hace visible como caja comun dentro del flujo.
   Para que sirve: que el ejemplo no se vea raro en la pagina.
+  Ejemplo real: podrias usarlo para mostrar un mensaje como "Compra realizada" o "Deseas continuar".
 */
 dialog {
   position: static;
@@ -636,6 +711,7 @@ dialog {
   Que es: ejemplo de inline-block y espaciado.
   Como funciona: muestra pequenas etiquetas una al lado de otra.
   Para que sirve: listar categorias o estados.
+  Ejemplo real: sirve para mostrar etiquetas como "nuevo", "oferta" o "sin stock".
 */
 .badge-contenedor {
   margin-top: 10px;
@@ -649,6 +725,19 @@ dialog {
   border-radius: 999px;
   background-color: #e0f2fe;
   color: #0369a1;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/*
+  .badge:hover
+  Que es: una pseudoclase para una etiqueta interactiva.
+  Como funciona: agranda un poco la chapa cuando el cursor pasa por arriba.
+  Para que sirve: mostrar un ejemplo simple de microinteraccion.
+  Ejemplo real: podrias usarlo en filtros o categorias de una tienda.
+*/
+.badge:hover {
+  transform: translateY(-2px);
+  background-color: #bae6fd;
 }
 
 /*
@@ -656,6 +745,7 @@ dialog {
   Que es: ejemplo de display flex.
   Como funciona: organiza cajas en fila flexible.
   Para que sirve: menus, tarjetas o grupos de botones.
+  Ejemplo real: te ayuda a poner varias tarjetas de productos una al lado de otra sin que se desordenen.
 */
 .flex-demo {
   display: flex;
@@ -669,6 +759,7 @@ dialog {
   Que es: ejemplo de display grid.
   Como funciona: arma una grilla de columnas automaticas.
   Para que sirve: tarjetas, galerias o paneles.
+  Ejemplo real: sirve para una galeria de fotos de ropa o una grilla de productos con precios.
 */
 .grid-demo {
   display: grid;
@@ -682,12 +773,30 @@ dialog {
   Que es: caja simple reutilizable.
   Como funciona: aplica borde, relleno y color de fondo.
   Para que sirve: mostrar items dentro de flex o grid.
+  Ejemplo real: cada tarjeta podria representar una remera, una campera o un accesorio.
 */
 .tarjeta-demo {
   padding: 12px;
   border: 1px solid #d1d5db;
   background-color: #fafafa;
   text-align: center;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/*
+  .tarjeta-demo:hover
+  Que es: una pseudoclase para tarjetas.
+  Como funciona: eleva la tarjeta con sombra y desplazamiento.
+  Para que sirve: mostrar un efecto de hover visible y facil de entender.
+  Ejemplo real: sirve para una tarjeta de producto o una categoria destacada.
+*/
+.tarjeta-demo:hover {
+  transform: translateY(-4px);
+  border-color: #93c5fd;
+  box-shadow: 0 14px 24px rgba(15, 23, 42, 0.1);
 }
 
 /*
@@ -695,6 +804,7 @@ dialog {
   Que es: ejemplo de position relative y absolute.
   Como funciona: el hijo absoluto se acomoda respecto al padre relativo.
   Para que sirve: etiquetas, iconos o carteles dentro de una caja.
+  Ejemplo real: podrias poner una etiqueta "Nuevo" arriba a la derecha de una foto de producto.
 */
 .posicion-padre {
   position: relative;
@@ -719,6 +829,7 @@ dialog {
   Que es: ejemplo de overflow.
   Como funciona: cuando el contenido supera el tamano, aparece scroll.
   Para que sirve: controlar textos o bloques largos.
+  Ejemplo real: sirve si una descripcion es muy larga y queres mantener la caja con un alto fijo.
 */
 .desborde {
   max-height: 80px;
@@ -730,10 +841,318 @@ dialog {
 }
 
 /*
+  .nota-guia y .nota-ejemplo
+  Que es: cajas informativas para acompanar los ejemplos.
+  Como funciona: muestran un fondo suave y un borde para separar la explicacion.
+  Para que sirve: avisar que debajo aparece el codigo que genera lo que se ve arriba.
+  Ejemplo real: sirve en una guia educativa donde quieres mostrar "vista real" y "codigo fuente".
+*/
+.nota-guia,
+.nota-ejemplo {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-left: 4px solid #93c5fd;
+  border-radius: 8px;
+  background-color: #eff6ff;
+}
+
+/*
+  .codigo-comparado y .codigo-caja
+  Que es: una grilla de bloques de codigo.
+  Como funciona: pone lado a lado el HTML y el CSS del mismo ejemplo.
+  Para que sirve: comparar rapido la estructura y el estilo correspondiente.
+  Ejemplo real: ideal para una pagina de practica donde quieres ver primero la etiqueta y despues el selector.
+*/
+.codigo-comparado {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.codigo-caja {
+  padding: 12px;
+  border: 1px solid #dbe4f0;
+  border-radius: 12px;
+  background-color: #f8fbff;
+}
+
+.codigo-caja h3 {
+  margin-bottom: 10px;
+}
+
+.codigo-caja pre {
+  margin: 0;
+  border-color: #1e293b;
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+.codigo-caja code {
+  background-color: transparent;
+  color: inherit;
+}
+
+/*
+  .ejemplo-individual
+  Que es: una tarjeta de ejemplo por etiqueta o grupo muy relacionado.
+  Como funciona: arma dos columnas; a la izquierda se ve el resultado y a la derecha el codigo.
+  Para que sirve: aprender de forma visual como se escribe y como impacta en pantalla.
+  Ejemplo real: sirve para mostrar una etiqueta HTML aislada con su CSS correspondiente al costado.
+*/
+.ejemplo-individual {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 18px;
+  align-items: start;
+}
+
+.ejemplo-vista,
+.codigo-lateral {
+  border: 1px solid #dbe4f0;
+  border-radius: 12px;
+}
+
+.ejemplo-vista {
+  padding: 16px;
+  background-color: #ffffff;
+}
+
+.ejemplo-vista > h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding: 10px 12px;
+  border: 1px solid #dbe4f0;
+  border-radius: 10px;
+  background-color: #f8fbff;
+  cursor: pointer;
+}
+
+.ejemplo-vista > h3::after {
+  content: "Ver codigo";
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+.ejemplo-individual.abierto {
+  grid-template-columns: minmax(0, 1fr) minmax(290px, 380px);
+}
+
+.ejemplo-individual.abierto .ejemplo-vista > h3::after {
+  content: "Ocultar";
+}
+
+.ejemplo-vista > h3:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+.ejemplo-vista > :last-child {
+  margin-bottom: 0;
+}
+
+.codigo-lateral {
+  padding: 12px;
+  background-color: #f8fbff;
+  display: none;
+}
+
+.ejemplo-individual.abierto .codigo-lateral {
+  display: block;
+}
+
+.codigo-lateral h3,
+.codigo-lateral h4 {
+  margin-bottom: 8px;
+}
+
+.codigo-lateral pre + h4,
+.codigo-lateral pre + h3 {
+  margin-top: 12px;
+}
+
+.codigo-lateral pre {
+  margin: 0;
+  border-color: #1e293b;
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+.codigo-lateral code {
+  background-color: transparent;
+  color: inherit;
+}
+
+/*
+  .ejemplo-formulario
+  Que es: una caja de apoyo para controles de formularios.
+  Como funciona: ordena campos y etiquetas sin mezclar el codigo del costado.
+  Para que sirve: mostrar cada control individual de forma clara.
+  Ejemplo real: sirve para ver un input, un select o un textarea de manera aislada.
+*/
+.ejemplo-formulario {
+  display: grid;
+  gap: 10px;
+  max-width: 420px;
+}
+
+.ejemplo-inline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.ejemplo-inline input,
+.ejemplo-inline select,
+.ejemplo-inline textarea,
+.ejemplo-inline button {
+  max-width: none;
+}
+
+.ejemplo-nota {
+  margin: 0;
+  padding: 10px 12px;
+  border-left: 4px solid #93c5fd;
+  border-radius: 8px;
+  background-color: #eff6ff;
+}
+
+.ejemplo-oculto {
+  padding: 12px;
+  border: 1px dashed #94a3b8;
+  border-radius: 10px;
+  background-color: #f8fafc;
+}
+
+.resumen-seccion {
+  margin-top: 22px;
+}
+
+.resumen-seccion h3 {
+  margin-bottom: 10px;
+}
+
+/*
+  .demo-hover
+  Que es: un contenedor para ejemplos de movimiento con hover.
+  Como funciona: agrupa opciones de menu y tarjetas con estilos interactivos.
+  Para que sirve: ensenar transition, transform y cambios visuales al pasar el cursor.
+  Ejemplo real: podrias usarlo para accesos rapidos a cursos, categorias o promociones.
+*/
+.demo-hover {
+  margin-top: 18px;
+  padding: 16px;
+  border: 1px solid #dbe4f0;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #ffffff 0%, #eef4ff 100%);
+}
+
+.menu-animado {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/*
+  .menu-animado a
+  Que es: enlaces con movimiento.
+  Como funciona: cada link usa transition para animar color, sombra y posicion.
+  Para que sirve: crear un menu mas vivo sin usar JavaScript.
+  Ejemplo real: sirve para botones como "Ver cursos", "Inscribirme" o "Contactar".
+*/
+.menu-animado a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid #bfdbfe;
+  border-radius: 999px;
+  background-color: #ffffff;
+  color: #1d4ed8;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.menu-animado a:hover,
+.menu-animado a:focus {
+  transform: translateY(-4px);
+  background-color: #eff6ff;
+  border-color: #60a5fa;
+  box-shadow: 0 12px 20px rgba(37, 99, 235, 0.16);
+  text-decoration: none;
+}
+
+.flecha-demo {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+.menu-animado a:hover .flecha-demo,
+.menu-animado a:focus .flecha-demo {
+  transform: translateX(4px);
+}
+
+/*
+  .tarjetas-hover y .tarjeta-hover
+  Que es: un conjunto de tarjetas con animacion.
+  Como funciona: la tarjeta sube y la flecha se mueve cuando el cursor pasa por arriba.
+  Para que sirve: reforzar visualmente una accion o una categoria.
+  Ejemplo real: puede servir para bloques como "HTML basico", "Practicas CSS" o "Proyecto final".
+*/
+.tarjetas-hover {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.tarjeta-hover {
+  padding: 16px;
+  border: 1px solid #dbe4f0;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  box-shadow: 0 8px 16px rgba(15, 23, 42, 0.05);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.tarjeta-hover strong {
+  display: block;
+  color: var(--color-principal);
+}
+
+.tarjeta-hover:hover {
+  transform: translateY(-6px);
+  border-color: #93c5fd;
+  box-shadow: 0 16px 28px rgba(31, 60, 136, 0.14);
+}
+
+.tarjeta-hover__flecha {
+  display: inline-block;
+  margin-top: 8px;
+  transition: transform 0.25s ease;
+}
+
+.tarjeta-hover:hover .tarjeta-hover__flecha {
+  transform: translateX(6px);
+}
+
+/*
   @media
   Que es: una media query.
   Como funciona: aplica reglas solo si se cumple una condicion de pantalla.
   Para que sirve: adaptar el diseno a celulares o pantallas pequenas.
+  Ejemplo real: te permite que el menu pase de horizontal a vertical cuando la pagina se abre en un telefono.
 */
 @media (max-width: 700px) {
   body {
@@ -741,7 +1160,8 @@ dialog {
   }
 
   .menu-principal,
-  .grupo-botones {
+  .grupo-botones,
+  .menu-animado {
     flex-direction: column;
   }
 
@@ -750,5 +1170,11 @@ dialog {
   textarea,
   button {
     max-width: 100%;
+  }
+
+  .codigo-comparado,
+  .tarjetas-hover,
+  .ejemplo-individual {
+    grid-template-columns: 1fr;
   }
 }
