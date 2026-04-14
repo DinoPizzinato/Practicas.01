@@ -88,12 +88,17 @@
         <a href="#formularios">Formularios</a>
         <a href="#interactivas">Interactivas</a>
         <a href="#css-demo">CSS</a>
+        <a href="pages/estructura/estructura-codigo.html">
+          Estructura en codigo HTML/CSS
+        </a>
         <a href="pages/formularios/formulario.html">Formulario aparte</a>
       </nav>
 
       <p class="nota-guia">
-        En varios bloques de esta guia vas a ver el ejemplo ya renderizado y,
-        al hacer clic en el nombre de la etiqueta se abrira su HTML y su CSS.
+        En varios bloques de esta guia vas a ver el ejemplo ya renderizado y, al
+        hacer clic en el nombre de la etiqueta se abrira su HTML y su CSS. Si
+        quieres una referencia aparte, ahora tambien tienes una pagina con
+        estructura en codigo HTML/CSS explicada paso a paso.
       </p>
 
       <div class="codigo-comparado">
@@ -103,6 +108,7 @@
   &lt;a href="#estructura"&gt;Estructura&lt;/a&gt;
   &lt;a href="#textos"&gt;Textos&lt;/a&gt;
   &lt;a href="#css-demo"&gt;CSS&lt;/a&gt;
+  &lt;a href="pages/estructura/estructura-codigo.html"&gt;Estructura en codigo HTML/CSS&lt;/a&gt;
 &lt;/nav&gt;</code></pre>
         </div>
         <div class="codigo-caja">
@@ -146,8 +152,8 @@
       <section class="bloque" id="estructura">
         <h2>Estructura y contenedores</h2>
         <p class="nota-ejemplo">
-          En esta seccion cada ejemplo va por separado. Haz clic en el nombre
-          de la etiqueta para desplegar su HTML y el CSS que la afecta cuando
+          En esta seccion cada ejemplo va por separado. Haz clic en el nombre de
+          la etiqueta para desplegar su HTML y el CSS que la afecta cuando
           corresponde.
         </p>
 
@@ -181,8 +187,7 @@
           <div class="ejemplo-vista">
             <h3>&lt;p id="..."&gt;</h3>
             <p id="selector-id-demo">
-              Este parrafo usa un id para mostrar un ejemplo de selector por
-              id.
+              Este parrafo usa un id para mostrar un ejemplo de selector por id.
             </p>
           </div>
           <div class="codigo-lateral">
@@ -206,8 +211,8 @@
           <div class="ejemplo-vista">
             <h3>&lt;p class="..."&gt;</h3>
             <p class="selector-clase-demo">
-              Este parrafo usa una clase para mostrar un ejemplo de selector
-              por clase.
+              Este parrafo usa una clase para mostrar un ejemplo de selector por
+              clase.
             </p>
           </div>
           <div class="codigo-lateral">
@@ -433,11 +438,16 @@ dd {
 
         <article class="ejemplo-individual">
           <div class="ejemplo-vista">
-            <h3>&lt;strong&gt;, &lt;b&gt;, &lt;em&gt;, &lt;i&gt;, &lt;u&gt;, &lt;mark&gt; y &lt;small&gt;</h3>
+            <h3>
+              &lt;strong&gt;, &lt;b&gt;, &lt;em&gt;, &lt;i&gt;, &lt;u&gt;,
+              &lt;mark&gt; y &lt;small&gt;
+            </h3>
             <p><strong>strong:</strong> indica importancia fuerte.</p>
             <p><b>b:</b> pone texto en negrita visual.</p>
             <p><em>em:</em> indica enfasis en una frase.</p>
-            <p><i>i:</i> suele usarse para una voz alternativa o estilo visual.</p>
+            <p>
+              <i>i:</i> suele usarse para una voz alternativa o estilo visual.
+            </p>
             <p><u>u:</u> subraya texto.</p>
             <p><mark>mark:</mark> resalta una palabra.</p>
             <p><small>small:</small> muestra texto de menor tamano.</p>
@@ -461,7 +471,9 @@ dd {
 
         <article class="ejemplo-individual">
           <div class="ejemplo-vista">
-            <h3>&lt;s&gt;, &lt;del&gt;, &lt;ins&gt;, &lt;sub&gt; y &lt;sup&gt;</h3>
+            <h3>
+              &lt;s&gt;, &lt;del&gt;, &lt;ins&gt;, &lt;sub&gt; y &lt;sup&gt;
+            </h3>
             <p><s>Texto no vigente</s></p>
             <p><del>Precio anterior</del> <ins>Precio nuevo</ins></p>
             <p>Formula: H<sub>2</sub>O</p>
@@ -501,7 +513,9 @@ dd {
 
         <article class="ejemplo-individual">
           <div class="ejemplo-vista">
-            <h3>&lt;code&gt;, &lt;pre&gt;, &lt;kbd&gt;, &lt;samp&gt; y &lt;var&gt;</h3>
+            <h3>
+              &lt;code&gt;, &lt;pre&gt;, &lt;kbd&gt;, &lt;samp&gt; y &lt;var&gt;
+            </h3>
             <p>Codigo corto: <code>&lt;p&gt;Hola&lt;/p&gt;</code></p>
             <pre>
 body {
@@ -594,8 +608,7 @@ blockquote::after {
             </address>
             <p>Linea uno<br />Linea dos con br.</p>
             <p>
-              Palabra larga con wbr:
-              electroencefalo<wbr />grafista<wbr />superavanzado
+              Palabra larga con wbr: electroencefalo<wbr />grafista<wbr />superavanzado
             </p>
             <hr />
           </div>
@@ -1720,7 +1733,9 @@ input[type="checkbox"] {
             <h3>&lt;textarea&gt;</h3>
             <div class="ejemplo-formulario">
               <label for="textarea-demo">Mensaje</label>
-              <textarea id="textarea-demo" rows="4" cols="30">Escribe aqui</textarea>
+              <textarea id="textarea-demo" rows="4" cols="30">
+Escribe aqui</textarea
+              >
             </div>
           </div>
           <div class="codigo-lateral">
@@ -2599,7 +2614,9 @@ dialog {
 
             ejemploAbierto.classList.remove("abierto");
 
-            const tituloAbierto = ejemploAbierto.querySelector(".ejemplo-vista > h3");
+            const tituloAbierto = ejemploAbierto.querySelector(
+              ".ejemplo-vista > h3",
+            );
 
             if (tituloAbierto) {
               tituloAbierto.setAttribute("aria-expanded", "false");
@@ -2630,12 +2647,3 @@ dialog {
     </script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-

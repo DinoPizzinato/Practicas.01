@@ -1,0 +1,472 @@
+/*
+  :root
+  Que hace: guarda colores y medidas con nombres faciles de recordar.
+  Para que sirve: si despues cambias un color o un espacio, lo cambias una sola vez.
+*/
+:root {
+  /* `--color-fondo` es el color general del fondo de la pagina. */
+  --color-fondo: #f7f3e8;
+  /* `--color-panel` es el fondo claro de las cajas principales. */
+  --color-panel: #fffdf8;
+  /* `--color-tinta` es el color base del texto. */
+  --color-tinta: #243447;
+  /* `--color-principal` es el color fuerte para titulos y botones. */
+  --color-principal: #1f5c4a;
+  /* `--color-principal-suave` sirve para fondos suaves relacionados con el color principal. */
+  --color-principal-suave: #e2f2ec;
+  /* `--color-borde` dibuja marcos suaves alrededor de las cajas. */
+  --color-borde: #d8d1c4;
+  /* `--color-codigo` es el fondo oscuro del codigo para que resalte. */
+  --color-codigo: #102033;
+  /* `--sombra-panel` guarda una sombra reutilizable. */
+  --sombra-panel: 0 16px 36px rgba(36, 52, 71, 0.1);
+}
+
+/*
+  *
+  Que hace: selecciona todos los elementos.
+  Para que sirve: dar una base comun a toda la pagina.
+*/
+* {
+  /* `box-sizing: border-box` hace que el ancho cuente tambien borde y relleno. */
+  box-sizing: border-box;
+}
+
+/*
+  html
+  Que hace: aplica reglas al documento entero.
+  Para que sirve: mejorar la navegacion interna con anclas.
+*/
+html {
+  /* `scroll-behavior` suaviza el movimiento cuando saltas a otra seccion de la misma pagina. */
+  scroll-behavior: smooth;
+}
+
+/*
+  body
+  Que hace: define el aspecto general de todo lo visible.
+  Para que sirve: elegir letra, fondo y color base.
+*/
+body {
+  /* `margin` es el espacio por fuera de la pagina. En 0 quitamos el margen que agrega el navegador. */
+  margin: 0;
+  /* `font-family` elige la familia de letra que va a usar la pagina. */
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  /* `line-height` deja aire entre una linea y otra para leer mejor. */
+  line-height: 1.6;
+  /* `background` pinta el fondo general. Aqui usamos un degradado suave. */
+  background: linear-gradient(180deg, #f3ecdc 0%, #f9f7f0 48%, #eef7f3 100%);
+  /* `color` cambia el color base del texto. */
+  color: var(--color-tinta);
+}
+
+/*
+  a
+  Que hace: da una base comun a todos los enlaces.
+  Para que sirve: que se noten como elementos tocables.
+*/
+a {
+  /* `color` tambien puede cambiar el color de un enlace. */
+  color: var(--color-principal);
+  /* `text-decoration` controla decoraciones como el subrayado. */
+  text-decoration: none;
+}
+
+/*
+  a:hover y a:focus-visible
+  Que hace: cambia el estilo al pasar el mouse o navegar con teclado.
+  Para que sirve: confirmar que el enlace responde.
+*/
+a:hover,
+a:focus-visible {
+  /* `text-decoration: underline` vuelve a mostrar el subrayado para remarcar la interaccion. */
+  text-decoration: underline;
+}
+
+/*
+  .pagina
+  Que hace: crea el contenedor principal.
+  Para que sirve: evitar que el contenido quede demasiado ancho.
+*/
+.pagina {
+  /* `width` define el ancho que intentamos ocupar. */
+  width: calc(100% - 32px);
+  /* `max-width` pone un limite para que la lectura no se estire demasiado en pantallas grandes. */
+  max-width: 1180px;
+  /* `margin` con `auto` centra la pagina horizontalmente. */
+  margin: 0 auto 48px;
+}
+
+/*
+  .hero
+  Que hace: arma la cabecera destacada.
+  Para que sirve: presentar la pagina de forma clara y agradable.
+*/
+.hero {
+  /* `position: relative` deja esta caja lista para ubicar detalles decorativos adentro. */
+  position: relative;
+  /* `margin-top` crea espacio arriba para que no quede pegada al borde superior. */
+  margin-top: 24px;
+  /* `padding` agrega aire dentro de la caja. */
+  padding: 32px;
+  /* `border` dibuja un marco. */
+  border: 1px solid var(--color-borde);
+  /* `border-radius` redondea las esquinas. */
+  border-radius: 28px;
+  /* `background` permite un fondo mas rico que un color liso. */
+  background: linear-gradient(135deg, #fffaf0 0%, #f3fbf7 52%, #e3f4ee 100%);
+  /* `box-shadow` agrega una sombra suave para levantar visualmente la tarjeta. */
+  box-shadow: var(--sombra-panel);
+  /* `overflow: hidden` evita que los adornos internos se salgan de la caja. */
+  overflow: hidden;
+}
+
+/*
+  .hero::after
+  Que hace: agrega una forma decorativa sin escribir mas HTML.
+  Para que sirve: sumar ambiente visual de una manera liviana.
+*/
+.hero::after {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -30px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: rgba(31, 92, 74, 0.1);
+  pointer-events: none;
+}
+
+/*
+  .hero > *
+  Que hace: pone el contenido por encima del adorno decorativo.
+  Para que sirve: mantener texto y botones siempre visibles y clickeables.
+*/
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+/*
+  .volver
+  Que hace: estiliza el enlace para volver al inicio.
+  Para que sirve: que parezca un boton liviano y facil de ubicar.
+*/
+.volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid rgba(31, 92, 74, 0.18);
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/*
+  .etiqueta-superior
+  Que hace: crea una chapita pequena arriba del titulo.
+  Para que sirve: dar contexto rapido.
+*/
+.etiqueta-superior {
+  display: inline-block;
+  margin: 18px 0 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background-color: var(--color-principal-suave);
+  color: var(--color-principal);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/*
+  h1, h2, h3
+  Que hace: unifica el color de los titulos.
+  Para que sirve: dar una jerarquia visual clara.
+*/
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  color: #173a31;
+  line-height: 1.2;
+}
+
+/*
+  .acciones
+  Que hace: acomoda los enlaces principales en fila flexible.
+  Para que sirve: que se adapten bien al ancho disponible.
+*/
+.acciones {
+  /* `display: flex` pone a los elementos uno al lado del otro. */
+  display: flex;
+  /* `flex-wrap` deja que bajen de linea si no entran. */
+  flex-wrap: wrap;
+  /* `gap` separa los elementos sin usar margenes manuales en cada uno. */
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/*
+  .acciones a y .indice a
+  Que hace: hace que los enlaces se vean como botones suaves.
+  Para que sirve: remarcar la navegacion.
+*/
+.acciones a,
+.indice a {
+  padding: 10px 16px;
+  border: 1px solid rgba(31, 92, 74, 0.18);
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.9);
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+/*
+  .acciones a:hover, .indice a:hover
+  Que hace: mueve apenas el boton y cambia su fondo.
+  Para que sirve: dar una respuesta visual simple.
+*/
+.acciones a:hover,
+.acciones a:focus-visible,
+.indice a:hover,
+.indice a:focus-visible,
+.volver:hover,
+.volver:focus-visible {
+  /* `transform` puede mover, agrandar o girar un elemento. Aqui solo lo levantamos un poco. */
+  transform: translateY(-2px);
+  background-color: #ffffff;
+  border-color: rgba(31, 92, 74, 0.3);
+  box-shadow: 0 10px 20px rgba(31, 92, 74, 0.12);
+}
+
+/*
+  .indice
+  Que hace: crea una barra de acceso rapido dentro de la pagina.
+  Para que sirve: saltar a cada bloque sin perderse.
+*/
+.indice {
+  /* `position: sticky` deja esta barra pegada mientras haces scroll. */
+  position: sticky;
+  /* `top` marca desde que distancia superior se pega. */
+  top: 16px;
+  z-index: 2;
+  margin: 22px 0;
+  padding: 14px;
+  border: 1px solid rgba(31, 92, 74, 0.12);
+  border-radius: 22px;
+  background-color: rgba(255, 253, 248, 0.92);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  box-shadow: 0 10px 24px rgba(36, 52, 71, 0.08);
+}
+
+/*
+  .bloque
+  Que hace: define cada seccion de contenido.
+  Para que sirve: separar los temas en cajas claras.
+*/
+.bloque {
+  margin-bottom: 22px;
+  padding: 24px;
+  border: 1px solid var(--color-borde);
+  border-radius: 24px;
+  background-color: var(--color-panel);
+  box-shadow: var(--sombra-panel);
+}
+
+/*
+  .tarjetas, .referencia-grid, .propiedades-grid, .paneles-codigo
+  Que hace: arma grillas de cajas.
+  Para que sirve: ordenar muchas piezas sin que se apilen de forma desprolija.
+*/
+.tarjetas,
+.referencia-grid,
+.propiedades-grid,
+.paneles-codigo {
+  /* `display: grid` crea una cuadricula de filas y columnas. */
+  display: grid;
+  /* `grid-template-columns` decide cuantas columnas caben y como se reparten. */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+/*
+  .lista-consejos
+  Que hace: estiliza una lista simple de recordatorios.
+  Para que sirve: mostrar consejos rapidos.
+*/
+.lista-consejos {
+  margin: 18px 0 0;
+  padding-left: 22px;
+  /* `list-style` decide como se ven las vinetas de una lista. */
+  list-style: square;
+}
+
+/*
+  .tarjeta, .referencia-card, .propiedad, .panel-codigo
+  Que hace: comparte el mismo estilo de tarjeta.
+  Para que sirve: que todo se vea parte de la misma familia visual.
+*/
+.tarjeta,
+.referencia-card,
+.propiedad,
+.panel-codigo {
+  padding: 18px;
+  border: 1px solid #e6dfd2;
+  border-radius: 20px;
+  background-color: #fffefb;
+}
+
+/*
+  .referencia-card
+  Que hace: ordena cada ficha de etiqueta como una columna.
+  Para que sirve: dejar arriba la etiqueta y debajo la explicacion.
+*/
+.referencia-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/*
+  .tag-ejemplo
+  Que hace: muestra la etiqueta completa como protagonista de la ficha.
+  Para que sirve: que se lea rapido la forma en que suele aparecer en HTML.
+*/
+.tag-ejemplo {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background-color: #173a31;
+  color: #f6fffb;
+  font-family: "Courier New", monospace;
+  font-size: 0.95rem;
+}
+
+/*
+  .tarjeta p:last-child, .referencia-card p:last-child, .propiedad p:last-child
+  Que hace: quita el margen final sobrante.
+  Para que sirve: que la caja termine prolija abajo.
+*/
+.tarjeta p:last-child,
+.referencia-card p:last-child,
+.propiedad p:last-child {
+  margin-bottom: 0;
+}
+
+/*
+  .detalle
+  Que hace: pinta una aclaracion breve.
+  Para que sirve: diferenciar la idea principal del dato extra.
+*/
+.detalle {
+  color: #506274;
+  font-size: 0.95rem;
+}
+
+/*
+  .panel-codigo
+  Que hace: prepara cada bloque de codigo.
+  Para que sirve: combinar explicacion y ejemplo.
+*/
+.panel-codigo {
+  background: linear-gradient(180deg, #fffefb 0%, #fbfaf6 100%);
+}
+
+/*
+  pre y code
+  Que hace: usa una letra de ancho parejo.
+  Para que sirve: que el codigo sea mas facil de seguir.
+*/
+pre,
+code {
+  font-family: "Courier New", monospace;
+}
+
+/*
+  code
+  Que hace: resalta pequenos fragmentos tecnicos dentro de una frase.
+  Para que sirve: diferenciar nombres de etiquetas, atributos o propiedades.
+*/
+code {
+  padding: 1px 4px;
+  border-radius: 6px;
+  background-color: #eef6f1;
+  color: #173a31;
+}
+
+/*
+  pre code
+  Que hace: quita ese resaltado pequeno cuando el codigo ya vive dentro de un bloque grande.
+  Para que sirve: que el bloque de codigo se vea limpio.
+*/
+pre code {
+  padding: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: inherit;
+}
+
+/*
+  pre
+  Que hace: muestra el bloque de codigo completo.
+  Para que sirve: conservar los saltos de linea y los espacios.
+*/
+pre {
+  margin: 0;
+  padding: 18px;
+  border-radius: 18px;
+  background-color: var(--color-codigo);
+  color: #eaf2ff;
+  overflow-x: auto;
+}
+
+/*
+  .propiedad code
+  Que hace: resalta el nombre de la propiedad.
+  Para que sirve: que se vea rapido lo importante.
+*/
+.propiedad code {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background-color: #edf7f2;
+  color: #1f5c4a;
+}
+
+/*
+  footer
+  Que hace: cierra la pagina con una nota final.
+  Para que sirve: dar una salida ordenada.
+*/
+footer {
+  padding: 0 0 18px;
+  color: #506274;
+}
+
+/*
+  @media
+  Que hace: cambia estilos segun el ancho de la pantalla.
+  Para que sirve: que todo se vea bien en celular.
+*/
+@media (max-width: 720px) {
+  .pagina {
+    width: calc(100% - 20px);
+  }
+
+  .hero,
+  .bloque {
+    padding: 20px;
+  }
+
+  .indice {
+    position: static;
+  }
+}
