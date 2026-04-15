@@ -246,6 +246,47 @@ h3 {
 }
 
 /*
+  .boton-limpiar y .chip-busqueda
+  Que hace: reutiliza la idea de boton suave en la zona de busqueda.
+  Para que sirve: mantener la misma estetica de la pagina.
+*/
+.boton-limpiar,
+.chip-busqueda,
+.chip-categoria {
+  padding: 10px 16px;
+  border: 1px solid rgba(31, 92, 74, 0.18);
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--color-principal);
+  font: inherit;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.boton-limpiar:hover,
+.boton-limpiar:focus-visible,
+.chip-busqueda:hover,
+.chip-busqueda:focus-visible,
+.chip-categoria:hover,
+.chip-categoria:focus-visible {
+  transform: translateY(-2px);
+  background-color: #ffffff;
+  border-color: rgba(31, 92, 74, 0.3);
+  box-shadow: 0 10px 20px rgba(31, 92, 74, 0.12);
+}
+
+.chip-categoria.activo {
+  background-color: #173a31;
+  border-color: #173a31;
+  color: #f6fffb;
+  box-shadow: 0 10px 20px rgba(23, 58, 49, 0.16);
+}
+
+/*
   .indice
   Que hace: crea una barra de acceso rapido dentro de la pagina.
   Para que sirve: saltar a cada bloque sin perderse.
@@ -262,9 +303,29 @@ h3 {
   border-radius: 22px;
   background-color: rgba(255, 253, 248, 0.92);
   display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 14px;
+  box-shadow: 0 10px 24px rgba(36, 52, 71, 0.08);
+}
+
+.indice-enlaces {
+  display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  box-shadow: 0 10px 24px rgba(36, 52, 71, 0.08);
+}
+
+.barra-busqueda-superior,
+.chips-indice {
+  width: 100%;
+}
+
+.barra-busqueda-superior {
+  margin: 22px 0;
+}
+
+.chips-indice .sugerencias-busqueda {
+  margin-top: 0;
 }
 
 /*
@@ -297,6 +358,53 @@ h3 {
   gap: 16px;
 }
 
+.propiedades-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.encabezado-css {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px 16px;
+}
+
+.encabezado-css h2 {
+  margin-bottom: 0;
+}
+
+.filtros-css {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.filtros-css-grupo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.filtros-css-titulo {
+  margin: 0;
+  color: #506274;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.niveles-css,
+.categorias-css {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
 /*
   .lista-consejos
   Que hace: estiliza una lista simple de recordatorios.
@@ -307,6 +415,66 @@ h3 {
   padding-left: 22px;
   /* `list-style` decide como se ven las vinetas de una lista. */
   list-style: square;
+}
+
+/*
+  .busqueda-panel
+  Que hace: crea la caja interna de la busqueda.
+  Para que sirve: agrupar input, botones y estado dentro del mismo lenguaje visual.
+*/
+.busqueda-panel {
+  padding: 18px;
+  border: 1px solid #e6dfd2;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #fffefb 0%, #fbfaf6 100%);
+}
+
+.busqueda-panel--indice {
+  padding: 14px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255, 254, 251, 0.98) 0%, #fbfaf6 100%);
+}
+
+.busqueda-label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #173a31;
+}
+
+.busqueda-fila {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.campo-busqueda {
+  flex: 1 1 260px;
+  min-width: 220px;
+  padding: 12px 16px;
+  border: 1px solid rgba(31, 92, 74, 0.18);
+  border-radius: 16px;
+  background-color: #fffefb;
+  color: var(--color-tinta);
+  font: inherit;
+}
+
+.campo-busqueda:focus-visible {
+  outline: 3px solid rgba(31, 92, 74, 0.2);
+  border-color: rgba(31, 92, 74, 0.35);
+}
+
+.sugerencias-busqueda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.estado-busqueda {
+  margin: 14px 0 0;
+  color: #506274;
 }
 
 /*
@@ -343,7 +511,7 @@ h3 {
 .tag-ejemplo {
   margin: 0;
   padding: 12px 14px;
-  border-radius: 16px;
+  border-radius: 0;
   background-color: #173a31;
   color: #f6fffb;
   font-family: "Courier New", monospace;
@@ -397,7 +565,7 @@ code {
 */
 code {
   padding: 1px 4px;
-  border-radius: 6px;
+  border-radius: 0;
   background-color: #eef6f1;
   color: #173a31;
 }
@@ -421,11 +589,12 @@ pre code {
 */
 pre {
   margin: 0;
-  padding: 18px;
-  border-radius: 18px;
+  padding: 8px 10px;
+  border-radius: 0;
   background-color: var(--color-codigo);
   color: #eaf2ff;
   overflow-x: auto;
+  line-height: 1.35;
 }
 
 /*
@@ -435,10 +604,92 @@ pre {
 */
 .propiedad code {
   display: inline-block;
-  padding: 3px 8px;
-  border-radius: 999px;
+  padding: 6px;
+  border-radius: 0;
   background-color: #edf7f2;
   color: #1f5c4a;
+}
+
+/*
+  .propiedad
+  Que hace: prepara las tarjetas CSS con mas contenido.
+  Para que sirve: dejar el nombre, la descripcion y el ejemplo bien ordenados.
+*/
+.propiedad {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.propiedad-cabecera {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.propiedad-cabecera h3 {
+  margin-bottom: 0;
+}
+
+.propiedad-etiquetas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.propiedad-tipo,
+.propiedad-nivel {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.propiedad-tipo {
+  background-color: var(--color-principal-suave);
+  color: var(--color-principal);
+}
+
+.propiedad-nivel--basico {
+  background-color: #e9f6ef;
+  color: #1f5c4a;
+}
+
+.propiedad-nivel--intermedio {
+  background-color: #f4ead7;
+  color: #6b4c1b;
+}
+
+.propiedad-nivel--avanzado {
+  background-color: #efe6db;
+  color: #7a4630;
+}
+
+.propiedad pre {
+  margin-top: 2px;
+}
+
+.propiedad-detalle-linea {
+  margin: 0;
+}
+
+.dato-label {
+  color: #173a31;
+  font-weight: bold;
+}
+
+/*
+  [hidden]
+  Que hace: respeta el atributo hidden tambien en las tarjetas filtradas.
+  Para que sirve: que la busqueda pueda ocultar elementos sin hacks raros.
+*/
+[hidden] {
+  display: none !important;
 }
 
 /*
@@ -468,5 +719,63 @@ footer {
 
   .indice {
     position: static;
+  }
+
+  .propiedades-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .encabezado-css {
+    flex-direction: column;
+  }
+
+  .niveles-css,
+  .categorias-css {
+    justify-content: flex-start;
+  }
+
+  .filtros-css,
+  .filtros-css-grupo {
+    align-items: flex-start;
+  }
+
+  .busqueda-fila {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .boton-limpiar {
+    width: 100%;
+  }
+
+  .propiedad-cabecera {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 721px) {
+  .propiedades-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 960px) {
+  .indice-enlaces {
+    flex-wrap: wrap;
+  }
+
+  .indice a {
+    text-align: center;
+  }
+
+  .sugerencias-busqueda {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .chip-busqueda {
+    width: auto;
+    text-align: center;
   }
 }
