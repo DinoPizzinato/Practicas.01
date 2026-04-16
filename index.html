@@ -1,75 +1,1252 @@
 ﻿<!doctype html>
 <html lang="es">
   <head>
-    <!--
-      <!doctype html>
-      Que es: indica que el documento usa HTML5.
-      Como funciona: se escribe una sola vez al principio del archivo.
-      Para que sirve: ayuda al navegador a interpretar bien la pagina.
-      Ejemplo real: lo usarias al crear la pagina principal de una tienda, un portfolio o una pagina de un local de ropa.
-    -->
     <meta charset="UTF-8" />
-    <!--
-      <meta charset>
-      Que es: define la codificacion de caracteres.
-      Como funciona: le dice al navegador como leer letras y simbolos.
-      Para que sirve: evitar errores con acentos y caracteres especiales.
-      Ejemplo real: sirve para que palabras como "musica", "direccion" o "seccion" no se rompan en la web.
-    -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--
-      <meta name="viewport">
-      Que es: configura la vista en dispositivos moviles.
-      Como funciona: adapta el ancho al tamaÃ±o del dispositivo.
-      Para que sirve: mejorar la visualizacion responsive.
-      Ejemplo real: hace que una pagina de un kiosco o una peluqueria se vea bien en celular.
-    -->
-    <title>Guia Basica de HTML y CSS</title>
-    <!--
-      <title>
-      Que es: el titulo de la pestaÃ±a del navegador.
-      Como funciona: muestra texto arriba del navegador.
-      Para que sirve: identificar la pagina.
-      Ejemplo real: podria decir "Tienda de Ropa", "Menu de Cafeteria" o "Portfolio de Juan".
-    -->
+    <title>Guia de HTML y ejemplos visuales</title>
     <link rel="stylesheet" href="css/index.css" />
-    <!--
-      <link>
-      Que es: conecta la pagina con un archivo externo.
-      Como funciona: en este caso carga una hoja de estilos CSS.
-      Para que sirve: separar HTML de CSS.
-      Ejemplo real: te deja tener la estructura de una pagina de restaurante en HTML y el diseno en otro archivo.
-    -->
+    <link rel="stylesheet" href="css/html-referencia.css" />
   </head>
   <body>
-    <!--
-      <body>
-      Que es: la parte visible del documento.
-      Como funciona: aqui van textos, imagenes, tablas, formularios y mas.
-      Para que sirve: mostrar contenido al usuario.
-      Ejemplo real: todo lo que ves en una web de una libreria o de una zapateria vive dentro del body.
-    -->
-    <noscript> Este mensaje aparece si JavaScript esta desactivado. </noscript>
-    <!--
-      <noscript>
-      Que es: contenido alternativo para cuando no hay JavaScript.
-      Como funciona: el navegador lo muestra solo en ese caso.
-      Para que sirve: dar avisos o instrucciones extra.
-      Ejemplo real: podrias avisar "Activa JavaScript para ver el carrito de compras" en una tienda online.
-    -->
+    <noscript>Este mensaje aparece si JavaScript esta desactivado.</noscript>
+    <div class="pagina-html">
+      <header class="hero-html" id="inicio-html">
+        <p class="etiqueta-superior-html">Guia principal de HTML</p>
+        <h1>Referencia de HTML y guia basica en una sola pagina</h1>
+        <p>
+          Aqui ahora vive toda la referencia de etiquetas HTML. Mas abajo queda
+          la guia practica con ejemplos renderizados para seguir practicando sin
+          salir de la misma pagina.
+        </p>
+        <div class="acciones-html">
+          <a href="#idea-html">Ir a la referencia HTML</a>
+          <a href="#guia-practica">Ir a la guia practica</a>
+          <a href="pages/estructura/estructura-codigo.html">Abrir la referencia de CSS</a>
+          <a href="pages/formularios/formulario.html">Abrir el formulario aparte</a>
+        </div>
+      </header>
 
-    <header class="bloque introduccion" id="inicio">
-      <!--
+      <nav class="indice-html" aria-label="Indice de HTML">
+        <div class="indice-enlaces">
+          <a href="#idea-html">Idea HTML</a>
+          <a href="#base-html">Base</a>
+          <a href="#estructura-html">Estructura</a>
+          <a href="#texto-html">Texto</a>
+          <a href="#listas-html">Listas</a>
+          <a href="#multimedia-html">Multimedia</a>
+          <a href="#tablas-html">Tablas</a>
+          <a href="#formularios-html">Formularios</a>
+          <a href="#extras-html">Extras</a>
+          <a href="#guia-practica">Practica</a>
+        </div>
+      </nav>
+
+      <main>
+        <section class="bloque bloque-html-intro">
+          <h2>Como usar esta pagina</h2>
+          <div class="tarjetas">
+            <article class="tarjeta">
+              <h3>Primero la referencia</h3>
+              <p>
+                Arriba tienes la parte ordenada por tipos de etiquetas HTML,
+                ideal para buscar rapido una base, un formulario o una etiqueta
+                puntual.
+              </p>
+            </article>
+            <article class="tarjeta">
+              <h3>Despues la practica</h3>
+              <p>
+                Al final de la pagina sigue la guia basica con ejemplos visibles
+                y bloques de codigo para practicar de una forma mas concreta.
+              </p>
+            </article>
+            <article class="tarjeta">
+              <h3>CSS por separado</h3>
+              <p>
+                La referencia de CSS ahora quedo en una pagina aparte para que
+                HTML y CSS no se mezclen y sea mas facil estudiar cada cosa.
+              </p>
+            </article>
+          </div>
+        </section>
+<section class="bloque" id="idea-html">
+          <h2>Idea rapida para recordar HTML</h2>
+          <div class="tarjetas">
+            <article class="tarjeta">
+              <p>
+                Si HTML es el esqueleto de la pagina, sus etiquetas son las
+                piezas que ordenan cada parte. Con muy pocas etiquetas ya puedes
+                armar titulos, textos, listas, imagenes, tablas y formularios.
+              </p>
+            </article>
+            <article class="tarjeta">
+              <p>
+                Si quieres ver la estructura completa explicada de forma simple,
+                recorre estas fichas: estan separadas por base, estructura,
+                texto, listas, multimedia, tablas, formularios y extras.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="bloque" id="base-html">
+          <h2>Base del documento HTML</h2>
+          <div class="referencia-grid">
+            <article class="referencia-card">
+              <p class="tag-ejemplo">&lt;!doctype html&gt;</p>
+              <p>Le avisa al navegador que el archivo usa HTML moderno.</p>
+              <p class="detalle">Va siempre arriba de todo.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;html&gt; Todo el sitio vive aqui. &lt;/html&gt;
+              </p>
+              <p>Es la caja mas grande de la pagina.</p>
+              <p class="detalle">
+                Adentro suelen ir <code>head</code> y <code>body</code>.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;head&gt; Configuracion del archivo. &lt;/head&gt;
+              </p>
+              <p>
+                Guarda datos que ayudan a la pagina, pero casi nunca se ven.
+              </p>
+              <p class="detalle">
+                Suele contener <code>meta</code>, <code>title</code> y
+                <code>link</code>.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">&lt;meta charset="UTF-8"&gt;</p>
+              <p>Ayuda a que letras y simbolos se vean bien.</p>
+              <p class="detalle">No suele llevar cierre.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;meta name="viewport" content="width=device-width,
+                initial-scale=1.0"&gt;
+              </p>
+              <p>Hace que la pagina se adapte mejor al celular.</p>
+              <p class="detalle">Tambien va dentro de <code>head</code>.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;meta name="description" content="Resumen corto de la
+                pagina"&gt;
+              </p>
+              <p>
+                Resume de que trata el sitio para buscadores y vistas previas.
+              </p>
+              <p class="detalle">
+                Tambien vive dentro de <code>head</code> y no lleva cierre.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;meta name="author" content="Tu nombre"&gt;
+              </p>
+              <p>Guarda el nombre de quien creo la pagina o el documento.</p>
+              <p class="detalle">
+                Es otro dato informativo que suele ir en <code>head</code>.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;title&gt;Nombre de la pestana&lt;/title&gt;
+              </p>
+              <p>
+                Es el titulo que aparece arriba en la pestana del navegador.
+              </p>
+              <p class="detalle">Va dentro de <code>head</code>.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;link rel="stylesheet" href="estilos.css"&gt;
+              </p>
+              <p>Conecta tu HTML con un archivo CSS.</p>
+              <p class="detalle">
+                Suele ir dentro de <code>head</code> y no necesita cierre.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;style&gt; Reglas CSS cortas. &lt;/style&gt;
+              </p>
+              <p>Sirve para escribir CSS directamente dentro del HTML.</p>
+              <p class="detalle">
+                Se usa poco en proyectos ordenados, porque normalmente el CSS va
+                en otro archivo.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;script&gt; Codigo de interaccion. &lt;/script&gt;
+              </p>
+              <p>Se usa para agregar acciones o comportamiento a la pagina.</p>
+              <p class="detalle">
+                Suele ir al final de <code>body</code> o dentro de
+                <code>head</code>.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;base href="https://ejemplo.com/"&gt;
+              </p>
+              <p>Le da una ruta base a todos los enlaces del documento.</p>
+              <p class="detalle">
+                Se usa poco, pero vive dentro de <code>head</code>.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;body&gt; Todo lo que si se ve. &lt;/body&gt;
+              </p>
+              <p>Guarda el contenido visible de la pagina.</p>
+              <p class="detalle">
+                Aqui viven titulos, textos, imagenes, listas y formularios.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;noscript&gt; Mensaje si no hay JavaScript. &lt;/noscript&gt;
+              </p>
+              <p>
+                Muestra un aviso cuando cierta parte interactiva no funciona.
+              </p>
+              <p class="detalle">
+                Se usa a veces para dar una aclaracion extra.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;!-- Este es un comentario en HTML --&gt;
+              </p>
+              <p>
+                Sirve para dejar notas dentro del archivo sin mostrarlas en
+                pantalla.
+              </p>
+              <p class="detalle">
+                Es util para explicar bloques o recordar tareas pendientes.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="bloque" id="estructura-html">
+          <h2>Estructura y contenedores HTML</h2>
+          <div class="referencia-grid">
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;header&gt; Logo, titulo o menu. &lt;/header&gt;
+              </p>
+              <p>Es la parte de arriba de una pagina o de una seccion.</p>
+              <p class="detalle">
+                Suele contener <code>h1</code>, <code>nav</code> o un logo.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;nav&gt; Enlaces importantes. &lt;/nav&gt;
+              </p>
+              <p>Agrupa links de navegacion.</p>
+              <p class="detalle">Suele llevar varios <code>a</code> adentro.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;search&gt;&lt;form&gt;...&lt;/form&gt;&lt;/search&gt;
+              </p>
+              <p>
+                Marca un bloque pensado para buscar contenido dentro de una
+                pagina.
+              </p>
+              <p class="detalle">
+                Suele envolver un <code>form</code> con un
+                <code>input type="search"</code>.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;main&gt; Contenido principal. &lt;/main&gt;
+              </p>
+              <p>Guarda lo mas importante de la pagina.</p>
+              <p class="detalle">
+                Suele envolver <code>section</code>, <code>article</code> y
+                <code>div</code>.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;section&gt; Un tema de la pagina. &lt;/section&gt;
+              </p>
+              <p>Sirve para separar grandes bloques por tema.</p>
+              <p class="detalle">
+                Dentro pueden ir titulos, textos, listas o tarjetas.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;article&gt; Una pieza con sentido propio. &lt;/article&gt;
+              </p>
+              <p>
+                Se usa para noticias, posts o tarjetas que podrian vivir solas.
+              </p>
+              <p class="detalle">
+                Suele ir dentro de una <code>section</code>.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;aside&gt; Informacion secundaria. &lt;/aside&gt;
+              </p>
+              <p>Sirve para tips, avisos o contenido lateral.</p>
+              <p class="detalle">Suele acompanar a un bloque principal.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;footer&gt; Cierre del bloque o del sitio. &lt;/footer&gt;
+              </p>
+              <p>Es la parte final donde suelen ir datos extra o contacto.</p>
+              <p class="detalle">
+                Puede estar al final de la pagina o de una tarjeta.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;div&gt; Suele envolver sections, listas o tarjetas.
+                &lt;/div&gt;
+              </p>
+              <p>Es una caja general para agrupar contenido.</p>
+              <p class="detalle">
+                Se usa cuando necesitas ordenar cosas sin darles un significado
+                especial.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;span&gt; Una parte pequena del texto. &lt;/span&gt;
+              </p>
+              <p>
+                Sirve para marcar una palabra o pedazo corto dentro de una
+                frase.
+              </p>
+              <p class="detalle">
+                Suele ir dentro de <code>p</code>, <code>h1</code> o
+                <code>button</code>.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;address&gt; Datos de contacto. &lt;/address&gt;
+              </p>
+              <p>
+                Sirve para mostrar direccion, mail, telefono o informacion de
+                contacto.
+              </p>
+              <p class="detalle">
+                Suele ir en un <code>footer</code> o en una seccion de contacto.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="bloque" id="texto-html">
+          <h2>Texto y titulos HTML</h2>
+          <div class="referencia-grid">
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;h1&gt; Titulo principal. &lt;/h1&gt;
+              </p>
+              <p>Es el titulo mas importante de la pagina.</p>
+              <p class="detalle">
+                Despues vienen <code>h2</code>, <code>h3</code> y asi hasta
+                <code>h6</code>.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;h2&gt; Subtitulo del tema. &lt;/h2&gt;
+              </p>
+              <p>Se usa para dividir el contenido en partes grandes.</p>
+              <p class="detalle">
+                Suele ir dentro de una <code>section</code>.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;h3&gt; Titulo interno de un bloque. &lt;/h3&gt;
+              </p>
+              <p>
+                Sirve para subtitulos mas pequenos dentro de una misma seccion.
+              </p>
+              <p class="detalle">
+                Despues de <code>h2</code> suele venir <code>h3</code> si el
+                tema sigue bajando de nivel.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;h4&gt;, &lt;h5&gt; y &lt;h6&gt; Titulos cada vez mas chicos.
+              </p>
+              <p>
+                Cierran la jerarquia de titulos cuando necesitas varios niveles.
+              </p>
+              <p class="detalle">
+                Conviene usarlos en orden, sin saltarte niveles si quieres
+                mantener la estructura clara.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;p&gt; Texto comun de explicacion. &lt;/p&gt;
+              </p>
+              <p>Guarda un parrafo normal.</p>
+              <p class="detalle">
+                Suele ir debajo de titulos o dentro de tarjetas.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;strong&gt; Esto es muy importante. &lt;/strong&gt;
+              </p>
+              <p>Resalta una parte importante del texto.</p>
+              <p class="detalle">Suele ir dentro de un <code>p</code>.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;em&gt; Esto merece enfasis. &lt;/em&gt;
+              </p>
+              <p>Da enfasis a una palabra o parte de la frase.</p>
+              <p class="detalle">
+                Tambien suele ir dentro de un <code>p</code>.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;small&gt; Aclaracion corta. &lt;/small&gt;
+              </p>
+              <p>Sirve para notas pequenas o texto secundario.</p>
+              <p class="detalle">
+                Suele acompanar precios, fechas o advertencias.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;mark&gt; Texto resaltado. &lt;/mark&gt;
+              </p>
+              <p>Pinta una parte del texto como si la subrayaras con color.</p>
+              <p class="detalle">Va muy bien dentro de un <code>p</code>.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;abbr title="Explicacion de la sigla"&gt;Sigla&lt;/abbr&gt;
+              </p>
+              <p>Sirve para siglas o abreviaturas.</p>
+              <p class="detalle">
+                El titulo suele explicar el significado completo.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">&lt;time&gt; 20 de abril &lt;/time&gt;</p>
+              <p>Guarda una fecha u hora.</p>
+              <p class="detalle">
+                Suele ir dentro de un <code>p</code> o una tarjeta.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;blockquote&gt; Una cita larga. &lt;/blockquote&gt;
+              </p>
+              <p>Se usa para frases destacadas o testimonios.</p>
+              <p class="detalle">Suele ir acompanada por <code>cite</code>.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;cite&gt; Fuente de la cita. &lt;/cite&gt;
+              </p>
+              <p>Nombra la obra, persona o lugar de donde sale una cita.</p>
+              <p class="detalle">
+                Suele ir cerca de un <code>blockquote</code>.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">&lt;br&gt;</p>
+              <p>Hace un salto de linea corto.</p>
+              <p class="detalle">No suele llevar cierre.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">&lt;hr&gt;</p>
+              <p>Marca una separacion entre temas.</p>
+              <p class="detalle">
+                Se usa para cortar visualmente un bloque del siguiente.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">&lt;sup&gt; Texto arriba. &lt;/sup&gt;</p>
+              <p>Sube un texto pequeno.</p>
+              <p class="detalle">Sirve en potencias o notas.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">&lt;sub&gt; Texto abajo. &lt;/sub&gt;</p>
+              <p>Baja un texto pequeno.</p>
+              <p class="detalle">Sirve en formulas como H<sub>2</sub>O.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;b&gt; Texto destacado visualmente. &lt;/b&gt;
+              </p>
+              <p>Hace que una parte del texto se vea mas fuerte.</p>
+              <p class="detalle">
+                Se parece a <code>strong</code>, pero suele usarse mas por
+                apariencia que por importancia.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;i&gt; Texto con tono distinto. &lt;/i&gt;
+              </p>
+              <p>
+                Sirve para palabras extranjeras, nombres especiales o tonos
+                diferentes.
+              </p>
+              <p class="detalle">
+                Se parece a <code>em</code>, pero no siempre significa enfasis.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">&lt;u&gt; Texto subrayado. &lt;/u&gt;</p>
+              <p>Subraya una parte del texto.</p>
+              <p class="detalle">
+                Conviene usarlo con cuidado para no confundirlo con un enlace.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;del&gt; Texto eliminado. &lt;/del&gt;
+              </p>
+              <p>Muestra algo que ya no vale o fue quitado.</p>
+              <p class="detalle">
+                Va bien para precios viejos o cambios en un texto.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;ins&gt; Texto agregado. &lt;/ins&gt;
+              </p>
+              <p>Marca una parte nueva que fue agregada.</p>
+              <p class="detalle">A veces se usa junto con <code>del</code>.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">&lt;q&gt; Una cita corta. &lt;/q&gt;</p>
+              <p>Sirve para citas breves dentro de una frase.</p>
+              <p class="detalle">
+                Se usa cuando no hace falta un <code>blockquote</code> completo.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;data value="sku-204"&gt;Teclado&lt;/data&gt;
+              </p>
+              <p>
+                Muestra un texto normal pero guarda un valor exacto por detras.
+              </p>
+              <p class="detalle">
+                Es util cuando quieres ver una palabra y tambien conservar un
+                codigo o numero preciso.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">&lt;dfn&gt;Variable&lt;/dfn&gt;</p>
+              <p>Marca la palabra que estas definiendo por primera vez.</p>
+              <p class="detalle">
+                Suele ir en textos explicativos o apuntes tecnicos.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;ruby&gt;HTML&lt;rt&gt;marcado&lt;/rt&gt;&lt;/ruby&gt;
+              </p>
+              <p>
+                Agrega una aclaracion pequena arriba o al costado de una
+                palabra.
+              </p>
+              <p class="detalle">
+                Se usa mucho en idiomas orientales, pero tambien sirve como
+                ejemplo de texto anotado.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;s&gt; Texto que ya no aplica. &lt;/s&gt;
+              </p>
+              <p>Tacha una parte del texto.</p>
+              <p class="detalle">Es muy comun en ofertas o contenido viejo.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">&lt;bdi&gt; Texto aislado. &lt;/bdi&gt;</p>
+              <p>
+                Ayuda cuando mezclas textos que pueden ir en distinto sentido.
+              </p>
+              <p class="detalle">
+                Se usa poco, pero sirve para nombres o palabras en otros
+                idiomas.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;bdo dir="rtl"&gt; Texto invertido. &lt;/bdo&gt;
+              </p>
+              <p>Fuerza la direccion del texto.</p>
+              <p class="detalle">
+                Se usa sobre todo en idiomas que no se escriben de izquierda a
+                derecha.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="bloque" id="listas-html">
+          <h2>Listas y enlaces</h2>
+          <div class="referencia-grid">
+            <article class="referencia-card">
+              <p class="tag-ejemplo">&lt;a&gt; Ir a otra pagina. &lt;/a&gt;</p>
+              <p>Crea un enlace.</p>
+              <p class="detalle">
+                Puede llevar a otra pagina, a una seccion o a un archivo.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;a href="mailto:hola@ejemplo.com"&gt;Enviar mail&lt;/a&gt;
+              </p>
+              <p>Abre el programa de correo con la direccion ya preparada.</p>
+              <p class="detalle">Sirve mucho en paginas de contacto.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;a href="tel:+5491112345678"&gt;Llamar&lt;/a&gt;
+              </p>
+              <p>Permite iniciar una llamada desde el celular con un toque.</p>
+              <p class="detalle">
+                En escritorio puede abrir una app de llamadas si existe.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;ul&gt; Suele contener varios li. &lt;/ul&gt;
+              </p>
+              <p>Es una lista desordenada, o sea, con vinetas.</p>
+              <p class="detalle">
+                Suele ir dentro de un <code>div</code> o una
+                <code>section</code>.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;ol&gt; Suele contener varios li numerados. &lt;/ol&gt;
+              </p>
+              <p>Es una lista ordenada.</p>
+              <p class="detalle">Va bien para pasos o instrucciones.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;li&gt; Un punto de la lista. &lt;/li&gt;
+              </p>
+              <p>Es cada elemento individual de una lista.</p>
+              <p class="detalle">
+                Suele ir dentro de <code>ul</code> o <code>ol</code>.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;dl&gt; Terminos con su explicacion. &lt;/dl&gt;
+              </p>
+              <p>Es una lista especial para definiciones.</p>
+              <p class="detalle">
+                Suele contener <code>dt</code> y <code>dd</code>.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;dt&gt; Palabra a explicar. &lt;/dt&gt;
+              </p>
+              <p>
+                Es el termino principal dentro de una lista de definiciones.
+              </p>
+              <p class="detalle">Suele ir antes de <code>dd</code>.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;dd&gt; Explicacion de esa palabra. &lt;/dd&gt;
+              </p>
+              <p>Da el significado o la descripcion del termino.</p>
+              <p class="detalle">Suele ir debajo de un <code>dt</code>.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;menu&gt; Grupo de opciones. &lt;/menu&gt;
+              </p>
+              <p>Es otra forma de agrupar opciones o acciones.</p>
+              <p class="detalle">
+                Se usa menos que <code>ul</code>, pero existe.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="bloque" id="multimedia-html">
+          <h2>Multimedia HTML</h2>
+          <div class="referencia-grid">
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;img src="foto.jpg" alt="descripcion"&gt;
+              </p>
+              <p>Muestra una imagen.</p>
+              <p class="detalle">
+                Suele ir dentro de <code>div</code>, <code>figure</code> o
+                tarjetas.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;img src="producto.jpg" alt="Zapatilla blanca"
+                loading="lazy"&gt;
+              </p>
+              <p>
+                Carga una imagen comun, pero puede esperar un poco si todavia no
+                esta cerca de verse.
+              </p>
+              <p class="detalle">
+                Ese <code>loading="lazy"</code> ayuda a que la pagina sea mas
+                liviana.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;figure&gt; Imagen con contexto. &lt;/figure&gt;
+              </p>
+              <p>Junta una imagen o grafico con su texto de apoyo.</p>
+              <p class="detalle">
+                Suele contener <code>img</code> y <code>figcaption</code>.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;figcaption&gt; Explicacion de la imagen. &lt;/figcaption&gt;
+              </p>
+              <p>Describe lo que se ve en la imagen o video.</p>
+              <p class="detalle">Suele ir dentro de <code>figure</code>.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;picture&gt; Varias versiones de una imagen. &lt;/picture&gt;
+              </p>
+              <p>
+                Sirve cuando quieres cargar una imagen distinta segun la
+                pantalla.
+              </p>
+              <p class="detalle">
+                Suele contener <code>source</code> e <code>img</code>.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;source src="archivo.mp4" type="video/mp4"&gt;
+              </p>
+              <p>Le dice al navegador que archivo debe usar.</p>
+              <p class="detalle">
+                Suele ir dentro de <code>audio</code>, <code>video</code> o
+                <code>picture</code>.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;audio&gt; Sonido para reproducir. &lt;/audio&gt;
+              </p>
+              <p>Sirve para musica, voz o efectos de audio.</p>
+              <p class="detalle">
+                Suele contener una o varias etiquetas <code>source</code>.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;video&gt; Video en la pagina. &lt;/video&gt;
+              </p>
+              <p>Muestra un video sin salir del sitio.</p>
+              <p class="detalle">Tambien suele contener <code>source</code>.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;iframe&gt; Otra pagina adentro. &lt;/iframe&gt;
+              </p>
+              <p>Inserta un mapa, un formulario o un contenido externo.</p>
+              <p class="detalle">Se usa mucho para videos y mapas.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;iframe src="mapa.html" loading="lazy"
+                title="Mapa"&gt;&lt;/iframe&gt;
+              </p>
+              <p>
+                Mete otro contenido dentro de tu pagina y lo identifica con un
+                titulo claro.
+              </p>
+              <p class="detalle">
+                El <code>title</code> ayuda a entender que contiene y
+                <code>loading="lazy"</code> evita cargarlo antes de tiempo.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;canvas&gt; Zona para dibujar. &lt;/canvas&gt;
+              </p>
+              <p>Reserva un espacio donde luego se puede dibujar con codigo.</p>
+              <p class="detalle">
+                Se usa a veces en juegos, graficos o efectos.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;track&gt; Subtitulos del video. &lt;/track&gt;
+              </p>
+              <p>Agrega subtitulos o pistas de texto a un video.</p>
+              <p class="detalle">Suele ir dentro de <code>video</code>.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;svg&gt; Dibujo vectorial. &lt;/svg&gt;
+              </p>
+              <p>
+                Sirve para iconos o dibujos que no pierden calidad al
+                agrandarse.
+              </p>
+              <p class="detalle">
+                Se usa mucho en logos, iconos y graficos simples.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="bloque" id="tablas-html">
+          <h2>Tablas HTML</h2>
+          <div class="referencia-grid">
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;table&gt; Datos en filas y columnas. &lt;/table&gt;
+              </p>
+              <p>Es la caja principal de una tabla.</p>
+              <p class="detalle">
+                Suele contener <code>caption</code>, <code>thead</code>,
+                <code>tbody</code> y filas.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;caption&gt; Titulo de la tabla. &lt;/caption&gt;
+              </p>
+              <p>Explica de que trata la tabla.</p>
+              <p class="detalle">
+                Suele ir arriba dentro de <code>table</code>.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;thead&gt; Nombres de columnas. &lt;/thead&gt;
+              </p>
+              <p>Guarda la parte superior de la tabla.</p>
+              <p class="detalle">Suele contener filas con <code>th</code>.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;tbody&gt; Datos principales. &lt;/tbody&gt;
+              </p>
+              <p>Guarda el cuerpo de la tabla.</p>
+              <p class="detalle">
+                Suele contener varias filas <code>tr</code>.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;tfoot&gt; Cierre o resumen. &lt;/tfoot&gt;
+              </p>
+              <p>Se usa para totales o notas finales.</p>
+              <p class="detalle">Va a veces, no siempre.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;tr&gt; Una fila de la tabla. &lt;/tr&gt;
+              </p>
+              <p>Crea una fila horizontal.</p>
+              <p class="detalle">
+                Dentro suelen ir <code>th</code> o <code>td</code>.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;th&gt; Titulo de columna o fila. &lt;/th&gt;
+              </p>
+              <p>Marca una celda de encabezado.</p>
+              <p class="detalle">
+                Suele ir dentro de <code>thead</code> o al inicio de una fila.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;td&gt; Dato de la tabla. &lt;/td&gt;
+              </p>
+              <p>Es una celda comun.</p>
+              <p class="detalle">Va dentro de una fila <code>tr</code>.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;colgroup&gt; Grupo de columnas. &lt;/colgroup&gt;
+              </p>
+              <p>
+                Sirve para tocar o identificar columnas enteras de una tabla.
+              </p>
+              <p class="detalle">
+                Suele contener una o varias etiquetas <code>col</code>.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">&lt;col&gt;</p>
+              <p>Representa una columna de la tabla.</p>
+              <p class="detalle">
+                Se usa dentro de <code>colgroup</code> y no suele llevar cierre.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;td colspan="2"&gt;Total general&lt;/td&gt;
+              </p>
+              <p>Sirve para que una celda ocupe varias columnas.</p>
+              <p class="detalle">
+                Tambien existe <code>rowspan</code> cuando quieres ocupar varias
+                filas.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="bloque" id="formularios-html">
+          <h2>Formularios HTML</h2>
+          <div class="referencia-grid">
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;form&gt; Varios campos para completar. &lt;/form&gt;
+              </p>
+              <p>Es la caja principal del formulario.</p>
+              <p class="detalle">
+                Suele contener <code>label</code>, <code>input</code>,
+                <code>select</code> y <code>button</code>.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;fieldset&gt; Grupo de campos relacionados. &lt;/fieldset&gt;
+              </p>
+              <p>Sirve para juntar varios campos del mismo tema.</p>
+              <p class="detalle">
+                Suele contener <code>legend</code> y varios controles.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;legend&gt; Titulo del grupo. &lt;/legend&gt;
+              </p>
+              <p>Nombra un bloque de campos.</p>
+              <p class="detalle">Suele ir dentro de <code>fieldset</code>.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;label&gt; Nombre del campo. &lt;/label&gt;
+              </p>
+              <p>Le explica a la persona que debe escribir o elegir.</p>
+              <p class="detalle">
+                Suele ir justo antes de un <code>input</code>,
+                <code>select</code> o <code>textarea</code>.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">&lt;input type="text"&gt;</p>
+              <p>Es una caja corta para escribir datos.</p>
+              <p class="detalle">
+                Puede ser texto, email, password, fecha y mucho mas.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;input type="email" placeholder="tu@mail.com"&gt;
+              </p>
+              <p>Pide una direccion de correo con un formato mas controlado.</p>
+              <p class="detalle">
+                En celular suele abrir un teclado mas comodo para correos.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">&lt;input type="password"&gt;</p>
+              <p>Oculta los caracteres mientras la persona escribe.</p>
+              <p class="detalle">Se usa para claves o datos sensibles.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;input type="checkbox" id="acepto"&gt;
+              </p>
+              <p>Sirve para marcar una o varias opciones independientes.</p>
+              <p class="detalle">
+                Suele ir junto a un <code>label</code> con el mismo
+                <code>for</code>.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">&lt;input type="radio" name="turno"&gt;</p>
+              <p>Se usa cuando solo puedes elegir una opcion de un grupo.</p>
+              <p class="detalle">
+                Todos los radios del mismo grupo comparten el mismo
+                <code>name</code>.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">&lt;input type="date"&gt;</p>
+              <p>Abre un selector de fecha listo para usar.</p>
+              <p class="detalle">
+                Va muy bien para reservas, turnos o vencimientos.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;input type="file" accept=".pdf,.jpg"&gt;
+              </p>
+              <p>Permite subir archivos desde el dispositivo.</p>
+              <p class="detalle">
+                Con <code>accept</code> puedes sugerir que tipo de archivo
+                quieres recibir.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;input type="range" min="0" max="100" value="50"&gt;
+              </p>
+              <p>Muestra un control deslizante para elegir un valor.</p>
+              <p class="detalle">Sirve para volumen, cantidad o intensidad.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;textarea&gt; Mensaje largo. &lt;/textarea&gt;
+              </p>
+              <p>Sirve para escribir varias lineas.</p>
+              <p class="detalle">Va bien para comentarios o descripciones.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;select&gt; Opciones para elegir. &lt;/select&gt;
+              </p>
+              <p>Crea una lista desplegable.</p>
+              <p class="detalle">
+                Suele contener varias etiquetas <code>option</code>.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;option&gt; Una opcion del menu. &lt;/option&gt;
+              </p>
+              <p>Es cada item dentro de un selector.</p>
+              <p class="detalle">Suele ir dentro de <code>select</code>.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;button&gt; Enviar o guardar. &lt;/button&gt;
+              </p>
+              <p>Es el boton que activa una accion.</p>
+              <p class="detalle">
+                Puede enviar el formulario o hacer otra tarea.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+              </p>
+              <p>Es el boton tipico para mandar el formulario.</p>
+              <p class="detalle">
+                Si esta dentro de <code>form</code>, suele ser la opcion
+                principal.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;button type="button"&gt;Vista previa&lt;/button&gt;
+              </p>
+              <p>Hace una accion sin enviar el formulario.</p>
+              <p class="detalle">
+                Se usa mucho para abrir ayudas, limpiar campos o mostrar pasos.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;datalist&gt; Sugerencias para escribir. &lt;/datalist&gt;
+              </p>
+              <p>Le da opciones sugeridas a un campo de texto.</p>
+              <p class="detalle">Suele ir conectada a un <code>input</code>.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;optgroup&gt; Grupo de opciones. &lt;/optgroup&gt;
+              </p>
+              <p>Sirve para ordenar un <code>select</code> en grupos.</p>
+              <p class="detalle">
+                Va dentro de <code>select</code> y contiene <code>option</code>.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;output&gt; Resultado mostrado. &lt;/output&gt;
+              </p>
+              <p>Muestra un resultado calculado o actualizado.</p>
+              <p class="detalle">
+                Se usa poco, pero sirve para formularios interactivos.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="bloque" id="extras-html">
+          <h2>Etiquetas HTML utiles que aparecen a veces</h2>
+          <div class="referencia-grid">
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;details&gt; Caja que se abre y se cierra. &lt;/details&gt;
+              </p>
+              <p>Sirve para mostrar contenido oculto al principio.</p>
+              <p class="detalle">Suele contener <code>summary</code>.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;summary&gt; Titulo del desplegable. &lt;/summary&gt;
+              </p>
+              <p>Es la parte que tocas para abrir un <code>details</code>.</p>
+              <p class="detalle">Va dentro de <code>details</code>.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;pre&gt; Texto con espacios respetados. &lt;/pre&gt;
+              </p>
+              <p>Muestra texto tal como fue escrito.</p>
+              <p class="detalle">
+                Se usa mucho para codigo o bloques tecnicos.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;code&gt; Parte tecnica o codigo. &lt;/code&gt;
+              </p>
+              <p>Marca un fragmento de codigo o una etiqueta.</p>
+              <p class="detalle">
+                Suele ir dentro de un <code>pre</code> o de un <code>p</code>.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;kbd&gt; Tecla del teclado. &lt;/kbd&gt;
+              </p>
+              <p>Sirve para mostrar combinaciones como Ctrl + S.</p>
+              <p class="detalle">Suele ir dentro de un <code>p</code>.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;progress&gt; Cuanto falta. &lt;/progress&gt;
+              </p>
+              <p>Muestra el avance de algo.</p>
+              <p class="detalle">Va bien para cargas o pasos completados.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;meter&gt; Nivel de algo. &lt;/meter&gt;
+              </p>
+              <p>Mide una cantidad, como bateria o capacidad.</p>
+              <p class="detalle">No es para progreso: es para nivel actual.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;dialog&gt; Ventana emergente. &lt;/dialog&gt;
+              </p>
+              <p>Sirve para una caja que aparece encima del contenido.</p>
+              <p class="detalle">
+                Se usa menos, pero existe para mensajes o confirmaciones.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;samp&gt; Texto de salida del sistema. &lt;/samp&gt;
+              </p>
+              <p>
+                Muestra una respuesta o mensaje como si viniera de la
+                computadora.
+              </p>
+              <p class="detalle">Va bien en ejemplos tecnicos.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;var&gt; Nombre de un valor. &lt;/var&gt;
+              </p>
+              <p>
+                Sirve para mostrar una variable o un dato que puede cambiar.
+              </p>
+              <p class="detalle">Se usa en ejemplos tecnicos o matematicos.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;data value="123"&gt; Producto &lt;/data&gt;
+              </p>
+              <p>Guarda un dato visible y otro mas preciso por detras.</p>
+              <p class="detalle">
+                Sirve cuando quieres mostrar un texto y tambien guardar su valor
+                exacto.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">
+                &lt;template id="tarjeta-base"&gt;...&lt;/template&gt;
+              </p>
+              <p>
+                Guarda un bloque de HTML que queda listo para copiar mas tarde
+                con JavaScript.
+              </p>
+              <p class="detalle">No se ve hasta que algun script lo usa.</p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">&lt;wbr&gt;</p>
+              <p>
+                Marca un punto donde una palabra muy larga podria cortarse si
+                hace falta.
+              </p>
+              <p class="detalle">
+                Ayuda en URLs, codigos largos o nombres tecnicos.
+              </p>
+            </article>
+          </div>
+        </section>
+        <section class="bloque bloque-transicion-practica" id="guia-practica">
+          <h2>Guia basica y ejemplos visuales</h2>
+          <p>
+            Debajo sigue la parte practica de la guia. Se mantiene en esta misma
+            pagina para que puedas comparar la referencia HTML de arriba con los
+            ejemplos mas visuales de abajo.
+          </p>
+        </section>
+        <section class="bloque introduccion introduccion-practica">
+<!--
         <header>
         Que es: la cabecera principal de la pagina.
         Como funciona: suele contener titulo, introduccion o menu.
         Para que sirve: presentar el contenido inicial.
         Ejemplo real: arriba de una web de ropa pondrias el nombre del local, una frase y el menu principal.
       -->
-      <h1>Guia Basica de HTML y CSS</h1>
+      <h1>Guia practica de HTML con ejemplos visuales</h1>
       <p>
-        Esta pagina junta muchos ejemplos simples de etiquetas HTML y una hoja
-        de estilos CSS separada para practicar.
+        Esta parte sigue reuniendo ejemplos simples de etiquetas HTML y algunos
+        apoyos visuales de CSS para que sea mas facil entender lo que se ve en
+        pantalla.
       </p>
 
       <nav class="menu-principal">
@@ -89,7 +1266,7 @@
         <a href="#interactivas">Interactivas</a>
         <a href="#css-demo">CSS</a>
         <a href="pages/estructura/estructura-codigo.html">
-          Estructura en codigo HTML/CSS
+          Referencia de CSS en codigo
         </a>
         <a href="pages/formularios/formulario.html">Formulario aparte</a>
       </nav>
@@ -97,8 +1274,8 @@
       <p class="nota-guia">
         En varios bloques de esta guia vas a ver el ejemplo ya renderizado y, al
         hacer clic en el nombre de la etiqueta se abrira su HTML y su CSS. Si
-        quieres una referencia aparte, ahora tambien tienes una pagina con
-        estructura en codigo HTML/CSS explicada paso a paso.
+        quieres una referencia aparte, ahora tambien tienes una pagina dedicada
+        solo a CSS explicada paso a paso.
       </p>
 
       <div class="codigo-comparado">
@@ -108,7 +1285,7 @@
   &lt;a href="#estructura"&gt;Estructura&lt;/a&gt;
   &lt;a href="#textos"&gt;Textos&lt;/a&gt;
   &lt;a href="#css-demo"&gt;CSS&lt;/a&gt;
-  &lt;a href="pages/estructura/estructura-codigo.html"&gt;Estructura en codigo HTML/CSS&lt;/a&gt;
+  &lt;a href="pages/estructura/estructura-codigo.html"&gt;Referencia de CSS en codigo&lt;/a&gt;
 &lt;/nav&gt;</code></pre>
         </div>
         <div class="codigo-caja">
@@ -139,10 +1316,8 @@
 }</code></pre>
         </div>
       </div>
-    </header>
-
-    <main>
-      <!--
+        </section>
+<!--
         <main>
         Que es: el contenido principal de la pagina.
         Como funciona: contiene la informacion mas importante del documento.
@@ -2579,20 +3754,21 @@ dialog {
           </div>
         </div>
       </section>
-    </main>
+      </main>
 
-    <footer class="bloque">
-      <!--
+      <footer class="bloque">
+<!--
         <footer>
         Que es: el pie de pagina.
         Como funciona: cierra el documento con informacion final.
         Para que sirve: terminar la pagina de forma ordenada.
         Ejemplo real: ahi podrias poner derechos reservados, redes sociales y medios de contacto.
       -->
-      <p>Fin de la guia basica de HTML y CSS.</p>
-    </footer>
+      <p>Fin de la guia de HTML y de los ejemplos visuales.</p>
+      </footer>
+    </div>
     <script>
-      const titulosEjemplo = document.querySelectorAll(".ejemplo-vista > h3");
+const titulosEjemplo = document.querySelectorAll(".ejemplo-vista > h3");
 
       function alternarCodigo(titulo) {
         const tarjeta = titulo.closest(".ejemplo-individual");

@@ -3817,21 +3817,8 @@ const advancedCssPropertyNames = new Set([
 ]);
 
 const sectionAliases = {
-  "base-documento":
-    "base documento archivo html head body meta title link style script comentarios",
-  estructura:
-    "estructura contenedores header nav search main section article aside footer div span address",
-  texto:
-    "texto titulos subtitulos parrafo enfasis cita fecha abreviatura dato ruby",
-  listas: "listas enlaces vinculos menu pasos definiciones mail telefono",
-  multimedia:
-    "multimedia imagenes audio video figure iframe canvas svg subtitulos",
-  tablas: "tablas filas columnas celdas caption thead tbody tfoot td th",
-  formularios:
-    "formularios campos input textarea select option button checkbox radio email password",
-  extras: "extras details summary code pre progress meter dialog template kbd",
   "propiedades-css":
-    "css propiedades estilos borde fondo texto flex grid posicion medidas sombra transicion",
+    "css selectores propiedades estilos etiqueta clase id universal descendiente hijo directo combinado borde fondo texto flex grid posicion medidas sombra transicion animacion color hover",
 };
 
 function escapeHtml(value) {
@@ -3971,6 +3958,473 @@ function getPropertyDetailLines(property) {
   ];
 }
 
+function getPreviewDemoBox(label) {
+  return `<div class="propiedad-demo-caja">${escapeHtml(label)}</div>`;
+}
+
+function getPreviewDemoText(text) {
+  return `<p class="propiedad-demo-frase">${escapeHtml(text)}</p>`;
+}
+
+function getPreviewDemoParagraph(text) {
+  return `<p class="propiedad-demo-parrafo">${escapeHtml(text)}</p>`;
+}
+
+function getPreviewDemoBoxes(labels, extraClass = "") {
+  const className = ["propiedad-demo-grupo", extraClass].filter(Boolean).join(" ");
+
+  return `
+    <div class="${className}">
+      ${labels
+        .map(
+          (label) => `<span class="propiedad-demo-chip">${escapeHtml(label)}</span>`,
+        )
+        .join("")}
+    </div>
+  `;
+}
+
+function getPreviewDemoList(items) {
+  return `
+    <ul class="propiedad-demo-lista">
+      ${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
+    </ul>
+  `;
+}
+
+function getPreviewDemoCheckbox(label) {
+  return `
+    <label class="propiedad-demo-check">
+      <input type="checkbox" checked />
+      <span>${escapeHtml(label)}</span>
+    </label>
+  `;
+}
+
+function getPreviewDemoLink(text) {
+  return `<span class="propiedad-demo-link">${escapeHtml(text)}</span>`;
+}
+
+function getPreviewDemoCanvas(label) {
+  return `<div class="propiedad-demo-lienzo">${escapeHtml(label)}</div>`;
+}
+
+function getPreviewDemoAction(label) {
+  return `<span class="propiedad-demo-boton-demo">${escapeHtml(label)}</span>`;
+}
+
+function getPreviewDemoValue(value) {
+  return `<span class="propiedad-demo-valor">${escapeHtml(value)}</span>`;
+}
+
+function buildCssPreviewComparison({
+  variant,
+  beforeLabel,
+  afterLabel,
+  beforeContent,
+  afterContent,
+  helpText,
+}) {
+  return `
+    <div class="propiedad-demo-bloque">
+      <button
+        class="propiedad-demo-toggle"
+        type="button"
+        data-property-preview-toggle
+        aria-expanded="false"
+      >
+        Ver ejemplo
+      </button>
+      <div class="propiedad-demo propiedad-demo--${escapeHtml(variant)}" data-property-preview hidden>
+        <div class="propiedad-demo-grid">
+          <div class="propiedad-demo-panel propiedad-demo-panel--before">
+            <p class="propiedad-demo-label">${escapeHtml(beforeLabel)}</p>
+            <div class="propiedad-demo-stage">
+              ${beforeContent}
+            </div>
+          </div>
+          <div class="propiedad-demo-panel propiedad-demo-panel--after">
+            <p class="propiedad-demo-label">${escapeHtml(afterLabel)}</p>
+            <div class="propiedad-demo-stage">
+              ${afterContent}
+            </div>
+          </div>
+        </div>
+        <p class="propiedad-demo-help">${escapeHtml(helpText)}</p>
+      </div>
+    </div>
+  `;
+}
+
+function getCssPreviewHtml(property) {
+  switch (property.name) {
+    case "padding":
+      return buildCssPreviewComparison({
+        variant: "padding",
+        beforeLabel: "Antes",
+        afterLabel: "Con padding",
+        beforeContent: getPreviewDemoBox("Contenido"),
+        afterContent: getPreviewDemoBox("Contenido"),
+        helpText: "Se ve mas aire entre el borde de la caja y lo que hay adentro.",
+      });
+    case "margin":
+      return buildCssPreviewComparison({
+        variant: "margin",
+        beforeLabel: "Pegado",
+        afterLabel: "Con margen",
+        beforeContent: getPreviewDemoBoxes(["Caja 1", "Caja 2"]),
+        afterContent: getPreviewDemoBoxes(["Caja 1", "Caja 2"]),
+        helpText: "El espacio aparece por fuera y separa una caja de la otra.",
+      });
+    case "border":
+      return buildCssPreviewComparison({
+        variant: "border",
+        beforeLabel: "Antes",
+        afterLabel: "Con border",
+        beforeContent: getPreviewDemoBox("Caja"),
+        afterContent: getPreviewDemoBox("Caja"),
+        helpText: "Aparece un marco visible alrededor del elemento.",
+      });
+    case "border-radius":
+      return buildCssPreviewComparison({
+        variant: "border-radius",
+        beforeLabel: "Esquina recta",
+        afterLabel: "Esquina redondeada",
+        beforeContent: getPreviewDemoBox("Caja"),
+        afterContent: getPreviewDemoBox("Caja"),
+        helpText: "La misma caja pasa de verse recta a mucho mas suave.",
+      });
+    case "background":
+      return buildCssPreviewComparison({
+        variant: "background",
+        beforeLabel: "Fondo simple",
+        afterLabel: "Con gradiente rgb",
+        beforeContent: getPreviewDemoBox("Hero"),
+        afterContent: getPreviewDemoBox("Hero"),
+        helpText:
+          "El fondo puede cambiar por completo, incluso con gradientes como linear-gradient(rgb(255, 250, 240), rgb(227, 244, 238)).",
+      });
+    case "background-color":
+      return buildCssPreviewComparison({
+        variant: "background-color",
+        beforeLabel: "Sin color",
+        afterLabel: "rgb(226, 242, 236)",
+        beforeContent: `${getPreviewDemoBox("Badge")}${getPreviewDemoValue("sin color")}`,
+        afterContent: `${getPreviewDemoBox("Badge")}${getPreviewDemoValue("rgb(226, 242, 236)")}`,
+        helpText: "La caja se rellena con un color liso y aqui se ve usando rgb(226, 242, 236).",
+      });
+    case "color":
+      return buildCssPreviewComparison({
+        variant: "color",
+        beforeLabel: "Texto normal",
+        afterLabel: "rgb(31, 92, 74)",
+        beforeContent: `${getPreviewDemoText("Texto de ejemplo")}${getPreviewDemoValue(
+          "rgb(36, 52, 71)",
+        )}`,
+        afterContent: `${getPreviewDemoText("Texto de ejemplo")}${getPreviewDemoValue(
+          "rgb(31, 92, 74)",
+        )}`,
+        helpText: "Solo cambia el color de la letra, y aqui lo ves con un valor escrito en rgb(...).",
+      });
+    case "font-size":
+      return buildCssPreviewComparison({
+        variant: "font-size",
+        beforeLabel: "Tamano normal",
+        afterLabel: "Mas grande",
+        beforeContent: getPreviewDemoText("Titulo corto"),
+        afterContent: getPreviewDemoText("Titulo corto"),
+        helpText: "La misma frase ocupa mas espacio porque la letra crece.",
+      });
+    case "line-height":
+      return buildCssPreviewComparison({
+        variant: "line-height",
+        beforeLabel: "Mas junto",
+        afterLabel: "Con aire",
+        beforeContent: getPreviewDemoParagraph("Primera linea de ejemplo. Segunda linea de ejemplo."),
+        afterContent: getPreviewDemoParagraph("Primera linea de ejemplo. Segunda linea de ejemplo."),
+        helpText: "Se nota en la distancia vertical entre una linea y la siguiente.",
+      });
+    case "text-align":
+      return buildCssPreviewComparison({
+        variant: "text-align",
+        beforeLabel: "A la izquierda",
+        afterLabel: "Centrado",
+        beforeContent: getPreviewDemoParagraph("Texto breve dentro de una caja."),
+        afterContent: getPreviewDemoParagraph("Texto breve dentro de una caja."),
+        helpText: "El contenido cambia de ubicacion dentro de la misma caja.",
+      });
+    case "width":
+      return buildCssPreviewComparison({
+        variant: "width",
+        beforeLabel: "Mas angosto",
+        afterLabel: "Con width",
+        beforeContent: getPreviewDemoBox("Panel"),
+        afterContent: getPreviewDemoBox("Panel"),
+        helpText: "La caja se ensancha y ocupa mas espacio horizontal.",
+      });
+    case "height":
+      return buildCssPreviewComparison({
+        variant: "height",
+        beforeLabel: "Mas bajo",
+        afterLabel: "Con height",
+        beforeContent: getPreviewDemoBox("Banner"),
+        afterContent: getPreviewDemoBox("Banner"),
+        helpText: "La caja gana altura y deja ver mas espacio vertical.",
+      });
+    case "display":
+      return buildCssPreviewComparison({
+        variant: "display",
+        beforeLabel: "Apilado",
+        afterLabel: "Con flex",
+        beforeContent: getPreviewDemoBoxes(["A", "B", "C"]),
+        afterContent: getPreviewDemoBoxes(["A", "B", "C"]),
+        helpText: "Los bloques dejan de apilarse y pasan a ir uno al lado del otro.",
+      });
+    case "flex-direction":
+      return buildCssPreviewComparison({
+        variant: "flex-direction",
+        beforeLabel: "En fila",
+        afterLabel: "En columna",
+        beforeContent: getPreviewDemoBoxes(["A", "B", "C"]),
+        afterContent: getPreviewDemoBoxes(["A", "B", "C"]),
+        helpText: "Cambia la direccion en la que se acomodan los elementos del contenedor.",
+      });
+    case "justify-content":
+      return buildCssPreviewComparison({
+        variant: "justify-content",
+        beforeLabel: "Juntos",
+        afterLabel: "Repartidos",
+        beforeContent: getPreviewDemoBoxes(["1", "2", "3"]),
+        afterContent: getPreviewDemoBoxes(["1", "2", "3"]),
+        helpText: "Se ve como el contenido se reparte a lo ancho del espacio disponible.",
+      });
+    case "align-items":
+      return buildCssPreviewComparison({
+        variant: "align-items",
+        beforeLabel: "Arriba",
+        afterLabel: "Centrados",
+        beforeContent: getPreviewDemoBoxes(["A", "B", "C"], "propiedad-demo-grupo--alto"),
+        afterContent: getPreviewDemoBoxes(["A", "B", "C"], "propiedad-demo-grupo--alto"),
+        helpText: "Alinea los elementos en el eje cruzado, por eso parecen subir o bajar.",
+      });
+    case "gap":
+      return buildCssPreviewComparison({
+        variant: "gap",
+        beforeLabel: "Sin espacio",
+        afterLabel: "Con gap",
+        beforeContent: getPreviewDemoBoxes(["A", "B", "C"]),
+        afterContent: getPreviewDemoBoxes(["A", "B", "C"]),
+        helpText: "Aparece una separacion limpia entre los elementos del grupo.",
+      });
+    case "box-shadow":
+      return buildCssPreviewComparison({
+        variant: "box-shadow",
+        beforeLabel: "Sin sombra",
+        afterLabel: "Con sombra",
+        beforeContent: getPreviewDemoBox("Tarjeta"),
+        afterContent: getPreviewDemoBox("Tarjeta"),
+        helpText: "La sombra hace que el bloque parezca levantado del fondo.",
+      });
+    case "border-color":
+      return buildCssPreviewComparison({
+        variant: "border-color",
+        beforeLabel: "Color base",
+        afterLabel: "rgb(31, 92, 74)",
+        beforeContent: `${getPreviewDemoBox("Borde")}${getPreviewDemoValue("rgb(216, 209, 196)")}`,
+        afterContent: `${getPreviewDemoBox("Borde")}${getPreviewDemoValue("rgb(31, 92, 74)")}`,
+        helpText: "Solo cambia el color del marco, y aqui se muestra con un valor rgb facil de copiar.",
+      });
+    case "border-width":
+      return buildCssPreviewComparison({
+        variant: "border-width",
+        beforeLabel: "Fino",
+        afterLabel: "Mas grueso",
+        beforeContent: getPreviewDemoBox("Borde"),
+        afterContent: getPreviewDemoBox("Borde"),
+        helpText: "El borde sigue ahi, pero gana grosor y se nota mas.",
+      });
+    case "border-style":
+      return buildCssPreviewComparison({
+        variant: "border-style",
+        beforeLabel: "Solid",
+        afterLabel: "Dashed",
+        beforeContent: getPreviewDemoBox("Borde"),
+        afterContent: getPreviewDemoBox("Borde"),
+        helpText: "Cambia la forma visual del borde sin mover el contenido.",
+      });
+    case "opacity":
+      return buildCssPreviewComparison({
+        variant: "opacity",
+        beforeLabel: "Solido",
+        afterLabel: "Transparente",
+        beforeContent: getPreviewDemoBox("Imagen"),
+        afterContent: getPreviewDemoBox("Imagen"),
+        helpText: "El bloque sigue ahi, pero se vuelve mas transparente.",
+      });
+    case "transition":
+      return buildCssPreviewComparison({
+        variant: "transition",
+        beforeLabel: "Salto brusco",
+        afterLabel: "Cambio suave",
+        beforeContent: getPreviewDemoAction("Boton"),
+        afterContent: getPreviewDemoAction("Boton"),
+        helpText: "A la izquierda el cambio pega un salto; a la derecha se siente mas fluido y suave.",
+      });
+    case "transform":
+      return buildCssPreviewComparison({
+        variant: "transform",
+        beforeLabel: "Quieto",
+        afterLabel: "Con movimiento",
+        beforeContent: getPreviewDemoAction("Tarjeta"),
+        afterContent: getPreviewDemoAction("Tarjeta"),
+        helpText: "Transform puede mover, girar o agrandar, por eso el bloque cambia de posicion y angulo.",
+      });
+    case "font-weight":
+      return buildCssPreviewComparison({
+        variant: "font-weight",
+        beforeLabel: "Normal",
+        afterLabel: "Mas gruesa",
+        beforeContent: getPreviewDemoText("Texto fuerte"),
+        afterContent: getPreviewDemoText("Texto fuerte"),
+        helpText: "La letra gana peso visual sin cambiar de lugar.",
+      });
+    case "text-transform":
+      return buildCssPreviewComparison({
+        variant: "text-transform",
+        beforeLabel: "Como estaba",
+        afterLabel: "En mayusculas",
+        beforeContent: getPreviewDemoText("etiqueta nueva"),
+        afterContent: getPreviewDemoText("etiqueta nueva"),
+        helpText: "Se transforma la forma en que se muestra el texto.",
+      });
+    case "letter-spacing":
+      return buildCssPreviewComparison({
+        variant: "letter-spacing",
+        beforeLabel: "Junto",
+        afterLabel: "Mas separado",
+        beforeContent: getPreviewDemoText("MARCA"),
+        afterContent: getPreviewDemoText("MARCA"),
+        helpText: "Las letras se abren y dejan mas aire entre una y otra.",
+      });
+    case "text-decoration":
+      return buildCssPreviewComparison({
+        variant: "text-decoration",
+        beforeLabel: "Sin linea",
+        afterLabel: "Subrayado",
+        beforeContent: getPreviewDemoLink("Enlace de ejemplo"),
+        afterContent: getPreviewDemoLink("Enlace de ejemplo"),
+        helpText: "Agrega una linea visible, como un subrayado.",
+      });
+    case "list-style":
+      return buildCssPreviewComparison({
+        variant: "list-style",
+        beforeLabel: "Simple",
+        afterLabel: "Con vinetas",
+        beforeContent: getPreviewDemoList(["Paso uno", "Paso dos"]),
+        afterContent: getPreviewDemoList(["Paso uno", "Paso dos"]),
+        helpText: "Cambia el aspecto de las vinetas o numeros de una lista.",
+      });
+    case "text-shadow":
+      return buildCssPreviewComparison({
+        variant: "text-shadow",
+        beforeLabel: "Plano",
+        afterLabel: "Con sombra",
+        beforeContent: getPreviewDemoText("Titulo"),
+        afterContent: getPreviewDemoText("Titulo"),
+        helpText: "La sombra ayuda a destacar el texto y darle profundidad.",
+      });
+    case "background-image":
+      return buildCssPreviewComparison({
+        variant: "background-image",
+        beforeLabel: "Fondo vacio",
+        afterLabel: "Gradiente rgb",
+        beforeContent: getPreviewDemoCanvas("Banner"),
+        afterContent: `${getPreviewDemoCanvas("Banner")}${getPreviewDemoValue(
+          "linear-gradient(rgb(...))",
+        )}`,
+        helpText: "Aqui el fondo usa un gradiente para que se note rapido lo que hace background-image.",
+      });
+    case "background-size":
+      return buildCssPreviewComparison({
+        variant: "background-size",
+        beforeLabel: "Mas chico",
+        afterLabel: "Cover",
+        beforeContent: getPreviewDemoCanvas("Foto"),
+        afterContent: getPreviewDemoCanvas("Foto"),
+        helpText: "La misma imagen se acomoda distinto dentro de la caja segun el tamano que le das.",
+      });
+    case "background-position":
+      return buildCssPreviewComparison({
+        variant: "background-position",
+        beforeLabel: "Esquina",
+        afterLabel: "Centro",
+        beforeContent: getPreviewDemoCanvas("Foto"),
+        afterContent: getPreviewDemoCanvas("Foto"),
+        helpText: "El contenido del fondo se mueve dentro del mismo marco sin cambiar el tamano de la caja.",
+      });
+    case "outline":
+      return buildCssPreviewComparison({
+        variant: "outline",
+        beforeLabel: "Sin contorno",
+        afterLabel: "Con outline",
+        beforeContent: getPreviewDemoAction("Campo"),
+        afterContent: getPreviewDemoAction("Campo"),
+        helpText: "Outline dibuja un contorno por fuera, muy usado para foco y accesibilidad.",
+      });
+    case "filter":
+      return buildCssPreviewComparison({
+        variant: "filter",
+        beforeLabel: "Normal",
+        afterLabel: "Con filtro",
+        beforeContent: getPreviewDemoCanvas("Foto"),
+        afterContent: getPreviewDemoCanvas("Foto"),
+        helpText: "Filter cambia el aspecto visual del bloque, por ejemplo con gris, brillo o desenfoque.",
+      });
+    case "accent-color":
+      return buildCssPreviewComparison({
+        variant: "accent-color",
+        beforeLabel: "Color normal",
+        afterLabel: "rgb(31, 92, 74)",
+        beforeContent: `${getPreviewDemoCheckbox("Aceptar terminos")}${getPreviewDemoValue(
+          "color del navegador",
+        )}`,
+        afterContent: `${getPreviewDemoCheckbox("Aceptar terminos")}${getPreviewDemoValue(
+          "rgb(31, 92, 74)",
+        )}`,
+        helpText: "Algunos controles del formulario cambian su color principal, y aqui lo ves con rgb(...).",
+      });
+    case "animation":
+      return buildCssPreviewComparison({
+        variant: "animation",
+        beforeLabel: "Quieto",
+        afterLabel: "Animando",
+        beforeContent: getPreviewDemoAction("Badge"),
+        afterContent: getPreviewDemoAction("Badge"),
+        helpText: "Animation hace que el movimiento se repita solo, sin esperar hover ni click.",
+      });
+    case "animation-delay":
+      return buildCssPreviewComparison({
+        variant: "animation-delay",
+        beforeLabel: "Arranca ya",
+        afterLabel: "Arranca despues",
+        beforeContent: getPreviewDemoAction("Aviso"),
+        afterContent: getPreviewDemoAction("Aviso"),
+        helpText: "La diferencia es que a la derecha la animacion se toma un momento antes de empezar.",
+      });
+    case "animation-duration":
+      return buildCssPreviewComparison({
+        variant: "animation-duration",
+        beforeLabel: "Rapida",
+        afterLabel: "Mas lenta",
+        beforeContent: getPreviewDemoAction("Punto"),
+        afterContent: getPreviewDemoAction("Punto"),
+        helpText: "La misma animacion puede sentirse muy distinta si dura poco o mucho tiempo.",
+      });
+    default:
+      return "";
+  }
+}
+
 function renderCssProperties() {
   const grid = document.getElementById("propiedades-grid");
 
@@ -3982,6 +4436,7 @@ function renderCssProperties() {
     .map(
       (property) => {
         const propertyLevel = getCssLevel(property);
+        const previewHtml = getCssPreviewHtml(property);
         const detailLinesHtml = getPropertyDetailLines(property)
           .map(
             (detailLine) => `
@@ -4012,6 +4467,7 @@ function renderCssProperties() {
             </div>
           </div>
           <pre><code>${escapeHtml(property.code)}</code></pre>
+          ${previewHtml}
           ${detailLinesHtml}
         </article>
       `;
@@ -4058,22 +4514,12 @@ function setupSearch() {
     return;
   }
 
-  const searchableSections = [
-    "base-documento",
-    "estructura",
-    "texto",
-    "listas",
-    "multimedia",
-    "tablas",
-    "formularios",
-    "extras",
-    "propiedades-css",
-  ]
+  const searchableSections = ["propiedades-css"]
     .map((id) => document.getElementById(id))
     .filter(Boolean);
 
   const searchableCards = searchableSections.flatMap((section) =>
-    Array.from(section.querySelectorAll(".referencia-card, .propiedad")),
+    Array.from(section.querySelectorAll(".selector-card, .propiedad")),
   );
 
   function updateCssTypeButtons() {
@@ -4156,7 +4602,7 @@ function setupSearch() {
 
     searchableSections.forEach((section) => {
       const hasVisibleCards = Array.from(
-        section.querySelectorAll(".referencia-card, .propiedad"),
+        section.querySelectorAll(".selector-card, .propiedad"),
       ).some((card) => !card.hidden);
 
       section.hidden = tokens.length > 0 && !hasVisibleCards;
@@ -4164,11 +4610,11 @@ function setupSearch() {
 
     if (tokens.length === 0) {
       if (cssFiltersSummary) {
-        status.textContent = `Filtros CSS activos: ${cssFiltersSummary}. Mostrando ${visibleCssCount} estilo${
-          visibleCssCount === 1 ? "" : "s"
-        } relacionados.`;
+        status.textContent = `Filtros CSS activos: ${cssFiltersSummary}. Mostrando ${visibleCssCount} propied${
+          visibleCssCount === 1 ? "ad" : "ades"
+        } CSS relacionadas y manteniendo visible la guia de selectores.`;
       } else {
-        status.textContent = `Mostrando ${searchableCards.length} fichas HTML y CSS.`;
+        status.textContent = `Mostrando ${searchableCards.length} fichas de selectores y propiedades CSS.`;
       }
     } else if (visibleCount === 0) {
       status.textContent =
@@ -4228,7 +4674,61 @@ function setupSearch() {
   updateSearch();
 }
 
+function setupSelectorCodeToggles() {
+  const toggleButtons = document.querySelectorAll("[data-selector-toggle]");
+
+  toggleButtons.forEach((button, index) => {
+    const example = button.closest(".selector-ejemplo");
+    const codeBlock = example?.querySelector("[data-selector-code]");
+
+    if (!codeBlock) {
+      return;
+    }
+
+    if (!codeBlock.id) {
+      codeBlock.id = `selector-code-${index + 1}`;
+    }
+
+    button.setAttribute("aria-controls", codeBlock.id);
+
+    button.addEventListener("click", () => {
+      const shouldShow = codeBlock.hidden;
+      codeBlock.hidden = !shouldShow;
+      button.setAttribute("aria-expanded", shouldShow ? "true" : "false");
+      button.textContent = shouldShow ? "Ocultar" : "Ver codigo";
+    });
+  });
+}
+
+function setupPropertyPreviewToggles() {
+  const toggleButtons = document.querySelectorAll("[data-property-preview-toggle]");
+
+  toggleButtons.forEach((button, index) => {
+    const card = button.closest(".propiedad");
+    const preview = card?.querySelector("[data-property-preview]");
+
+    if (!preview) {
+      return;
+    }
+
+    if (!preview.id) {
+      preview.id = `propiedad-preview-${index + 1}`;
+    }
+
+    button.setAttribute("aria-controls", preview.id);
+
+    button.addEventListener("click", () => {
+      const shouldShow = preview.hidden;
+      preview.hidden = !shouldShow;
+      button.setAttribute("aria-expanded", shouldShow ? "true" : "false");
+      button.textContent = shouldShow ? "Ocultar ejemplo" : "Ver ejemplo";
+    });
+  });
+}
+
 renderCssTypeChips();
 renderCssLevelChips();
 renderCssProperties();
 setupSearch();
+setupSelectorCodeToggles();
+setupPropertyPreviewToggles();
