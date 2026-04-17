@@ -151,6 +151,8 @@ a:focus {
   padding: var(--espacio);
   margin-bottom: 20px;
   box-shadow: var(--sombra);
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 720px;
 }
 
 /*

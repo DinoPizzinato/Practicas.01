@@ -13,12 +13,14 @@
         <p class="etiqueta-superior">Referencia aparte</p>
         <h1>Referencia de CSS en codigo</h1>
         <p>
-          Esta pagina queda dedicada solo a CSS: selectores basicos, propiedades,
-          filtros visuales y ejemplos completos para copiar con mas contexto.
+          Esta pagina queda dedicada solo a CSS: fundamentos, selectores,
+          pseudoclases, variables, media queries, propiedades y ejemplos
+          completos para copiar con mas contexto.
         </p>
 
         <div class="acciones">
           <a href="#busqueda">Buscar en CSS</a>
+          <a href="#fundamentos-css">Ver fundamentos CSS</a>
           <a href="#selectores-css">Ver selectores CSS</a>
           <a href="#propiedades-css">Ver propiedades CSS</a>
           <a href="../../css/estructura-codigo.css">Abrir CSS comentado</a>
@@ -28,14 +30,14 @@
       <div class="barra-busqueda-superior" id="busqueda">
         <div class="busqueda-panel busqueda-panel--superior">
           <label class="busqueda-label" for="busqueda-referencia">
-            Buscar un selector CSS, una propiedad CSS o una idea general
+            Buscar una propiedad CSS o describir la propiedad que necesitas.
           </label>
           <div class="busqueda-fila">
             <input
               class="campo-busqueda"
               id="busqueda-referencia"
               type="search"
-              placeholder="Ej: border, borde, flex, grid, color, hover..."
+              placeholder="Buscar elementos..."
               autocomplete="off"
               data-search-input
             />
@@ -49,57 +51,835 @@
             </button>
           </div>
           <p class="estado-busqueda" data-search-status>
-            Mostrando todos los selectores y propiedades CSS.
+            Mostrando todas las fichas CSS, incluidos los fundamentos.
           </p>
+          <div class="respuesta-busqueda" data-search-recommendation hidden>
+            <p class="selector-etiqueta">Respuesta recomendada</p>
+            <h3
+              class="respuesta-busqueda-titulo"
+              data-search-recommendation-title
+            ></h3>
+            <p
+              class="respuesta-busqueda-texto"
+              data-search-recommendation-summary
+            ></p>
+            <pre
+              class="respuesta-busqueda-codigo"
+            ><code data-search-recommendation-code></code></pre>
+            <p
+              class="detalle respuesta-busqueda-nota"
+              data-search-recommendation-note
+              hidden
+            ></p>
+            <div
+              class="respuesta-busqueda-relacionadas"
+              data-search-recommendation-tags
+              aria-label="Propiedades CSS relacionadas"
+            ></div>
+          </div>
         </div>
       </div>
 
       <nav class="indice">
         <div class="indice-enlaces">
+          <a href="#fundamentos-css">Fundamentos</a>
           <a href="#selectores-css">Selectores</a>
           <a href="#propiedades-css">Propiedades</a>
-          <a href="../../index.html#idea-html">HTML</a>
+          <a href="../../index.html#fundamentos-html">HTML</a>
         </div>
         <div class="chips-indice" aria-label="Busquedas rapidas CSS">
           <div class="sugerencias-busqueda">
-            <button class="chip-busqueda" type="button" data-search-chip="border">border</button>
-            <button class="chip-busqueda" type="button" data-search-chip="borde">borde</button>
-            <button class="chip-busqueda" type="button" data-search-chip="flex">flex</button>
-            <button class="chip-busqueda" type="button" data-search-chip="grid">grid</button>
-            <button class="chip-busqueda" type="button" data-search-chip="color">color</button>
-            <button class="chip-busqueda" type="button" data-search-chip="hover">hover</button>
+            <button
+              class="chip-busqueda"
+              type="button"
+              data-search-chip="border"
+            >
+              border
+            </button>
+            <button
+              class="chip-busqueda"
+              type="button"
+              data-search-chip="borde"
+            >
+              borde
+            </button>
+            <button class="chip-busqueda" type="button" data-search-chip="flex">
+              flex
+            </button>
+            <button class="chip-busqueda" type="button" data-search-chip="grid">
+              grid
+            </button>
+            <button
+              class="chip-busqueda"
+              type="button"
+              data-search-chip="color"
+            >
+              color
+            </button>
+            <button
+              class="chip-busqueda"
+              type="button"
+              data-search-chip="hover"
+            >
+              hover
+            </button>
+            <button
+              class="chip-busqueda"
+              type="button"
+              data-search-chip="variable"
+            >
+              variable
+            </button>
+            <button
+              class="chip-busqueda"
+              type="button"
+              data-search-chip="media query"
+            >
+              media query
+            </button>
+            <button
+              class="chip-busqueda"
+              type="button"
+              data-search-chip="clamp"
+            >
+              clamp
+            </button>
+            <button
+              class="chip-busqueda"
+              type="button"
+              data-search-chip="pseudo"
+            >
+              pseudo
+            </button>
+            <button
+              class="chip-busqueda"
+              type="button"
+              data-search-chip="centrar en pantalla"
+            >
+              centrar en pantalla
+            </button>
+            <button
+              class="chip-busqueda"
+              type="button"
+              data-search-chip="tarjetas en grid"
+            >
+              tarjetas en grid
+            </button>
+            <button
+              class="chip-busqueda"
+              type="button"
+              data-search-chip="texto responsive"
+            >
+              texto responsive
+            </button>
+            <button
+              class="chip-busqueda"
+              type="button"
+              data-search-chip="cascada"
+            >
+              cascada
+            </button>
+            <button
+              class="chip-busqueda"
+              type="button"
+              data-search-chip="especificidad"
+            >
+              especificidad
+            </button>
+            <button
+              class="chip-busqueda"
+              type="button"
+              data-search-chip="box model"
+            >
+              box model
+            </button>
           </div>
         </div>
       </nav>
 
       <main>
+        <section class="bloque fundamentos-prioritarios" data-search-intro>
+          <div class="fundamentos-prioritarios-encabezado">
+            <div>
+              <p class="selector-etiqueta">Fundamentos primero</p>
+              <h2>Primero entiende como trabajan HTML y CSS juntos</h2>
+            </div>
+            <a class="fundamentos-prioritarios-link" href="#fundamentos-css">
+              Abrir bloque completo
+            </a>
+          </div>
+          <p>
+            Antes de memorizar propiedades o copiar ejemplos, conviene entender
+            que HTML define la estructura del documento y CSS decide como se
+            presenta esa estructura en pantalla. Cuando esa base se entiende
+            bien, el resto deja de sentirse como una lista de trucos sueltos.
+          </p>
+          <div class="fundamentos-prioritarios-grid">
+            <article class="fundamentos-prioritarios-card">
+              <h3>HTML: estructura y significado</h3>
+              <p>
+                HTML no se usa para "hacerlo ver lindo", sino para decirle al
+                navegador que una pieza es un titulo, un parrafo, una lista, un
+                formulario, un enlace o una seccion. Esa estructura importa
+                porque CSS no estiliza pixeles sueltos: estiliza elementos HTML
+                concretos y las relaciones que tienen entre si.
+              </p>
+              <p>
+                Si el HTML esta bien armado, luego es mas facil seleccionar,
+                ordenar y mantener el contenido. Si el HTML esta confuso, CSS
+                termina lleno de parches.
+              </p>
+            </article>
+            <article class="fundamentos-prioritarios-card">
+              <h3>CSS: presentacion, reglas y layout</h3>
+              <p>
+                CSS toma esa estructura y decide color, espaciado, tamanos,
+                bordes, posicion, distribucion y respuesta a distintos anchos de
+                pantalla. Pero no aplica todo al azar: primero tiene que decidir
+                que regla coincide con cada elemento y cual gana cuando varias
+                compiten.
+              </p>
+              <p>
+                Por eso estudiar CSS no es solo aprender propiedades. Tambien es
+                entender cascada, especificidad, herencia, box model y flujo
+                normal.
+              </p>
+            </article>
+            <article class="fundamentos-prioritarios-card">
+              <h3>Que hace el navegador con todo eso</h3>
+              <p>
+                El navegador lee el HTML, construye una estructura interna del
+                documento, lee el CSS y prueba que reglas coinciden con cada
+                elemento. Despues calcula estilos finales, tamanos, posiciones y
+                recien ahi dibuja la pagina.
+              </p>
+              <p>
+                Cuando algo falla, casi siempre el problema esta en alguna parte
+                de esa cadena: el HTML, el selector, la regla que gano, la caja
+                o el contexto donde se acomoda el elemento.
+              </p>
+              <div class="fundamentos-prioritarios-acciones">
+                <a href="#fundamentos-css">Ir a fundamentos</a>
+                <a href="#selectores-css">Seguir con selectores</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
         <section class="bloque">
           <h2>Como leer esta referencia CSS</h2>
           <div class="tarjetas">
             <article class="tarjeta">
-              <h3>Selectores simples</h3>
+              <h3>CSS puro</h3>
               <p>
-                Primero veras una guia corta para recordar como llamar etiquetas,
-                clases, ids y otros selectores basicos.
+                Veras selectores, pseudoclases, variables, media queries y
+                propiedades, todo centrado en CSS y sin salir del mismo formato.
               </p>
             </article>
             <article class="tarjeta">
               <h3>Codigo completo</h3>
               <p>
-                Cada propiedad viene con una regla CSS completa para que el ejemplo
-                funcione tal como esta y no quede a medias.
+                Cada propiedad viene con una regla CSS completa para que el
+                ejemplo funcione tal como esta y no quede a medias.
               </p>
             </article>
             <article class="tarjeta">
               <h3>Ver ejemplo</h3>
               <p>
-                En varias propiedades tambien puedes abrir una mini vista para ver
-                de inmediato como se nota el cambio en pantalla.
+                Cada ficha trae codigo y una vista rapida para entender mejor el
+                efecto visual de la regla.
               </p>
             </article>
           </div>
         </section>
-<section class="bloque" id="propiedades-css">
+
+        <section class="bloque bloque--fundamentos" id="fundamentos-css">
+          <div class="fundamentos-encabezado">
+            <div>
+              <p class="selector-etiqueta">Bloque aparte</p>
+              <h2>Fundamentos y conceptos de CSS para estudiar</h2>
+            </div>
+            <a class="fundamentos-atajo" href="#propiedades-css">
+              Despues seguir con propiedades
+            </a>
+          </div>
+          <p>
+            Aprender propiedades ayuda, pero entender como piensa CSS es lo que
+            realmente te deja resolver problemas sin depender de memoria pura.
+          </p>
+          <p class="detalle">
+            Esta seccion esta pensada para estudiar: conceptos base, ejemplos
+            cortos y preguntas utiles para entender por que una regla funciona.
+          </p>
+          <div class="fundamentos-contexto">
+            <h3>Antes de bajar a propiedades, esta es la idea completa</h3>
+            <p>
+              HTML pone la estructura y el significado del contenido. CSS entra
+              despues para leer esa estructura y decidir como se ve cada pieza.
+              Eso significa que, si no entiendes que elemento estas tocando en
+              HTML, tambien sera dificil entender por que CSS no responde como
+              esperas.
+            </p>
+            <p>
+              El navegador no piensa en "hacerlo lindo" o "hacerlo feo". Piensa
+              en reglas. Primero verifica que selector coincide con que
+              elemento, luego resuelve cascada y especificidad, calcula
+              herencia, mide la caja, acomoda todo en el flujo normal o en un
+              layout especial y al final pinta la interfaz. Esa secuencia es la
+              base real para estudiar CSS y HTML con sentido.
+            </p>
+          </div>
+          <div
+            class="selector-guia"
+            aria-label="Fundamentos y conceptos clave de CSS"
+          >
+            <article
+              class="selector-card"
+              data-search="fundamentos conceptos css cascada orden prioridad ultima regla"
+            >
+              <p class="selector-etiqueta">1. Cascada</p>
+              <h3>Si dos reglas compiten, CSS decide cual gana</h3>
+              <p>
+                La cascada no significa solo "gana la ultima". Primero importa
+                si ambas reglas llegan al mismo elemento y si tienen un peso
+                parecido. Si empatan, gana la que aparece mas abajo.
+              </p>
+              <p class="fundamentos-texto">
+                Cuando el navegador encuentra varias reglas para el mismo
+                elemento, no las aplica todas con el mismo valor final. La
+                cascada es justamente el sistema que decide que declaracion
+                termina viva. Entender esto evita tocar una regla esperando un
+                cambio cuando, en realidad, otra mas fuerte o mas abajo la esta
+                pisando.
+              </p>
+              <div class="selector-ejemplos">
+                <div class="selector-ejemplo">
+                  <p class="selector-ejemplo-titulo">Idea</p>
+                  <pre><code>mismo selector
+misma propiedad
+gana la ultima regla</code></pre>
+                </div>
+                <div class="selector-ejemplo selector-ejemplo--css">
+                  <div class="selector-ejemplo-encabezado">
+                    <p class="selector-ejemplo-titulo">CSS</p>
+                    <button
+                      class="selector-toggle"
+                      type="button"
+                      data-selector-toggle
+                      aria-expanded="false"
+                    >
+                      Ver codigo
+                    </button>
+                  </div>
+                  <pre data-selector-code hidden><code>.titulo {
+  color: steelblue;
+}
+
+.titulo {
+  color: tomato;
+}</code></pre>
+                </div>
+              </div>
+              <p class="detalle">
+                Pregunta para estudiar: las dos reglas apuntan al mismo
+                elemento? Si no, la cascada ni siquiera entra en juego.
+              </p>
+            </article>
+            <article
+              class="selector-card"
+              data-search="especificidad prioridad selector id clase etiqueta peso"
+            >
+              <p class="selector-etiqueta">2. Especificidad</p>
+              <h3>Un selector mas especifico puede ganarle a otro</h3>
+              <p>
+                En general, un <code>#id</code> pesa mas que una
+                <code>.clase</code> y una clase pesa mas que una etiqueta.
+                Entender esto evita pelearte con CSS a base de reglas cada vez
+                mas largas.
+              </p>
+              <p class="fundamentos-texto">
+                La especificidad no mide que selector esta "mejor escrito", sino
+                cuanta precision usa para apuntar. Si te acostumbras a resolver
+                todo con selectores demasiado pesados, despues cada cambio
+                necesita todavia mas peso y el CSS se vuelve dificil de
+                mantener.
+              </p>
+              <div class="selector-ejemplos">
+                <div class="selector-ejemplo">
+                  <p class="selector-ejemplo-titulo">Orden mental</p>
+                  <pre><code>#id  &gt;  .clase  &gt;  etiqueta</code></pre>
+                </div>
+                <div class="selector-ejemplo selector-ejemplo--css">
+                  <div class="selector-ejemplo-encabezado">
+                    <p class="selector-ejemplo-titulo">CSS</p>
+                    <button
+                      class="selector-toggle"
+                      type="button"
+                      data-selector-toggle
+                      aria-expanded="false"
+                    >
+                      Ver codigo
+                    </button>
+                  </div>
+                  <pre data-selector-code hidden><code>h1 {
+  color: steelblue;
+}
+
+.hero h1 {
+  color: seagreen;
+}
+
+#inicio h1 {
+  color: tomato;
+}</code></pre>
+                </div>
+              </div>
+              <p class="detalle">
+                Regla util: intenta ganar por claridad y estructura, no por
+                fuerza bruta.
+              </p>
+            </article>
+            <article
+              class="selector-card"
+              data-search="herencia inherit color fuente tipografia padres hijos"
+            >
+              <p class="selector-etiqueta">3. Herencia</p>
+              <h3>Algunas propiedades bajan a los hijos y otras no</h3>
+              <p>
+                Colores, tipografias y line-height suelen heredarse. En cambio,
+                medidas, bordes, margenes o fondos no se copian automaticamente.
+              </p>
+              <p class="fundamentos-texto">
+                La herencia explica por que muchas veces un texto ya toma una
+                tipografia o un color sin que escribas la regla en cada hijo.
+                Pero tambien explica por que un borde, un fondo o un margen no
+                aparecen magicamente en todos los descendientes. Saber que viaja
+                y que no viaja te ordena mucho la cabeza.
+              </p>
+              <div class="selector-ejemplos">
+                <div class="selector-ejemplo">
+                  <p class="selector-ejemplo-titulo">Idea</p>
+                  <pre><code>color y font-family suelen heredarse
+border y margin no</code></pre>
+                </div>
+                <div class="selector-ejemplo selector-ejemplo--css">
+                  <div class="selector-ejemplo-encabezado">
+                    <p class="selector-ejemplo-titulo">CSS</p>
+                    <button
+                      class="selector-toggle"
+                      type="button"
+                      data-selector-toggle
+                      aria-expanded="false"
+                    >
+                      Ver codigo
+                    </button>
+                  </div>
+                  <pre data-selector-code hidden><code>body {
+  color: #243447;
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+.card {
+  border: 1px solid #d8d1c4;
+}</code></pre>
+                </div>
+              </div>
+              <p class="detalle">
+                Cuando un texto no toma el color esperado, revisa si realmente
+                hereda o si otra regla lo esta sobrescribiendo.
+              </p>
+            </article>
+            <article
+              class="selector-card"
+              data-search="box model modelo de caja margin padding border width height box sizing"
+            >
+              <p class="selector-etiqueta">4. Box model</p>
+              <h3>Toda caja tiene contenido, padding, borde y margen</h3>
+              <p>
+                El modelo de caja explica por que un elemento ocupa cierto
+                espacio. Muchas veces el problema no es el ancho, sino el
+                padding, el border o el margin que se le suman.
+              </p>
+              <p class="fundamentos-texto">
+                Cuando dices que una caja mide cierto ancho, eso no siempre
+                significa que ese sera el espacio visual final. Depende de si el
+                padding y el borde quedan sumados por fuera o incluidos dentro
+                de la medida. Por eso muchisimos problemas de layout no son de
+                "ancho roto", sino de caja mal entendida.
+              </p>
+              <div class="selector-ejemplos">
+                <div class="selector-ejemplo">
+                  <p class="selector-ejemplo-titulo">Capas</p>
+                  <pre><code>contenido
+padding
+border
+margin</code></pre>
+                </div>
+                <div class="selector-ejemplo selector-ejemplo--css">
+                  <div class="selector-ejemplo-encabezado">
+                    <p class="selector-ejemplo-titulo">CSS</p>
+                    <button
+                      class="selector-toggle"
+                      type="button"
+                      data-selector-toggle
+                      aria-expanded="false"
+                    >
+                      Ver codigo
+                    </button>
+                  </div>
+                  <pre data-selector-code hidden><code>* {
+  box-sizing: border-box;
+}
+
+.card {
+  width: 320px;
+  padding: 24px;
+  border: 2px solid #1f5c4a;
+  margin: 16px auto;
+}</code></pre>
+                </div>
+              </div>
+              <p class="detalle">
+                <code>box-sizing: border-box;</code> suele simplificar mucho el
+                calculo visual de las cajas.
+              </p>
+            </article>
+            <article
+              class="selector-card"
+              data-search="flujo normal display block inline inline block maquetado"
+            >
+              <p class="selector-etiqueta">5. Flujo y display</p>
+              <h3>Primero existe un flujo normal, despues lo modificas</h3>
+              <p>
+                CSS no arranca con flex ni grid. Primero hay un flujo por
+                defecto donde algunos elementos ocupan toda la linea y otros
+                viven dentro del texto.
+              </p>
+              <p class="fundamentos-texto">
+                El flujo normal es la manera basica en que el navegador acomoda
+                el documento antes de que tu fuerces otro comportamiento. Si no
+                entiendes como funciona un elemento como <code>block</code>,
+                <code>inline</code> o <code>inline-block</code>, despues cuesta
+                entender por que no acepta ancho, por que baja de linea o por
+                que se mezcla con el texto.
+              </p>
+              <div class="selector-ejemplos">
+                <div class="selector-ejemplo">
+                  <p class="selector-ejemplo-titulo">Idea</p>
+                  <pre><code>block: baja de linea
+inline: sigue dentro del texto
+inline-block: mezcla ambos</code></pre>
+                </div>
+                <div class="selector-ejemplo selector-ejemplo--css">
+                  <div class="selector-ejemplo-encabezado">
+                    <p class="selector-ejemplo-titulo">CSS</p>
+                    <button
+                      class="selector-toggle"
+                      type="button"
+                      data-selector-toggle
+                      aria-expanded="false"
+                    >
+                      Ver codigo
+                    </button>
+                  </div>
+                  <pre data-selector-code hidden><code>p {
+  display: block;
+}
+
+span {
+  display: inline;
+}
+
+.badge {
+  display: inline-block;
+}</code></pre>
+                </div>
+              </div>
+              <p class="detalle">
+                Mucha confusion con anchos o alturas nace de olvidar que un
+                elemento sigue siendo inline o block.
+              </p>
+            </article>
+            <article
+              class="selector-card"
+              data-search="flex grid una dimension dos dimensiones layout maquetado"
+            >
+              <p class="selector-etiqueta">6. Flex y Grid</p>
+              <h3>Flex ordena un eje; Grid piensa filas y columnas a la vez</h3>
+              <p>
+                Flexbox va genial para grupos en fila o columna. Grid brilla
+                cuando quieres controlar una composicion completa con varias
+                columnas y filas.
+              </p>
+              <p class="fundamentos-texto">
+                Flexbox suele servir cuando la pregunta es como alinear,
+                repartir o separar elementos en un solo eje. Grid se vuelve mas
+                claro cuando ya estas pensando en una composicion completa, con
+                filas y columnas al mismo tiempo. Elegir bien entre ambos te
+                simplifica mucho el codigo.
+              </p>
+              <div class="selector-ejemplos">
+                <div class="selector-ejemplo">
+                  <p class="selector-ejemplo-titulo">Regla rapida</p>
+                  <pre><code>Flex: una dimension
+Grid: dos dimensiones</code></pre>
+                </div>
+                <div class="selector-ejemplo selector-ejemplo--css">
+                  <div class="selector-ejemplo-encabezado">
+                    <p class="selector-ejemplo-titulo">CSS</p>
+                    <button
+                      class="selector-toggle"
+                      type="button"
+                      data-selector-toggle
+                      aria-expanded="false"
+                    >
+                      Ver codigo
+                    </button>
+                  </div>
+                  <pre data-selector-code hidden><code>.menu {
+  display: flex;
+  gap: 12px;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}</code></pre>
+                </div>
+              </div>
+              <p class="detalle">
+                Si te pierdes, pregunta simple: estoy acomodando items en un eje
+                o diseniando una cuadricula completa?
+              </p>
+            </article>
+            <article
+              class="selector-card"
+              data-search="responsive media query rem porcentaje clamp viewport mobile celular"
+            >
+              <p class="selector-etiqueta">7. Responsive</p>
+              <h3>Un buen CSS se adapta al espacio disponible</h3>
+              <p>
+                Responsive no es solo media query. Tambien entran en juego
+                unidades relativas, anchos fluidos y limites minimos o maximos.
+              </p>
+              <p class="fundamentos-texto">
+                La web no vive en una sola pantalla fija. El mismo HTML puede
+                verse en un celular angosto, una tablet o un monitor grande. El
+                CSS responsive busca que el contenido responda al espacio
+                disponible sin romper lectura, jerarquia ni comodidad de uso.
+              </p>
+              <div class="selector-ejemplos">
+                <div class="selector-ejemplo">
+                  <p class="selector-ejemplo-titulo">Pistas utiles</p>
+                  <pre><code>rem, %, vw, min(), max(), clamp()</code></pre>
+                </div>
+                <div class="selector-ejemplo selector-ejemplo--css">
+                  <div class="selector-ejemplo-encabezado">
+                    <p class="selector-ejemplo-titulo">CSS</p>
+                    <button
+                      class="selector-toggle"
+                      type="button"
+                      data-selector-toggle
+                      aria-expanded="false"
+                    >
+                      Ver codigo
+                    </button>
+                  </div>
+                  <pre data-selector-code hidden><code>.hero {
+  padding: clamp(16px, 4vw, 48px);
+}
+
+.card {
+  width: min(100%, 420px);
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}</code></pre>
+                </div>
+              </div>
+              <p class="detalle">
+                Estudiar responsive es aprender a pensar en rangos, no en una
+                sola pantalla fija.
+              </p>
+            </article>
+            <article
+              class="selector-card"
+              data-search="position absolute relative fixed sticky z index capas apilar encima"
+            >
+              <p class="selector-etiqueta">8. Posicion y capas</p>
+              <h3>
+                Posicionar no es mover por capricho, es cambiar la referencia
+              </h3>
+              <p>
+                <code>relative</code> prepara una caja. <code>absolute</code>
+                ubica un hijo respecto a un ancestro posicionado.
+                <code>fixed</code> se pega a la ventana y
+                <code>sticky</code> mezcla flujo normal con fijacion al scroll.
+              </p>
+              <p class="fundamentos-texto">
+                Cambiar <code>position</code> no es solo "mover cosas". Tambien
+                cambia desde donde el navegador calcula la referencia de esa
+                caja y si sigue participando o no del flujo normal. Por eso un
+                elemento absoluto puede verse correcto visualmente, pero alterar
+                por completo la logica del layout si se usa sin entenderlo.
+              </p>
+              <div class="selector-ejemplos">
+                <div class="selector-ejemplo">
+                  <p class="selector-ejemplo-titulo">Idea</p>
+                  <pre><code>relative = referencia
+absolute = sale del flujo
+sticky = se pega al hacer scroll</code></pre>
+                </div>
+                <div class="selector-ejemplo selector-ejemplo--css">
+                  <div class="selector-ejemplo-encabezado">
+                    <p class="selector-ejemplo-titulo">CSS</p>
+                    <button
+                      class="selector-toggle"
+                      type="button"
+                      data-selector-toggle
+                      aria-expanded="false"
+                    >
+                      Ver codigo
+                    </button>
+                  </div>
+                  <pre data-selector-code hidden><code>.panel {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+}
+
+.barra {
+  position: sticky;
+  top: 0;
+}</code></pre>
+                </div>
+              </div>
+              <p class="detalle">
+                Si algo queda debajo de otra capa, revisa contexto, orden y
+                <code>z-index</code>, no solo el valor numerico.
+              </p>
+            </article>
+            <article
+              class="selector-card"
+              data-search="pseudoclases estados hover focus active first child nth child"
+            >
+              <p class="selector-etiqueta">9. Estados</p>
+              <h3>CSS tambien reacciona a estados y contexto</h3>
+              <p>
+                Las pseudoclases permiten cambiar el estilo cuando el usuario
+                interactua o cuando un elemento ocupa cierta posicion dentro de
+                sus hermanos.
+              </p>
+              <p class="fundamentos-texto">
+                CSS no solo pinta cosas quietas. Tambien reacciona a estados del
+                mouse, del teclado, del formulario y del lugar que ocupa un
+                elemento dentro de la estructura. Eso permite interfaces mas
+                ricas sin tener que usar JavaScript para cada detalle visual.
+              </p>
+              <div class="selector-ejemplos">
+                <div class="selector-ejemplo">
+                  <p class="selector-ejemplo-titulo">Casos comunes</p>
+                  <pre><code>:hover
+:focus-visible
+:active
+:first-child</code></pre>
+                </div>
+                <div class="selector-ejemplo selector-ejemplo--css">
+                  <div class="selector-ejemplo-encabezado">
+                    <p class="selector-ejemplo-titulo">CSS</p>
+                    <button
+                      class="selector-toggle"
+                      type="button"
+                      data-selector-toggle
+                      aria-expanded="false"
+                    >
+                      Ver codigo
+                    </button>
+                  </div>
+                  <pre data-selector-code hidden><code>.boton:hover {
+  transform: translateY(-2px);
+}
+
+.campo:focus-visible {
+  outline: 2px solid #1f5c4a;
+}
+
+.lista li:first-child {
+  font-weight: bold;
+}</code></pre>
+                </div>
+              </div>
+              <p class="detalle">
+                Si quieres que algo sea usable con teclado, no te quedes solo
+                con <code>:hover</code>.
+              </p>
+            </article>
+            <article
+              class="selector-card selector-card--amplia"
+              data-search="debug debugging no funciona css checklist selector herencia especificidad overflow"
+            >
+              <p class="selector-etiqueta">10. Debug</p>
+              <h3>Cuando algo no funciona, casi siempre falla una idea base</h3>
+              <p>
+                La mayoria de los bugs de CSS no se resuelven memorizando mas
+                propiedades, sino revisando selector, flujo, caja, contexto y
+                estados.
+              </p>
+              <p class="fundamentos-texto">
+                Depurar CSS es reconstruir la cadena de decisiones del
+                navegador: que elemento seleccionaste, que regla gano, como se
+                calculo la caja y dentro de que contexto se dibujo. Cuando
+                entiendes esa cadena, dejas de probar propiedades al azar y
+                empiezas a corregir con criterio.
+              </p>
+              <div class="selector-ejemplos">
+                <div class="selector-ejemplo">
+                  <p class="selector-ejemplo-titulo">Chequeo rapido</p>
+                  <pre><code>1. Apunta al elemento correcto?
+2. Otra regla pesa mas?
+3. Falta ancho, alto o display?
+4. El padre recorta con overflow?
+5. Depende de hover, focus o media query?</code></pre>
+                </div>
+                <div class="selector-ejemplo selector-ejemplo--css">
+                  <div class="selector-ejemplo-encabezado">
+                    <p class="selector-ejemplo-titulo">CSS util</p>
+                    <button
+                      class="selector-toggle"
+                      type="button"
+                      data-selector-toggle
+                      aria-expanded="false"
+                    >
+                      Ver codigo
+                    </button>
+                  </div>
+                  <pre data-selector-code hidden><code>.debug * {
+  outline: 1px dashed rgba(31, 92, 74, 0.2);
+}
+
+.debug img {
+  background-color: rgba(31, 92, 74, 0.08);
+}</code></pre>
+                </div>
+              </div>
+              <p class="detalle">
+                Buen habito de estudio: antes de tocar diez reglas, intenta
+                nombrar que concepto base esta fallando.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="bloque" id="propiedades-css">
           <div class="encabezado-css">
             <h2>Propiedades CSS esenciales</h2>
             <div class="filtros-css">
@@ -128,12 +908,13 @@
           </p>
           <p class="detalle">
             Para empezar con CSS, lo mas importante es entender estas tres
-            formas de llamar cosas: por etiqueta, por clase y por id. Si luego
-            ves otros selectores, casi siempre salen de combinar o afinar estas
-            mismas ideas.
+            formas de llamar cosas: por etiqueta, por clase y por id. Desde ahi
+            ya puedes pasar a ideas mas propias de CSS como estados, variables,
+            reglas responsive y atajos de escritura.
           </p>
           <div
-            class="selector-guia" id="selectores-css"
+            class="selector-guia"
+            id="selectores-css"
             aria-label="Guia simple para llamar elementos desde CSS"
           >
             <article class="selector-card">
@@ -344,8 +1125,8 @@
                 </div>
               </div>
               <p class="detalle">
-                Sirve cuando quieres ser mas preciso y no tocar todo lo que
-                este mas profundo.
+                Sirve cuando quieres ser mas preciso y no tocar todo lo que este
+                mas profundo.
               </p>
             </article>
             <article class="selector-card selector-card--amplia">
@@ -390,6 +1171,398 @@
             <code>body</code>, punto es <code>.class</code> y numeral es
             <code>#id</code>.
           </p>
+          <p class="detalle">
+            Despues de ubicar elementos, estas fichas siguen con CSS puro para
+            que tengas mas recursos de escritura, organizacion y responsive sin
+            salir del mismo estilo visual.
+          </p>
+          <div class="selector-guia" aria-label="Guia de conceptos CSS puros">
+            <article
+              class="selector-card"
+              data-search="pseudoclase hover focus active checked nth-child first-child last-child not"
+            >
+              <p class="selector-etiqueta">8. Pseudoclases</p>
+              <h3>Estados, posiciones y condiciones en CSS</h3>
+              <p>
+                Las pseudoclases empiezan con <code>:</code> y te dejan
+                reaccionar a hover, focus, checked o a posiciones como
+                <code>:nth-child()</code>.
+              </p>
+              <div class="selector-ejemplos">
+                <div class="selector-ejemplo">
+                  <p class="selector-ejemplo-titulo">Uso rapido</p>
+                  <pre><code>.boton:hover {
+  transform: translateY(-2px);
+}</code></pre>
+                </div>
+                <div class="selector-ejemplo selector-ejemplo--css">
+                  <div class="selector-ejemplo-encabezado">
+                    <p class="selector-ejemplo-titulo">CSS completo</p>
+                    <button
+                      class="selector-toggle"
+                      type="button"
+                      data-selector-toggle
+                      aria-expanded="false"
+                    >
+                      Ver codigo
+                    </button>
+                  </div>
+                  <pre
+                    data-selector-code
+                    hidden
+                  ><code>.lista li:nth-child(odd) {
+  background-color: #eef6f1;
+}
+
+.campo:focus-visible {
+  outline: 3px solid rgba(31, 92, 74, 0.22);
+}</code></pre>
+                </div>
+              </div>
+              <p class="detalle">
+                Sirven para estados del mouse, teclado, formularios y recorridos
+                de listas sin agregar clases extra.
+              </p>
+            </article>
+            <article
+              class="selector-card"
+              data-search="pseudoelemento before after placeholder selection marker"
+            >
+              <p class="selector-etiqueta">9. Pseudoelementos</p>
+              <h3>Partes visuales creadas desde CSS</h3>
+              <p>
+                Los pseudoelementos empiezan con <code>::</code> y dejan crear
+                adornos, marcadores, placeholders o fragmentos visuales sin mas
+                HTML.
+              </p>
+              <div class="selector-ejemplos">
+                <div class="selector-ejemplo">
+                  <p class="selector-ejemplo-titulo">Uso rapido</p>
+                  <pre><code>.etiqueta::before {
+  content: "# ";
+}</code></pre>
+                </div>
+                <div class="selector-ejemplo selector-ejemplo--css">
+                  <div class="selector-ejemplo-encabezado">
+                    <p class="selector-ejemplo-titulo">CSS completo</p>
+                    <button
+                      class="selector-toggle"
+                      type="button"
+                      data-selector-toggle
+                      aria-expanded="false"
+                    >
+                      Ver codigo
+                    </button>
+                  </div>
+                  <pre data-selector-code hidden><code>.tarjeta::after {
+  content: "";
+  position: absolute;
+  inset: auto 16px 16px auto;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #1f5c4a;
+}
+
+.campo::placeholder {
+  color: #7b8c9b;
+}</code></pre>
+                </div>
+              </div>
+              <p class="detalle">
+                Muy utiles para detalles visuales, iconos simples y textos de
+                apoyo como <code>::placeholder</code> o
+                <code>::selection</code>.
+              </p>
+            </article>
+            <article
+              class="selector-card"
+              data-search="selector atributo disabled type data attribute"
+            >
+              <p class="selector-etiqueta">10. Atributos</p>
+              <h3>Selector por tipo, estado o dato</h3>
+              <p>
+                Los selectores de atributo apuntan a valores concretos como
+                <code>[type="email"]</code>, <code>[disabled]</code> o
+                <code>[data-estado="ok"]</code>.
+              </p>
+              <div class="selector-ejemplos">
+                <div class="selector-ejemplo">
+                  <p class="selector-ejemplo-titulo">Uso rapido</p>
+                  <pre><code>input[type="search"] {
+  border-radius: 999px;
+}</code></pre>
+                </div>
+                <div class="selector-ejemplo selector-ejemplo--css">
+                  <div class="selector-ejemplo-encabezado">
+                    <p class="selector-ejemplo-titulo">CSS completo</p>
+                    <button
+                      class="selector-toggle"
+                      type="button"
+                      data-selector-toggle
+                      aria-expanded="false"
+                    >
+                      Ver codigo
+                    </button>
+                  </div>
+                  <pre data-selector-code hidden><code>button[disabled] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+[data-estado="ok"] {
+  border-color: #1f5c4a;
+}</code></pre>
+                </div>
+              </div>
+              <p class="detalle">
+                Son practicos cuando quieres estilos muy puntuales sin inventar
+                una clase nueva para cada caso.
+              </p>
+            </article>
+            <article
+              class="selector-card selector-card--amplia"
+              data-search="variables css root var fallback tema tokens"
+            >
+              <p class="selector-etiqueta">11. Variables CSS</p>
+              <h3>Colores, espacios y medidas reutilizables</h3>
+              <p>
+                Las variables CSS se definen con <code>--nombre</code> y se usan
+                con <code>var()</code>. Sirven para temas, escalas y cambios
+                rapidos en toda la hoja.
+              </p>
+              <div class="selector-ejemplos">
+                <div class="selector-ejemplo">
+                  <p class="selector-ejemplo-titulo">Uso rapido</p>
+                  <pre><code>:root {
+  --color-principal: #1f5c4a;
+}</code></pre>
+                </div>
+                <div class="selector-ejemplo selector-ejemplo--css">
+                  <div class="selector-ejemplo-encabezado">
+                    <p class="selector-ejemplo-titulo">CSS completo</p>
+                    <button
+                      class="selector-toggle"
+                      type="button"
+                      data-selector-toggle
+                      aria-expanded="false"
+                    >
+                      Ver codigo
+                    </button>
+                  </div>
+                  <pre data-selector-code hidden><code>:root {
+  --color-principal: #1f5c4a;
+  --espacio-card: 20px;
+}
+
+.boton {
+  padding: var(--espacio-card, 16px);
+  background-color: var(--color-principal, #173a31);
+  color: #f6fffb;
+}</code></pre>
+                </div>
+              </div>
+              <p class="detalle">
+                Si cambias una variable en <code>:root</code>, el ajuste puede
+                propagarse a toda la interfaz sin reescribir veinte reglas.
+              </p>
+            </article>
+            <article
+              class="selector-card selector-card--amplia"
+              data-search="media query responsive breakpoints max-width min-width"
+            >
+              <p class="selector-etiqueta">12. Media Queries</p>
+              <h3>Responsive desde CSS segun ancho o contexto</h3>
+              <p>
+                Las media queries agrupan reglas que solo se activan cuando se
+                cumple una condicion, por ejemplo un ancho maximo de pantalla.
+              </p>
+              <div class="selector-ejemplos">
+                <div class="selector-ejemplo">
+                  <p class="selector-ejemplo-titulo">Uso rapido</p>
+                  <pre><code>@media (max-width: 720px) {
+  .grilla {
+    grid-template-columns: 1fr;
+  }
+}</code></pre>
+                </div>
+                <div class="selector-ejemplo selector-ejemplo--css">
+                  <div class="selector-ejemplo-encabezado">
+                    <p class="selector-ejemplo-titulo">CSS completo</p>
+                    <button
+                      class="selector-toggle"
+                      type="button"
+                      data-selector-toggle
+                      aria-expanded="false"
+                    >
+                      Ver codigo
+                    </button>
+                  </div>
+                  <pre data-selector-code hidden><code>.hero {
+  padding: 32px;
+}
+
+.propiedades-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 720px) {
+  .hero,
+  .bloque {
+    padding: 20px;
+  }
+
+  .propiedades-grid {
+    grid-template-columns: 1fr;
+  }
+}</code></pre>
+                </div>
+              </div>
+              <p class="detalle">
+                Te sirven para acomodar grillas, espacios, tipografias y layout
+                cuando el ancho disponible cambia.
+              </p>
+            </article>
+            <article
+              class="selector-card"
+              data-search="unidades rem em porcentaje vw vh clamp min max calc responsive"
+            >
+              <p class="selector-etiqueta">13. Unidades</p>
+              <h3>Medidas fluidas y formulas practicas</h3>
+              <p>
+                CSS acepta unidades relativas como <code>rem</code>,
+                <code>%</code>, <code>vw</code> y funciones como
+                <code>clamp()</code> o <code>calc()</code>.
+              </p>
+              <div class="selector-ejemplos">
+                <div class="selector-ejemplo">
+                  <p class="selector-ejemplo-titulo">Uso rapido</p>
+                  <pre><code>h2 {
+  font-size: clamp(1.4rem, 2vw, 2.2rem);
+}</code></pre>
+                </div>
+                <div class="selector-ejemplo selector-ejemplo--css">
+                  <div class="selector-ejemplo-encabezado">
+                    <p class="selector-ejemplo-titulo">CSS completo</p>
+                    <button
+                      class="selector-toggle"
+                      type="button"
+                      data-selector-toggle
+                      aria-expanded="false"
+                    >
+                      Ver codigo
+                    </button>
+                  </div>
+                  <pre data-selector-code hidden><code>.pagina {
+  width: calc(100% - 32px);
+  max-width: min(1180px, 100%);
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+}</code></pre>
+                </div>
+              </div>
+              <p class="detalle">
+                Mezclar unidades relativas con funciones te ayuda a lograr una
+                UI mas flexible sin llenar todo de numeros fijos.
+              </p>
+            </article>
+            <article
+              class="selector-card"
+              data-search="shorthand atajo border background font margin padding transition"
+            >
+              <p class="selector-etiqueta">14. Shorthand</p>
+              <h3>Atajos para escribir varias cosas en una sola linea</h3>
+              <p>
+                Muchas propiedades tienen una version corta que junta varios
+                valores en una sola regla, como <code>border</code>,
+                <code>margin</code> o <code>background</code>.
+              </p>
+              <div class="selector-ejemplos">
+                <div class="selector-ejemplo">
+                  <p class="selector-ejemplo-titulo">Uso rapido</p>
+                  <pre><code>.card {
+  border: 1px solid #d8d1c4;
+}</code></pre>
+                </div>
+                <div class="selector-ejemplo selector-ejemplo--css">
+                  <div class="selector-ejemplo-encabezado">
+                    <p class="selector-ejemplo-titulo">CSS completo</p>
+                    <button
+                      class="selector-toggle"
+                      type="button"
+                      data-selector-toggle
+                      aria-expanded="false"
+                    >
+                      Ver codigo
+                    </button>
+                  </div>
+                  <pre data-selector-code hidden><code>.card {
+  margin: 20px auto;
+  padding: 16px 20px;
+  border: 1px solid #d8d1c4;
+  background: linear-gradient(180deg, #fffefb 0%, #f5faf7 100%);
+}</code></pre>
+                </div>
+              </div>
+              <p class="detalle">
+                Van bien para escribir mas rapido, pero conviene saber que cada
+                valor ocupa una parte distinta del shorthand.
+              </p>
+            </article>
+            <article
+              class="selector-card"
+              data-search="transition animation keyframes estados hover transform"
+            >
+              <p class="selector-etiqueta">15. Movimiento</p>
+              <h3>Transiciones y animaciones con CSS</h3>
+              <p>
+                <code>transition</code> suaviza cambios entre estados y
+                <code>animation</code> repite un movimiento usando
+                <code>@keyframes</code>.
+              </p>
+              <div class="selector-ejemplos">
+                <div class="selector-ejemplo">
+                  <p class="selector-ejemplo-titulo">Uso rapido</p>
+                  <pre><code>.boton {
+  transition: transform 0.2s ease;
+}</code></pre>
+                </div>
+                <div class="selector-ejemplo selector-ejemplo--css">
+                  <div class="selector-ejemplo-encabezado">
+                    <p class="selector-ejemplo-titulo">CSS completo</p>
+                    <button
+                      class="selector-toggle"
+                      type="button"
+                      data-selector-toggle
+                      aria-expanded="false"
+                    >
+                      Ver codigo
+                    </button>
+                  </div>
+                  <pre data-selector-code hidden><code>.boton {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.boton:hover {
+  transform: translateY(-2px);
+}
+
+.badge {
+  animation: demoPulse 1.4s ease-in-out infinite;
+}</code></pre>
+                </div>
+              </div>
+              <p class="detalle">
+                Para interfaces comunes, primero suele alcanzar con
+                <code>transition</code>; deja <code>animation</code> para
+                efectos mas autonomos o repetidos.
+              </p>
+            </article>
+          </div>
           <div class="propiedades-grid" id="propiedades-grid"></div>
         </section>
       </main>

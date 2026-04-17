@@ -51,7 +51,8 @@ const cssProperties = [
   {
     name: "background",
     type: "Fondo",
-    aliases: "background fondo degradado color combinado",
+    aliases:
+      "background fondo degradado color combinado degrade de colores fondo con degrade background con degrade gradiente fondo con gradiente linear-gradient",
     description: "Pone un fondo completo, incluso degradados.",
     code: `.hero {
   background: linear-gradient(135deg, #fffaf0 0%, #e3f4ee 100%);
@@ -101,7 +102,8 @@ const cssProperties = [
   {
     name: "line-height",
     type: "Texto",
-    aliases: "line-height interlineado altura de linea",
+    aliases:
+      "line-height interlineado altura de linea espacio entre lineas aire entre lineas separacion entre lineas",
     description: "Da mas o menos aire entre lineas.",
     code: `body {
   line-height: 1.6;
@@ -449,7 +451,8 @@ const cssProperties = [
   {
     name: "letter-spacing",
     type: "Texto",
-    aliases: "letter-spacing espaciado letras",
+    aliases:
+      "letter-spacing espaciado letras espacio entre letras aire entre letras separacion entre letras letras separadas",
     description: "Separa mas o menos las letras.",
     code: `.etiqueta {
   letter-spacing: 0.08em;
@@ -469,7 +472,8 @@ const cssProperties = [
   {
     name: "background-image",
     type: "Fondo",
-    aliases: "background-image imagen fondo url gradient",
+    aliases:
+      "background-image imagen fondo url gradient degradado fondo imagen de fondo fondo con imagen fondo con gradiente",
     description: "Pone una imagen o degradado de fondo.",
     code: `.banner {
   background-image: url("banner.jpg");
@@ -1134,7 +1138,8 @@ const cssProperties = [
   {
     name: "word-spacing",
     type: "Texto",
-    aliases: "word-spacing espacio palabras texto",
+    aliases:
+      "word-spacing espacio palabras texto espacio entre palabras aire entre palabras separacion entre palabras",
     description: "Aumenta o reduce la separacion entre palabras.",
     code: `.frase {
   word-spacing: 0.2em;
@@ -3537,7 +3542,352 @@ const cssProperties = [
 }`,
     note: "Es util cuando un clipPath tiene huecos o caminos superpuestos.",
   },
+  {
+    name: "font-variant-numeric",
+    type: "Texto",
+    aliases: "font-variant-numeric numeros tipografia tabular oldstyle lining",
+    description: "Cambia la forma en que se muestran los numeros dentro de una fuente.",
+    code: `.precio {
+  font-variant-numeric: tabular-nums;
+}`,
+    note: "Sirve mucho para tablas, paneles de datos o precios donde conviene alinear cifras.",
+  },
+  {
+    name: "hyphenate-character",
+    type: "Texto",
+    aliases: "hyphenate-character guion corte palabras texto",
+    description: "Define que caracter aparece cuando el navegador corta una palabra con guion.",
+    code: `.articulo {
+  hyphenate-character: "-";
+}`,
+    note: "Se combina mejor con hyphens y con textos largos que realmente permiten separacion silabica.",
+  },
+  {
+    name: "scroll-margin",
+    type: "Interaccion",
+    aliases: "scroll-margin margen scroll ancla seccion",
+    description: "Deja un margen general cuando una seccion se enfoca con scroll o anclas.",
+    code: `.seccion {
+  scroll-margin: 80px 0 0;
+}`,
+    note: "Muy util cuando tienes una barra fija arriba y no quieres que tape el titulo de destino.",
+  },
+  {
+    name: "scroll-padding",
+    type: "Interaccion",
+    aliases: "scroll-padding espacio scroll anclas contenedor",
+    description: "Reserva espacio interno para el comportamiento automatico del scroll.",
+    code: `html {
+  scroll-padding: 88px 0 0;
+}`,
+    note: "Suele ir en el contenedor que hace scroll, muchas veces en html o en una caja con overflow.",
+  },
+  {
+    name: "padding-top",
+    type: "Caja",
+    aliases: "padding-top relleno superior espacio arriba adentro",
+    description: "Agrega espacio interno solo en la parte superior de la caja.",
+    code: `.tarjeta {
+  padding-top: 24px;
+}`,
+    note: "Va bien cuando arriba necesitas mas aire que en los otros lados.",
+  },
+  {
+    name: "padding-right",
+    type: "Caja",
+    aliases: "padding-right relleno derecho espacio derecha adentro",
+    description: "Agrega espacio interno solo del lado derecho.",
+    code: `.tarjeta {
+  padding-right: 20px;
+}`,
+    note: "Sirve para afinar cajas donde el contenido necesita respirar mas hacia un costado.",
+  },
+  {
+    name: "padding-bottom",
+    type: "Caja",
+    aliases: "padding-bottom relleno inferior espacio abajo adentro",
+    description: "Agrega espacio interno solo en la parte inferior.",
+    code: `.tarjeta {
+  padding-bottom: 24px;
+}`,
+    note: "Se usa mucho cuando el cierre visual del bloque necesita mas aire.",
+  },
+  {
+    name: "padding-left",
+    type: "Caja",
+    aliases: "padding-left relleno izquierdo espacio izquierda adentro",
+    description: "Agrega espacio interno solo del lado izquierdo.",
+    code: `.tarjeta {
+  padding-left: 20px;
+}`,
+    note: "Es practico para listas, paneles o cajas con iconos alineados a la izquierda.",
+  },
+  {
+    name: "margin-top",
+    type: "Caja",
+    aliases: "margin-top margen superior espacio arriba afuera",
+    description: "Separa el elemento por fuera solo en la parte superior.",
+    code: `.bloque {
+  margin-top: 32px;
+}`,
+    note: "Muy comun para despegar secciones, titulos o tarjetas del contenido anterior.",
+  },
+  {
+    name: "margin-right",
+    type: "Caja",
+    aliases: "margin-right margen derecho espacio derecha afuera",
+    description: "Separa el elemento por fuera solo del lado derecho.",
+    code: `.etiqueta {
+  margin-right: 12px;
+}`,
+    note: "Ayuda cuando varios elementos van en fila y solo uno necesita aire hacia ese lado.",
+  },
+  {
+    name: "margin-bottom",
+    type: "Caja",
+    aliases: "margin-bottom margen inferior espacio abajo afuera",
+    description: "Separa el elemento por fuera solo en la parte inferior.",
+    code: `.titulo-seccion {
+  margin-bottom: 20px;
+}`,
+    note: "Muy util para dejar respiracion entre un encabezado y el contenido que viene despues.",
+  },
+  {
+    name: "margin-left",
+    type: "Caja",
+    aliases: "margin-left margen izquierdo espacio izquierda afuera",
+    description: "Separa el elemento por fuera solo del lado izquierdo.",
+    code: `.etiqueta {
+  margin-left: 12px;
+}`,
+    note: "Sirve para empujar una pieza sin tocar directamente el resto de la fila.",
+  },
+  {
+    name: "border-image",
+    type: "Borde",
+    aliases: "border-image borde imagen gradiente marco",
+    description: "Pinta el borde usando una imagen o un gradiente como fuente visual.",
+    code: `.marco {
+  border: 10px solid transparent;
+  border-image: linear-gradient(135deg, #1f5c4a, #9fded0) 1;
+}`,
+    note: "Es una forma rapida de lograr marcos decorativos sin meter mas HTML.",
+  },
+  {
+    name: "ruby-align",
+    type: "Texto",
+    aliases: "ruby-align anotacion texto oriental ruby",
+    description: "Ajusta la alineacion de las anotaciones ruby respecto del texto base.",
+    code: `.anotacion-japonesa {
+  ruby-align: center;
+}`,
+    note: "Es avanzada, pero muy valiosa cuando trabajas con anotaciones foneticas o textos orientales.",
+  },
+  {
+    name: "ruby-merge",
+    type: "Texto",
+    aliases: "ruby-merge fusion anotaciones ruby texto",
+    description: "Controla si varias anotaciones ruby se fusionan o quedan separadas.",
+    code: `.anotacion-japonesa {
+  ruby-merge: collapse;
+}`,
+    note: "Se usa para afinar la lectura y el espaciado en composiciones con ruby.",
+  },
+  {
+    name: "offset-anchor",
+    type: "Posicion",
+    aliases: "offset-anchor ancla movimiento posicion trayectoria",
+    description: "Define el punto del elemento que se usa como referencia para su desplazamiento.",
+    code: `.insignia-flotante {
+  offset-anchor: center;
+}`,
+    note: "Acompana bien a offset-path y otras propiedades de movimiento sobre trayectorias.",
+  },
+  {
+    name: "view-timeline-name",
+    type: "Interaccion",
+    aliases: "view-timeline-name timeline scroll vista animacion",
+    description: "Le pone nombre a una linea de tiempo basada en la aparicion del elemento en pantalla.",
+    code: `.seccion-animada {
+  view-timeline-name: --entrada-seccion;
+}`,
+    note: "Es util para animaciones que reaccionan al scroll segun entra o sale un bloque.",
+  },
+  {
+    name: "view-timeline-axis",
+    type: "Interaccion",
+    aliases: "view-timeline-axis eje timeline scroll vista",
+    description: "Define si la linea de tiempo de vista usa el eje vertical u horizontal.",
+    code: `.seccion-animada {
+  view-timeline-axis: block;
+}`,
+    note: "Normalmente block sigue el eje vertical de lectura.",
+  },
+  {
+    name: "animation-range",
+    type: "Interaccion",
+    aliases: "animation-range rango animacion scroll timeline",
+    description: "Marca en que tramo de una timeline debe desarrollarse la animacion.",
+    code: `.tarjeta-revela {
+  animation-range: entry 20% cover 40%;
+}`,
+    note: "Te deja afinar exactamente cuando empieza y cuando termina un efecto ligado al scroll.",
+  },
+  {
+    name: "anchor-name",
+    type: "Posicion",
+    aliases: "anchor-name ancla posicion popup tooltip",
+    description: "Le pone nombre a un elemento para que otro pueda posicionarse respecto de el.",
+    code: `.tarjeta-ancla {
+  anchor-name: --tarjeta-activa;
+}`,
+    note: "Se relaciona con las nuevas propiedades de anchor positioning.",
+  },
+  {
+    name: "position-anchor",
+    type: "Posicion",
+    aliases: "position-anchor ancla posicion tooltip popover",
+    description: "Dice que ancla debe usar un elemento para posicionarse.",
+    code: `.tooltip {
+  position-anchor: --tarjeta-activa;
+}`,
+    note: "Va muy bien con tooltips, menus flotantes y popovers.",
+  },
+  {
+    name: "inset-area",
+    type: "Posicion",
+    aliases: "inset-area area posicion ancla popover",
+    description: "Elige una zona predefinida alrededor del ancla para ubicar el elemento.",
+    code: `.popover {
+  inset-area: center;
+}`,
+    note: "Sirve para expresarte con menos calculo manual cuando usas posicionamiento anclado.",
+  },
+  {
+    name: "baseline-source",
+    type: "Layout",
+    aliases: "baseline-source linea base alineacion layout",
+    description: "Define que linea base toma un elemento cuando participa en alineacion por baseline.",
+    code: `.columna-texto {
+  baseline-source: first;
+}`,
+    note: "Es mas tecnica, pero ayuda en layouts donde la alineacion fina del texto importa mucho.",
+  },
+  {
+    name: "alignment-baseline",
+    type: "SVG",
+    aliases: "alignment-baseline linea base svg texto",
+    description: "Alinea un texto o figura SVG respecto de una linea base concreta.",
+    code: `.texto-logo {
+  alignment-baseline: middle;
+}`,
+    note: "Va muy bien para centrar etiquetas dentro de iconos o diagramas SVG.",
+  },
+  {
+    name: "flood-color",
+    type: "SVG",
+    aliases: "flood-color color filtro svg sombra",
+    description: "Define el color que emiten ciertos filtros SVG como los de inundacion.",
+    code: `.sombra-filtro {
+  flood-color: rgba(31, 92, 74, 0.45);
+}`,
+    note: "Sirve para colorear sombras, resplandores y otros efectos filtrados.",
+  },
+  {
+    name: "flood-opacity",
+    type: "SVG",
+    aliases: "flood-opacity opacidad filtro svg sombra",
+    description: "Controla la transparencia del color usado por un filtro de inundacion SVG.",
+    code: `.sombra-filtro {
+  flood-opacity: 0.35;
+}`,
+    note: "Se usa para suavizar efectos sin cambiar el color principal del filtro.",
+  },
+  {
+    name: "lighting-color",
+    type: "SVG",
+    aliases: "lighting-color luz filtro svg brillo",
+    description: "Define el color de luz usado por filtros SVG de iluminacion.",
+    code: `.brillo-filtro {
+  lighting-color: #fff4c4;
+}`,
+    note: "Ayuda a dar tonos calidos o frios a efectos de relieve y luz.",
+  },
+  {
+    name: "stroke-miterlimit",
+    type: "SVG",
+    aliases: "stroke-miterlimit limite esquinas trazo svg",
+    description: "Controla cuan largas pueden ser las puntas de un trazo con uniones en angulo.",
+    code: `.contorno-punta {
+  stroke-miterlimit: 6;
+}`,
+    note: "Evita puntas exageradas cuando un camino tiene esquinas muy cerradas.",
+  },
+  {
+    name: "text-anchor",
+    type: "SVG",
+    aliases: "text-anchor ancla texto svg centrar",
+    description: "Alinea texto SVG desde su punto de referencia inicial.",
+    code: `.etiqueta-grafico {
+  text-anchor: middle;
+}`,
+    note: "Es la clasica para centrar textos dentro de un grafico SVG.",
+  },
+  {
+    name: "cx",
+    type: "SVG",
+    aliases: "cx coordenada x centro circulo svg",
+    description: "Marca la posicion horizontal del centro de un circulo o elipse SVG.",
+    code: `.circulo-logo {
+  cx: 50%;
+}`,
+    note: "Suele combinarse con cy para ubicar la figura justo donde la necesitas.",
+  },
+  {
+    name: "cy",
+    type: "SVG",
+    aliases: "cy coordenada y centro circulo svg",
+    description: "Marca la posicion vertical del centro de un circulo o elipse SVG.",
+    code: `.circulo-logo {
+  cy: 50%;
+}`,
+    note: "Es especialmente util cuando quieres centrar figuras dentro del viewBox.",
+  },
+  {
+    name: "r",
+    type: "SVG",
+    aliases: "r radio circulo svg",
+    description: "Define el radio de un circulo SVG.",
+    code: `.circulo-logo {
+  r: 42;
+}`,
+    note: "Con cx y cy controlas el lugar; con r controlas el tamano del circulo.",
+  },
+  {
+    name: "rx",
+    type: "SVG",
+    aliases: "rx radio horizontal esquinas elipse svg",
+    description: "Marca el radio horizontal de una elipse o el redondeo horizontal en un rect SVG.",
+    code: `.pildora-svg {
+  rx: 18;
+}`,
+    note: "Muy usado para crear pastillas, chips y botones dentro de SVG.",
+  },
+  {
+    name: "ry",
+    type: "SVG",
+    aliases: "ry radio vertical esquinas elipse svg",
+    description: "Marca el radio vertical de una elipse o el redondeo vertical en un rect SVG.",
+    code: `.pildora-svg {
+  ry: 18;
+}`,
+    note: "Suele acompañar a rx para redondeos simetricos o elipses mas controladas.",
+  },
 ];
+
+const cssPropertyMap = new Map(
+  cssProperties.map((property) => [property.name, property]),
+);
 
 const cssTypeOrder = [
   "Texto",
@@ -3589,7 +3939,15 @@ const cssLevelLabels = {
 
 const basicCssPropertyNames = new Set([
   "padding",
+  "padding-top",
+  "padding-right",
+  "padding-bottom",
+  "padding-left",
   "margin",
+  "margin-top",
+  "margin-right",
+  "margin-bottom",
+  "margin-left",
   "border",
   "border-radius",
   "background",
@@ -3686,7 +4044,12 @@ const advancedCssPropertyNames = new Set([
   "font-kerning",
   "font-stretch",
   "text-rendering",
+  "font-variant-numeric",
+  "hyphenate-character",
+  "ruby-align",
+  "ruby-merge",
   "background-blend-mode",
+  "border-image",
   "mask",
   "mask-image",
   "mask-size",
@@ -3797,6 +4160,7 @@ const advancedCssPropertyNames = new Set([
   "offset-path",
   "offset-distance",
   "offset-rotate",
+  "offset-anchor",
   "transition-behavior",
   "will-change",
   "animation",
@@ -3808,6 +4172,13 @@ const advancedCssPropertyNames = new Set([
   "animation-direction",
   "animation-play-state",
   "animation-timing-function",
+  "animation-range",
+  "anchor-name",
+  "position-anchor",
+  "inset-area",
+  "view-timeline-name",
+  "view-timeline-axis",
+  "baseline-source",
   "forced-color-adjust",
   "text-size-adjust",
   "field-sizing",
@@ -3817,8 +4188,10 @@ const advancedCssPropertyNames = new Set([
 ]);
 
 const sectionAliases = {
+  "fundamentos-css":
+    "fundamentos conceptos estudio css cascada especificidad herencia box model modelo de caja flujo normal display block inline inline block flex grid responsive media query rem clamp porcentaje viewport position absolute relative fixed sticky z index hover focus pseudoclase debug debugging selector prioridad orden",
   "propiedades-css":
-    "css selectores propiedades estilos etiqueta clase id universal descendiente hijo directo combinado borde fondo texto flex grid posicion medidas sombra transicion animacion color hover",
+    "css selectores propiedades estilos etiqueta clase id universal descendiente hijo directo combinado borde fondo texto flex grid posicion medidas sombra transicion animacion color hover pseudoclase pseudoelemento variables var media query responsive clamp calc shorthand before after focus nth child atributo centro centrar pantalla formulario tarjetas sticky cover ellipsis vidrio blur redondear esquinas sombra caja card margen padding aire adentro aire afuera apilado columna fila lado grid columnas degradado gradiente hover suave arriba pegado desborde puntitos imagen responsive ancho completo facher piola copado canchero prolijo celu compu desktop mobile tarjetita pegadito",
 };
 
 function escapeHtml(value) {
@@ -3876,7 +4249,11 @@ function getCssTypeLabel(type) {
 }
 
 function getOrderedCssProperties() {
-  return [...cssProperties].sort((propertyA, propertyB) => {
+  if (getOrderedCssProperties.cache) {
+    return getOrderedCssProperties.cache;
+  }
+
+  getOrderedCssProperties.cache = [...cssProperties].sort((propertyA, propertyB) => {
     const typeDiff = getCssTypeOrderIndex(propertyA.type) - getCssTypeOrderIndex(propertyB.type);
 
     if (typeDiff !== 0) {
@@ -3885,6 +4262,8 @@ function getOrderedCssProperties() {
 
     return getCssLevelOrderIndex(getCssLevel(propertyA)) - getCssLevelOrderIndex(getCssLevel(propertyB));
   });
+
+  return getOrderedCssProperties.cache;
 }
 
 function renderCssTypeChips() {
@@ -4054,6 +4433,125 @@ function buildCssPreviewComparison({
       </div>
     </div>
   `;
+}
+
+function getGenericCssPreview(property) {
+  const helpText = `${property.description} Vista rapida orientativa para ubicar el tipo de cambio que suele producir esta propiedad.`;
+
+  switch (property.type) {
+    case "Texto":
+      return buildCssPreviewComparison({
+        variant: "generic-text",
+        beforeLabel: "Base",
+        afterLabel: "Aplicado",
+        beforeContent: getPreviewDemoParagraph("Texto de ejemplo para ver el cambio."),
+        afterContent: `${getPreviewDemoParagraph(
+          "Texto de ejemplo para ver el cambio.",
+        )}${getPreviewDemoValue(property.name)}`,
+        helpText,
+      });
+    case "Caja":
+    case "Borde":
+    case "Medidas":
+      return buildCssPreviewComparison({
+        variant: "generic-box",
+        beforeLabel: "Base",
+        afterLabel: "Aplicado",
+        beforeContent: getPreviewDemoBox("Caja"),
+        afterContent: `${getPreviewDemoBox("Caja")}${getPreviewDemoValue(property.name)}`,
+        helpText,
+      });
+    case "Fondo":
+    case "Efecto":
+    case "SVG":
+      return buildCssPreviewComparison({
+        variant: "generic-canvas",
+        beforeLabel: "Base",
+        afterLabel: "Aplicado",
+        beforeContent: getPreviewDemoCanvas("Vista"),
+        afterContent: `${getPreviewDemoCanvas("Vista")}${getPreviewDemoValue(property.name)}`,
+        helpText,
+      });
+    case "Layout":
+    case "Flex":
+      return buildCssPreviewComparison({
+        variant: "generic-layout",
+        beforeLabel: "Apilado",
+        afterLabel: "Organizado",
+        beforeContent: getPreviewDemoBoxes(["A", "B", "C"]),
+        afterContent: `${getPreviewDemoBoxes(["A", "B", "C"])}${getPreviewDemoValue(
+          property.name,
+        )}`,
+        helpText,
+      });
+    case "Grid":
+    case "Tabla":
+      return buildCssPreviewComparison({
+        variant: "generic-grid",
+        beforeLabel: "Base",
+        afterLabel: "En grilla",
+        beforeContent: getPreviewDemoBoxes(["1", "2", "3", "4"]),
+        afterContent: `${getPreviewDemoBoxes(["1", "2", "3", "4"], "propiedad-demo-grupo--grid")}${getPreviewDemoValue(
+          property.name,
+        )}`,
+        helpText,
+      });
+    case "Posicion":
+      return buildCssPreviewComparison({
+        variant: "generic-position",
+        beforeLabel: "Base",
+        afterLabel: "Reubicado",
+        beforeContent: getPreviewDemoBoxes(["Caja", "Nota"], "propiedad-demo-grupo--posicion"),
+        afterContent: `${getPreviewDemoBoxes(["Caja", "Nota"], "propiedad-demo-grupo--posicion")}${getPreviewDemoValue(
+          property.name,
+        )}`,
+        helpText,
+      });
+    case "Interaccion":
+    case "Accesibilidad":
+    case "Pseudoelemento":
+      return buildCssPreviewComparison({
+        variant: "generic-action",
+        beforeLabel: "Base",
+        afterLabel: "Aplicado",
+        beforeContent: getPreviewDemoAction("Control"),
+        afterContent: `${getPreviewDemoAction("Control")}${getPreviewDemoValue(
+          property.name,
+        )}`,
+        helpText,
+      });
+    case "Formulario":
+      return buildCssPreviewComparison({
+        variant: "generic-form",
+        beforeLabel: "Base",
+        afterLabel: "Aplicado",
+        beforeContent: getPreviewDemoCheckbox("Campo activo"),
+        afterContent: `${getPreviewDemoCheckbox("Campo activo")}${getPreviewDemoValue(
+          property.name,
+        )}`,
+        helpText,
+      });
+    case "Media":
+      return buildCssPreviewComparison({
+        variant: "generic-media",
+        beforeLabel: "Pantalla amplia",
+        afterLabel: "Regla responsive",
+        beforeContent: `${getPreviewDemoCanvas("Desktop")}${getPreviewDemoValue("base")}`,
+        afterContent: `${getPreviewDemoCanvas("Mobile")}${getPreviewDemoValue(
+          property.name,
+        )}`,
+        helpText,
+      });
+    default:
+      return buildCssPreviewComparison({
+        variant: "generic-box",
+        beforeLabel: "Base",
+        afterLabel: "Aplicado",
+        beforeContent: getPreviewDemoBox("Caja"),
+        afterContent: `${getPreviewDemoBox("Caja")}${getPreviewDemoValue(property.name)}`,
+        helpText,
+      });
+  }
 }
 
 function getCssPreviewHtml(property) {
@@ -4421,8 +4919,38 @@ function getCssPreviewHtml(property) {
         helpText: "La misma animacion puede sentirse muy distinta si dura poco o mucho tiempo.",
       });
     default:
-      return "";
+      return getGenericCssPreview(property);
   }
+}
+
+const propertyPreviewHtmlCache = new Map();
+
+function getPropertyPreviewHtml(propertyName) {
+  if (propertyPreviewHtmlCache.has(propertyName)) {
+    return propertyPreviewHtmlCache.get(propertyName);
+  }
+
+  const property = cssPropertyMap.get(propertyName);
+  const previewHtml = property ? getCssPreviewHtml(property) : "";
+
+  propertyPreviewHtmlCache.set(propertyName, previewHtml);
+  return previewHtml;
+}
+
+function getPropertyPreviewShellHtml() {
+  return `
+    <div class="propiedad-demo-bloque">
+      <button
+        class="propiedad-demo-toggle"
+        type="button"
+        data-property-preview-toggle
+        aria-expanded="false"
+      >
+        Ver ejemplo
+      </button>
+      <div class="propiedad-demo-host" data-property-preview-host></div>
+    </div>
+  `;
 }
 
 function renderCssProperties() {
@@ -4436,7 +4964,6 @@ function renderCssProperties() {
     .map(
       (property) => {
         const propertyLevel = getCssLevel(property);
-        const previewHtml = getCssPreviewHtml(property);
         const detailLinesHtml = getPropertyDetailLines(property)
           .map(
             (detailLine) => `
@@ -4451,6 +4978,7 @@ function renderCssProperties() {
         return `
         <article
           class="propiedad"
+          data-name="${escapeHtml(property.name)}"
           data-search="${escapeHtml(property.aliases)}"
           data-type="${escapeHtml(property.type)}"
           data-level="${escapeHtml(propertyLevel)}"
@@ -4467,7 +4995,7 @@ function renderCssProperties() {
             </div>
           </div>
           <pre><code>${escapeHtml(property.code)}</code></pre>
-          ${previewHtml}
+          ${getPropertyPreviewShellHtml()}
           ${detailLinesHtml}
         </article>
       `;
@@ -4486,18 +5014,1970 @@ function normalizeText(value) {
     .trim();
 }
 
+const searchStopWords = new Set([
+  "a",
+  "al",
+  "algo",
+  "asi",
+  "como",
+  "con",
+  "cual",
+  "cuales",
+  "de",
+  "del",
+  "dejar",
+  "deje",
+  "dejen",
+  "entre",
+  "el",
+  "ella",
+  "ellas",
+  "ello",
+  "ellos",
+  "en",
+  "es",
+  "esa",
+  "ese",
+  "eso",
+  "esta",
+  "este",
+  "esto",
+  "hacer",
+  "la",
+  "las",
+  "lo",
+  "los",
+  "mas",
+  "me",
+  "mi",
+  "mis",
+  "menos",
+  "meter",
+  "mete",
+  "necesito",
+  "o",
+  "para",
+  "pero",
+  "poner",
+  "pone",
+  "por",
+  "porque",
+  "que",
+  "quede",
+  "queden",
+  "quiero",
+  "sea",
+  "sean",
+  "si",
+  "sin",
+  "su",
+  "sus",
+  "tener",
+  "tenga",
+  "tengan",
+  "tipo",
+  "usar",
+  "usa",
+  "usan",
+  "un",
+  "una",
+  "uno",
+  "unos",
+  "unas",
+  "y",
+]);
+
+const searchStemSuffixes = [
+  "amientos",
+  "imientos",
+  "amiento",
+  "imiento",
+  "aciones",
+  "adores",
+  "adoras",
+  "acion",
+  "ciones",
+  "mente",
+  "idades",
+  "idad",
+  "antes",
+  "ancia",
+  "ancias",
+  "ados",
+  "adas",
+  "ando",
+  "iendo",
+  "ador",
+  "adora",
+  "ivos",
+  "ivas",
+  "ivo",
+  "iva",
+  "idos",
+  "idas",
+  "ado",
+  "ada",
+  "ido",
+  "ida",
+  "ores",
+  "oras",
+  "or",
+  "ora",
+  "icas",
+  "icos",
+  "ica",
+  "ico",
+  "ales",
+  "able",
+  "ible",
+  "es",
+  "as",
+  "os",
+  "ar",
+  "er",
+  "ir",
+  "s",
+  "a",
+  "e",
+  "o",
+];
+
+function getSearchStem(value) {
+  let word = normalizeText(value);
+
+  if (!word || word.includes(" ")) {
+    return word;
+  }
+
+  for (const suffix of searchStemSuffixes) {
+    if (word.length - suffix.length < 4) {
+      continue;
+    }
+
+    if (word.endsWith(suffix)) {
+      word = word.slice(0, -suffix.length);
+      break;
+    }
+  }
+
+  return word;
+}
+
+const naturalSearchRecipes = [
+  {
+    id: "cards-grid",
+    title: "Armar una grilla de tarjetas flexible",
+    summary:
+      "Grid te deja repartir varias tarjetas en columnas que se adaptan solas al ancho disponible.",
+    snippet: `.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}`,
+    note:
+      "Si quieres tarjetas mas anchas, sube el 220px. Si las quieres mas compactas, bajalo.",
+    relatedTerms: ["display", "grid-template-columns", "gap"],
+    required: [
+      ["tarjeta", "tarjetas", "card", "cards", "cajas", "bloques", "tarjetita", "tarjetitas"],
+      ["grid", "grilla", "cuadricula", "columnas", "repart", "acomod"],
+    ],
+    optional: [["responsive", "adapt", "auto-fit", "automatic"]],
+    baseScore: 18,
+  },
+  {
+    id: "space-items",
+    title: "Separar elementos sin pelearte con margenes",
+    summary:
+      "Cuando varias piezas van juntas, flex mas gap suele ser la salida mas simple y limpia.",
+    snippet: `.fila {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}`,
+    note:
+      "Si todos los elementos deben quedar en una sola linea, quita flex-wrap.",
+    relatedTerms: ["display", "flex-wrap", "gap"],
+    required: [
+      ["separ", "espacio", "aire", "hueco", "gap"],
+      ["botones", "elementos", "items", "cajas", "bloques", "chips"],
+    ],
+    optional: [["fila", "flex", "juntos"]],
+    baseScore: 16,
+  },
+  {
+    id: "responsive-text",
+    title: "Hacer que el texto se adapte mejor a la pantalla",
+    summary:
+      "Clamp ayuda a que una tipografia crezca o se achique sin volverse extrema.",
+    snippet: `h1 {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1.1;
+}`,
+    note:
+      "El primer valor es el minimo, el segundo es la parte fluida y el tercero es el maximo.",
+    relatedTerms: ["font-size", "line-height"],
+    required: [
+      ["texto", "titulo", "h1", "letra", "fuente"],
+      ["responsive", "fluido", "adapt", "pantalla", "clamp", "celu", "mobile", "compu"],
+    ],
+    optional: [["grande", "chico", "achique", "agrande"]],
+    baseScore: 18,
+  },
+  {
+    id: "mobile-friendly",
+    title: "Hacer que el bloque no se rompa en celu",
+    summary:
+      "Una base responsive simple suele empezar por ancho flexible y una media query que acomode el layout.",
+    snippet: `.contenedor {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 720px) {
+  .grilla {
+    grid-template-columns: 1fr;
+  }
+}`,
+    note:
+      "Si el problema es texto chico o gigante, puedes sumar clamp() o ajustar font-size dentro de la media query.",
+    relatedTerms: ["width", "max-width", "grid-template-columns", "font-size"],
+    required: [
+      ["celu", "mobile", "pantalla chica", "no se rompa", "en telefono"],
+    ],
+    optional: [["responsive", "adapt", "compu", "desktop", "se acomode"]],
+    baseScore: 17,
+  },
+  {
+    id: "sticky-bar",
+    title: "Dejar una barra pegada arriba",
+    summary:
+      "Sticky sirve cuando quieres que un menu o encabezado siga visible mientras haces scroll.",
+    snippet: `.barra {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}`,
+    note:
+      "Si no funciona, revisa que el contenedor padre no tenga overflow que lo bloquee.",
+    relatedTerms: ["position", "top", "z-index"],
+    required: [
+      ["barra", "menu", "nav", "header", "encabezado"],
+      ["pegad", "arriba", "sticky", "fija", "pegadito arriba"],
+    ],
+    optional: [["scroll", "bajar", "subir"]],
+    baseScore: 17,
+  },
+  {
+    id: "cover-image",
+    title: "Hacer que una imagen cubra el espacio sin deformarse",
+    summary:
+      "Object-fit cover recorta lo justo para llenar la caja manteniendo la proporcion visual.",
+    snippet: `img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}`,
+    note:
+      "Va muy bien en banners, miniaturas y tarjetas con imagen fija.",
+    relatedTerms: ["width", "height", "object-fit", "object-position"],
+    required: [
+      ["imagen", "foto", "img"],
+      ["cover", "cubrir", "rellenar", "ocupe todo", "sin deform", "recorte"],
+    ],
+    optional: [["banner", "tarjeta", "miniatura"]],
+    baseScore: 17,
+  },
+  {
+    id: "ellipsis-text",
+    title: "Cortar texto largo con puntos suspensivos",
+    summary:
+      "La combinacion de overflow, white-space y text-overflow es la receta clasica para una sola linea.",
+    snippet: `.titulo {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}`,
+    note:
+      "Si quieres varias lineas en vez de una, ya conviene otra tecnica distinta.",
+    relatedTerms: ["overflow", "white-space", "text-overflow"],
+    required: [
+      ["texto", "titulo", "nombre", "parrafo"],
+      ["cortar", "recortar", "puntos", "ellipsis", "no se salga", "..."],
+    ],
+    optional: [["largo", "sobrante", "linea"]],
+    baseScore: 16,
+  },
+  {
+    id: "glass-effect",
+    title: "Armar un panel con efecto vidrio",
+    summary:
+      "Una mezcla de fondo semitransparente y backdrop-filter suele dar ese look de vidrio suave.",
+    snippet: `.panel {
+  background: rgba(255, 255, 255, 0.58);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}`,
+    note:
+      "Se luce mejor cuando detras hay una imagen, un degradado o bastante contraste.",
+    relatedTerms: ["background", "backdrop-filter", "border"],
+    required: [
+      ["vidrio", "glass", "blur", "desenfo", "transparente"],
+      ["panel", "caja", "card", "tarjeta", "fondo"],
+    ],
+    optional: [["suave", "frosted", "glassmorphism"]],
+    baseScore: 16,
+  },
+  {
+    id: "stack-items",
+    title: "Poner elementos uno debajo del otro",
+    summary:
+      "Flex en columna ordena piezas apiladas y deja mas claro como alinearlas y separarlas.",
+    snippet: `.contenedor {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}`,
+    note:
+      "Si luego quieres centrar el grupo entero, puedes sumar justify-content o align-items segun el caso.",
+    relatedTerms: ["display", "flex-direction", "gap"],
+    required: [
+      [
+        "uno debajo del otro",
+        "uno abajo del otro",
+        "una debajo del otro",
+        "una abajo del otro",
+        "apil",
+        "en columna",
+        "columna",
+      ],
+      ["elementos", "cajas", "bloques", "botones", "campos", "formulario", "items", "cosas"],
+    ],
+    optional: [["orden", "acomod", "separ"]],
+    baseScore: 17,
+  },
+  {
+    id: "row-items",
+    title: "Poner elementos uno al lado del otro",
+    summary:
+      "Flex en fila suele ser la base mas simple para acomodar piezas horizontalmente.",
+    snippet: `.fila {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}`,
+    note:
+      "Si quieres repartirlos a lo ancho, puedes sumar justify-content: space-between;",
+    relatedTerms: ["display", "align-items", "gap"],
+    required: [
+      [
+        "uno al lado del otro",
+        "una al lado del otro",
+        "lado del otro",
+        "en fila",
+        "horizontal",
+        "fila",
+      ],
+      ["elementos", "cajas", "bloques", "botones", "campos", "items", "cosas"],
+    ],
+    optional: [["juntos", "acomod", "aline"]],
+    baseScore: 17,
+  },
+  {
+    id: "padding-space",
+    title: "Agregar aire dentro de una caja",
+    summary:
+      "Padding mete espacio interno entre el contenido y el borde del elemento.",
+    snippet: `.caja {
+  padding: 16px;
+}`,
+    note:
+      "Si el espacio debe ser por fuera, entonces lo que buscas es margin, no padding.",
+    relatedTerms: ["padding"],
+    required: [
+      ["aire adentro", "espacio adentro", "espacio interno", "relleno", "padding", "que respire adentro"],
+    ],
+    optional: [["caja", "tarjeta", "card", "boton", "input", "contenedor"]],
+    baseScore: 16,
+  },
+  {
+    id: "margin-space",
+    title: "Separar una caja de lo que tiene afuera",
+    summary:
+      "Margin crea aire por fuera del elemento y ayuda a despegarlo de otros bloques.",
+    snippet: `.caja {
+  margin: 24px;
+}`,
+    note:
+      "Cuando solo quieres distancia entre hijos dentro de flex o grid, muchas veces conviene mas gap.",
+    relatedTerms: ["margin", "gap"],
+    required: [
+      ["aire afuera", "espacio afuera", "margen", "margin", "despegar", "separado", "que respire", "despegar del fondo"],
+    ],
+    optional: [["caja", "tarjeta", "card", "formulario", "contenedor", "bloque"]],
+    baseScore: 16,
+  },
+  {
+    id: "round-corners",
+    title: "Redondear esquinas",
+    summary:
+      "Border-radius suaviza el borde y cambia rapido la sensacion visual de la caja.",
+    snippet: `.caja {
+  border-radius: 20px;
+}`,
+    note:
+      "Si tambien tienes imagen o fondo, el redondeo se nota mucho mas.",
+    relatedTerms: ["border-radius"],
+    required: [
+      ["redonde", "esquinas redondas", "esquinas suaves", "bordes redondos", "radius", "curvitas"],
+    ],
+    optional: [["caja", "tarjeta", "card", "boton", "imagen", "input", "facher", "prolij"]],
+    baseScore: 16,
+  },
+  {
+    id: "shadow-card",
+    title: "Agregar sombra a una caja",
+    summary:
+      "Box-shadow sirve para levantar una tarjeta o boton y darle un poco mas de profundidad.",
+    snippet: `.caja {
+  box-shadow: 0 16px 28px rgba(36, 52, 71, 0.18);
+}`,
+    note:
+      "Si la sombra es muy dura, prueba bajando la opacidad antes de tocar mas valores.",
+    relatedTerms: ["box-shadow"],
+    required: [
+      ["sombra", "sombrita", "elevacion", "levantar", "flotar", "despegar del fondo"],
+    ],
+    optional: [["caja", "tarjeta", "card", "panel", "boton", "bloque", "facher", "piola", "copad"]],
+    baseScore: 16,
+  },
+  {
+    id: "gradient-background",
+    title: "Poner un fondo con degradado",
+    summary:
+      "Background con linear-gradient es una salida muy comoda para fondos mas vivos que un color plano.",
+    snippet: `.hero {
+  background: linear-gradient(135deg, #fffaf0 0%, #e3f4ee 100%);
+}`,
+    note:
+      "Si quieres usar una imagen ademas del degradado, puedes mirar tambien background-image.",
+    relatedTerms: ["background", "background-image"],
+    required: [
+      [
+        "degradado",
+        "gradiente",
+        "gradient",
+        "degrade",
+        "degrade de colores",
+        "colores mezclados",
+        "mezcla de colores",
+      ],
+      ["fondo", "background", "hero", "banner", "caja", "seccion"],
+    ],
+    optional: [["suave", "lindo", "vistoso", "facher", "cancher", "piola"]],
+    baseScore: 16,
+  },
+  {
+    id: "style-card",
+    title: "Hacer una tarjetita mas fachera",
+    summary:
+      "Una mezcla de fondo suave, esquinas redondeadas y sombra deja la tarjeta mas prolija de una.",
+    snippet: `.card {
+  padding: 18px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #fffefb 0%, #f5faf7 100%);
+  box-shadow: 0 16px 28px rgba(36, 52, 71, 0.16);
+}`,
+    note:
+      "Desde ahi puedes afinar color, borde o sombra segun el tono que quieras darle.",
+    relatedTerms: ["padding", "border-radius", "background", "box-shadow"],
+    required: [
+      ["tarjeta", "card", "tarjetita", "caja", "panel"],
+      ["facher", "piola", "copad", "cancher", "prolij", "linda"],
+    ],
+    optional: [["sombra", "suave", "redonde", "elegante"]],
+    baseScore: 17,
+  },
+  {
+    id: "center-text",
+    title: "Centrar texto dentro de su caja",
+    summary:
+      "Cuando el problema es el texto y no el bloque entero, text-align suele ser la propiedad correcta.",
+    snippet: `.mensaje {
+  text-align: center;
+}`,
+    note:
+      "Esto centra el contenido textual dentro de la caja, no mueve la caja completa.",
+    relatedTerms: ["text-align"],
+    required: [
+      ["centrar texto", "texto centrado", "alinear texto", "texto al medio"],
+    ],
+    optional: [["titulo", "parrafo", "mensaje", "h1", "h2"]],
+    baseScore: 16,
+  },
+  {
+    id: "full-width-element",
+    title: "Hacer que un elemento ocupe todo el ancho",
+    summary:
+      "Width al 100 por ciento es lo usual cuando un input, boton o bloque debe estirarse completo.",
+    snippet: `.campo {
+  width: 100%;
+  max-width: 100%;
+}`,
+    note:
+      "Si no quieres que se pase de cierto limite en escritorio, combina width con max-width.",
+    relatedTerms: ["width", "max-width"],
+    required: [
+      ["ancho completo", "todo el ancho", "ocupe todo", "full width", "se estire", "de punta a punta", "todo lo ancho"],
+    ],
+    optional: [["input", "campo", "formulario", "boton", "caja", "contenedor"]],
+    baseScore: 16,
+  },
+  {
+    id: "hover-lift",
+    title: "Dar respuesta visual al pasar el mouse",
+    summary:
+      "Una mezcla de transition y transform suele alcanzar para que un boton o tarjeta se sientan interactivos.",
+    snippet: `.boton {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.boton:hover {
+  transform: translateY(-2px);
+}`,
+    note:
+      "Si quieres algo mas suave todavia, baja la distancia del translateY o alarga un poco la duracion.",
+    relatedTerms: ["transition", "transform"],
+    required: [
+      ["hover", "al pasar el mouse", "pasar el mouse", "mouse arriba", "que responda", "feedback"],
+    ],
+    optional: [["boton", "tarjeta", "card", "link", "enlace", "caja"]],
+    baseScore: 16,
+  },
+  {
+    id: "hide-overflow",
+    title: "Evitar que algo se salga de la caja",
+    summary:
+      "Overflow hidden sirve cuando el contenido desborda y quieres recortarlo dentro del marco.",
+    snippet: `.caja {
+  overflow: hidden;
+}`,
+    note:
+      "Si lo que quieres cortar es texto en una sola linea, probablemente necesites tambien text-overflow.",
+    relatedTerms: ["overflow", "text-overflow"],
+    required: [
+      ["no se salga", "que no desborde", "desborde", "overflow", "se corte", "que no chorree", "que no se pase"],
+    ],
+    optional: [["contenido", "imagen", "texto", "elemento", "caja", "bloque"]],
+    baseScore: 16,
+  },
+  {
+    id: "layer-above",
+    title: "Poner un elemento por encima de otro",
+    summary:
+      "Cuando dos piezas se pisan, z-index y position suelen ser las primeras propiedades a revisar.",
+    snippet: `.aviso {
+  position: relative;
+  z-index: 10;
+}`,
+    note:
+      "Si el elemento necesita moverse respecto de su contenedor, despues revisa top, right, bottom o left.",
+    relatedTerms: ["position", "z-index", "top", "left"],
+    required: [
+      ["encima", "por arriba", "superpuesto", "adelante", "sobre otro"],
+    ],
+    optional: [["menu", "aviso", "panel", "modal", "caja", "elemento"]],
+    baseScore: 16,
+  },
+  {
+    id: "soft-blur",
+    title: "Desenfocar o filtrar visualmente un elemento",
+    summary:
+      "Filter o backdrop-filter te ayudan a cambiar el aspecto visual de una foto, panel o fondo.",
+    snippet: `.panel {
+  backdrop-filter: blur(8px);
+}`,
+    note:
+      "Si el efecto va sobre la imagen misma, mira tambien la propiedad filter.",
+    relatedTerms: ["filter", "backdrop-filter"],
+    required: [
+      ["blur", "desenfo", "filtro", "borroso"],
+    ],
+    optional: [["imagen", "foto", "panel", "fondo", "caja"]],
+    baseScore: 16,
+  },
+];
+
+const naturalSearchLexicon = [
+  {
+    phrases: ["aire adentro", "espacio adentro", "espacio interno", "relleno", "colchon"],
+    relatedTerms: ["padding"],
+  },
+  {
+    phrases: ["aire afuera", "espacio afuera", "espacio externo", "despegar", "margen", "que respire"],
+    relatedTerms: ["margin", "gap"],
+  },
+  {
+    phrases: ["redonde", "bordes redondos", "esquinas suaves", "radius", "curvitas"],
+    relatedTerms: ["border-radius"],
+  },
+  {
+    phrases: ["sombra", "sombrita", "elevacion", "flotar", "despegar del fondo"],
+    relatedTerms: ["box-shadow", "text-shadow"],
+  },
+  {
+    phrases: [
+      "degradado",
+      "gradiente",
+      "gradient",
+      "degrade",
+      "degrade de colores",
+      "background con degrade",
+      "fondo con degrade",
+      "fondo con gradiente",
+      "background con gradiente",
+      "mezcla de colores",
+      "fondo fachero",
+    ],
+    relatedTerms: ["background", "background-image"],
+  },
+  {
+    phrases: [
+      "espacio entre letras",
+      "aire entre letras",
+      "separacion entre letras",
+      "letras separadas",
+      "espaciado de letras",
+    ],
+    relatedTerms: ["letter-spacing"],
+  },
+  {
+    phrases: [
+      "espacio entre palabras",
+      "aire entre palabras",
+      "separacion entre palabras",
+      "espaciado de palabras",
+    ],
+    relatedTerms: ["word-spacing"],
+  },
+  {
+    phrases: [
+      "espacio entre lineas",
+      "aire entre lineas",
+      "separacion entre lineas",
+      "interlineado",
+      "altura de linea",
+    ],
+    relatedTerms: ["line-height"],
+  },
+  {
+    phrases: [
+      "color del texto",
+      "color de la letra",
+      "texto de color",
+      "tinta del texto",
+      "cambiar color de letra",
+    ],
+    relatedTerms: ["color"],
+  },
+  {
+    phrases: [
+      "color de fondo",
+      "fondo liso",
+      "background liso",
+      "fondo de un solo color",
+      "un color de fondo",
+    ],
+    relatedTerms: ["background-color"],
+  },
+  {
+    phrases: [
+      "tamano de letra",
+      "tamano del texto",
+      "texto mas grande",
+      "texto mas chico",
+      "letra mas grande",
+      "letra mas chica",
+    ],
+    relatedTerms: ["font-size"],
+  },
+  {
+    phrases: [
+      "tipo de letra",
+      "tipografia",
+      "cambiar fuente",
+      "familia tipografica",
+      "fuente del texto",
+    ],
+    relatedTerms: ["font-family"],
+  },
+  {
+    phrases: [
+      "texto mas grueso",
+      "texto mas fino",
+      "grosor de letra",
+      "peso de la letra",
+      "negrita",
+    ],
+    relatedTerms: ["font-weight"],
+  },
+  {
+    phrases: [
+      "subrayar texto",
+      "quitar subrayado",
+      "tachar texto",
+      "linea debajo del texto",
+    ],
+    relatedTerms: ["text-decoration"],
+  },
+  {
+    phrases: ["vidrio", "glass", "glassmorphism", "frosted", "vidrioso"],
+    relatedTerms: ["background", "backdrop-filter", "border"],
+  },
+  {
+    phrases: ["blur", "desenfo", "borroso", "filtro", "esfumado"],
+    relatedTerms: ["filter", "backdrop-filter"],
+  },
+  {
+    phrases: ["pegado arriba", "siempre arriba", "se quede arriba", "sticky", "pegadito arriba"],
+    relatedTerms: ["position", "top", "z-index"],
+  },
+  {
+    phrases: ["no se salga", "desborde", "overflow", "se corte", "que no chorree", "que no se pase"],
+    relatedTerms: ["overflow"],
+  },
+  {
+    phrases: ["puntitos", "puntos suspensivos", "ellipsis", "..."],
+    relatedTerms: ["text-overflow", "white-space", "overflow"],
+  },
+  {
+    phrases: ["ancho completo", "todo el ancho", "full width", "ocupe todo", "se estire", "de punta a punta"],
+    relatedTerms: ["width", "max-width"],
+  },
+  {
+    phrases: ["centro", "centrar", "al medio", "en el medio", "bien al medio", "centrito"],
+    relatedTerms: ["display", "justify-content", "align-items"],
+  },
+  {
+    phrases: ["apilado", "en columna", "debajo del otro", "uno abajo del otro", "una abajo del otro"],
+    relatedTerms: ["display", "flex-direction", "gap"],
+  },
+  {
+    phrases: ["al lado del otro", "en fila", "horizontal", "en linea"],
+    relatedTerms: ["display", "align-items", "gap"],
+  },
+  {
+    phrases: ["responsive", "adaptable", "segun pantalla", "fluido", "en celu", "en compu", "mobile", "desktop"],
+    relatedTerms: ["width", "max-width", "font-size", "line-height"],
+  },
+  {
+    phrases: ["grilla", "cuadricula", "columnas", "grid", "tarjetitas"],
+    relatedTerms: ["display", "grid-template-columns", "gap"],
+  },
+  {
+    phrases: ["texto centrado", "centrar texto", "alinear texto"],
+    relatedTerms: ["text-align"],
+  },
+  {
+    phrases: ["transicion", "suave", "animacion suave"],
+    relatedTerms: ["transition", "transform"],
+  },
+  {
+    phrases: ["animado", "moverse solo", "que se mueva"],
+    relatedTerms: ["animation", "animation-duration", "animation-delay"],
+  },
+  {
+    phrases: ["no se deforme la imagen", "imagen completa", "foto completa", "cover"],
+    relatedTerms: ["object-fit", "object-position", "width", "height"],
+  },
+  {
+    phrases: ["encima", "superpuesto", "adelante", "por arriba"],
+    relatedTerms: ["position", "z-index"],
+  },
+];
+
+const descriptivePropertyLexicon = [
+  {
+    propertyName: "letter-spacing",
+    phrases: [
+      "espacio entre letras",
+      "aire entre letras",
+      "separacion entre letras",
+      "espaciado de letras",
+    ],
+    summary:
+      "Letter-spacing controla cuanto se separan los caracteres dentro del mismo texto.",
+  },
+  {
+    propertyName: "word-spacing",
+    phrases: [
+      "espacio entre palabras",
+      "aire entre palabras",
+      "separacion entre palabras",
+      "espaciado de palabras",
+    ],
+    summary:
+      "Word-spacing cambia la distancia horizontal entre palabras completas.",
+  },
+  {
+    propertyName: "line-height",
+    phrases: [
+      "espacio entre lineas",
+      "aire entre lineas",
+      "separacion entre lineas",
+      "interlineado",
+    ],
+    summary:
+      "Line-height maneja el aire vertical entre una linea de texto y la siguiente.",
+  },
+  {
+    propertyName: "background",
+    phrases: [
+      "background con degrade",
+      "fondo con degrade",
+      "fondo con gradiente",
+      "background con gradiente",
+      "degrade de colores",
+    ],
+    summary:
+      "Background puede pintar el fondo completo y tambien aceptar degradados como linear-gradient().",
+    relatedTerms: ["background-image"],
+  },
+  {
+    propertyName: "background-color",
+    phrases: [
+      "color de fondo",
+      "fondo liso",
+      "background liso",
+      "fondo de un solo color",
+    ],
+    summary:
+      "Background-color es la salida mas directa cuando solo quieres un color plano de fondo.",
+  },
+  {
+    propertyName: "color",
+    phrases: [
+      "color del texto",
+      "color de la letra",
+      "tinta del texto",
+      "texto de color",
+    ],
+    summary:
+      "Color cambia la tinta del texto y de varios elementos que heredan ese color base.",
+  },
+  {
+    propertyName: "font-size",
+    phrases: [
+      "tamano de letra",
+      "tamano del texto",
+      "texto mas grande",
+      "texto mas chico",
+      "letra mas grande",
+      "letra mas chica",
+    ],
+    summary:
+      "Font-size define cuanto mide la letra y es la propiedad base para escalar tipografia.",
+  },
+  {
+    propertyName: "font-family",
+    phrases: [
+      "tipo de letra",
+      "tipografia",
+      "cambiar fuente",
+      "familia tipografica",
+    ],
+    summary:
+      "Font-family elige la familia tipografica que usara el texto.",
+  },
+  {
+    propertyName: "font-weight",
+    phrases: [
+      "texto mas grueso",
+      "texto mas fino",
+      "grosor de letra",
+      "peso de la letra",
+      "negrita",
+    ],
+    summary:
+      "Font-weight regula si la letra se ve mas liviana o mas pesada.",
+  },
+  {
+    propertyName: "text-decoration",
+    phrases: [
+      "subrayar texto",
+      "quitar subrayado",
+      "tachar texto",
+      "linea debajo del texto",
+    ],
+    summary:
+      "Text-decoration agrega, quita o cambia lineas decorativas como subrayado o tachado.",
+  },
+];
+
+const intentFamilies = [
+  {
+    id: "layout-center",
+    label: "centrado y acomodo de layout",
+    cueGroups: [
+      ["centr", "al medio", "en el medio", "bien al medio", "centrito", "acomod", "ubic"],
+      ["pantalla", "viewport", "ventana", "contenedor", "formulario", "bloque", "seccion"],
+    ],
+    recipeIds: ["center-layout"],
+    relatedTerms: ["display", "justify-content", "align-items", "flex-direction", "min-height"],
+    boost: 4,
+    minMatchedGroups: 1,
+  },
+  {
+    id: "layout-flow",
+    label: "acomodo de elementos",
+    cueGroups: [
+      ["columna", "fila", "en linea", "apil", "debajo", "al lado", "horizontal"],
+      ["elementos", "cosas", "cajas", "bloques", "botones", "campos", "items"],
+    ],
+    recipeIds: ["stack-items", "row-items", "space-items"],
+    relatedTerms: ["display", "flex-direction", "align-items", "justify-content", "gap"],
+    boost: 3,
+    minMatchedGroups: 2,
+  },
+  {
+    id: "spacing",
+    label: "espaciado y aire",
+    cueGroups: [
+      ["aire", "respire", "espacio", "despegar", "hueco", "colchon", "separad", "pegad"],
+      ["adentro", "afuera", "caja", "tarjeta", "card", "elementos", "botones", "contenedor"],
+    ],
+    recipeIds: ["padding-space", "margin-space", "space-items"],
+    relatedTerms: ["padding", "margin", "gap"],
+    boost: 3,
+    minMatchedGroups: 2,
+  },
+  {
+    id: "surface-style",
+    label: "estilo de tarjetas y cajas",
+    cueGroups: [
+      ["tarjeta", "card", "tarjetita", "panel", "caja", "bloque"],
+      ["facher", "piola", "copad", "cancher", "prolij", "suave", "elegante", "levantar"],
+    ],
+    recipeIds: ["round-corners", "shadow-card", "gradient-background", "glass-effect"],
+    relatedTerms: ["border-radius", "box-shadow", "background", "backdrop-filter", "border"],
+    boost: 3,
+    minMatchedGroups: 2,
+  },
+  {
+    id: "text",
+    label: "texto y tipografia",
+    cueGroups: [
+      ["texto", "titulo", "h1", "h2", "parrafo", "copy", "letra", "fuente"],
+      ["centrado", "alinear", "puntitos", "ellipsis", "clamp", "responsive", "chiquito", "grand"],
+    ],
+    recipeIds: ["center-text", "responsive-text", "ellipsis-text"],
+    relatedTerms: ["text-align", "font-size", "line-height", "text-overflow", "white-space", "overflow"],
+    boost: 4,
+    minMatchedGroups: 2,
+  },
+  {
+    id: "responsive",
+    label: "responsive y pantallas",
+    cueGroups: [
+      ["responsive", "adapt", "fluido", "celu", "mobile", "compu", "desktop", "escritorio", "pantalla chica", "pantalla grande", "no se rompa"],
+      ["texto", "titulo", "imagen", "tarjeta", "grid", "formulario", "layout", "ancho"],
+    ],
+    recipeIds: ["responsive-text", "cards-grid", "cover-image", "full-width-element", "center-layout"],
+    relatedTerms: ["font-size", "line-height", "width", "max-width", "grid-template-columns", "object-fit", "object-position", "min-height"],
+    boost: 3,
+    minMatchedGroups: 1,
+  },
+  {
+    id: "motion",
+    label: "movimiento e interaccion",
+    cueGroups: [
+      ["hover", "transicion", "animacion", "feedback", "responda", "se mueva", "suave"],
+      ["boton", "tarjeta", "card", "link", "enlace", "caja", "panel"],
+    ],
+    recipeIds: ["hover-lift"],
+    relatedTerms: ["transition", "transform", "animation", "animation-duration", "animation-delay"],
+    boost: 3,
+    minMatchedGroups: 2,
+  },
+  {
+    id: "overflow-control",
+    label: "desborde y recorte",
+    cueGroups: [
+      ["desborde", "no se salga", "se corte", "chorree", "puntitos", "ellipsis", "recortar"],
+      ["texto", "contenido", "titulo", "parrafo", "caja", "imagen", "bloque"],
+    ],
+    recipeIds: ["hide-overflow", "ellipsis-text"],
+    relatedTerms: ["overflow", "text-overflow", "white-space"],
+    boost: 3,
+    minMatchedGroups: 2,
+  },
+  {
+    id: "layering",
+    label: "capas y fijado",
+    cueGroups: [
+      ["encima", "superpuesto", "adelante", "por arriba", "sticky", "pegadito arriba", "pegado arriba"],
+      ["menu", "barra", "modal", "panel", "aviso", "header", "elemento"],
+    ],
+    recipeIds: ["layer-above", "sticky-bar"],
+    relatedTerms: ["position", "z-index", "top", "left"],
+    boost: 3,
+    minMatchedGroups: 2,
+  },
+  {
+    id: "media-effects",
+    label: "imagenes y efectos visuales",
+    cueGroups: [
+      ["imagen", "foto", "banner", "fondo", "panel"],
+      ["cover", "blur", "vidrio", "filtro", "desenfo", "glass"],
+    ],
+    recipeIds: ["cover-image", "glass-effect", "soft-blur", "gradient-background"],
+    relatedTerms: ["object-fit", "object-position", "filter", "backdrop-filter", "background"],
+    boost: 3,
+    minMatchedGroups: 2,
+  },
+];
+
+function getMeaningfulSearchTokens(query) {
+  return query
+    .split(" ")
+    .filter(Boolean)
+    .filter((token) => token.length > 1 && !searchStopWords.has(token));
+}
+
+function queryIncludesTerm(query, term) {
+  const normalizedTerm = normalizeText(term);
+
+  if (!normalizedTerm) {
+    return false;
+  }
+
+  if (query.includes(normalizedTerm)) {
+    return true;
+  }
+
+  const queryWords = query.split(" ").filter(Boolean);
+  const termTokens = getMeaningfulSearchTokens(normalizedTerm);
+
+  if (!termTokens.length) {
+    return false;
+  }
+
+  return termTokens.every((token) => tokenMatches(query, queryWords, token));
+}
+
+function queryMatchesGroup(query, terms) {
+  return terms.some((term) => queryIncludesTerm(query, term));
+}
+
+function countMatchingGroups(query, groups = []) {
+  return groups.reduce(
+    (count, group) => count + (queryMatchesGroup(query, group) ? 1 : 0),
+    0,
+  );
+}
+
+function getUniqueSearchTerms(values) {
+  return Array.from(new Set(values.filter(Boolean)));
+}
+
+function getLexiconMatches(query) {
+  if (!query) {
+    return [];
+  }
+
+  return naturalSearchLexicon.filter((entry) => queryMatchesGroup(query, entry.phrases));
+}
+
+function getLexiconFilterTerms(query) {
+  return getUniqueSearchTerms(
+    getLexiconMatches(query).flatMap((entry) => entry.relatedTerms || []),
+  );
+}
+
+function getDescriptivePropertyRecommendation(query) {
+  if (!query) {
+    return null;
+  }
+
+  const matches = descriptivePropertyLexicon
+    .map((entry) => {
+      const matchedPhrase = entry.phrases.find((phrase) => queryIncludesTerm(query, phrase));
+
+      if (!matchedPhrase) {
+        return null;
+      }
+
+      const property = cssPropertyMap.get(entry.propertyName);
+
+      if (!property) {
+        return null;
+      }
+
+      const relatedTerms = getUniqueSearchTerms([
+        property.name,
+        ...(entry.relatedTerms || []),
+      ]);
+
+      return {
+        id: `property-${property.name}`,
+        title: `Probablemente buscas ${property.name}`,
+        summary: entry.summary || property.description,
+        snippet: property.code,
+        note: property.note || "",
+        relatedTerms,
+        filterTerms: relatedTerms,
+        score: 24 + Math.min(6, matchedPhrase.length / 8),
+      };
+    })
+    .filter(Boolean)
+    .sort((matchA, matchB) => matchB.score - matchA.score);
+
+  return matches[0] || null;
+}
+
+function getMatchedIntentFamilies(query) {
+  if (!query) {
+    return [];
+  }
+
+  return intentFamilies
+    .map((family) => {
+      const matchedCueCount = countMatchingGroups(query, family.cueGroups || []);
+
+      if (matchedCueCount < (family.minMatchedGroups || 1)) {
+        return null;
+      }
+
+      return {
+        ...family,
+        matchedCueCount,
+        priorityScore: family.boost * matchedCueCount,
+      };
+    })
+    .filter(Boolean)
+    .sort((familyA, familyB) => familyB.priorityScore - familyA.priorityScore);
+}
+
+function getIntentFamilyBoost(recipeId, matchedFamilies) {
+  return matchedFamilies.reduce((score, family) => {
+    if (!family.recipeIds.includes(recipeId)) {
+      return score;
+    }
+
+    return score + family.boost * family.matchedCueCount;
+  }, 0);
+}
+
+function getIntentFamilyFilterTerms(matchedFamilies) {
+  return getUniqueSearchTerms(
+    matchedFamilies.slice(0, 3).flatMap((family) => family.relatedTerms || []),
+  );
+}
+
+function getPrimaryIntentFamily(matchedFamilies) {
+  return matchedFamilies[0] || null;
+}
+
+function buildCenteringSearchRecommendation(query, matchedFamilies = []) {
+  if (
+    queryMatchesGroup(query, [
+      "centrar texto",
+      "texto centrado",
+      "alinear texto",
+      "titulo centrado",
+      "text align",
+    ])
+  ) {
+    return null;
+  }
+
+  const hasCenterIntent = queryMatchesGroup(query, [
+    "centr",
+    "medio",
+    "aline",
+    "acomod",
+    "ubic",
+  ]);
+
+  if (!hasCenterIntent) {
+    return null;
+  }
+
+  const mentionsScreen = queryMatchesGroup(query, [
+    "pantalla",
+    "viewport",
+    "ventana",
+    "100vh",
+    "pantalla completa",
+    "pantalla entera",
+    "pagina completa",
+    "medio de la pantalla",
+    "centro de la pantalla",
+  ]);
+  const mentionsExact = queryMatchesGroup(query, [
+    "medio exact",
+    "centro exact",
+    "mitad de la pantalla",
+    "medio de la pantalla",
+    "centro de la pantalla",
+    "exactamente al centro",
+  ]);
+  const mentionsVertical = queryMatchesGroup(query, [
+    "vertical",
+    "arriba y abajo",
+  ]);
+  const mentionsHorizontal = queryMatchesGroup(query, [
+    "horizontal",
+    "izquierda y derecha",
+  ]);
+  const mentionsColumn = queryMatchesGroup(query, [
+    "columna",
+    "apil",
+    "debajo",
+    "uno debajo del otro",
+    "uno abajo del otro",
+    "encima y abajo",
+  ]);
+  const mentionsMultiple = query.includes(" y ") || queryMatchesGroup(query, [
+    "formulario",
+    "h1",
+    "h2",
+    "titulo",
+    "subtitulo",
+    "botones",
+    "campos",
+    "inputs",
+  ]);
+
+  const useColumn = mentionsColumn || mentionsMultiple;
+  const shouldUseScreenHeight = mentionsScreen || mentionsExact;
+
+  let wantsVertical = false;
+  let wantsHorizontal = false;
+
+  if (
+    mentionsExact ||
+    (mentionsVertical && mentionsHorizontal) ||
+    (mentionsScreen && !mentionsVertical && !mentionsHorizontal)
+  ) {
+    wantsVertical = true;
+    wantsHorizontal = true;
+  } else if (mentionsVertical) {
+    wantsVertical = true;
+  } else if (mentionsHorizontal) {
+    wantsHorizontal = true;
+  } else {
+    wantsHorizontal = true;
+  }
+
+  const lines = ["display: flex;"];
+
+  if (useColumn) {
+    lines.push("flex-direction: column;");
+  }
+
+  if (wantsVertical) {
+    lines.push(useColumn ? "justify-content: center;" : "align-items: center;");
+  }
+
+  if (wantsHorizontal) {
+    lines.push(useColumn ? "align-items: center;" : "justify-content: center;");
+  }
+
+  if (shouldUseScreenHeight) {
+    lines.push("min-height: 100vh;");
+  }
+
+  let title = "Centrar elementos horizontalmente";
+
+  if (wantsVertical && wantsHorizontal && shouldUseScreenHeight) {
+    title = "Centrar elementos en el medio exacto de la pantalla";
+  } else if (wantsVertical && wantsHorizontal) {
+    title = "Centrar elementos en ambos ejes";
+  } else if (wantsVertical) {
+    title = "Centrar elementos verticalmente";
+  }
+
+  const summary = useColumn
+    ? "Flex en columna te deja apilar piezas como un titulo y un formulario, y luego centrarlas con mucha mas claridad."
+    : "Flex es la forma mas directa de mover el contenido al centro dentro de un contenedor.";
+
+  let note = "";
+
+  if (wantsVertical && !shouldUseScreenHeight) {
+    note =
+      "Para que el centrado vertical se note, el contenedor necesita altura. Si lo quieres respecto de toda la pantalla, suma min-height: 100vh;";
+  } else if (useColumn) {
+    note =
+      "Si quieres separar mejor las piezas apiladas, puedes sumar gap: 16px; al mismo contenedor.";
+  }
+
+  const relatedTerms = getUniqueSearchTerms([
+    "display",
+    useColumn ? "flex-direction" : "",
+    wantsVertical ? (useColumn ? "justify-content" : "align-items") : "",
+    wantsHorizontal ? (useColumn ? "align-items" : "justify-content") : "",
+    shouldUseScreenHeight ? "min-height" : "",
+    shouldUseScreenHeight ? "height" : "",
+  ]);
+
+  return {
+    id: "center-layout",
+    title,
+    summary,
+    snippet: `.contenedor {
+  ${lines.join("\n  ")}
+}`,
+    note,
+    relatedTerms,
+    filterTerms: relatedTerms,
+    score:
+      20 +
+      (mentionsExact ? 4 : 0) +
+      (mentionsScreen ? 3 : 0) +
+      (useColumn ? 2 : 0) +
+      (wantsVertical && wantsHorizontal ? 2 : 0) +
+      getIntentFamilyBoost("center-layout", matchedFamilies),
+  };
+}
+
+function getStaticSearchRecommendation(query, matchedFamilies = []) {
+  const matches = naturalSearchRecipes
+    .map((recipe) => {
+      const matchesRequired = recipe.required.every((group) =>
+        queryMatchesGroup(query, group),
+      );
+
+      if (!matchesRequired) {
+        return null;
+      }
+
+      return {
+        ...recipe,
+        filterTerms: recipe.relatedTerms,
+        score:
+          recipe.baseScore +
+          countMatchingGroups(query, recipe.optional) * 2 +
+          getIntentFamilyBoost(recipe.id, matchedFamilies),
+      };
+    })
+    .filter(Boolean)
+    .sort((recipeA, recipeB) => recipeB.score - recipeA.score);
+
+  return matches[0] || null;
+}
+
+function getSearchRecommendation(query) {
+  if (!query) {
+    return null;
+  }
+
+  const matchedFamilies = getMatchedIntentFamilies(query);
+
+  const candidates = [
+    getDescriptivePropertyRecommendation(query),
+    buildCenteringSearchRecommendation(query, matchedFamilies),
+    getStaticSearchRecommendation(query, matchedFamilies),
+  ]
+    .filter(Boolean)
+    .sort((candidateA, candidateB) => candidateB.score - candidateA.score);
+
+  return candidates[0] || null;
+}
+
+function getSelectorLineComment(line) {
+  const selector = line.replace(/\{$/, "").trim();
+
+  if (!selector) {
+    return "";
+  }
+
+  if (selector.startsWith("@media")) {
+    const maxWidthMatch = selector.match(/max-width:\s*([0-9.]+[a-z%]+)/i);
+    const minWidthMatch = selector.match(/min-width:\s*([0-9.]+[a-z%]+)/i);
+
+    if (maxWidthMatch) {
+      return `solo en ${maxWidthMatch[1]} o menos`;
+    }
+
+    if (minWidthMatch) {
+      return `solo desde ${minWidthMatch[1]}`;
+    }
+
+    return "solo si se cumple";
+  }
+
+  if (selector.startsWith("@keyframes")) {
+    return "pasos de la animacion";
+  }
+
+  return `aplica a ${selector}`;
+}
+
+function getPropertyValueHint(propertyName, value) {
+  const rawValue = value.trim();
+  const normalizedValue = normalizeText(value);
+
+  switch (propertyName) {
+    case "display":
+      if (normalizedValue.includes("flex")) {
+        return "activa flex";
+      }
+      if (normalizedValue.includes("grid")) {
+        return "activa grid";
+      }
+      if (normalizedValue.includes("block")) {
+        return "baja de linea";
+      }
+      break;
+    case "grid-template-columns":
+      if (normalizedValue.includes("auto-fit") || normalizedValue.includes("minmax")) {
+        const minMatch = rawValue.match(/minmax\(([^,]+),/i);
+
+        if (minMatch) {
+          return `columnas desde ${minMatch[1].trim()}`;
+        }
+
+        return "columnas flexibles";
+      }
+      if (normalizedValue === "1fr") {
+        return "una sola columna";
+      }
+      break;
+    case "gap":
+      return `separa ${rawValue}`;
+    case "flex-direction":
+      if (normalizedValue.includes("column")) {
+        return "uno debajo del otro";
+      }
+      if (normalizedValue.includes("row")) {
+        return "uno al lado del otro";
+      }
+      break;
+    case "flex-wrap":
+      if (normalizedValue.includes("wrap")) {
+        return "bajan si no entran";
+      }
+      break;
+    case "justify-content":
+      if (normalizedValue.includes("center")) {
+        return "centra principal";
+      }
+      if (normalizedValue.includes("space-between")) {
+        return "reparte a los lados";
+      }
+      break;
+    case "align-items":
+      if (normalizedValue.includes("center")) {
+        return "centra cruzado";
+      }
+      break;
+    case "width":
+      if (normalizedValue === "100%") {
+        return "ocupa todo el ancho";
+      }
+      break;
+    case "max-width":
+      if (normalizedValue === "100%") {
+        return "no se pasa del ancho";
+      }
+      return `ancho maximo ${rawValue}`;
+      break;
+    case "min-height":
+      if (normalizedValue.includes("100vh")) {
+        return "ocupa toda la pantalla";
+      }
+      return `alto minimo ${rawValue}`;
+      break;
+    case "height":
+      if (normalizedValue.includes("100vh")) {
+        return "ocupa toda la pantalla";
+      }
+      if (normalizedValue.includes("100%")) {
+        return "ocupa todo el alto";
+      }
+      return `alto ${rawValue}`;
+      break;
+    case "font-size":
+      if (normalizedValue.includes("clamp")) {
+        const clampMatch = rawValue.match(/clamp\(([^,]+),\s*([^,]+),\s*([^)]+)\)/i);
+
+        if (clampMatch) {
+          return `texto entre ${clampMatch[1].trim()} y ${clampMatch[3].trim()}`;
+        }
+
+        return "texto fluido";
+      }
+      return `texto ${rawValue}`;
+      break;
+    case "line-height":
+      return `aire entre lineas ${rawValue}`;
+    case "position":
+      if (normalizedValue.includes("sticky")) {
+        return "queda pegado";
+      }
+      if (normalizedValue.includes("relative")) {
+        return "base para posicionar";
+      }
+      if (normalizedValue.includes("absolute")) {
+        return "sale del flujo";
+      }
+      break;
+    case "top":
+      if (normalizedValue === "0") {
+        return "pegado arriba";
+      }
+      return `baja ${rawValue} desde arriba`;
+      break;
+    case "z-index":
+      return `sube la capa a ${rawValue}`;
+    case "object-fit":
+      if (normalizedValue.includes("cover")) {
+        return "cubre sin deformar";
+      }
+      break;
+    case "object-position":
+      if (normalizedValue.includes("center")) {
+        return "centra el recorte";
+      }
+      break;
+    case "overflow":
+      if (normalizedValue.includes("hidden")) {
+        return "recorta lo que sobra";
+      }
+      break;
+    case "white-space":
+      if (normalizedValue.includes("nowrap")) {
+        return "no baja de linea";
+      }
+      break;
+    case "text-overflow":
+      if (normalizedValue.includes("ellipsis")) {
+        return "pone puntos";
+      }
+      break;
+    case "background":
+      if (normalizedValue.includes("linear-gradient")) {
+        return "fondo con degrade";
+      }
+      return "define el fondo";
+      break;
+    case "background-color":
+      return "fondo liso";
+    case "backdrop-filter":
+      if (normalizedValue.includes("blur")) {
+        const blurMatch = rawValue.match(/blur\(([^)]+)\)/i);
+
+        if (blurMatch) {
+          return `desenfoca detras ${blurMatch[1].trim()}`;
+        }
+
+        return "desenfoca detras";
+      }
+      break;
+    case "border":
+      return "dibuja el borde";
+    case "margin":
+      return `separa afuera ${rawValue}`;
+    case "padding":
+      return `separa adentro ${rawValue}`;
+    case "text-align":
+      if (normalizedValue.includes("center")) {
+        return "centra el texto";
+      }
+      break;
+    case "font-family":
+      return "cambia la tipografia";
+    case "font-weight":
+      return `grosor ${rawValue}`;
+    case "color":
+      return "color del texto";
+    case "letter-spacing":
+      return `separa letras ${rawValue}`;
+    case "word-spacing":
+      return `separa palabras ${rawValue}`;
+    case "transition":
+      return "suaviza el cambio";
+    case "transform":
+      if (normalizedValue.includes("translatey")) {
+        const translateMatch = rawValue.match(/translateY\(([^)]+)\)/i);
+
+        if (translateMatch) {
+          return `mueve en vertical ${translateMatch[1].trim()}`;
+        }
+
+        return "mueve en vertical";
+      }
+      break;
+    case "border-radius":
+      return `redondea ${rawValue}`;
+    case "box-shadow":
+      return "agrega sombra";
+    default:
+      break;
+  }
+
+  return "";
+}
+
+function getPropertyLineComment(propertyName, value, declarations = new Map()) {
+  const normalizedValue = normalizeText(value);
+  const flexDirection = normalizeText(declarations.get("flex-direction") || "row");
+  const isColumnLayout = flexDirection.includes("column");
+
+  if (propertyName === "justify-content" && normalizedValue.includes("center")) {
+    return isColumnLayout ? "centra vertical" : "centra horizontal";
+  }
+
+  if (propertyName === "align-items" && normalizedValue.includes("center")) {
+    return isColumnLayout ? "centra horizontal" : "centra vertical";
+  }
+
+  const propertyEntry = cssPropertyMap.get(propertyName);
+  const property = propertyEntry
+    ? { ...propertyEntry, description: "" }
+    : null;
+  const valueHint = getPropertyValueHint(propertyName, value);
+
+  if (valueHint) {
+    return valueHint;
+  }
+
+  if (property?.description) {
+    const description = property.description
+      .replace(/\.$/, "")
+      .replace(/^[A-ZÁÉÍÓÚÑ]/, (letter) => letter.toLowerCase());
+    return description;
+  }
+
+  return `ajusta ${(property?.name || propertyName).replace(/-/g, " ")}`;
+}
+
+function getSnippetBlockEndIndex(lines, startIndex) {
+  let depth = 0;
+
+  for (let index = startIndex; index < lines.length; index += 1) {
+    const line = lines[index];
+    depth += (line.match(/\{/g) || []).length;
+    depth -= (line.match(/\}/g) || []).length;
+
+    if (depth === 0 && index > startIndex) {
+      return index;
+    }
+  }
+
+  return startIndex;
+}
+
+function getBlockDeclarationMap(blockLines) {
+  const declarations = new Map();
+
+  blockLines.forEach((line) => {
+    const trimmedLine = line.trim();
+    const propertyMatch = trimmedLine.match(/^([a-z-]+)\s*:\s*(.+);$/);
+
+    if (!propertyMatch) {
+      return;
+    }
+
+    const [, propertyName, value] = propertyMatch;
+    declarations.set(propertyName, value.trim());
+  });
+
+  return declarations;
+}
+
+function blockHasValue(declarations, propertyName, expectedValue) {
+  const value = declarations.get(propertyName);
+
+  if (!value) {
+    return false;
+  }
+
+  return normalizeText(value).includes(normalizeText(expectedValue));
+}
+
+function getBlockGroupComment(selectorLine, blockLines) {
+  const selector = selectorLine.replace(/\{$/, "").trim();
+
+  if (!selector || selector.startsWith("@")) {
+    return "";
+  }
+
+  const declarations = getBlockDeclarationMap(blockLines);
+
+  if (
+    blockHasValue(declarations, "display", "flex") &&
+    blockHasValue(declarations, "justify-content", "center") &&
+    blockHasValue(declarations, "align-items", "center") &&
+    (blockHasValue(declarations, "min-height", "100vh") ||
+      blockHasValue(declarations, "height", "100vh"))
+  ) {
+    return "centra en pantalla";
+  }
+
+  if (
+    blockHasValue(declarations, "display", "flex") &&
+    blockHasValue(declarations, "flex-direction", "column") &&
+    declarations.has("gap")
+  ) {
+    return "columna con espacio";
+  }
+
+  if (
+    blockHasValue(declarations, "display", "flex") &&
+    declarations.has("gap")
+  ) {
+    return "fila con espacio";
+  }
+
+  if (
+    blockHasValue(declarations, "display", "grid") &&
+    (blockHasValue(declarations, "grid-template-columns", "auto-fit") ||
+      blockHasValue(declarations, "grid-template-columns", "minmax"))
+  ) {
+    return "grilla flexible";
+  }
+
+  if (
+    blockHasValue(declarations, "display", "grid") &&
+    blockHasValue(declarations, "grid-template-columns", "1fr")
+  ) {
+    return "una sola columna";
+  }
+
+  if (
+    blockHasValue(declarations, "overflow", "hidden") &&
+    blockHasValue(declarations, "white-space", "nowrap") &&
+    blockHasValue(declarations, "text-overflow", "ellipsis")
+  ) {
+    return "corta con puntos";
+  }
+
+  if (
+    blockHasValue(declarations, "width", "100%") &&
+    blockHasValue(declarations, "height", "100%") &&
+    blockHasValue(declarations, "object-fit", "cover")
+  ) {
+    return "la imagen llena la caja";
+  }
+
+  if (
+    blockHasValue(declarations, "position", "sticky") &&
+    blockHasValue(declarations, "top", "0")
+  ) {
+    return "queda pegado arriba";
+  }
+
+  if (
+    blockHasValue(declarations, "background", "rgba") &&
+    blockHasValue(declarations, "backdrop-filter", "blur") &&
+    declarations.has("border")
+  ) {
+    return "efecto vidrio";
+  }
+
+  if (
+    blockHasValue(declarations, "background", "linear-gradient")
+  ) {
+    return "fondo con degrade";
+  }
+
+  if (
+    blockHasValue(declarations, "font-size", "clamp") &&
+    declarations.has("line-height")
+  ) {
+    return "texto fluido";
+  }
+
+  if (
+    declarations.has("padding") &&
+    declarations.has("border-radius") &&
+    declarations.has("box-shadow")
+  ) {
+    return "tarjeta con sombra";
+  }
+
+  return "";
+}
+
+function getCommentedCssSnippet(snippet) {
+  if (!snippet) {
+    return "";
+  }
+
+  const lines = snippet.split("\n");
+  const result = [];
+  let currentBlockDeclarations = new Map();
+  let currentBlockEndIndex = -1;
+
+  lines.forEach((line, index) => {
+    const trimmedLine = line.trim();
+
+    if (index > currentBlockEndIndex) {
+      currentBlockDeclarations = new Map();
+      currentBlockEndIndex = -1;
+    }
+
+    if (!trimmedLine || trimmedLine === "}" || trimmedLine.startsWith("/*")) {
+      result.push(line);
+      return;
+    }
+
+    const indentation = line.match(/^\s*/)?.[0] || "";
+
+    if (trimmedLine.endsWith("{")) {
+      const blockEndIndex = getSnippetBlockEndIndex(lines, index);
+      const blockLines = lines.slice(index + 1, blockEndIndex);
+      const groupComment = getBlockGroupComment(trimmedLine, blockLines);
+      const selectorComment = getSelectorLineComment(trimmedLine);
+
+      currentBlockDeclarations = getBlockDeclarationMap(blockLines);
+      currentBlockEndIndex = blockEndIndex;
+
+      if (groupComment) {
+        result.push(`${indentation}/* ${groupComment} */`);
+      }
+
+      if (selectorComment) {
+        result.push(`${indentation}/* ${selectorComment} */`);
+      }
+
+      result.push(line);
+      return;
+    }
+
+    const propertyMatch = trimmedLine.match(/^([a-z-]+)\s*:\s*(.+);$/);
+
+    if (!propertyMatch) {
+      result.push(line);
+      return;
+    }
+
+    const [, propertyName, value] = propertyMatch;
+    const propertyComment = getPropertyLineComment(
+      propertyName,
+      value,
+      currentBlockDeclarations,
+    );
+
+    result.push(`${indentation}/* ${propertyComment} */`);
+    result.push(line);
+  });
+
+  return result.join("\n");
+}
+
+function getCommentedCssSnippetHtml(snippet) {
+  if (!snippet) {
+    return "";
+  }
+
+  const lines = snippet.split("\n");
+  const result = [];
+  let currentBlockDeclarations = new Map();
+  let currentBlockEndIndex = -1;
+
+  lines.forEach((line, index) => {
+    const trimmedLine = line.trim();
+
+    if (index > currentBlockEndIndex) {
+      currentBlockDeclarations = new Map();
+      currentBlockEndIndex = -1;
+    }
+
+    if (!trimmedLine) {
+      result.push('<span class="respuesta-busqueda-linea">&nbsp;</span>');
+      return;
+    }
+
+    if (trimmedLine === "}" || trimmedLine.startsWith("/*")) {
+      result.push(
+        `<span class="respuesta-busqueda-linea"><span class="respuesta-busqueda-linea-codigo">${escapeHtml(line)}</span></span>`,
+      );
+      return;
+    }
+
+    const indentation = line.match(/^\s*/)?.[0] || "";
+
+    if (trimmedLine.endsWith("{")) {
+      const blockEndIndex = getSnippetBlockEndIndex(lines, index);
+      const blockLines = lines.slice(index + 1, blockEndIndex);
+      const groupComment = getBlockGroupComment(trimmedLine, blockLines);
+      const selectorComment = getSelectorLineComment(trimmedLine);
+
+      currentBlockDeclarations = getBlockDeclarationMap(blockLines);
+      currentBlockEndIndex = blockEndIndex;
+
+      if (groupComment) {
+        result.push(
+          `<span class="respuesta-busqueda-linea respuesta-busqueda-linea--comentario-superior"><span class="respuesta-busqueda-comentario">${escapeHtml(`${indentation}/* ${groupComment} */`)}</span></span>`,
+        );
+      }
+
+      if (selectorComment) {
+        result.push(
+          `<span class="respuesta-busqueda-linea respuesta-busqueda-linea--comentario-superior"><span class="respuesta-busqueda-comentario">${escapeHtml(`${indentation}/* ${selectorComment} */`)}</span></span>`,
+        );
+      }
+
+      result.push(
+        `<span class="respuesta-busqueda-linea"><span class="respuesta-busqueda-linea-codigo">${escapeHtml(line)}</span></span>`,
+      );
+      return;
+    }
+
+    const propertyMatch = trimmedLine.match(/^([a-z-]+)\s*:\s*(.+);$/);
+
+    if (!propertyMatch) {
+      result.push(
+        `<span class="respuesta-busqueda-linea"><span class="respuesta-busqueda-linea-codigo">${escapeHtml(line)}</span></span>`,
+      );
+      return;
+    }
+
+    const [, propertyName, value] = propertyMatch;
+    const propertyComment = getPropertyLineComment(
+      propertyName,
+      value,
+      currentBlockDeclarations,
+    );
+
+    result.push(
+      `<span class="respuesta-busqueda-linea respuesta-busqueda-linea--comentada"><span class="respuesta-busqueda-linea-codigo">${escapeHtml(line)}</span><span class="respuesta-busqueda-codigo-comentario-lateral">${escapeHtml(`/* ${propertyComment} */`)}</span></span>`,
+    );
+  });
+
+  return result.join("\n");
+}
+
 function tokenMatches(searchIndex, words, token) {
   if (searchIndex.includes(token)) {
     return true;
   }
 
-  if (token.length < 4) {
+  const tokenStem = getSearchStem(token);
+
+  if (token.length < 4 && tokenStem.length < 4) {
     return false;
   }
 
-  return words.some(
-    (word) => word.startsWith(token) || token.startsWith(word) || word.includes(token),
-  );
+  return words.some((word) => {
+    const wordStem = getSearchStem(word);
+
+    return (
+      word.startsWith(token) ||
+      token.startsWith(word) ||
+      word.includes(token) ||
+      (tokenStem.length >= 4 &&
+        wordStem.length >= 4 &&
+        (wordStem === tokenStem ||
+          wordStem.startsWith(tokenStem) ||
+          tokenStem.startsWith(wordStem)))
+    );
+  });
 }
 
 function setupSearch() {
@@ -4507,6 +6987,14 @@ function setupSearch() {
   const cssTypeButtons = document.querySelectorAll("[data-css-type-chip]");
   const cssLevelButtons = document.querySelectorAll("[data-css-level-chip]");
   const status = document.querySelector("[data-search-status]");
+  const stickySearchBar = document.querySelector(".barra-busqueda-superior");
+  const introPanels = document.querySelectorAll("[data-search-intro]");
+  const recommendationPanel = document.querySelector("[data-search-recommendation]");
+  const recommendationTitle = document.querySelector("[data-search-recommendation-title]");
+  const recommendationSummary = document.querySelector("[data-search-recommendation-summary]");
+  const recommendationCode = document.querySelector("[data-search-recommendation-code]");
+  const recommendationNote = document.querySelector("[data-search-recommendation-note]");
+  const recommendationTags = document.querySelector("[data-search-recommendation-tags]");
   let activeCssType = "";
   let activeCssLevel = "";
 
@@ -4514,13 +7002,68 @@ function setupSearch() {
     return;
   }
 
-  const searchableSections = ["propiedades-css"]
+  const searchableSections = ["fundamentos-css", "propiedades-css"]
     .map((id) => document.getElementById(id))
     .filter(Boolean);
 
   const searchableCards = searchableSections.flatMap((section) =>
     Array.from(section.querySelectorAll(".selector-card, .propiedad")),
   );
+  const sectionTitleMap = new Map(
+    searchableSections.map((section) => [
+      section,
+      section.querySelector("h2")?.textContent || "",
+    ]),
+  );
+  const searchableCardEntries = searchableCards.map((card) => {
+    const section = card.closest("section");
+    const sectionId = section ? section.id : "";
+    const sectionTitle = sectionTitleMap.get(section) || "";
+    const searchIndex = normalizeText(
+      [
+        card.textContent,
+        card.dataset.search || "",
+        sectionTitle,
+        sectionAliases[sectionId] || "",
+      ].join(" "),
+    );
+
+    card.dataset.searchIndex = searchIndex;
+
+    return {
+      card,
+      group: card.parentElement,
+      section,
+      searchIndex,
+      words: searchIndex.split(" ").filter(Boolean),
+      cardName: normalizeText(card.dataset.name || ""),
+      isProperty: card.classList.contains("propiedad"),
+      isFundamentalsCard:
+        sectionId === "fundamentos-css" && !card.classList.contains("propiedad"),
+      originalOrder: 0,
+      searchScore: 0,
+    };
+  });
+  const searchableSectionEntries = searchableSections.map((section) => ({
+    section,
+    entries: searchableCardEntries.filter((entry) => entry.section === section),
+  }));
+  const searchableGroupEntries = Array.from(
+    new Set(searchableCardEntries.map((entry) => entry.group).filter(Boolean)),
+  ).map((group) => ({
+    group,
+    entries: searchableCardEntries.filter((entry) => entry.group === group),
+  }));
+  let scheduledSearchFrame = 0;
+  let lastSearchState = "";
+  let lastRecommendationKey = "__initial__";
+
+  searchableGroupEntries.forEach((groupEntry) => {
+    groupEntry.entries.forEach((entry, index) => {
+      entry.originalOrder = index;
+      entry.card.dataset.originalOrder = String(index);
+    });
+  });
 
   function updateCssTypeButtons() {
     cssTypeButtons.forEach((button) => {
@@ -4552,70 +7095,338 @@ function setupSearch() {
     return parts.join(" + ");
   }
 
-  searchableCards.forEach((card) => {
-    const section = card.closest("section");
-    const sectionId = section ? section.id : "";
-    const sectionTitle = section ? section.querySelector("h2")?.textContent || "" : "";
-
-    card.dataset.searchIndex = normalizeText(
-      [
-        card.textContent,
-        card.dataset.search || "",
-        sectionTitle,
-        sectionAliases[sectionId] || "",
-      ].join(" "),
+  function getVisibleResultsInDomOrder() {
+    return searchableSections.flatMap((section) =>
+      Array.from(section.querySelectorAll(".selector-card, .propiedad")).filter(
+        (card) => !card.hidden,
+      ),
     );
-  });
+  }
+
+  function renderSearchRecommendation(recommendation) {
+    if (
+      !recommendationPanel ||
+      !recommendationTitle ||
+      !recommendationSummary ||
+      !recommendationCode ||
+      !recommendationNote ||
+      !recommendationTags
+    ) {
+      return;
+    }
+
+    const recommendationKey = recommendation
+      ? [
+          recommendation.title,
+          recommendation.summary,
+          recommendation.snippet,
+          recommendation.note || "",
+          ...(recommendation.relatedTerms || []),
+        ].join("||")
+      : "";
+
+    if (recommendationKey === lastRecommendationKey) {
+      return;
+    }
+
+    lastRecommendationKey = recommendationKey;
+
+    if (!recommendation) {
+      recommendationPanel.hidden = true;
+      recommendationTitle.textContent = "";
+      recommendationSummary.textContent = "";
+      recommendationCode.innerHTML = "";
+      recommendationNote.textContent = "";
+      recommendationNote.hidden = true;
+      recommendationTags.innerHTML = "";
+      return;
+    }
+
+    recommendationTitle.textContent = recommendation.title;
+    recommendationSummary.textContent = recommendation.summary;
+    recommendationCode.innerHTML = getCommentedCssSnippetHtml(recommendation.snippet);
+    recommendationNote.textContent = recommendation.note || "";
+    recommendationNote.hidden = !recommendation.note;
+    recommendationTags.innerHTML = recommendation.relatedTerms
+      .map(
+        (term) =>
+          `<span class="respuesta-busqueda-tag">${escapeHtml(term)}</span>`,
+      )
+      .join("");
+    recommendationPanel.hidden = false;
+  }
+
+  function hasActiveSearchIntent() {
+    return normalizeText(input.value).length > 0 || activeCssType !== "" || activeCssLevel !== "";
+  }
+
+  function getFirstVisibleSearchResult() {
+    return getVisibleResultsInDomOrder()[0] || null;
+  }
+
+  function scrollToSearchResult(target) {
+    if (!target) {
+      return;
+    }
+
+    const stickyOffset = (stickySearchBar?.offsetHeight || 0) + 20;
+    const targetTop = window.scrollY + target.getBoundingClientRect().top - stickyOffset;
+
+    window.scrollTo({
+      top: Math.max(0, targetTop),
+      behavior: "smooth",
+    });
+  }
+
+  function getCardSearchScore({
+    searchIndex,
+    query,
+    tokens,
+    words,
+    cardName,
+    matchesDirectSearch,
+    matchesRecommendation,
+    matchesLexicon,
+    matchesIntentFamily,
+    isFundamentalsCard,
+  }) {
+    if (!query) {
+      return 0;
+    }
+
+    const matchedTokenCount = tokens.reduce(
+      (count, token) => count + (tokenMatches(searchIndex, words, token) ? 1 : 0),
+      0,
+    );
+    const exactNameMatch = cardName !== "" && (cardName === query || query.includes(cardName));
+    const descriptivePhraseMatch = descriptivePropertyLexicon.some(
+      (entry) =>
+        entry.propertyName === cardName &&
+        entry.phrases.some((phrase) => queryIncludesTerm(query, phrase)),
+    );
+    const nameTokenCoverage =
+      cardName === ""
+        ? 0
+        : tokens.reduce((count, token) => {
+            const tokenStem = getSearchStem(token);
+            const cardStem = getSearchStem(cardName);
+            return count + (tokenStem.length >= 4 && cardStem.includes(tokenStem) ? 1 : 0);
+          }, 0);
+
+    let score = 0;
+
+    if (matchesDirectSearch) {
+      score += 18 + matchedTokenCount * 4;
+    } else {
+      score += matchedTokenCount * 2;
+    }
+
+    if (exactNameMatch) {
+      score += 28;
+    }
+
+    if (matchesRecommendation) {
+      score += 26;
+    }
+
+    if (matchesLexicon) {
+      score += 18;
+    }
+
+    if (matchesIntentFamily) {
+      score += 14;
+    }
+
+    if (descriptivePhraseMatch) {
+      score += 24;
+    }
+
+    if (nameTokenCoverage > 0) {
+      score += nameTokenCoverage * 5;
+    }
+
+    if (isFundamentalsCard) {
+      score += queryMatchesGroup(query, ["fundamento", "concepto", "base", "teoria", "como funciona"])
+        ? 8
+        : 0;
+    }
+
+    return score;
+  }
+
+  function sortCardsByRelevance(hasActiveQuery) {
+    searchableGroupEntries.forEach((groupEntry) => {
+      const sortedEntries = [...groupEntry.entries].sort((entryA, entryB) => {
+        if (!hasActiveQuery) {
+          return entryA.originalOrder - entryB.originalOrder;
+        }
+
+        const isVisibleA = !entryA.card.hidden;
+        const isVisibleB = !entryB.card.hidden;
+
+        if (isVisibleA !== isVisibleB) {
+          return isVisibleA ? -1 : 1;
+        }
+
+        const scoreDiff = entryB.searchScore - entryA.searchScore;
+
+        if (scoreDiff !== 0) {
+          return scoreDiff;
+        }
+
+        return entryA.originalOrder - entryB.originalOrder;
+      });
+      const orderChanged = sortedEntries.some(
+        (entry, index) => entry !== groupEntry.entries[index],
+      );
+
+      if (!orderChanged) {
+        return;
+      }
+
+      groupEntry.entries = sortedEntries;
+      const fragment = document.createDocumentFragment();
+
+      sortedEntries.forEach((entry) => {
+        fragment.appendChild(entry.card);
+      });
+
+      groupEntry.group.appendChild(fragment);
+    });
+  }
 
   function updateSearch() {
     const query = normalizeText(input.value);
-    const tokens = query.split(" ").filter(Boolean);
+    const hasActiveQuery = query.length > 0;
+    const tokens = getMeaningfulSearchTokens(query);
+    const recommendation = getSearchRecommendation(query);
+    const matchedIntentFamilies = getMatchedIntentFamilies(query);
+    const primaryIntentFamily = getPrimaryIntentFamily(matchedIntentFamilies);
+    const lexiconFilterTerms = getLexiconFilterTerms(query).map((term) =>
+      normalizeText(term),
+    );
+    const familyFilterTerms = getIntentFamilyFilterTerms(matchedIntentFamilies).map((term) =>
+      normalizeText(term),
+    );
+    const recommendationFilterTerms = (recommendation?.filterTerms || []).map((term) =>
+      normalizeText(term),
+    );
     let visibleCount = 0;
     let visibleCssCount = 0;
     const cssFiltersSummary = getCssFiltersSummary();
 
-    searchableCards.forEach((card) => {
-      const index = card.dataset.searchIndex || "";
-      const words = index.split(" ").filter(Boolean);
+    renderSearchRecommendation(recommendation);
+
+    searchableCardEntries.forEach((entry) => {
+      const { card, searchIndex: index, words, cardName, isProperty, isFundamentalsCard } = entry;
+      const matchesDirectSearch =
+        tokens.length > 0 && tokens.every((token) => tokenMatches(index, words, token));
+      const matchesRecommendation =
+        isProperty &&
+        recommendationFilterTerms.some((term) => term && term === cardName);
+      const matchesLexicon =
+        isProperty &&
+        lexiconFilterTerms.some((term) => term && term === cardName);
+      const matchesIntentFamily =
+        isProperty &&
+        familyFilterTerms.some((term) => term && term === cardName);
       const matchesSearch =
-        tokens.length === 0 || tokens.every((token) => tokenMatches(index, words, token));
+        !hasActiveQuery ||
+        matchesDirectSearch ||
+        matchesRecommendation ||
+        matchesLexicon ||
+        matchesIntentFamily;
       const matchesCssType =
-        !card.classList.contains("propiedad") ||
+        !isProperty ||
         activeCssType === "" ||
         card.dataset.type === activeCssType;
       const matchesCssLevel =
-        !card.classList.contains("propiedad") ||
+        !isProperty ||
         activeCssLevel === "" ||
         card.dataset.level === activeCssLevel;
       const matches = matchesSearch && matchesCssType && matchesCssLevel;
+      const searchScore = matches
+        ? getCardSearchScore({
+            searchIndex: index,
+            query,
+            tokens,
+            words,
+            cardName,
+            matchesDirectSearch,
+            matchesRecommendation,
+            matchesLexicon,
+            matchesIntentFamily,
+            isFundamentalsCard,
+          })
+        : 0;
 
       card.hidden = !matches;
+      entry.searchScore = searchScore;
 
       if (matches) {
         visibleCount += 1;
 
-        if (card.classList.contains("propiedad")) {
+        if (isProperty) {
           visibleCssCount += 1;
         }
       }
     });
 
-    searchableSections.forEach((section) => {
-      const hasVisibleCards = Array.from(
-        section.querySelectorAll(".selector-card, .propiedad"),
-      ).some((card) => !card.hidden);
-
-      section.hidden = tokens.length > 0 && !hasVisibleCards;
+    searchableSectionEntries.forEach(({ section, entries }) => {
+      const hasVisibleCards = entries.some((entry) => !entry.card.hidden);
+      section.hidden = hasActiveQuery && !hasVisibleCards;
     });
 
-    if (tokens.length === 0) {
+    introPanels.forEach((panel) => {
+      panel.hidden = hasActiveQuery;
+    });
+
+    sortCardsByRelevance(hasActiveQuery);
+
+    if (!hasActiveQuery) {
       if (cssFiltersSummary) {
         status.textContent = `Filtros CSS activos: ${cssFiltersSummary}. Mostrando ${visibleCssCount} propied${
           visibleCssCount === 1 ? "ad" : "ades"
-        } CSS relacionadas y manteniendo visible la guia de selectores.`;
+        } CSS relacionadas y manteniendo visibles los fundamentos y guias CSS.`;
       } else {
-        status.textContent = `Mostrando ${searchableCards.length} fichas de selectores y propiedades CSS.`;
+        status.textContent = `Mostrando ${searchableCards.length} fichas CSS entre fundamentos, guias y propiedades.`;
       }
+    } else if (recommendation && visibleCount > 0) {
+      if (cssFiltersSummary) {
+        status.textContent = `Interprete la idea como: ${recommendation.title}. Con ${cssFiltersSummary}, se muestran ${visibleCount} ficha${
+          visibleCount === 1 ? "" : "s"
+        } relacionadas.`;
+      } else {
+        status.textContent = `Interprete la idea como: ${recommendation.title}. Mostrando ${visibleCount} ficha${
+          visibleCount === 1 ? "" : "s"
+        } relacionadas y una receta arriba.`;
+      }
+    } else if (lexiconFilterTerms.length > 0 && visibleCount > 0) {
+      if (cssFiltersSummary) {
+        status.textContent = `Detecte palabras clave del diccionario CSS. Con ${cssFiltersSummary}, se muestran ${visibleCount} ficha${
+          visibleCount === 1 ? "" : "s"
+        } relacionadas.`;
+      } else {
+        status.textContent = `Detecte palabras clave del diccionario CSS. Mostrando ${visibleCount} ficha${
+          visibleCount === 1 ? "" : "s"
+        } relacionadas.`;
+      }
+    } else if (primaryIntentFamily && visibleCount > 0) {
+      if (cssFiltersSummary) {
+        status.textContent = `Detecte la familia ${primaryIntentFamily.label}. Con ${cssFiltersSummary}, se muestran ${visibleCount} ficha${
+          visibleCount === 1 ? "" : "s"
+        } relacionadas.`;
+      } else {
+        status.textContent = `Detecte la familia ${primaryIntentFamily.label}. Mostrando ${visibleCount} ficha${
+          visibleCount === 1 ? "" : "s"
+        } relacionadas.`;
+      }
+    } else if (tokens.length === 0) {
+      status.textContent =
+        "Escribe una idea mas concreta, por ejemplo: centrar en pantalla, aire adentro, tarjetita fachera o algo que no se rompa en celu.";
+    } else if (recommendation) {
+      status.textContent =
+        "Se entendio la idea general, pero con los filtros activos no quedaron fichas visibles abajo.";
     } else if (visibleCount === 0) {
       status.textContent =
         "No hubo coincidencias exactas o parecidas. Prueba con otra palabra.";
@@ -4631,23 +7442,73 @@ function setupSearch() {
       }
     }
 
-    clearButton.hidden = tokens.length === 0;
+    clearButton.hidden = !hasActiveQuery;
   }
 
-  input.addEventListener("input", updateSearch);
-  input.addEventListener("search", updateSearch);
+  function runSearchUpdate({ force = false } = {}) {
+    if (scheduledSearchFrame) {
+      cancelAnimationFrame(scheduledSearchFrame);
+      scheduledSearchFrame = 0;
+    }
+
+    const searchState = `${normalizeText(input.value)}|${activeCssType}|${activeCssLevel}`;
+
+    if (!force && searchState === lastSearchState) {
+      return;
+    }
+
+    lastSearchState = searchState;
+    updateSearch();
+  }
+
+  function scheduleSearchUpdate() {
+    if (scheduledSearchFrame) {
+      cancelAnimationFrame(scheduledSearchFrame);
+    }
+
+    scheduledSearchFrame = requestAnimationFrame(() => {
+      scheduledSearchFrame = 0;
+      runSearchUpdate();
+    });
+  }
+
+  input.addEventListener("input", scheduleSearchUpdate);
+  input.addEventListener("search", scheduleSearchUpdate);
+  input.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" || event.isComposing) {
+      return;
+    }
+
+    if (!hasActiveSearchIntent()) {
+      return;
+    }
+
+    event.preventDefault();
+    runSearchUpdate();
+
+    const firstVisibleResult = getFirstVisibleSearchResult();
+
+    if (firstVisibleResult) {
+      scrollToSearchResult(firstVisibleResult);
+      return;
+    }
+
+    if (recommendationPanel && !recommendationPanel.hidden) {
+      scrollToSearchResult(recommendationPanel);
+    }
+  });
 
   clearButton.addEventListener("click", () => {
     input.value = "";
     input.focus();
-    updateSearch();
+    runSearchUpdate();
   });
 
   chipButtons.forEach((button) => {
     button.addEventListener("click", () => {
       input.value = button.dataset.searchChip || "";
       input.focus();
-      updateSearch();
+      runSearchUpdate();
     });
   });
 
@@ -4656,7 +7517,7 @@ function setupSearch() {
       const selectedType = button.dataset.cssTypeChip || "";
       activeCssType = activeCssType === selectedType ? "" : selectedType;
       updateCssTypeButtons();
-      updateSearch();
+      runSearchUpdate();
     });
   });
 
@@ -4665,13 +7526,13 @@ function setupSearch() {
       const selectedLevel = button.dataset.cssLevelChip || "";
       activeCssLevel = activeCssLevel === selectedLevel ? "" : selectedLevel;
       updateCssLevelButtons();
-      updateSearch();
+      runSearchUpdate();
     });
   });
 
   updateCssTypeButtons();
   updateCssLevelButtons();
-  updateSearch();
+  runSearchUpdate({ force: true });
 }
 
 function setupSelectorCodeToggles() {
@@ -4701,28 +7562,60 @@ function setupSelectorCodeToggles() {
 }
 
 function setupPropertyPreviewToggles() {
-  const toggleButtons = document.querySelectorAll("[data-property-preview-toggle]");
+  const grid = document.getElementById("propiedades-grid");
 
-  toggleButtons.forEach((button, index) => {
-    const card = button.closest(".propiedad");
-    const preview = card?.querySelector("[data-property-preview]");
+  if (!grid) {
+    return;
+  }
 
-    if (!preview) {
+  grid.addEventListener("click", (event) => {
+    if (!(event.target instanceof Element)) {
       return;
     }
 
-    if (!preview.id) {
-      preview.id = `propiedad-preview-${index + 1}`;
+    const button = event.target.closest("[data-property-preview-toggle]");
+
+    if (!(button instanceof HTMLElement) || !grid.contains(button)) {
+      return;
     }
 
-    button.setAttribute("aria-controls", preview.id);
+    const card = button.closest(".propiedad");
+    const previewHost = card?.querySelector("[data-property-preview-host]");
 
-    button.addEventListener("click", () => {
-      const shouldShow = preview.hidden;
-      preview.hidden = !shouldShow;
-      button.setAttribute("aria-expanded", shouldShow ? "true" : "false");
-      button.textContent = shouldShow ? "Ocultar ejemplo" : "Ver ejemplo";
-    });
+    if (!card || !(previewHost instanceof HTMLElement)) {
+      return;
+    }
+
+    let preview = previewHost.querySelector("[data-property-preview]");
+
+    if (!preview) {
+      const propertyName = card.dataset.name || "";
+      const previewHtml = getPropertyPreviewHtml(propertyName);
+
+      if (!previewHtml) {
+        return;
+      }
+
+      previewHost.innerHTML = previewHtml;
+      preview = previewHost.querySelector("[data-property-preview]");
+
+      if (!(preview instanceof HTMLElement)) {
+        return;
+      }
+
+      const previewId = `propiedad-preview-${propertyName.replace(/[^a-z0-9_-]+/gi, "-")}`;
+      preview.id = previewId;
+      button.setAttribute("aria-controls", previewId);
+    }
+
+    if (!(preview instanceof HTMLElement)) {
+      return;
+    }
+
+    const shouldShow = preview.hidden;
+    preview.hidden = !shouldShow;
+    button.setAttribute("aria-expanded", shouldShow ? "true" : "false");
+    button.textContent = shouldShow ? "Ocultar ejemplo" : "Ver ejemplo";
   });
 }
 

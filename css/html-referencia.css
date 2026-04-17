@@ -144,6 +144,150 @@ h2::after {
   box-shadow: var(--html-sombra);
 }
 
+.fundamentos-html-prioritarios,
+.bloque--fundamentos-html {
+  position: relative;
+  overflow: hidden;
+}
+
+.fundamentos-html-prioritarios {
+  border-color: rgba(31, 79, 145, 0.18);
+  background: linear-gradient(135deg, #ffffff 0%, #f2f7ff 52%, #dfeaff 100%);
+}
+
+.fundamentos-html-prioritarios::after,
+.bloque--fundamentos-html::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.fundamentos-html-prioritarios::after {
+  top: -62px;
+  right: -44px;
+  width: 210px;
+  height: 210px;
+  background: rgba(31, 79, 145, 0.08);
+}
+
+.bloque--fundamentos-html {
+  border-color: rgba(31, 79, 145, 0.16);
+  background: linear-gradient(180deg, #fffefb 0%, #f6faff 100%);
+}
+
+.bloque--fundamentos-html::after {
+  right: -36px;
+  bottom: -64px;
+  width: 180px;
+  height: 180px;
+  background: rgba(31, 79, 145, 0.05);
+}
+
+.fundamentos-html-prioritarios > *,
+.bloque--fundamentos-html > * {
+  position: relative;
+  z-index: 1;
+}
+
+.fundamentos-html-prioritarios-encabezado,
+.fundamentos-html-encabezado {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px 16px;
+}
+
+.fundamentos-html-prioritarios-encabezado h2,
+.fundamentos-html-encabezado h2 {
+  margin-bottom: 0;
+}
+
+.fundamentos-html-prioritarios-link,
+.fundamentos-html-atajo,
+.fundamentos-html-prioritarios-acciones a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: 1px solid rgba(31, 79, 145, 0.16);
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.94);
+  color: var(--html-principal);
+  text-decoration: none;
+  font-weight: bold;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.fundamentos-html-prioritarios-link:hover,
+.fundamentos-html-prioritarios-link:focus-visible,
+.fundamentos-html-atajo:hover,
+.fundamentos-html-atajo:focus-visible,
+.fundamentos-html-prioritarios-acciones a:hover,
+.fundamentos-html-prioritarios-acciones a:focus-visible {
+  transform: translateY(-2px);
+  background-color: #ffffff;
+  border-color: rgba(31, 79, 145, 0.3);
+  box-shadow: 0 10px 20px rgba(31, 79, 145, 0.12);
+  color: var(--html-principal);
+  text-decoration: none;
+}
+
+.fundamentos-html-prioritarios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.fundamentos-html-prioritarios-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px;
+  border: 1px solid #dde7f5;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.84);
+  box-shadow: 0 10px 24px rgba(29, 56, 108, 0.06);
+}
+
+.fundamentos-html-prioritarios-card h3,
+.fundamentos-html-prioritarios-card p {
+  margin: 0;
+}
+
+.fundamentos-html-prioritarios-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.fundamentos-html-contexto {
+  margin: 22px 0;
+  padding: 20px;
+  border: 1px solid rgba(31, 79, 145, 0.14);
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(240, 246, 255, 0.98) 100%);
+}
+
+.fundamentos-html-contexto h3,
+.fundamentos-html-contexto p {
+  margin: 0;
+}
+
+.fundamentos-html-contexto p + p {
+  margin-top: 12px;
+}
+
+.fundamentos-html-texto {
+  color: #355173;
+}
+
 .bloque-html-intro,
 .bloque-transicion-practica,
 .introduccion-practica {
@@ -173,6 +317,8 @@ h2::after {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 320px;
 }
 
 .tag-ejemplo {
@@ -367,6 +513,16 @@ footer.bloque {
   .ejemplo-individual.abierto,
   .codigo-comparado {
     grid-template-columns: 1fr;
+  }
+
+  .fundamentos-html-prioritarios-encabezado,
+  .fundamentos-html-encabezado {
+    flex-direction: column;
+  }
+
+  .fundamentos-html-prioritarios-link,
+  .fundamentos-html-atajo {
+    width: 100%;
   }
 
   .menu-principal,

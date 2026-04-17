@@ -19,6 +19,7 @@
           salir de la misma pagina.
         </p>
         <div class="acciones-html">
+          <a href="#fundamentos-html">Ir a fundamentos HTML</a>
           <a href="#idea-html">Ir a la referencia HTML</a>
           <a href="#guia-practica">Ir a la guia practica</a>
           <a href="pages/estructura/estructura-codigo.html">Abrir la referencia de CSS</a>
@@ -28,6 +29,7 @@
 
       <nav class="indice-html" aria-label="Indice de HTML">
         <div class="indice-enlaces">
+          <a href="#fundamentos-html">Fundamentos</a>
           <a href="#idea-html">Idea HTML</a>
           <a href="#base-html">Base</a>
           <a href="#estructura-html">Estructura</a>
@@ -42,6 +44,71 @@
       </nav>
 
       <main>
+        <section class="bloque fundamentos-html-prioritarios">
+          <div class="fundamentos-html-prioritarios-encabezado">
+            <div>
+              <p class="etiqueta-superior-html">Fundamentos primero</p>
+              <h2>Aqui se estudia la base de HTML y en la otra pagina la base de CSS</h2>
+            </div>
+            <a
+              class="fundamentos-html-prioritarios-link"
+              href="pages/estructura/estructura-codigo.html#fundamentos-css"
+            >
+              Ver fundamentos de CSS
+            </a>
+          </div>
+          <p>
+            HTML y CSS trabajan juntos, pero no cumplen la misma tarea. En esta
+            pagina conviene pensar HTML como la parte que ordena, nombra y da
+            sentido al contenido. La pagina aparte de CSS queda para estudiar
+            como esa estructura se pinta, se distribuye y responde en pantalla.
+          </p>
+          <div class="fundamentos-html-prioritarios-grid">
+            <article class="fundamentos-html-prioritarios-card">
+              <h3>HTML no dibuja: describe</h3>
+              <p>
+                Cuando escribes <code>h1</code>, <code>p</code>,
+                <code>nav</code>, <code>section</code> o
+                <code>button</code>, no estas diciendo colores ni tamanos.
+                Estas diciendo que es cada parte del contenido y que papel
+                cumple dentro del documento.
+              </p>
+              <p>
+                Esa descripcion importa porque el navegador, los lectores de
+                pantalla, los buscadores y el propio CSS se apoyan en esa
+                estructura para entender la pagina.
+              </p>
+            </article>
+            <article class="fundamentos-html-prioritarios-card">
+              <h3>El navegador lee relaciones</h3>
+              <p>
+                El navegador no ve una lista de etiquetas sueltas. Ve un arbol
+                de elementos: padres, hijos, hermanos, bloques principales y
+                piezas internas. Por eso la anidacion y el orden de HTML son tan
+                importantes.
+              </p>
+              <p>
+                Si una estructura esta mal pensada, despues cuesta seleccionar
+                con CSS, mantener formularios, recorrer contenido y entender la
+                jerarquia real del documento.
+              </p>
+            </article>
+            <article class="fundamentos-html-prioritarios-card">
+              <h3>La mejor practica inicial</h3>
+              <p>
+                Antes de escribir estilos, intenta poder explicar en voz alta
+                que es cada bloque de la pagina: encabezado, navegacion,
+                contenido principal, secciones, listas, enlaces, imagenes y
+                formulario. Si eso esta claro, tu base HTML ya va bien encaminada.
+              </p>
+              <div class="fundamentos-html-prioritarios-acciones">
+                <a href="#fundamentos-html">Ir a fundamentos HTML</a>
+                <a href="#idea-html">Seguir con la referencia HTML</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
         <section class="bloque bloque-html-intro">
           <h2>Como usar esta pagina</h2>
           <div class="tarjetas">
@@ -69,7 +136,284 @@
             </article>
           </div>
         </section>
-<section class="bloque" id="idea-html">
+
+        <section class="bloque bloque--fundamentos-html" id="fundamentos-html">
+          <div class="fundamentos-html-encabezado">
+            <div>
+              <p class="etiqueta-superior-html">Bloque aparte</p>
+              <h2>Fundamentos y conceptos de HTML para estudiar</h2>
+            </div>
+            <a
+              class="fundamentos-html-atajo"
+              href="pages/estructura/estructura-codigo.html#fundamentos-css"
+            >
+              Despues seguir con CSS
+            </a>
+          </div>
+          <p>
+            Antes de memorizar etiquetas, conviene entender la idea central:
+            HTML describe que es cada parte del contenido, no como se ve.
+          </p>
+          <p class="detalle">
+            Si una pagina sigue teniendo sentido aunque le quites los estilos,
+            probablemente su HTML esta bastante bien armado.
+          </p>
+          <div class="fundamentos-html-contexto">
+            <h3>Como piensa HTML dentro de una pagina real</h3>
+            <p>
+              HTML es la capa que organiza el contenido y le da significado. El
+              navegador lee ese archivo y construye una estructura interna donde
+              reconoce que partes son titulos, textos, listas, enlaces, imagenes,
+              formularios o zonas principales del documento. Esa estructura es la
+              base sobre la que despues se apoyan CSS y JavaScript.
+            </p>
+            <p>
+              Por eso estudiar HTML no es memorizar etiquetas como si fueran
+              figuritas. Es aprender a representar ideas y relaciones: que
+              bloque es principal, que contenido es secundario, que texto es un
+              titulo, que elemento navega, cual ejecuta una accion y como viajan
+              los datos de un formulario.
+            </p>
+          </div>
+          <div class="tarjetas">
+            <article class="tarjeta">
+              <h3>HTML ordena el contenido</h3>
+              <p>
+                Titulos, parrafos, listas, enlaces, tablas y formularios viven
+                en HTML porque primero hay que definir la estructura antes de
+                pensar en colores, animaciones o efectos.
+              </p>
+              <p class="fundamentos-html-texto">
+                Si la estructura esta clara desde el principio, luego resulta
+                mucho mas simple estilizar, mantener y ampliar la pagina sin
+                depender de parches.
+              </p>
+            </article>
+            <article class="tarjeta">
+              <h3>Semantica antes que apariencia</h3>
+              <p>
+                Una <code>section</code>, un <code>article</code> o un
+                <code>button</code> dicen algo sobre el rol del contenido.
+                Elegir bien la etiqueta ayuda a leer, mantener y entender mejor
+                la pagina.
+              </p>
+              <p class="fundamentos-html-texto">
+                Cuando una etiqueta comunica bien su papel, tambien mejora la
+                accesibilidad y hace que el documento se entienda incluso sin
+                mirar su diseño visual.
+              </p>
+            </article>
+            <article class="tarjeta">
+              <h3>Estudiar HTML es aprender a pensar la pagina</h3>
+              <p>
+                La pregunta clave no es "que etiqueta me acuerdo", sino "que es
+                esta parte del contenido y como se relaciona con las demas".
+              </p>
+              <p class="fundamentos-html-texto">
+                Esa manera de pensar te sirve despues en cualquier proyecto,
+                porque primero diseñas la estructura logica y luego agregas CSS,
+                interaccion y comportamiento.
+              </p>
+            </article>
+          </div>
+          <div class="referencia-grid">
+            <article class="referencia-card">
+              <p class="tag-ejemplo">Semantica</p>
+              <p>
+                No todo contenedor es igual. <code>div</code> sirve como caja
+                generica, pero etiquetas como <code>header</code>,
+                <code>main</code>, <code>nav</code> y <code>footer</code>
+                cuentan para que esta cada bloque.
+              </p>
+              <p class="fundamentos-html-texto">
+                La semantica no es decorativa. Hace que el documento se lea con
+                mas claridad, que otros desarrolladores entiendan mejor la
+                intencion del bloque y que herramientas externas interpreten el
+                contenido con mas contexto.
+              </p>
+              <pre><code>&lt;header&gt;...&lt;/header&gt;
+&lt;main&gt;...&lt;/main&gt;
+&lt;footer&gt;...&lt;/footer&gt;</code></pre>
+              <p class="detalle">
+                Para estudiar: preguntate si la caja tiene un rol claro o si
+                solo la usaste porque necesitabas envolver algo.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">Jerarquia</p>
+              <p>
+                Los encabezados ordenan la informacion. <code>h1</code> marca
+                el tema principal y <code>h2</code>, <code>h3</code> y
+                siguientes bajan de nivel.
+              </p>
+              <p class="fundamentos-html-texto">
+                Los titulos no deberian elegirse solo por el tamano visual. Su
+                funcion principal es construir una jerarquia de ideas, igual que
+                un indice de estudio o el esquema de un apunte.
+              </p>
+              <pre><code>&lt;h1&gt;Portfolio&lt;/h1&gt;
+&lt;h2&gt;Proyectos&lt;/h2&gt;
+&lt;h3&gt;Landing page&lt;/h3&gt;</code></pre>
+              <p class="detalle">
+                Buen ejercicio: revisar si los titulos forman un arbol con
+                sentido y no solo tamaños visuales.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">Anidacion</p>
+              <p>
+                HTML funciona por relaciones de padre e hijo. Un elemento puede
+                vivir dentro de otro, pero no cualquier combinacion es valida.
+              </p>
+              <p class="fundamentos-html-texto">
+                La anidacion correcta importa porque el navegador interpreta el
+                contenido en ese orden y CSS tambien selecciona elementos segun
+                sus relaciones dentro del arbol del documento.
+              </p>
+              <pre><code>&lt;section&gt;
+  &lt;h2&gt;Servicios&lt;/h2&gt;
+  &lt;p&gt;Diseno y maquetado web.&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+              <p class="detalle">
+                Error comun: meter cajas como <code>div</code> dentro de un
+                <code>p</code>. Primero piensa la estructura, despues el estilo.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">Atributos</p>
+              <p>
+                Los atributos completan la informacion de una etiqueta:
+                <code>href</code>, <code>src</code>, <code>alt</code>,
+                <code>class</code>, <code>id</code>, <code>name</code> o
+                <code>type</code>.
+              </p>
+              <p class="fundamentos-html-texto">
+                Algunos atributos cambian comportamiento, otros agregan
+                descripcion y otros ayudan a identificar elementos. Entenderlos
+                bien evita usar HTML incompleto que despues obliga a compensar
+                con JavaScript o CSS.
+              </p>
+              <pre><code>&lt;img
+  src="img/cafe.jpg"
+  alt="Cafe servido en una taza blanca"
+/&gt;</code></pre>
+              <p class="detalle">
+                Para estudiar: intenta explicar que pasa si quitas cada
+                atributo. Eso te obliga a entender para que sirve.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">Bloque e inline</p>
+              <p>
+                Algunas etiquetas ocupan su propia linea, como
+                <code>div</code> o <code>p</code>. Otras viven dentro del flujo
+                del texto, como <code>span</code>, <code>a</code> o
+                <code>strong</code>.
+              </p>
+              <p class="fundamentos-html-texto">
+                Aunque luego CSS pueda cambiar ese comportamiento, entender esta
+                diferencia base ayuda mucho a interpretar por que ciertos
+                elementos se acomodan como bloques y otros como partes del
+                contenido en linea.
+              </p>
+              <pre><code>&lt;p&gt;
+  Hola &lt;strong&gt;mundo&lt;/strong&gt;
+  &lt;a href="#"&gt;ir al enlace&lt;/a&gt;
+&lt;/p&gt;</code></pre>
+              <p class="detalle">
+                Entender esto ayuda un monton cuando despues CSS empieza a mover
+                cajas, alinearlas o cambiarles <code>display</code>.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">Formularios</p>
+              <p>
+                Un formulario no solo muestra campos: tambien necesita que los
+                datos tengan nombre y contexto para poder enviarse bien.
+              </p>
+              <p class="fundamentos-html-texto">
+                Un formulario bien pensado une estructura, semantica y datos.
+                No alcanza con que el campo se vea. Tiene que tener etiqueta,
+                identificacion clara y una clave util para el momento del envio.
+              </p>
+              <pre><code>&lt;label for="email"&gt;Email&lt;/label&gt;
+&lt;input id="email" name="email" type="email" required /&gt;</code></pre>
+              <p class="detalle">
+                Dos claves para repasar: <code>label</code> conecta con
+                <code>for</code>/<code>id</code> y <code>name</code> es la clave
+                del dato enviado.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">Rutas</p>
+              <p>
+                HTML conecta archivos. Por eso conviene entender rutas
+                relativas, carpetas y como cambia un enlace segun donde vive el
+                documento.
+              </p>
+              <p class="fundamentos-html-texto">
+                Este punto suele parecer chico, pero rompe muchisimas paginas al
+                empezar. Un enlace o una imagen pueden estar bien escritos y aun
+                asi fallar si no entiendes desde que carpeta parte la ruta.
+              </p>
+              <pre><code>&lt;a href="pages/contacto.html"&gt;Contacto&lt;/a&gt;
+&lt;img src="../img/logo.png" alt="Logo" /&gt;</code></pre>
+              <p class="detalle">
+                Buena practica: ubica mentalmente desde que carpeta parte cada
+                archivo antes de escribir el <code>href</code> o el
+                <code>src</code>.
+              </p>
+            </article>
+            <article class="referencia-card">
+              <p class="tag-ejemplo">Accesibilidad basica</p>
+              <p>
+                Un buen HTML ayuda a que la pagina se entienda con teclado,
+                lector de pantalla o conexiones lentas. Eso arranca desde la
+                estructura, no al final.
+              </p>
+              <p class="fundamentos-html-texto">
+                Muchas mejoras de accesibilidad no requieren trucos raros. Salen
+                de elegir bien elementos nativos, escribir textos claros y usar
+                atributos que describan con precision que hace cada pieza.
+              </p>
+              <pre><code>&lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;a href="/catalogo.html"&gt;Ver catalogo&lt;/a&gt;</code></pre>
+              <p class="detalle">
+                Para estudiar: usa <code>button</code> para acciones,
+                <code>a</code> para navegar, <code>alt</code> en imagenes y
+                textos de enlace que digan a donde van.
+              </p>
+            </article>
+          </div>
+          <div class="tarjetas">
+            <article class="tarjeta">
+              <h3>Pregunta para hacerte</h3>
+              <p>
+                Si borras todas las clases y estilos, tu documento sigue
+                contando bien que es cada parte?
+              </p>
+            </article>
+            <article class="tarjeta">
+              <h3>Practica recomendada</h3>
+              <p>
+                Arma una pagina simple con <code>header</code>,
+                <code>main</code>, dos <code>section</code>, una lista, una
+                imagen y un formulario. Luego explica en voz alta por que
+                elegiste cada etiqueta.
+              </p>
+            </article>
+            <article class="tarjeta">
+              <h3>Error comun</h3>
+              <p>
+                Usar <code>div</code> para todo y despues intentar que CSS
+                arregle el sentido del documento. Primero se ordena, despues se
+                decora.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="bloque" id="idea-html">
           <h2>Idea rapida para recordar HTML</h2>
           <div class="tarjetas">
             <article class="tarjeta">
